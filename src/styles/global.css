@@ -1,1 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 @import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "sojourners";
+  default: true;
+  prefersdark: true;
+  color-scheme: "dark";
+  --color-base-100: oklch(27% 0.041 260.031);
+  --color-base-200: oklch(20% 0.042 265.755);
+  --color-base-300: oklch(12% 0.042 264.695);
+  --color-base-content: oklch(98% 0.003 247.858);
+  --color-primary: oklch(85% 0.199 91.936);
+  --color-primary-content: oklch(27% 0.041 260.031);
+  --color-secondary: oklch(98% 0.003 247.858);
+  --color-secondary-content: oklch(27% 0.041 260.031);
+  --color-accent: oklch(51% 0.096 186.391);
+  --color-accent-content: oklch(98% 0.003 247.858);
+  --color-neutral: oklch(55% 0.046 257.417);
+  --color-neutral-content: oklch(98% 0.003 247.858);
+  --color-info: oklch(44% 0.11 240.79);
+  --color-info-content: oklch(98% 0.003 247.858);
+  --color-success: oklch(68% 0.169 237.323);
+  --color-success-content: oklch(27% 0.041 260.031);
+  --color-warning: oklch(68% 0.162 75.834);
+  --color-warning-content: oklch(27% 0.041 260.031);
+  --color-error: oklch(57% 0.245 27.325);
+  --color-error-content: oklch(98% 0.003 247.858);
+  --radius-selector: 1rem;
+  --radius-field: 2rem;
+  --radius-box: 0.25rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@theme {
+  --font-sans: "Poppins", sans-serif;
+}
