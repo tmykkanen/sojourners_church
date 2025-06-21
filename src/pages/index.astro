@@ -1,47 +1,26 @@
 ---
-import "@styles/global.css";
-import { Icon } from "astro-icon/components";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Sojourners Church</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Space+Grotesk:wght@300..700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+<BaseLayout>
   <body>
-    <header class="p-4">
-      <nav class="navbar">
-        <h1 class="navbar-start text-2xl uppercase">
-          <a href="#">Sojourners <br /> Church</a>
-        </h1>
-        <ul class="navbar-end font-light tracking-wider uppercase">
-          <li class="btn btn-ghost"><a href="#">About Us</a></li>
-          <li class="btn btn-ghost"><a href="#">Life Together</a></li>
-          <li class="btn btn-ghost"><a href="#">Sermons</a></li>
-          <li class="btn btn-ghost"><a href="#">Writings</a></li>
-          <li class="btn btn-outline"><a href="#">What is the Gospel?</a></li>
-        </ul>
-      </nav>
-    </header>
+    <Header />
     <main>
-      <div class="hero min-h-screen">
-        <!-- <div class="hero-overlay opacity-50"></div> -->
+      <div
+        class="hero min-h-screen"
+        style="background-image: url(https://imagescdn.homes.com/i2/CEji7IWNBAkZ0oR6Ys2M4_qKV1NXED2iubcrhIUqjAw/116/albert-lea-mn-9.jpg?p=1);"
+      >
+        <div class="hero-overlay bg-base-100 opacity-85"></div>
         <div class="hero-content">
-          <div class="max-w-5xl">
-            <h2 class="mb-4 text-5xl font-bold uppercase">
-              We exist to be and make <span class="text-primary"
-                >eternally joyful disciples</span
-              > of Jesus Christ.
+          <div class="max-w-6xl">
+            <h2 class="mb-4 text-7xl font-bold uppercase drop-shadow-xl">
+              <span class="opacity-40">We exist to be and make</span>
+              <br />
+              <span class="text-primary">eternally joyful disciples</span>
+              <br />
+              <span class="opacity-40"> of Jesus Christ. </span>
             </h2>
 
             <a href="#" class="btn btn-accent tracking-widest uppercase">
@@ -51,84 +30,6 @@ import { Icon } from "astro-icon/components";
         </div>
       </div>
     </main>
-    <footer class="bg-accent text-accent-content flex gap-4 p-4">
-      <section>
-        <h2 class="sr-only">Address & Contact Info</h2>
-        <p class="text-xl font-bold tracking-wider uppercase">
-          Sundays at 10am
-        </p>
-        <address>
-          1679 West Main Street <br />
-          Skyline Plaza <br />
-          Albert Lea, MN 56007
-        </address>
-        <h3 class="text-xl font-bold tracking-wider uppercase">Contact Us</h3>
-        <address>
-          <a href="mailto:hello@sojourners.church">hello@sojourners.church</a>
-          <br />
-          (507) 552-1595
-        </address>
-        <div class="flex">
-          <Icon name="mdi:facebook" />
-          <Icon name="mdi:youtube" />
-        </div>
-      </section>
-      <section>
-        <h2 class="text-xl font-bold tracking-wider uppercase">
-          Weekly Bulletin
-        </h2>
-        <p>
-          Sign up to stay informed and connected to Sojourners Church weekly
-          happenings.
-        </p>
-        <form action="">
-          <fieldset
-            class="fieldset border-base-300 rounded-box w-xs border p-4"
-          >
-            <legend class="fieldset-legend">Sign Up</legend>
-
-            <label class="input">
-              <input type="text" class="" placeholder="First Name" />
-            </label>
-            <label class="input">
-              <input type="text" placeholder="Last Name" />
-            </label>
-
-            <label class="input validator">
-              <svg
-                class="h-[1em] opacity-50"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <g
-                  stroke-linejoin="round"
-                  stroke-linecap="round"
-                  stroke-width="2.5"
-                  fill="none"
-                  stroke="currentColor"
-                >
-                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                </g>
-              </svg>
-              <input type="email" placeholder="mail@site.com" required />
-            </label>
-            <button class="btn btn-primary btn-outline">Submit</button>
-          </fieldset>
-        </form>
-      </section>
-      <section>
-        <h2 class="text-xl font-bold tracking-wider uppercase">
-          Give to Sojourners Church
-        </h2>
-        <p>
-          Click below to set up a one time or recurring gift to Sojourners
-          Church.
-        </p>
-        <button class="btn btn-primary btn-outline">Give</button>
-      </section>
-    </footer>
+    <Footer />
   </body>
-</html>
-
-<style></style>
+</BaseLayout>

@@ -1,0 +1,74 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<footer class="bg-accent text-accent-content grid grid-cols-3 p-6">
+  <section class="flex flex-col gap-2">
+    <h2 class="sr-only">Address & Contact Info</h2>
+    <p class="text-2xl font-bold tracking-wider uppercase">Sundays at 10am</p>
+    <address class="mb-6">
+      1679 West Main Street <br />
+      Skyline Plaza <br />
+      Albert Lea, MN 56007
+    </address>
+    <h3 class="text-2xl font-bold tracking-wider uppercase">Contact Us</h3>
+    <address>
+      <a href="mailto:hello@sojourners.church">hello@sojourners.church</a>
+      <br />
+      (507) 552-1595
+    </address>
+    <div class="flex gap-2 text-xl">
+      <Icon name="mdi:facebook" />
+      <Icon name="mdi:youtube" />
+    </div>
+  </section>
+  <section class="flex flex-col gap-2">
+    <h2 class="text-2xl font-bold tracking-wider uppercase">Weekly Bulletin</h2>
+    <p>
+      Sign up to stay informed and connected to Sojourners Church weekly
+      happenings.
+    </p>
+    <form action="" class="mt-6">
+      <fieldset class="fieldset border-base-300 rounded-box w-xs border p-4">
+        <legend class="fieldset-legend">Sign Up</legend>
+
+        <label class="input">
+          <input type="text" class="" placeholder="First Name" />
+        </label>
+        <label class="input">
+          <input type="text" placeholder="Last Name" />
+        </label>
+
+        <label class="input validator">
+          <svg
+            class="h-[1em] opacity-50"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <g
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="2.5"
+              fill="none"
+              stroke="currentColor"
+            >
+              <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </g>
+          </svg>
+          <input type="email" placeholder="mail@site.com" required />
+        </label>
+        <button class="btn btn-primary btn-outline">Submit</button>
+      </fieldset>
+    </form>
+  </section>
+  <section class="flex flex-col gap-2">
+    <h2 class="text-2xl font-bold tracking-wider uppercase">
+      Give to Sojourners Church
+    </h2>
+    <p>
+      Click below to set up a one time or recurring gift to Sojourners Church.
+    </p>
+    <button class="btn btn-primary btn-outline mt-6 w-xs">Give</button>
+  </section>
+</footer>

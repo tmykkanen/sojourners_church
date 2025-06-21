@@ -1,0 +1,20 @@
+---
+import { getCollection } from "astro:content";
+import Header from "@components/Header.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const allPosts = await getCollection("blog");
+---
+
+<BaseLayout>
+  <Header />
+  <h1>Writings</h1>
+
+  {
+    allPosts.map((post) => (
+      <h2>
+        <a href={`/writings/${post.id}`}>{post.data.title}</a>
+      </h2>
+    ))
+  }
+</BaseLayout>
