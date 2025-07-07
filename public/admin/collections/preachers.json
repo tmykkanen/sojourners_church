@@ -1,0 +1,24 @@
+{
+  "collections": [
+    {
+      "name": "preachers",
+      "label": "Preachers",
+      "folder": "src/collections/preachers",
+      "create": true,
+      "slug": "{{last}}_{{first}}",
+      "summary": "{{first}} {{last}}",
+      "fields": [
+        {
+          "name": "first",
+          "label": "First Name",
+          "widget": "string"
+        },
+        {
+          "name": "last",
+          "label": "Last Name",
+          "widget": "string"
+        }
+      ]
+    }
+  ]
+}

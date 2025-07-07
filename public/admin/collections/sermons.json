@@ -1,0 +1,49 @@
+{
+  "collections": [
+    {
+      "name": "sermons",
+      "label": "Sermons",
+      "folder": "src/collections/sermons",
+      "create": true,
+      "slug": "{{date}}-{{slug}}",
+      "fields": [
+        {
+          "name": "layout",
+          "label": "Layout",
+          "widget": "hidden",
+          "default": "sermon"
+        },
+        {
+          "name": "title",
+          "label": "Title",
+          "widget": "string"
+        },
+        {
+          "name": "date",
+          "label": "Date Preached",
+          "widget": "datetime",
+          "date_format": "YYYY-MM-DD"
+        },
+        {
+          "name": "sermon_text",
+          "label": "Sermon Text",
+          "widget": "string"
+        },
+        {
+          "name": "preacher",
+          "label": "Preacher",
+          "widget": "relation",
+          "collection": "preachers",
+          "search_fields": ["first", "last"],
+          "value_field": "{{slug}}",
+          "display_fields": ["first", "last"]
+        },
+        {
+          "name": "body",
+          "label": "Body",
+          "widget": "markdown"
+        }
+      ]
+    }
+  ]
+}
