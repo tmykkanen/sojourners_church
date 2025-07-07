@@ -1,0 +1,13 @@
+{
+  "yaml.schemas": {
+    "https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json": [
+      "/public/admin/config.yml"
+    ]
+  },
+  "json.schemas": [
+    {
+      "fileMatch": ["/public/admin/config.json"],
+      "url": "https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json"
+    }
+  ]
+}
