@@ -20,7 +20,7 @@ const sermons = defineCollection({
   loader: glob({ pattern: "**/[^_]*.md", base: "./src/collections/sermons" }),
   schema: z.object({
     title: z.string(),
-    text: z.string(),
+    sermon_text: z.string(),
     preacher: z.string(),
     date: z.date(),
   }),
