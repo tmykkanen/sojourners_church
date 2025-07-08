@@ -3,6 +3,7 @@
     {
       "name": "preachers",
       "label": "Preachers",
+      "icon": "person",
       "folder": "src/collections/preachers",
       "create": true,
       "slug": "{{last}}_{{first}}",

@@ -1,0 +1,24 @@
+---
+const { spotifyURI } = Astro.props;
+---
+
+<div id="spotify-audio-iframe"></div>
+
+<script define:vars={{ spotifyURI }}>
+  if (spotifyURI) {
+    window.onSpotifyIframeApiReady = (IFrameAPI) => {
+      const uri = `spotify:episode:${spotifyURI[0]}`;
+
+      const element = document.getElementById("spotify-audio-iframe");
+      const options = {
+        width: "60%",
+        height: "152",
+        uri: uri,
+      };
+
+      const callback = (EmbedController) => {};
+
+      IFrameAPI.createController(element, options, callback);
+    };
+  }
+</script>

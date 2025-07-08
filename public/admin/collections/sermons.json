@@ -3,6 +3,7 @@
     {
       "name": "sermons",
       "label": "Sermons",
+      "icon": "podium",
       "folder": "src/collections/sermons",
       "create": true,
       "slug": "{{date}}-{{slug}}",
@@ -22,6 +23,7 @@
           "name": "date",
           "label": "Date Preached",
           "widget": "datetime",
+          "time_format": false,
           "date_format": "YYYY-MM-DD"
         },
         {
@@ -37,6 +39,18 @@
           "search_fields": ["first", "last"],
           "value_field": "{{slug}}",
           "display_fields": ["first", "last"]
+        },
+        {
+          "name": "spotify_link",
+          "label": "Spotify Episode Link",
+          "widget": "string",
+          "required": false
+        },
+        {
+          "name": "bulletin_link",
+          "label": "Bulletin Link",
+          "widget": "string",
+          "required": false
         },
         {
           "name": "body",

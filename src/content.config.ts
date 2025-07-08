@@ -23,6 +23,8 @@ const sermons = defineCollection({
     sermon_text: z.string(),
     preacher: z.string(),
     date: z.date(),
+    spotify_link: z.string().optional(),
+    bulletin_link: z.string().optional(),
   }),
 });
 
