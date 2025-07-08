@@ -1,0 +1,30 @@
+{
+  "collections": [
+    {
+      "name": "series",
+      "label": "Sermon Series",
+      "folder": "src/collections/series",
+      "create": true,
+      "slug": "{{slug}}",
+      "fields": [
+        {
+          "name": "name",
+          "label": "Series Name",
+          "widget": "string"
+        },
+        {
+          "name": "image",
+          "label": "Series Image",
+          "widget": "image"
+        },
+        {
+          "name": "startDate",
+          "label": "Series Start Date",
+          "widget": "datetime",
+          "time_format": false,
+          "date_format": "YYYY-MM-DD"
+        }
+      ]
+    }
+  ]
+}

@@ -5,6 +5,15 @@ import Header from "@components/Header.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
 const allSermons = await getCollection("sermons");
+allSermons.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const latestSermon = allSermons[0];
+
+const allSeries = await getCollection("sermonSeries");
+allSeries.sort(
+  (a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf(),
+);
+
+const allPreachers = await getCollection("preachers");
 ---
 
 <BaseLayout>
@@ -13,17 +22,23 @@ const allSermons = await getCollection("sermons");
     <h1 class="sr-only">Sermons</h1>
     <div class="grid grid-cols-2">
       <div>
-        <h2>Latest Sermon</h2>
-
-        {
-          allSermons.map((post) => (
-            <h2>
-              <a href={`/sermons/${post.id}`} class="link">
-                {post.data.title}
-              </a>
-            </h2>
-          ))
-        }
+        <h2 class="text-2xl">Latest Sermon</h2>
+        <h3 class="text-xl">
+          <a href={`/sermons/${latestSermon.id}`} class="link">
+            {latestSermon.data.title}
+          </a>
+        </h3>
+        <p>{latestSermon.data.description}</p>
+        <p>
+          {
+            latestSermon.data.date.toLocaleDateString("en-US", {
+              month: "long",
+              day: "2-digit",
+              year: "numeric",
+            })
+          }
+        </p>
+        <p>{latestSermon.data.series}</p>
       </div>
       <div>
         <h2>Listen on Spotify</h2>
@@ -35,43 +50,20 @@ const allSermons = await getCollection("sermons");
           scrolling="no"></iframe>
       </div>
     </div>
-    <div>
-      <h2>Sermons By Series</h2>
-      <div class="flex gap-6">
-        <div class="card bg-base-100 image-full w-48 shadow-sm">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes"
-            />
-          </figure>
-          <div class="card-body">
-            <h3 class="card-title">Sermon Title</h3>
+    <h2>Sermons By Series</h2>
+    <div class="flex gap-6">
+      {
+        allSeries.map((item) => (
+          <div class="card bg-base-200 w-48 shadow-sm">
+            <figure>
+              <img src={item.data.image} alt="series image" />
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title text-sm">{item.data.name}</h3>
+            </div>
           </div>
-        </div>
-        <div class="card bg-base-100 image-full w-48 shadow-sm">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes"
-            />
-          </figure>
-          <div class="card-body">
-            <h3 class="card-title">Sermon Title</h3>
-          </div>
-        </div>
-        <div class="card bg-base-100 image-full w-48 shadow-sm">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes"
-            />
-          </figure>
-          <div class="card-body">
-            <h3 class="card-title">Sermon Title</h3>
-          </div>
-        </div>
-      </div>
+        ))
+      }
     </div>
 
     <div class="divider"></div>

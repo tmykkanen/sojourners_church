@@ -15,31 +15,32 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { spotify_link, bulletin_link } = post.data;
+const { spotify_link, bulletin_link, title, preacher, description } = post.data;
 
 const { Content } = await render(post);
 
-// console.log(post);
-
-// const spotify = post.data.spotify_link.match(/(?<=episode\/).+?(?=\?)/gm);
+// Get uri/id from links using regex
 const spotifyURI = spotify_link
   ? spotify_link.match(/(?<=episode\/).+?(?=\?)/gm)
   : "";
 const bulletinID = bulletin_link
   ? bulletin_link.match(/(?<=d\/).+?(?=\/)/gm)
   : "";
-
-// const bulletinSrc = `https://drive.google.com/file/d/${post.data.bulletinID}/preview`;
 ---
 
 <BaseLayout>
   <Header />
-  <Content />
-  <!-- <div id="embed-iframe"></div> -->
 
-  <SpotifyAudioEmbed {spotifyURI} />
+  <h1 class="text-4xl">{title}</h1>
+  <h3>{preacher}</h3>
+
+  <p>{description}</p>
+
+  <Content />
 
   <SpotifyVideoEmbed {spotifyURI} />
+
+  <SpotifyAudioEmbed {spotifyURI} />
 
   <GoogleDocsEmbed {bulletinID} />
 </BaseLayout>
