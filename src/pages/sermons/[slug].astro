@@ -8,6 +8,7 @@ import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const posts = await getCollection("sermons");
+
   return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },
@@ -18,14 +19,6 @@ const { post } = Astro.props;
 const { spotify_link, bulletin_link, title, preacher, description } = post.data;
 
 const { Content } = await render(post);
-
-// Get uri/id from links using regex
-const spotifyURI = spotify_link
-  ? spotify_link.match(/(?<=episode\/).+?(?=\?)/gm)
-  : "";
-const bulletinID = bulletin_link
-  ? bulletin_link.match(/(?<=d\/).+?(?=\/)/gm)
-  : "";
 ---
 
 <BaseLayout>
@@ -38,9 +31,9 @@ const bulletinID = bulletin_link
 
   <Content />
 
-  <SpotifyVideoEmbed {spotifyURI} />
+  <SpotifyVideoEmbed {spotify_link} />
 
-  <SpotifyAudioEmbed {spotifyURI} />
+  <SpotifyAudioEmbed {spotify_link} />
 
-  <GoogleDocsEmbed {bulletinID} />
+  <GoogleDocsEmbed {bulletin_link} />
 </BaseLayout>

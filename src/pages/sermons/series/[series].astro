@@ -1,0 +1,49 @@
+---
+import Header from "@components/Header.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const allSeries = await getCollection("sermonSeries");
+
+  return allSeries.map((series) => ({
+    params: { series: series.id },
+    props: { series },
+  }));
+}
+
+const { series } = Astro.props;
+
+const allSermons = await getCollection("sermons");
+// Sort to most recent
+allSermons.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const targetSermons = allSermons.filter(
+  (sermon) => sermon.data.series === series.data.name,
+);
+---
+
+<BaseLayout>
+  <Header />
+  <h1 class="text-4xl">{series.data.name}</h1>
+  <ul>
+    {
+      targetSermons.map(
+        ({ data: { date, title, preacher, description }, id }) => (
+          <li>
+            {date.toLocaleDateString("en-US", {
+              month: "long",
+              day: "2-digit",
+              year: "numeric",
+            })}
+            <a href={`/sermons/${id}`} class="link">
+              {title}
+            </a>
+            {preacher}
+            {description}
+          </li>
+        ),
+      )
+    }
+  </ul>
+</BaseLayout>

@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 
 import Header from "@components/Header.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import SpotifyAudioEmbed from "@components/SpotifyAudioEmbed.astro";
 
 const allSermons = await getCollection("sermons");
 allSermons.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
@@ -42,12 +43,7 @@ const allPreachers = await getCollection("preachers");
       </div>
       <div>
         <h2>Listen on Spotify</h2>
-        <iframe
-          src="https://podcasters.spotify.com/pod/show/sojourners-church/embed"
-          height="100%"
-          width="100%"
-          frameborder="0"
-          scrolling="no"></iframe>
+        <SpotifyAudioEmbed spotify_link={latestSermon.data.spotify_link} />
       </div>
     </div>
     <h2>Sermons By Series</h2>
@@ -55,12 +51,14 @@ const allPreachers = await getCollection("preachers");
       {
         allSeries.map((item) => (
           <div class="card bg-base-200 w-48 shadow-sm">
-            <figure>
-              <img src={item.data.image} alt="series image" />
-            </figure>
-            <div class="card-body">
-              <h3 class="card-title text-sm">{item.data.name}</h3>
-            </div>
+            <a href={`/sermons/series/${item.id}`}>
+              <figure>
+                <img src={item.data.image} alt="series image" />
+              </figure>
+              <div class="card-body">
+                <h3 class="card-title text-sm">{item.data.name}</h3>
+              </div>
+            </a>
           </div>
         ))
       }
@@ -94,10 +92,14 @@ const allPreachers = await getCollection("preachers");
       <div>
         <h2>Sermons By Preacher</h2>
         <select class="select">
-          <option disabled selected>Pick a color</option>
-          <option>Crimson</option>
-          <option>Amber</option>
-          <option>Velvet</option>
+          <option disabled selected>Pick a Preacher</option>
+          {
+            allPreachers.map((preacher) => (
+              <option>
+                {preacher.data.first} {preacher.data.last}
+              </option>
+            ))
+          }
         </select>
       </div>
       <div>

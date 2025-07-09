@@ -1,5 +1,10 @@
 ---
-const { spotifyURI } = Astro.props;
+const { spotify_link } = Astro.props;
+
+// Get uri/id from links using regex
+const spotifyURI = spotify_link
+  ? spotify_link.match(/(?<=episode\/).+?(?=\?)/gm)
+  : "";
 ---
 
 <div id="spotify-audio-iframe"></div>
