@@ -2,6 +2,7 @@
 layout: sermon
 title: Rage or Refuge?
 date: 2025-06-22
+series: 'Psalms: Songs for Every Season of the Soul'
 sermon_text: Psalm 2
 book:
   - Psalms
