@@ -4,7 +4,6 @@
     "repo": "tmykkanen/sojourners_church"
   },
   "media_folder": "public/images/uploads",
-  "collections": [
-
-  ]
+  "public_folder": "/images/uploads",
+  "collections": []
 }
