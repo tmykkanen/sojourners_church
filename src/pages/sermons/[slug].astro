@@ -24,16 +24,18 @@ const { Content } = await render(post);
 <BaseLayout>
   <Header />
 
-  <h1 class="text-4xl">{title}</h1>
-  <h3>{preacher}</h3>
+  <main class="layout-base">
+    <h1 class="text-4xl">{title}</h1>
+    <h3>{preacher}</h3>
 
-  <p>{description}</p>
+    <p>{description}</p>
 
-  <Content />
+    <Content />
 
-  <SpotifyVideoEmbed {spotify_link} />
+    <SpotifyVideoEmbed {spotify_link} />
 
-  <SpotifyAudioEmbed {spotify_link} />
+    <SpotifyAudioEmbed {spotify_link} />
 
-  <GoogleDocsEmbed {bulletin_link} />
+    <GoogleDocsEmbed {bulletin_link} />
+  </main>
 </BaseLayout>

@@ -19,11 +19,11 @@ const allPreachers = await getCollection("preachers");
 
 <BaseLayout>
   <Header />
-  <main>
+  <main class="layout-base">
     <h1 class="sr-only">Sermons</h1>
     <div class="grid grid-cols-2">
       <div>
-        <h2 class="text-2xl">Latest Sermon</h2>
+        <h2 class="text-2xl uppercase">Latest Sermon</h2>
         <h3 class="text-xl">
           <a href={`/sermons/${latestSermon.id}`} class="link">
             {latestSermon.data.title}
@@ -42,11 +42,11 @@ const allPreachers = await getCollection("preachers");
         <p>{latestSermon.data.series}</p>
       </div>
       <div>
-        <h2>Listen on Spotify</h2>
+        <h2 class="text-2xl uppercase">Listen on Spotify</h2>
         <SpotifyAudioEmbed spotify_link={latestSermon.data.spotify_link} />
       </div>
     </div>
-    <h2>Sermons By Series</h2>
+    <h2 class="text-2xl uppercase">Sermons By Series</h2>
     <div class="flex gap-6">
       {
         allSeries.map((item) => (

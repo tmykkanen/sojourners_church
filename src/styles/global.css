@@ -40,4 +40,25 @@
 
 @theme {
   --font-sans: "Poppins", sans-serif;
+  /* --root-bg: var(--color-base-200); */
+}
+
+@utility layout-base {
+  --max-width: 120ch;
+  --padding: 36px;
+
+  display: grid;
+  place-content: center;
+  grid-template-columns:
+    minmax(var(--padding), 1fr)
+    min(var(--max-width), 100% - var(--padding) * 2)
+    minmax(var(--padding), 1fr);
+
+  & > * {
+    grid-column: 2/3;
+  }
+
+  & > .full-width {
+    grid-column: 1/-1;
+  }
 }
