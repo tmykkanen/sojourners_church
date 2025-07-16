@@ -1,9 +1,15 @@
-<header class="bg-base-100 p-4">
+---
+import { Icon } from "astro-icon/components";
+---
+
+<header class="bg-base-100 p-2 sm:p-4">
   <nav class="navbar">
-    <h1 class="navbar-start text-xl uppercase">
+    <h1 class="flex-1 text-lg uppercase md:text-2xl">
       <a href="/">Sojourners <br /> Church</a>
     </h1>
-    <ul class="navbar-end font-light tracking-wider uppercase">
+    <Icon name={"mdi:menu"} class="text-3xl lg:hidden" />
+
+    <ul class="hidden font-light tracking-wider uppercase lg:inline-flex">
       <li class="btn btn-ghost"><a href="/about/beliefs">About Us</a></li>
       <li class="btn btn-ghost"><a href="#">Life Together</a></li>
       <li class="btn btn-ghost"><a href="/sermons">Sermons</a></li>

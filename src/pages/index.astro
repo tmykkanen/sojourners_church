@@ -14,7 +14,9 @@ import BaseLayout from "@layouts/BaseLayout.astro";
       <div class="hero-overlay bg-base-100 opacity-85"></div>
       <div class="hero-content">
         <div class="max-w-6xl">
-          <h2 class="mb-4 text-7xl font-bold uppercase drop-shadow-xl">
+          <h2
+            class="mb-4 text-5xl font-bold uppercase drop-shadow-xl sm:text-7xl"
+          >
             <span class="opacity-40">We exist to be and make</span>
             <br />
             <span class="text-primary">eternally joyful disciples</span>
@@ -22,12 +24,15 @@ import BaseLayout from "@layouts/BaseLayout.astro";
             <span class="opacity-40"> of Jesus Christ. </span>
           </h2>
 
-          <a href="#" class="btn btn-accent tracking-widest uppercase">
+          <a
+            href="#"
+            class="btn btn-accent btn-lg sm:btn-md text-xs tracking-widest uppercase sm:text-sm"
+          >
             10 am Sundays at the Skyline Plaza | Click here for livestream
           </a>
         </div>
       </div>
     </div>
   </main>
-  <Footer />
+  <!-- <Footer /> -->
 </BaseLayout>
