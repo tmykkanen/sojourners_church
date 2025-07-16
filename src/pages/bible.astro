@@ -1,0 +1,58 @@
+---
+import Header from "@components/Header.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+import { bcv_parser } from "bible-passage-reference-parser/esm/bcv_parser.js";
+import * as lang from "bible-passage-reference-parser/esm/lang/en.js";
+
+import osisToEn from "../script/en";
+
+const bcv = new bcv_parser(lang);
+
+const input = "Rev 5:1-6:3";
+
+const parsedText = bcv
+  .parse(input)
+  .set_options({
+    consecutive_combination_strategy: "separate",
+    osis_compaction_strategy: "bcv",
+  })
+  .osis();
+
+const parsedTextFULL = bcv
+  .parse(input)
+  .set_options({
+    consecutive_combination_strategy: "separate",
+    osis_compaction_strategy: "bcv",
+  })
+  .parsed_entities();
+
+const bookStart = parsedTextFULL[0].entities[0].start.b;
+const chapterStart = parsedTextFULL[0].entities[0].start.c;
+const chapterEnd = parsedTextFULL[0].entities[0].end.c;
+
+const readableText = osisToEn("esv-long", parsedText);
+---
+
+<script define:vars={{ parsedTextFULL }}>
+  console.log(parsedTextFULL);
+</script>
+
+<BaseLayout>
+  <Header />
+  <main class="layout-base gap-4">
+    <h1 class="text-4xl">Bible Verse Parsing</h1>
+    <p>Input: {input}</p>
+    <section>
+      <h2 class="text-xl">OSIS</h2>
+      <p>{parsedText}</p>
+      <p>Book: {bookStart}</p>
+      <p>Chapter Start: {chapterStart}</p>
+      <p>Chapter End: {chapterEnd}</p>
+    </section>
+    <section>
+      <h2 class="text-xl">Human readable</h2>
+      <p>{readableText}</p>
+    </section>
+  </main>
+</BaseLayout>
