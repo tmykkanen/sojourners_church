@@ -6,18 +6,51 @@
       "icon": "person",
       "folder": "src/collections/preachers",
       "create": true,
-      "slug": "{{last}}_{{first}}",
-      "summary": "{{first}} {{last}}",
+      "slug": "{{name.last}}_{{name.first}}",
+      "summary": "{{name.first}} {{name.last}}",
       "fields": [
         {
-          "name": "first",
-          "label": "First Name",
-          "widget": "string"
+          "name": "name",
+          "label": "Name",
+          "widget": "object",
+          "summary": "{{fields.first}} {{fields.last}}",
+          "fields": [
+            {
+              "name": "first",
+              "label": "First Name",
+              "widget": "string"
+            },
+            {
+              "name": "last",
+              "label": "Last Name",
+              "widget": "string"
+            }
+          ]
+        },
+
+        {
+          "name": "priority",
+          "label": "Sort Order Priority (lower number is higher priority)",
+          "widget": "number",
+          "required": false
         },
         {
-          "name": "last",
-          "label": "Last Name",
-          "widget": "string"
+          "name": "guest",
+          "label": "Guest Preacher",
+          "widget": "boolean",
+          "required": false
+        },
+        {
+          "name": "bio",
+          "label": "Bio",
+          "widget": "markdown",
+          "required": false
+        },
+        {
+          "name": "image",
+          "label": "Upload a Picture",
+          "widget": "image",
+          "required": false
         }
       ]
     }
