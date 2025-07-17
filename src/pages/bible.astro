@@ -9,7 +9,8 @@ import osisToEn from "../script/en";
 
 const bcv = new bcv_parser(lang);
 
-const input = "Rev 5:1-6:3";
+// BUG: NB: requires at least book and chapter
+const input = "Lev 1";
 
 const parsedText = bcv
   .parse(input)
@@ -19,24 +20,88 @@ const parsedText = bcv
   })
   .osis();
 
-const parsedTextFULL = bcv
-  .parse(input)
-  .set_options({
-    consecutive_combination_strategy: "separate",
-    osis_compaction_strategy: "bcv",
-  })
-  .parsed_entities();
-
-const bookStart = parsedTextFULL[0].entities[0].start.b;
-const chapterStart = parsedTextFULL[0].entities[0].start.c;
-const chapterEnd = parsedTextFULL[0].entities[0].end.c;
-
 const readableText = osisToEn("esv-long", parsedText);
----
 
-<script define:vars={{ parsedTextFULL }}>
-  console.log(parsedTextFULL);
-</script>
+// Parsing OSIS - split at divisions and compare results
+// TODO: Implement parsing for identification
+// TODO: Implement OSIS book reference ids in series book selector (e.g. Rev = Revelation)
+
+// TODO: Add remaining OSIS book references - https://wiki.crosswire.org/OSIS_Book_Abbreviations
+const bookNumbers = [
+  { book: "Gen", num: 1 },
+  { book: "Exod", num: 2 },
+  { book: "Lev", num: 3 },
+  { book: "Deut", num: 4 },
+  { book: "Josh", num: 5 },
+  { book: "Judg", num: 6 },
+  { book: "Ruth", num: 7 },
+];
+
+const encodeRefToNumber = (ref: string[]) => {
+  const bookNum =
+    bookNumbers.filter(({ book }) => book === ref[0])[0].num * 1000000;
+  const chapterNum = parseInt(ref[1]) * 1000;
+  const verseNum = parseInt(ref[2]);
+
+  return bookNum + chapterNum + verseNum;
+};
+
+const parseRefs = (osis: string) => {
+  const osisSplit = osis.split("-");
+  const startRef = osisSplit[0].split(".");
+
+  const startRefObj = {
+    id: encodeRefToNumber(startRef),
+    book: startRef[0],
+    chapter: startRef[1],
+    verse: startRef[2],
+  };
+
+  if (osisSplit.length === 1) {
+    return [startRefObj];
+  }
+
+  const endRef = osisSplit[1].split(".");
+
+  const endRefObj = {
+    id: encodeRefToNumber(endRef),
+    book: endRef[0],
+    chapter: endRef[1],
+    verse: endRef[2],
+  };
+
+  return [startRefObj, endRefObj];
+};
+
+// TESTING
+console.log("Parsed Text: ", parsedText);
+console.log("Function Output: ", parseRefs(parsedText));
+
+const firstTextObj = parseRefs(parsedText)[0];
+
+// GOAL? Get assign each sermon book + chapter ids
+// https://github.com/monty5811/elm-bible/blob/2.0.2/src/Bible.elm
+// # Encoding
+
+// It may be useful to have a unique, compact representation of a reference for storage, searching, sorting, etc.
+
+// An easy way to achieve this is to convert the start and end of the reference to an `Int`.
+// These integers can then be stored in a database, sorted, checked for intersections to do searches, etc.
+
+// The encoding process is as follows:
+
+//     (1000000 * Book.toInt book) + (1000 * chapter) + verse
+
+// This results in an `Int` with the following structure
+
+//     16001001
+//     --===___
+//      | |  |
+//      | |  |
+//      | |  |--- Zero padded verse number
+//      | |------ Zero padded chapter number
+//      |-------- Book number
+---
 
 <BaseLayout>
   <Header />
@@ -46,9 +111,9 @@ const readableText = osisToEn("esv-long", parsedText);
     <section>
       <h2 class="text-xl">OSIS</h2>
       <p>{parsedText}</p>
-      <p>Book: {bookStart}</p>
-      <p>Chapter Start: {chapterStart}</p>
-      <p>Chapter End: {chapterEnd}</p>
+      <p>Book: {firstTextObj.book}</p>
+      <p>Chapter Start: {firstTextObj.chapter}</p>
+      <p>Chapter End:</p>
     </section>
     <section>
       <h2 class="text-xl">Human readable</h2>
