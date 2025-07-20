@@ -9,14 +9,22 @@ const sermons = defineCollection({
   loader: glob({ pattern: "**/[^_]*.md", base: "./src/collections/sermons" }),
   schema: z.object({
     title: z.string(),
-    description: z.string(),
-    sermon_text: z.string(),
-    preacher: z.string(),
     date: z.date(),
-    book: z.array(z.string()).optional(),
-    spotify_link: z.string().optional(),
-    bulletin_link: z.string().optional(),
-    series: z.string().optional(),
+    series: z.string(),
+    sermonText: z.array(
+      z.object({
+        book: z.string(),
+        startingChapter: z.number(),
+        startingVerse: z.number().optional().nullable(),
+        endingChapter: z.number().optional().nullable(),
+        endingVerse: z.number().optional().nullable(),
+      }),
+    ),
+    preacher: z.string(),
+    spotifyLink: z.string().optional(),
+    bulletinLink: z.string().optional(),
+    description: z.string(),
+    argument: z.string().optional(),
   }),
 });
 

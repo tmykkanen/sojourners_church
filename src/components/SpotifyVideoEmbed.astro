@@ -1,8 +1,8 @@
 ---
-const { spotify_link } = Astro.props;
+const { spotifyLink } = Astro.props;
 
-const spotifyURI = spotify_link
-  ? spotify_link.match(/(?<=episode\/).+?(?=\?)/gm)
+const spotifyURI = spotifyLink
+  ? spotifyLink.match(/(?<=episode\/).+?(?=\?)/gm)
   : "";
 
 const src = `https://open.spotify.com/embed/episode/${spotifyURI}/video?utm_source=generator`;

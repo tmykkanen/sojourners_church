@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { spotify_link, bulletin_link, title, preacher, description } = post.data;
+const { spotifyLink, bulletinLink, title, preacher, description } = post.data;
 
 const { Content } = await render(post);
 ---
@@ -32,10 +32,10 @@ const { Content } = await render(post);
 
     <Content />
 
-    <SpotifyVideoEmbed {spotify_link} />
+    <SpotifyVideoEmbed {spotifyLink} />
 
     <!-- <SpotifyAudioEmbed {spotify_link} /> -->
 
-    <GoogleDocsEmbed {bulletin_link} />
+    <GoogleDocsEmbed {bulletinLink} />
   </main>
 </BaseLayout>

@@ -1,8 +1,8 @@
 ---
-const { bulletin_link } = Astro.props;
+const { bulletinLink } = Astro.props;
 
-const bulletinID = bulletin_link
-  ? bulletin_link.match(/(?<=d\/).+?(?=\/)/gm)
+const bulletinID = bulletinLink
+  ? bulletinLink.match(/(?<=d\/).+?(?=\/)/gm)
   : "";
 
 const src = `https://drive.google.com/file/d/${bulletinID}/preview`;

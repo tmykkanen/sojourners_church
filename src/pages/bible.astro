@@ -2,117 +2,41 @@
 import Header from "@components/Header.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
-import { bcv_parser } from "bible-passage-reference-parser/esm/bcv_parser.js";
-import * as lang from "bible-passage-reference-parser/esm/lang/en.js";
+import { getCollection } from "astro:content";
+import {
+  scriptureRefToOsis,
+  osisToEnWrapper,
+  encodeRefToNumber,
+  createScriptureObject,
+} from "../utils/bibleParser";
 
-import osisToEn from "../script/en";
+const allSermons = await getCollection("sermons");
+allSermons.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const latestSermon = allSermons[0];
 
-const bcv = new bcv_parser(lang);
+// Function to process sermon post frontmatter to form readable for bcv_parser (processSermonPostRef)
+// const scriptureRef = formatForBCVParser(latestSermon);
 
-// BUG: NB: requires at least book and chapter
-const input = "Lev 1";
+// Function to process scriptureRef to osisRef
+const osisRef = scriptureRefToOsis(latestSermon);
 
-const parsedText = bcv
-  .parse(input)
-  .set_options({
-    consecutive_combination_strategy: "separate",
-    osis_compaction_strategy: "bcv",
-  })
-  .osis();
+console.log("OSIS REF: ", osisRef);
+console.log(createScriptureObject(osisRef));
 
-const readableText = osisToEn("esv-long", parsedText);
-
-// Parsing OSIS - split at divisions and compare results
-// TODO: Implement parsing for identification
-// TODO: Implement OSIS book reference ids in series book selector (e.g. Rev = Revelation)
-
-// TODO: Add remaining OSIS book references - https://wiki.crosswire.org/OSIS_Book_Abbreviations
-const bookNumbers = [
-  { book: "Gen", num: 1 },
-  { book: "Exod", num: 2 },
-  { book: "Lev", num: 3 },
-  { book: "Deut", num: 4 },
-  { book: "Josh", num: 5 },
-  { book: "Judg", num: 6 },
-  { book: "Ruth", num: 7 },
-];
-
-const encodeRefToNumber = (ref: string[]) => {
-  const bookNum =
-    bookNumbers.filter(({ book }) => book === ref[0])[0].num * 1000000;
-  const chapterNum = parseInt(ref[1]) * 1000;
-  const verseNum = parseInt(ref[2]);
-
-  return bookNum + chapterNum + verseNum;
-};
-
-const parseRefs = (osis: string) => {
-  const osisSplit = osis.split("-");
-  const startRef = osisSplit[0].split(".");
-
-  const startRefObj = {
-    id: encodeRefToNumber(startRef),
-    book: startRef[0],
-    chapter: startRef[1],
-    verse: startRef[2],
-  };
-
-  if (osisSplit.length === 1) {
-    return [startRefObj];
-  }
-
-  const endRef = osisSplit[1].split(".");
-
-  const endRefObj = {
-    id: encodeRefToNumber(endRef),
-    book: endRef[0],
-    chapter: endRef[1],
-    verse: endRef[2],
-  };
-
-  return [startRefObj, endRefObj];
-};
-
-// TESTING
-console.log("Parsed Text: ", parsedText);
-console.log("Function Output: ", parseRefs(parsedText));
-
-const firstTextObj = parseRefs(parsedText)[0];
-
-// GOAL? Get assign each sermon book + chapter ids
-// https://github.com/monty5811/elm-bible/blob/2.0.2/src/Bible.elm
-// # Encoding
-
-// It may be useful to have a unique, compact representation of a reference for storage, searching, sorting, etc.
-
-// An easy way to achieve this is to convert the start and end of the reference to an `Int`.
-// These integers can then be stored in a database, sorted, checked for intersections to do searches, etc.
-
-// The encoding process is as follows:
-
-//     (1000000 * Book.toInt book) + (1000 * chapter) + verse
-
-// This results in an `Int` with the following structure
-
-//     16001001
-//     --===___
-//      | |  |
-//      | |  |
-//      | |  |--- Zero padded verse number
-//      | |------ Zero padded chapter number
-//      |-------- Book number
+// Create human readable text
+const readableText = osisToEnWrapper(osisRef);
 ---
 
 <BaseLayout>
   <Header />
   <main class="layout-base gap-4">
     <h1 class="text-4xl">Bible Verse Parsing</h1>
-    <p>Input: {input}</p>
+    <!-- <p>Input: {scriptureRef}</p> -->
     <section>
       <h2 class="text-xl">OSIS</h2>
-      <p>{parsedText}</p>
-      <p>Book: {firstTextObj.book}</p>
-      <p>Chapter Start: {firstTextObj.chapter}</p>
+      <p>{osisRef}</p>
+      <p>Book:</p>
+      <p>Chapter Start:</p>
       <p>Chapter End:</p>
     </section>
     <section>
