@@ -18,6 +18,11 @@
           "widget": "image"
         },
         {
+          "name": "imageSQ",
+          "label": "Series Image Square",
+          "widget": "image"
+        },
+        {
           "name": "startDate",
           "label": "Series Start Date",
           "widget": "datetime",

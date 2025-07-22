@@ -1,6 +1,7 @@
 ---
 name: 'Revelation: Living in the Valley Between the Victories'
-image: /images/uploads/Revelation Sermon Series graphic sq.jpg
+image: /images/uploads/Revelation Sermon Series graphic.jpg
+imageSQ: /images/uploads/Revelation Sermon Series graphic sq.jpg
 startDate: 2025-01-01
 book:
   - Revelation

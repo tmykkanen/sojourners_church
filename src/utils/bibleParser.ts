@@ -7,14 +7,19 @@ import osisToEn from "../script/en";
 
 import bibleBookNumbers from "./bibleBookNumbers";
 
+type SermonText = {
+  book: string;
+  startingChapter: number;
+  startingVerse?: number | null | undefined;
+  endingChapter?: number | null | undefined;
+  endingVerse?: number | null | undefined;
+};
+
 // (1) SCRIPTURE REF TO OSIS: "Psalm 2" => "Ps.2.1–Ps.2.12"
 // Function to process sermon post frontmatter to form readable for bcv_parser (processSermonPostRef)
-const formatForBCVParser = (
-  sermonPostRefFromMD: CollectionEntry<"sermons">,
-) => {
-  const { sermonText } = sermonPostRefFromMD.data;
-
+const formatForBCVParser = (sermonText: SermonText[]) => {
   // TODO: Add handling for multiple sermon texts
+
   const { book, startingChapter, endingChapter, startingVerse, endingVerse } =
     sermonText[0];
 
@@ -45,17 +50,13 @@ const bcvParserWrapper = (scriptureRef: string) => {
     .osis();
 };
 
-const scriptureRefToOsis = (
-  sermonPostRefFromMD: CollectionEntry<"sermons">,
-) => {
-  const refReadyForBCV = formatForBCVParser(sermonPostRefFromMD);
+const scriptureRefToOsis = (sermonText: SermonText[]) => {
+  const refReadyForBCV = formatForBCVParser(sermonText);
   return bcvParserWrapper(refReadyForBCV);
 };
 
-const getHumanReadableScriptureRef = (
-  sermonPostRefFromMD: CollectionEntry<"sermons">,
-) => {
-  return osisToEnWrapper(scriptureRefToOsis(sermonPostRefFromMD));
+const getHumanReadableScriptureRef = (sermonText: SermonText[]) => {
+  return osisToEnWrapper(scriptureRefToOsis(sermonText));
 };
 
 // Wrapper for osisToEn to return readable text

@@ -32,6 +32,7 @@ const sermonSeries = defineCollection({
   schema: z.object({
     name: z.string(),
     image: z.string(),
+    imageSQ: z.string(),
     startDate: z.date(),
     book: z.array(
       z.enum([
@@ -116,11 +117,10 @@ const preachers = defineCollection({
 });
 
 const writings = defineCollection({
-  loader: glob({ pattern: "**/[^_]*.md", base: "./src/collections/preachers" }),
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/collections/writings" }),
   schema: z.object({
     title: z.string(),
     date: z.date(),
-    body: z.string(),
   }),
 });
 

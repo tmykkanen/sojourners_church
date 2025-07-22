@@ -1,5 +1,5 @@
 ---
-const { spotifyLink } = Astro.props;
+const { spotifyLink, small } = Astro.props;
 
 const spotifyURI = spotifyLink
   ? spotifyLink.match(/(?<=episode\/).+?(?=\?)/gm)
@@ -13,8 +13,8 @@ const src = `https://open.spotify.com/embed/episode/${spotifyURI}/video?utm_sour
     <iframe
       style="border-radius:12px"
       src={src}
-      width="100%"
-      height="351"
+      width={small ? "25%" : "100%"}
+      height={small ? "200" : "351"}
       allowfullscreen=""
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       loading="lazy"

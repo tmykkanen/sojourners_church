@@ -17,13 +17,13 @@ const latestSermon = allSermons[0];
 // const scriptureRef = formatForBCVParser(latestSermon);
 
 // Function to process scriptureRef to osisRef
-const osisRef = scriptureRefToOsis(latestSermon);
+const osisRef = scriptureRefToOsis(latestSermon.data.sermonText);
 
 console.log("OSIS REF: ", osisRef);
 console.log(createScriptureObject(osisRef));
 
 // Create human readable text
-const readableText = getHumanReadableScriptureRef(osisRef);
+const readableText = getHumanReadableScriptureRef(latestSermon.data.sermonText);
 ---
 
 <BaseLayout>
@@ -40,7 +40,7 @@ const readableText = getHumanReadableScriptureRef(osisRef);
     </section>
     <section>
       <h2 class="text-xl">Human readable</h2>
-      <p>{readableText}</p>
+      <!-- <p>{readableText}</p> -->
     </section>
   </main>
 </BaseLayout>
