@@ -28,22 +28,19 @@ const targetSermons = allSermons.filter(
   <h1 class="text-4xl">{series.data.name}</h1>
   <ul>
     {
-      targetSermons.map(
-        ({ data: { date, title, preacher, description }, id }) => (
-          <li>
-            {date.toLocaleDateString("en-US", {
-              month: "long",
-              day: "2-digit",
-              year: "numeric",
-            })}
-            <a href={`/sermons/${id}`} class="link">
-              {title}
-            </a>
-            {preacher}
-            {description}
-          </li>
-        ),
-      )
+      targetSermons.map(({ data: { date, title, preacher }, id }) => (
+        <li>
+          {date.toLocaleDateString("en-US", {
+            month: "long",
+            day: "2-digit",
+            year: "numeric",
+          })}
+          <a href={`/sermons/${id}`} class="link">
+            {title}
+          </a>
+          {preacher}
+        </li>
+      ))
     }
   </ul>
 </BaseLayout>
