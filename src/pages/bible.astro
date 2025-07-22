@@ -5,9 +5,8 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import {
   scriptureRefToOsis,
-  osisToEnWrapper,
-  encodeRefToNumber,
   createScriptureObject,
+  getHumanReadableScriptureRef,
 } from "../utils/bibleParser";
 
 const allSermons = await getCollection("sermons");
@@ -24,7 +23,7 @@ console.log("OSIS REF: ", osisRef);
 console.log(createScriptureObject(osisRef));
 
 // Create human readable text
-const readableText = osisToEnWrapper(osisRef);
+const readableText = getHumanReadableScriptureRef(osisRef);
 ---
 
 <BaseLayout>
