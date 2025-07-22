@@ -1,11 +1,32 @@
 ---
 import Head from "@components/Head.astro";
+import { Icon } from "@node/astro-icon/components";
 import "@styles/global.css";
 ---
 
 <html lang="en">
   <Head />
   <body>
-    <slot />
+    <div class="drawer drawer-end">
+      <input id="sidebar-menu" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content">
+        <slot />
+      </div>
+      <div class="drawer-side">
+        <ul class="menu bg-base-100 text-base-content min-h-full w-full p-4">
+          <label
+            for="sidebar-menu"
+            aria-label="close sidebar"
+            class="btn btn-ghost flex justify-end"
+            ><Icon name="mdi:close" class="text-3xl" /></label
+          >
+          <li class="btn btn-ghost"><a href="/about/beliefs">About Us</a></li>
+          <li class="btn btn-ghost"><a href="#">Life Together</a></li>
+          <li class="btn btn-ghost"><a href="/sermons">Sermons</a></li>
+          <li class="btn btn-ghost"><a href="/writings">Writings</a></li>
+          <li class="btn btn-outline"><a href="#">What is the Gospel?</a></li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
