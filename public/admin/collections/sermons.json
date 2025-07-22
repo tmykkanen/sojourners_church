@@ -155,13 +155,8 @@
           "required": false
         },
         {
-          "name": "description",
-          "label": "Sermon Description",
-          "widget": "markdown"
-        },
-        {
-          "name": "argument",
-          "label": "Sermon Argument",
+          "name": "body",
+          "label": "Notes",
           "widget": "markdown",
           "required": false
         }

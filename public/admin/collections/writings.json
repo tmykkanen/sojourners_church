@@ -1,0 +1,30 @@
+{
+  "collections": [
+    {
+      "name": "writings",
+      "label": "Writings",
+      "folder": "src/collections/writings",
+      "create": true,
+      "slug": "{{slug}}",
+      "fields": [
+        {
+          "name": "title",
+          "label": "Title",
+          "widget": "string"
+        },
+        {
+          "name": "date",
+          "label": "Date",
+          "widget": "datetime",
+          "time_format": false,
+          "date_format": "YYYY-MM-DD"
+        },
+        {
+          "name": "body",
+          "label": "Post Body",
+          "widget": "markdown"
+        }
+      ]
+    }
+  ]
+}

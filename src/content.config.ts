@@ -23,8 +23,7 @@ const sermons = defineCollection({
     preacher: z.string(),
     spotifyLink: z.string().optional(),
     bulletinLink: z.string().optional(),
-    description: z.string(),
-    argument: z.string().optional(),
+    body: z.string().optional(),
   }),
 });
 
@@ -116,5 +115,14 @@ const preachers = defineCollection({
   }),
 });
 
+const writings = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/collections/preachers" }),
+  schema: z.object({
+    title: z.string(),
+    date: z.date(),
+    body: z.string(),
+  }),
+});
+
 // Export a single 'collections' object to register your collection(s)
-export const collections = { sermons, sermonSeries, preachers };
+export const collections = { sermons, sermonSeries, preachers, writings };
