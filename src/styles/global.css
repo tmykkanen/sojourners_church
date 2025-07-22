@@ -62,3 +62,41 @@
     grid-column: 1/-1;
   }
 }
+
+@utility layout-80ch {
+  --max-width: 80ch;
+  --padding: 36px;
+
+  display: grid;
+  place-content: center;
+  grid-template-columns:
+    minmax(var(--padding), 1fr)
+    min(var(--max-width), 100% - var(--padding) * 2)
+    minmax(var(--padding), 1fr);
+
+  & > * {
+    grid-column: 2/3;
+  }
+
+  & > .full-width {
+    grid-column: 1/-1;
+  }
+}
+
+/* Sensible defaults for list styling */
+
+ol {
+  counter-reset: counter;
+}
+
+ol li {
+  counter-increment: counter;
+  padding-block: 0.5rem;
+  /* color: color-mix(in srgb, var(--color-base-content), transparent 50%); */
+}
+
+ol li::before {
+  content: counter(counter) ". ";
+  color: var(--color-primary);
+  /* font-weight: bold; */
+}
