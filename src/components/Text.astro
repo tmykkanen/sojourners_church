@@ -1,0 +1,28 @@
+---
+// https://lexingtonthemes.com/tutorials/how-to-create-a-typography-component-with-variants-with-astro-js-and-tailwind-css/
+
+import type { HTMLAttributes } from "@node/astro/types";
+
+interface Props extends HTMLAttributes<"h1"> {
+  as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "address";
+  variant?: keyof typeof variants;
+}
+
+const variants = {
+  screenReader: "sr-only",
+  displayXL: "text-5xl font-bold uppercase sm:text-7xl",
+  displayLG: "text-xl font-bold uppercase md:text-2xl",
+  displayMD: "text-accent",
+  textMD: "tmp",
+};
+
+const {
+  as: As = "p", // Default to paragraph
+  variant = "textMD",
+  ...attrs
+} = Astro.props;
+---
+
+<As class:list={variants[variant]} {...attrs}>
+  <slot />
+</As>

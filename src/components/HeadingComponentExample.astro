@@ -1,0 +1,26 @@
+---
+import type { HTMLAttributes } from "@node/astro/types";
+
+interface Props extends HTMLAttributes<"h1"> {
+  as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  weight?: keyof typeof weights;
+  size?: keyof typeof sizes;
+}
+
+const weights = {
+  bold: "font-bold",
+  medium: "font-medium",
+  light: "font-light",
+};
+
+const sizes = {
+  xl: "text-xl",
+  lg: "text-lg",
+};
+
+const { as: As = "h2", weight = "medium", size = "xl", ...attrs } = Astro.props;
+---
+
+<As class:list={[sizes[size], weights[weight]]} {...attrs}>
+  <slot />
+</As>

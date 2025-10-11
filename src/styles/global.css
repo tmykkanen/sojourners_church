@@ -40,12 +40,14 @@
 
 @theme {
   --font-sans: "Poppins", sans-serif;
+  --text-xxs: 0.6875rem; /* 10pt */
   /* --root-bg: var(--color-base-200); */
+  --padding: 2rem;
 }
 
 @utility layout-base {
   --max-width: 120ch;
-  --padding: 36px;
+  /* --padding: 36px; */
 
   display: grid;
   place-content: center;
@@ -65,7 +67,7 @@
 
 @utility layout-80ch {
   --max-width: 80ch;
-  --padding: 36px;
+  /* --padding: 36px; */
 
   display: grid;
   place-content: center;
@@ -100,3 +102,33 @@ ol li::before {
   color: var(--color-primary);
   /* font-weight: bold; */
 }
+
+/* ------- */
+.drawer-toggle:checked ~ * #nav-icon3 span {
+  /* For testing: */
+  /* background: yellow; */
+
+  &:nth-child(1) {
+    top: 10px;
+    width: 0%;
+    left: 50%;
+  }
+  &:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  &:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  &:nth-child(4) {
+    top: 10px;
+    width: 0%;
+    left: 50%;
+  }
+}
+/* ------- */

@@ -2,23 +2,25 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<header class="bg-base-100 p-2 sm:p-4">
-  <nav class="navbar">
-    <h1 class="flex-1 text-lg uppercase md:text-2xl">
-      <a href="/">Sojourners <br /> Church</a>
+<header class="bg-base-100 layout-base py-2 sm:py-4">
+  <nav class="navbar p-0">
+    <h1
+      class="text-base-content/70 flex-1 text-xl font-bold uppercase md:text-2xl"
+    >
+      <a href="/">Sojourners <br class="hidden sm:inline" /> Church</a>
     </h1>
-    <label for="sidebar-menu" class="">
-      <Icon
+    <label for="sidebar-menu" class="z-50">
+      <!-- <Icon
         name={"mdi:menu"}
         class="drawer-button btn-ghost btn text-3xl lg:hidden"
-      /></label
-    >
-
-    <!-- <div id="nav-icon4">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div> -->
+      /> -->
+      <div id="nav-icon3" class="lg:hidden">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </label>
 
     <ul class="hidden font-light tracking-wider uppercase lg:inline-flex">
       <li class="btn btn-ghost"><a href="/about/beliefs">About Us</a></li>
@@ -31,16 +33,16 @@ import { Icon } from "astro-icon/components";
 </header>
 
 <style>
-  /* Icon 4 */
-
+  /* Nav Icon 3 From https://codepen.io/designcouch/pen/ExvwPY */
   #nav-icon1,
   #nav-icon2,
   #nav-icon3,
   #nav-icon4 {
-    width: 60px;
-    height: 45px;
+    width: 36px;
+    height: 23px;
+    /* background-color: aqua; */
     position: relative;
-    margin: 50px auto;
+    /* margin: 50px auto; */
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -57,10 +59,10 @@ import { Icon } from "astro-icon/components";
   #nav-icon4 span {
     display: block;
     position: absolute;
-    height: 9px;
+    height: 3px;
     width: 100%;
-    background: #d3531a;
-    border-radius: 9px;
+    background: var(--color-base-content);
+    /* border-radius: 9px; */
     opacity: 1;
     left: 0;
     -webkit-transform: rotate(0deg);
@@ -73,50 +75,16 @@ import { Icon } from "astro-icon/components";
     transition: 0.25s ease-in-out;
   }
 
-  #nav-icon4 span:nth-child(1) {
+  #nav-icon3 span:nth-child(1) {
     top: 0px;
-    -webkit-transform-origin: left center;
-    -moz-transform-origin: left center;
-    -o-transform-origin: left center;
-    transform-origin: left center;
   }
 
-  #nav-icon4 span:nth-child(2) {
-    top: 18px;
-    -webkit-transform-origin: left center;
-    -moz-transform-origin: left center;
-    -o-transform-origin: left center;
-    transform-origin: left center;
+  #nav-icon3 span:nth-child(2),
+  #nav-icon3 span:nth-child(3) {
+    top: 10px;
   }
 
-  #nav-icon4 span:nth-child(3) {
-    top: 36px;
-    -webkit-transform-origin: left center;
-    -moz-transform-origin: left center;
-    -o-transform-origin: left center;
-    transform-origin: left center;
-  }
-
-  #nav-icon4.open span:nth-child(1) {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    top: -3px;
-    left: 8px;
-  }
-
-  #nav-icon4.open span:nth-child(2) {
-    width: 0%;
-    opacity: 0;
-  }
-
-  #nav-icon4.open span:nth-child(3) {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    top: 39px;
-    left: 8px;
+  #nav-icon3 span:nth-child(4) {
+    top: 20px;
   }
 </style>
