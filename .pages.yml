@@ -7,7 +7,7 @@ media:
 
 content:
   - name: blog
-    label: Blog Posts
+    label: Sermons
     type: collection
     path: src/content/blog
     fields:
