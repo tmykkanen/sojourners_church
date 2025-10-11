@@ -28,3 +28,6 @@ content:
       - name: body
         label: Body
         type: rich-text
+
+settings:
+  hide: true
