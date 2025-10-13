@@ -35,3 +35,24 @@ content:
       - name: body
         label: Notes
         type: text
+  - name: preachers
+    label: Preachers
+    type: collection
+    path: src/collections/preachers
+    # filename:
+    fields:
+      - name: firstName
+        label: First Name
+        type: string
+      - name: lastName
+        label: Last Name
+        type: string
+      - name: guest
+        label: Guest Preacher
+        type: boolean
+      - name: bio
+        label: Bio
+        type: text
+      - name: image
+        label: Upload a Picture
+        type: image
