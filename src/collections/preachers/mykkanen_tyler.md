@@ -1,9 +1,6 @@
 ---
-name:
-  first: Tyler
-  last: Mykkanen
-priority: 1
+firstName: Tyler
+lastName: Mykkanen
 guest: false
 bio: Lead pastor
-image: ""
 ---
