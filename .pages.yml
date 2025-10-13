@@ -25,11 +25,12 @@ content:
         type: string # TODO: Configure sermon text
       - name: preacher
         label: Preacher
-        type: reference # TODO: Add reference tyype
+        type: reference
         options:
           collection: preachers
           value: "{firstName} {lastName}"
           search: "firstName, lastName"
+          label: "{bio}"
       - name: spotifyURL
         label: Spotify URL
         type: string
