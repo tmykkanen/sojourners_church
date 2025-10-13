@@ -25,7 +25,9 @@ content:
         type: string # TODO: Configure sermon text
       - name: preacher
         label: Preacher
-        type: string # TODO: Add reference tyype
+        type: reference # TODO: Add reference tyype
+        options:
+          collection: preachers
       - name: spotifyURL
         label: Spotify URL
         type: string
