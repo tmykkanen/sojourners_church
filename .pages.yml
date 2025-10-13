@@ -6,25 +6,32 @@ media:
     path: /media
 
 content:
-  - name: blog
+  - name: sermons
     label: Sermons
     type: collection
-    path: src/content/blog
+    path: src/collections/sermons
     fields:
       - name: title
         label: Title
         type: string
-      - name: pubDate
-        label: Publication Date
+      - name: date
+        label: Date Preached
         type: date
-      - name: description
-        label: Description
+      - name: series
+        label: Sermon Series
+        type: string # TODO: Add reference type
+      - name: text
+        label: Sermon Text
+        type: string # TODO: Configure sermon text
+      - name: preacher
+        label: Preacher
+        type: string # TODO: Add reference tyype
+      - name: spotifyURL
+        label: Spotify URL
         type: string
-      - name: tags
-        label: Tags
-        type: list
-        items:
-          type: string
+      - name: googleDocsURL
+        label: Google Docs URL
+        type: string
       - name: body
-        label: Body
-        type: rich-text
+        label: Notes
+        type: text
