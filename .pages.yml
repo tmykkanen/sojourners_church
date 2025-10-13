@@ -57,4 +57,4 @@ content:
         label: Upload a Picture
         type: image
     view:
-      primary: firstName lastName
+      primary: "{firstName} {lastName}"
