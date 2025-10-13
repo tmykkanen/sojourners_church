@@ -30,7 +30,7 @@ content:
           collection: preachers
           value: "{firstName} {lastName}"
           search: "firstName, lastName"
-          label: "{bio}"
+          label: "{firstName} {lastName}"
       - name: spotifyURL
         label: Spotify URL
         type: string
