@@ -1,10 +1,6 @@
 ---
-name:
-  first: Caleb
-  last: Geary
-priority: null
+firstName: Caleb
+lastName: Geary
 guest: false
 bio: Pastoral Intern summer 2025
-image: ''
 ---
-
