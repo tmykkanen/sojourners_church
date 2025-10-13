@@ -28,6 +28,7 @@ content:
         type: reference # TODO: Add reference tyype
         options:
           collection: preachers
+          value: "{firstName}"
       - name: spotifyURL
         label: Spotify URL
         type: string
