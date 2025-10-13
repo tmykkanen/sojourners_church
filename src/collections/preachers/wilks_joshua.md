@@ -1,10 +1,6 @@
 ---
-name:
-  first: Joshua
-  last: Wilks
-priority: null
+firstName: Joshua
+lastName: Wilks
 guest: true
 bio: BCS student
-image: ''
 ---
-
