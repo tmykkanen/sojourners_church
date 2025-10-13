@@ -29,6 +29,7 @@ content:
         options:
           collection: preachers
           value: "{firstName} {lastName}"
+          search: firstName, lastName
       - name: spotifyURL
         label: Spotify URL
         type: string
