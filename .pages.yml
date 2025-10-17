@@ -84,6 +84,7 @@ content:
         label: Bible Book(s)
         type: select
         options:
+          multiple: true
           values:
             [
               "Genesis",
