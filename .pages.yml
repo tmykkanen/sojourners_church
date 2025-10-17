@@ -4,7 +4,6 @@ media:
     input: src/media
     output: /media
     path: /media
-
 content:
   - name: sermons
     label: Sermons
@@ -67,7 +66,7 @@ content:
     label: Sermon Series
     type: collection
     path: src/collections/series
-    filename: {primary}.md
+    filename: '{primary}.md'
     fields:
       - name: title
         label: "Series Title"
