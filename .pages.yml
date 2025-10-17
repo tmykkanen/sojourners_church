@@ -28,11 +28,9 @@ content:
         type: reference
         options:
           collection: preachers
-          
           value: "{firstName {lastName}" # TODO: Should this be default of {path}?
           # search: "firstName, lastName"
           label: "{firstName} {lastName}"
-          
       - name: spotifyURL
         label: Spotify URL
         type: string
