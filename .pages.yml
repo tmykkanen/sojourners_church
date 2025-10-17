@@ -57,6 +57,10 @@ content:
           - name: lastName
             label: Last Name
             type: string
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.firstName} {fields.lastName}"
       - name: guest
         label: Guest Preacher
         type: boolean
