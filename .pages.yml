@@ -18,7 +18,10 @@ content:
         type: date
       - name: series
         label: Sermon Series
-        type: string # TODO: Add reference type
+        type: reference
+        options:
+          collection: series
+          label: "{title}"
       - name: text
         label: Sermon Text
         type: string # TODO: Configure sermon text
@@ -66,7 +69,7 @@ content:
     label: Sermon Series
     type: collection
     path: src/collections/series
-    filename: '{primary}.md'
+    filename: "{primary}.md"
     fields:
       - name: title
         label: "Series Title"
