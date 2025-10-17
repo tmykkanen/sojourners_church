@@ -30,7 +30,7 @@ const sermons = defineCollection({
 const sermonSeries = defineCollection({
   loader: glob({ pattern: "**/[^_]*.md", base: "./src/collections/series" }),
   schema: z.object({
-    name: z.string(),
+    title: z.string(),
     image: z.string(),
     imageSQ: z.string(),
     startDate: z.date(),
