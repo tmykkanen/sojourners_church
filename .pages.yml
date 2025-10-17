@@ -29,7 +29,7 @@ content:
         options:
           collection: preachers
           label: "{firstName} {lastName}"
-          value: "{firstName {lastName}}" # TODO: Should this be default of {path}?
+          value: "{firstName {lastName}" # TODO: Should this be default of {path}?
           # search: "firstName, lastName"
           
       - name: spotifyURL
