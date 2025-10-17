@@ -46,7 +46,6 @@ content:
     label: Preachers
     type: collection
     path: src/collections/preachers
-    # filename:
     fields:
       - name: firstName
         label: First Name
@@ -65,6 +64,7 @@ content:
         type: image
     view:
       primary: firstName
+    filename: "{lastName}_{firstName}.md"
   - name: series
     label: Sermon Series
     type: collection
