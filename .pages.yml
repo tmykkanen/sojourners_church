@@ -28,9 +28,10 @@ content:
         type: reference
         options:
           collection: preachers
-          label: "{firstName} {lastName}"
+          
           value: "{firstName {lastName}" # TODO: Should this be default of {path}?
           # search: "firstName, lastName"
+          label: "{firstName} {lastName}"
           
       - name: spotifyURL
         label: Spotify URL
