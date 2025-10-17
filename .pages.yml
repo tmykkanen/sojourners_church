@@ -47,12 +47,16 @@ content:
     type: collection
     path: src/collections/preachers
     fields:
-      - name: firstName
-        label: First Name
-        type: string
-      - name: lastName
-        label: Last Name
-        type: string
+      - name: name
+        label: Name
+        type: object
+        fields:
+          - name: firstName
+            label: First Name
+            type: string
+          - name: lastName
+            label: Last Name
+            type: string
       - name: guest
         label: Guest Preacher
         type: boolean
