@@ -74,16 +74,16 @@ content:
     filename: "{primary}.md"
     fields:
       - name: title
-        label: "Series Title"
+        label: Series Title
         type: string
       - name: image
-        label: Upload a series image
+        label: Series Image
         type: image
       - name: imageSquare
-        label: Upload a square series image
+        label: Square series image
         type: image
       - name: startDate
-        label: Series start date
+        label: Start date
         type: date
       - name: book
         label: Bible Book(s)
