@@ -63,6 +63,8 @@ content:
       - name: image
         label: Upload a Picture
         type: image
+    view:
+      primary: lastName
   - name: series
     label: Sermon Series
     type: collection
