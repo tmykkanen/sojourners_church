@@ -23,8 +23,8 @@ content:
         type: reference
         options:
           collection: series
-          label: "{slug}"
-          value: "{title}"
+          label: "{title}"
+          value: "{slug}"
       - name: text
         label: Sermon Text
         type: string # TODO: Configure sermon text
