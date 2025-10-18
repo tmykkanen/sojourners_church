@@ -13,7 +13,7 @@ const { id: latestSermonID, data: latestSermon } = allSermons.sort(
 )[0];
 const latestSermonSeriesEntry = await getEntry(
   "sermonSeries",
-  latestSermon.series,
+  latestSermon.series.match(/[a-z0-9-]*.(?=.md$)/)![0],
 );
 
 const allSeries = await getCollection("sermonSeries");
@@ -46,27 +46,27 @@ const allPreachers = await getCollection("preachers");
               })
             }
           </p>
-          <p>{latestSermonSeriesEntry?.data.name}</p>
+          <p>{latestSermonSeriesEntry?.data.title}</p>
           <p>{latestSermon.preacher}</p>
-          <p>{getHumanReadableScriptureRef(latestSermon.sermonText)}</p>
+          <!-- <p>{getHumanReadableScriptureRef(latestSermon.sermonText)}</p> -->
         </div>
       </div>
       <div>
         <h2 class="text-2xl uppercase">Listen on Spotify</h2>
-        <SpotifyAudioEmbed spotifyLink={latestSermon.spotifyLink} />
+        <SpotifyAudioEmbed spotifyLink={latestSermon.spotifyURL} />
       </div>
     </div>
     <h2 class="text-2xl uppercase">Sermons By Series</h2>
     <div class="flex gap-6">
       {
-        allSeries.map(({ data: { imageSQ, name }, id }) => (
+        allSeries.map(({ data: { imageSquare, title }, id }) => (
           <div class="card bg-base-200 w-48 shadow-sm">
             <a href={`/sermons/series/${id}`}>
               <figure>
-                <img src={imageSQ} alt="series image" />
+                <img src={imageSquare} alt="series image" />
               </figure>
               <div class="card-body">
-                <h3 class="card-title text-sm">{name}</h3>
+                <h3 class="card-title text-sm">{title}</h3>
               </div>
             </a>
           </div>
@@ -99,7 +99,7 @@ const allPreachers = await getCollection("preachers");
       </label>
     </div>
     <div class="grid grid-cols-2">
-      <div>
+      <!-- <div>
         <h2>Sermons By Preacher</h2>
         <select class="select">
           <option disabled selected>Pick a Preacher</option>
@@ -111,7 +111,7 @@ const allPreachers = await getCollection("preachers");
             ))
           }
         </select>
-      </div>
+      </div> -->
       <div>
         <h2>Sermons By Date</h2>
         <select class="select">
