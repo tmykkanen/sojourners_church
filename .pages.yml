@@ -57,7 +57,9 @@ content:
           - name: lastName
             label: Last Name
             type: string
-      - component: fullName
+      - name: fullName
+        label: "FullName"
+        component: fullName
       - name: firstName
         label: First Name
         type: string
