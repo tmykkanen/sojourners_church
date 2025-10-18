@@ -10,7 +10,7 @@ content:
     type: collection
     path: src/collections/sermons
     view:
-      fields: [title, date, series, text]
+      fields: [title, date, text]
     fields:
       - name: title
         label: Title
