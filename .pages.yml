@@ -77,7 +77,7 @@ content:
         type: image
     view:
       primary: "fields.lastName"
-    filename: "{fields.lastName}_{fields.firstName}.md"
+    filename: "{fields.name.lastName}_{fields.firstName}.md"
   - name: series
     label: Sermon Series
     type: collection
