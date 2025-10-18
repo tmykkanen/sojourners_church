@@ -170,10 +170,10 @@ components:
     label: "Full Name"
     type: object
     fields:
-          - name: firstName
-            label: First Name
-            type: string
-          - name: lastName
-            label: Last Name
-            type: string
+      - name: firstName
+        label: First Name
+        type: string
+      - name: lastName
+        label: Last Name
+        type: string
     
