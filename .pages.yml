@@ -73,7 +73,7 @@ content:
     path: src/collections/series
     filename: "{primary}.md"
     view:
-      fields: [title, image, book]
+      fields: [title, imageSquare, book]
     fields:
       - name: title
         label: Series Title
