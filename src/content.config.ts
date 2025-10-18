@@ -105,11 +105,8 @@ const sermonSeries = defineCollection({
 const preachers = defineCollection({
   loader: glob({ pattern: "**/[^_]*.md", base: "./src/collections/preachers" }),
   schema: z.object({
-    name: z.object({
-      first: z.string(),
-      last: z.string(),
-    }),
-    priority: z.number().optional().nullable(),
+    firstName: z.string(),
+    lastName: z.string(),
     guest: z.boolean().optional(),
     bio: z.string().optional(),
     image: z.string().optional(),
