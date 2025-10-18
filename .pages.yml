@@ -76,8 +76,8 @@ content:
         label: Upload a Picture
         type: image
     view:
-      primary: "['name'][0]"
-    filename: "{lastName}_{firstName}.md"
+      primary: "name"
+    filename: "{fields.lastName}_{fields.firstName}.md"
   - name: series
     label: Sermon Series
     type: collection
