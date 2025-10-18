@@ -46,20 +46,8 @@ content:
     label: Preachers
     type: collection
     path: src/collections/preachers
+    filename: "{fields.lastName}_{fields.firstName}.md"
     fields:
-      - name: name
-        label: Name
-        type: object
-        fields:
-          - name: firstName
-            label: First Name
-            type: string
-          - name: lastName
-            label: Last Name
-            type: string
-      - name: fullName
-        label: "FullName"
-        component: fullName
       - name: firstName
         label: First Name
         type: string
@@ -75,9 +63,6 @@ content:
       - name: image
         label: Upload a Picture
         type: image
-    view:
-      primary: "fields.lastName"
-    filename: "{fields.name.lastName}_{fields.firstName}.md"
   - name: series
     label: Sermon Series
     type: collection
@@ -165,15 +150,4 @@ content:
               "Jude",
               "Revelation",
             ]
-components:
-  fullName:
-    label: "Full Name"
-    type: object
-    fields:
-      - name: firstName
-        label: First Name
-        type: string
-      - name: lastName
-        label: Last Name
-        type: string
     
