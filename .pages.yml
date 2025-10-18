@@ -57,6 +57,7 @@ content:
           - name: lastName
             label: Last Name
             type: string
+      - component: fullName
       - name: firstName
         label: First Name
         type: string
@@ -162,3 +163,7 @@ content:
               "Jude",
               "Revelation",
             ]
+components:
+  fullName:
+    label: "Full Name"
+    type: string
