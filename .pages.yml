@@ -9,6 +9,8 @@ content:
     label: Sermons
     type: collection
     path: src/collections/sermons
+    view:
+      fields: [title, date, series, text]
     fields:
       - name: title
         label: Title
