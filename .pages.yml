@@ -168,4 +168,12 @@ content:
 components:
   fullName:
     label: "Full Name"
-    type: string
+    type: object
+    fields:
+          - name: firstName
+            label: First Name
+            type: string
+          - name: lastName
+            label: Last Name
+            type: string
+    
