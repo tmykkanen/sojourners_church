@@ -24,7 +24,6 @@ content:
         options:
           collection: series
           label: "{title}"
-          value: "{id}"
       - name: text
         label: Sermon Text
         type: string # TODO: Configure sermon text
