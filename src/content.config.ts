@@ -11,19 +11,11 @@ const sermons = defineCollection({
     title: z.string(),
     date: z.date(),
     series: z.string(),
-    sermonText: z.array(
-      z.object({
-        book: z.string(),
-        startingChapter: z.number(),
-        startingVerse: z.number().optional().nullable(),
-        endingChapter: z.number().optional().nullable(),
-        endingVerse: z.number().optional().nullable(),
-      }),
-    ),
+    text: z.string(),
     preacher: z.string(),
-    spotifyLink: z.string().optional(),
-    bulletinLink: z.string().optional(),
-    body: z.string().optional(),
+    spotifyURL: z.string().optional(),
+    googleDocsURL: z.string().optional(),
+    // body: z.string().optional(),
   }),
 });
 
@@ -32,7 +24,7 @@ const sermonSeries = defineCollection({
   schema: z.object({
     title: z.string(),
     image: z.string(),
-    imageSQ: z.string(),
+    imageSquare: z.string(),
     startDate: z.date(),
     book: z.array(
       z.enum([

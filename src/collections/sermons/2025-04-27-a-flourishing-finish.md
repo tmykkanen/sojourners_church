@@ -2,15 +2,10 @@
 title: A Flourishing Finish
 date: 2025-04-27
 series: revelation-living-in-the-valley-between-the-victories
-sermonText:
-  - book: Revelation
-    startingChapter: 21
-    startingVerse: 9
-    endingChapter: 22
-    endingVerse: 5
+text: Revelation 21:9–22:5
 preacher: Tyler Mykkanen
-spotifyLink: https://open.spotify.com/episode/4cunjnpJaO6gf83M4PMqzL?si=73add7ba8d654281
-bulletinLink: https://drive.google.com/file/d/1MG8VK-UTQXlscD1sThXPbY3XwJGDje_G/view
+spotifyURL: https://open.spotify.com/episode/4cunjnpJaO6gf83M4PMqzL?si=73add7ba8d654281
+googleDocsURL: https://drive.google.com/file/d/1MG8VK-UTQXlscD1sThXPbY3XwJGDje_G/view
 ---
 Argument: Keep following Jesus now and you will be happy forever.
 
