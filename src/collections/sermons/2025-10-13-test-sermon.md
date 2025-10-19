@@ -1,10 +1,9 @@
 ---
 title: Test Sermon
-id: 57301ec4-9f88-4908-9656-aa82c766c83d
 date: 2025-10-12
 series: src/collections/series/thessalonians-gospel-encouragement-for-everyday-life.md
 text: 1 Thessalonians 3:9–13
-preacher: 75eef2eb-14f9-425c-ac80-0478fe7b6d2c
+preacher: src/collections/preachers/mykkanen_tyler.md
 spotifyURL: Spotify URL
 googleDocsURL: Google Docs URL
 ---
