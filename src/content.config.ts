@@ -12,7 +12,7 @@ const sermons = defineCollection({
     date: z.date(),
     series: reference("sermonSeries"),
     text: z.string(),
-    preacher: z.string(),
+    preacher: reference("preachers"),
     spotifyURL: z.string().optional(),
     googleDocsURL: z.string().optional(),
     // body: z.string().optional(),
