@@ -35,7 +35,7 @@ content:
           # value: "{firstName} {lastName}" # TODO: Should this be default of {path}?
           # search: "firstName, lastName"
           label: "{firstName} {lastName}"
-          value: "{lastName}_{firstName}.md"
+          value: "{primary}.md"
       - name: spotifyURL
         label: Spotify URL
         type: string
