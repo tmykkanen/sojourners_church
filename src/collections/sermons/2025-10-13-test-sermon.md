@@ -7,4 +7,5 @@ preacher: src/collections/preachers/mykkanen_tyler.md
 spotifyURL: Spotify URL
 googleDocsURL: Google Docs URL
 ---
+
 Here is the sermon argument.

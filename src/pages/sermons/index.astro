@@ -1,27 +1,45 @@
 ---
 import { getCollection, getEntry } from "astro:content";
-
 import { getHumanReadableScriptureRef } from "@src/utils/bibleParser";
 
 import Header from "@components/Header.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import SpotifyAudioEmbed from "@components/SpotifyAudioEmbed.astro";
 
+// Get all sermons
 const allSermons = await getCollection("sermons");
+
+// Get latest sermon from all sermons
 const { id: latestSermonID, data: latestSermon } = allSermons.sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 )[0];
-const latestSermonSeriesEntry = await getEntry(
-  "sermonSeries",
-  latestSermon.series.match(/[a-z0-9-]*.(?=.md$)/)![0],
-);
 
+console.log(latestSermon);
+
+const tmp = await getEntry(latestSermon.series);
+
+// Get latest sermon entry
+// const latestSermonSeriesEntry = await getEntry(
+//   "sermonSeries",
+//   latestSermon.series.match(/[a-z0-9-]*.(?=.md$)/)![0]
+// );
+
+// Get all sermon series
 const allSeries = await getCollection("sermonSeries");
 allSeries.sort(
   (a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf(),
 );
 
+// Get all preachers
 const allPreachers = await getCollection("preachers");
+
+// Get latest preacher entry
+const latestPreacherEntry = await getEntry(
+  "preachers",
+  latestSermon.preacher.match(/[a-z0-9-_]*.(?=.md$)/)![0],
+);
+
+const { firstName, lastName } = latestPreacherEntry?.data!;
 ---
 
 <BaseLayout>
@@ -47,7 +65,8 @@ const allPreachers = await getCollection("preachers");
             }
           </p>
           <p>{latestSermonSeriesEntry?.data.title}</p>
-          <p>{latestSermon.preacher}</p>
+          <p>{firstName} {lastName}</p>
+          <!-- TODO: Redo interaction with Bible Parser -->
           <!-- <p>{getHumanReadableScriptureRef(latestSermon.sermonText)}</p> -->
         </div>
       </div>

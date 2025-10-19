@@ -2,7 +2,7 @@
 import { glob } from "astro/loaders";
 
 // Import utilities from 'astro:content'
-import { z, defineCollection } from "astro:content";
+import { z, defineCollection, reference } from "astro:content";
 
 // Define a 'loader' and 'schema' for each defineCollection
 const sermons = defineCollection({
@@ -10,7 +10,7 @@ const sermons = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.date(),
-    series: z.string(),
+    series: reference("sermonSeries"),
     text: z.string(),
     preacher: z.string(),
     spotifyURL: z.string().optional(),
