@@ -15,11 +15,6 @@ content:
       - name: title
         label: Title
         type: string
-      - name: id
-        label: Id
-        type: uuid
-        options:
-          editable: false
       - name: date
         label: Date Preached
         type: date
@@ -40,7 +35,6 @@ content:
           # value: "{firstName} {lastName}" # TODO: Should this be default of {path}?
           # search: "firstName, lastName"
           label: "{firstName} {lastName}"
-          value: "{id}"
       - name: spotifyURL
         label: Spotify URL
         type: string
@@ -62,11 +56,6 @@ content:
       - name: lastName
         label: Last Name
         type: string
-      - name: id
-        label: Id
-        type: uuid
-        options:
-          editable: false
       - name: guest
         label: Guest Preacher
         type: boolean
