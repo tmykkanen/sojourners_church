@@ -1,9 +1,9 @@
 ---
-const { spotifyLink } = Astro.props;
+const { spotifyURL } = Astro.props;
 
 // Get uri/id from links using regex
-const spotifyURI = spotifyLink
-  ? spotifyLink.match(/(?<=episode\/).+?(?=\?)/gm)
+const spotifyURI = spotifyURL
+  ? spotifyURL.match(/(?<=episode\/).+?(?=\?)/gm)
   : "";
 ---
 

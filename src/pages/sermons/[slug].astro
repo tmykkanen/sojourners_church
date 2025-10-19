@@ -24,7 +24,7 @@ export async function getStaticPaths() {
 }
 
 const { post, prevEntryIndex, nextEntryIndex } = Astro.props;
-const { spotifyLink, bulletinLink, title, preacher, date, series, sermonText } =
+const { spotifyURL, googleDocsURL, title, preacher, date, series, text } =
   post.data;
 
 const { Content } = await render(post);
@@ -41,17 +41,27 @@ if (nextEntryIndex >= 0) {
   nextEntry = await getEntry("sermons", allSermons[nextEntryIndex].id);
 }
 
-const seriesEntry = await getEntry("sermonSeries", series);
-console.log(seriesEntry?.data.name);
+const seriesEntry = await getEntry(
+  "sermonSeries",
+  series.id.match(/[a-z0-9-_]*.(?=.md$)/)![0],
+);
+
+const preacherEntry = await getEntry(
+  "preachers",
+  preacher.id.match(/[a-z0-9-_]*.(?=.md$)/)![0],
+);
+
+console.log(seriesEntry?.data.title);
 ---
 
 <BaseLayout>
   <Header />
 
   <main class="layout-80ch">
-    <SpotifyVideoEmbed {spotifyLink} />
-    <h1 class="text-4xl">
-      {title} ({getHumanReadableScriptureRef(sermonText)})
+    <SpotifyVideoEmbed {spotifyURL} />
+    <h1 class="mt-4 text-4xl">
+      <!-- {title} ({getHumanReadableScriptureRef(sermonText)}) -->
+      {title}
     </h1>
     <h3 class="text-base-content/50">
       {
@@ -60,8 +70,10 @@ console.log(seriesEntry?.data.name);
           day: "2-digit",
           year: "numeric",
         })
-      } - {preacher} - <a href=`/sermons/series/${seriesEntry?.id}` class="link"
-        >{seriesEntry?.data.name}</a
+      } - {preacherEntry?.data.firstName}
+      {preacherEntry?.data.lastName} - <a
+        href=`/sermons/series/${seriesEntry?.id}`
+        class="link">{seriesEntry?.data.title}</a
       >
     </h3>
 
@@ -82,7 +94,7 @@ console.log(seriesEntry?.data.name);
 
     <!-- <h3>{preacher}</h3> -->
     <h3 class="text-2xl">Bulletin</h3>
-    <GoogleDocsEmbed {bulletinLink} />
+    <GoogleDocsEmbed {googleDocsURL} />
     {
       prevEntry && (
         <a href={prevEntry.id} class="link flex">
@@ -111,5 +123,3 @@ console.log(seriesEntry?.data.name);
     <!-- <SpotifyAudioEmbed {spotify_link} /> -->
   </main>
 </BaseLayout>
-
-<style></style>

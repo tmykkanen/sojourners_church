@@ -1,6 +1,6 @@
 ---
 import { getCollection, getEntry } from "astro:content";
-import { getHumanReadableScriptureRef } from "@src/utils/bibleParser";
+// import { getHumanReadableScriptureRef } from "@src/utils/bibleParser";
 
 import Header from "@components/Header.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
@@ -13,8 +13,6 @@ const allSermons = await getCollection("sermons");
 const latestSermon = allSermons.sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 )[0];
-
-// console.log(latestSermonEntry);
 
 // Get latest sermon entry
 const latestSermonSeries = await getEntry(
@@ -33,25 +31,14 @@ const allSeries = await getCollection("sermonSeries");
 allSeries.sort(
   (a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf(),
 );
-
-// Variables needed
-// latest sermon
-// id / path
-// title
-// date
-// preacher full name
-// spotifyURL
-// all sermon series
-// id
-// imageSquare
-// title
 ---
 
 <BaseLayout>
   <Header />
   <main class="layout-base">
     <h1 class="sr-only">Sermons</h1>
-    <div class="grid grid-cols-2">
+
+    <div class="mb-8 grid grid-cols-2">
       <div>
         <h2 class="text-2xl uppercase">Latest Sermon</h2>
         <h3 class="text-xl">
@@ -69,7 +56,7 @@ allSeries.sort(
               })
             }
           </p>
-          <p>{latestSermon.data.title}</p>
+          <!-- <p>{latestSermon.data.title}</p> -->
           <p>
             {latestPreacher?.data.firstName}
             {latestPreacher?.data.lastName}
@@ -80,7 +67,7 @@ allSeries.sort(
       </div>
       <div>
         <h2 class="text-2xl uppercase">Listen on Spotify</h2>
-        <SpotifyAudioEmbed spotifyLink={latestSermon.data.spotifyURL} />
+        <SpotifyAudioEmbed spotifyURL={latestSermon.data.spotifyURL} />
       </div>
     </div>
     <h2 class="text-2xl uppercase">Sermons By Series</h2>
@@ -101,7 +88,7 @@ allSeries.sort(
       }
     </div>
 
-    <div class="divider"></div>
+    <!-- <div class="divider"></div>
     <div>
       <label class="input">
         <svg
@@ -126,7 +113,7 @@ allSeries.sort(
       </label>
     </div>
     <div class="grid grid-cols-2">
-      <!-- <div>
+      <div>
         <h2>Sermons By Preacher</h2>
         <select class="select">
           <option disabled selected>Pick a Preacher</option>
@@ -138,7 +125,7 @@ allSeries.sort(
             ))
           }
         </select>
-      </div> -->
+      </div>
       <div>
         <h2>Sermons By Date</h2>
         <select class="select">
@@ -148,6 +135,6 @@ allSeries.sort(
           <option>Velvet</option>
         </select>
       </div>
-    </div>
+    </div> -->
   </main>
 </BaseLayout>
