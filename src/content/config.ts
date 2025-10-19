@@ -5,13 +5,13 @@ import { glob } from "astro/loaders";
 import { z, defineCollection, reference } from "astro:content";
 
 // Define a 'loader' and 'schema' for each defineCollection
-const sermons = defineCollection({
-  loader: glob({ pattern: "**/[^_]*.md", base: "./src/collections/sermons" }),
+const sermonsCollection = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/sermons" }),
   schema: z.object({
     title: z.string(),
     date: z.date(),
-    series: reference("sermonSeries"),
-    text: z.string(),
+    series: reference("series"),
+    scripture: z.string(),
     preacher: reference("preachers"),
     spotifyURL: z.string().optional(),
     googleDocsURL: z.string().optional(),
@@ -19,8 +19,8 @@ const sermons = defineCollection({
   }),
 });
 
-const sermonSeries = defineCollection({
-  loader: glob({ pattern: "**/[^_]*.md", base: "./src/collections/series" }),
+const seriesCollection = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/series" }),
   schema: z.object({
     title: z.string(),
     image: z.string(),
@@ -94,19 +94,18 @@ const sermonSeries = defineCollection({
   }),
 });
 
-const preachers = defineCollection({
-  loader: glob({ pattern: "**/[^_]*.md", base: "./src/collections/preachers" }),
+const preachersCollection = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/preachers" }),
   schema: z.object({
-    firstName: z.string(),
-    lastName: z.string(),
-    guest: z.boolean().optional(),
+    name: z.string(),
+    isGuest: z.boolean().optional(),
     bio: z.string().optional(),
     image: z.string().optional(),
   }),
 });
 
-const writings = defineCollection({
-  loader: glob({ pattern: "**/[^_]*.md", base: "./src/collections/writings" }),
+const writingsCollection = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/writings" }),
   schema: z.object({
     title: z.string(),
     date: z.date(),
@@ -114,4 +113,9 @@ const writings = defineCollection({
 });
 
 // Export a single 'collections' object to register your collection(s)
-export const collections = { sermons, sermonSeries, preachers, writings };
+export const collections = {
+  sermons: sermonsCollection,
+  series: seriesCollection,
+  preachers: preachersCollection,
+  writings: writingsCollection,
+};

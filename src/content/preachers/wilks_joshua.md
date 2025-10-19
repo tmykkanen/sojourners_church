@@ -1,6 +1,5 @@
 ---
-firstName: Joshua
-lastName: Wilks
+name: Joshua Wilks
 guest: true
 bio: BCS student
 ---

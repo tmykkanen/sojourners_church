@@ -16,7 +16,7 @@ const latestSermon = allSermons.sort(
 
 // Get latest sermon entry
 const latestSermonSeries = await getEntry(
-  "sermonSeries",
+  "series",
   latestSermon.data.series.id.match(/[a-z0-9-]*.(?=.md$)/)![0],
 );
 
@@ -27,7 +27,7 @@ const latestPreacher = await getEntry(
 );
 
 // Get all sermon series
-const allSeries = await getCollection("sermonSeries");
+const allSeries = await getCollection("series");
 allSeries.sort(
   (a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf(),
 );
@@ -58,8 +58,7 @@ allSeries.sort(
           </p>
           <!-- <p>{latestSermon.data.title}</p> -->
           <p>
-            {latestPreacher?.data.firstName}
-            {latestPreacher?.data.lastName}
+            {latestPreacher?.data.name}
           </p>
           <!-- TODO: Redo interaction with Bible Parser -->
           <!-- <p>{getHumanReadableScriptureRef(latestSermon.sermonText)}</p> -->

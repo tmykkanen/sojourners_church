@@ -8,7 +8,7 @@ content:
   - name: sermons
     label: Sermons
     type: collection
-    path: src/collections/sermons
+    path: src/content/sermons
     view:
       fields: [title, date, text]
     fields:
@@ -24,7 +24,7 @@ content:
         options:
           collection: series
           label: "{title}"
-      - name: text
+      - name: scripture
         label: Sermon Text
         type: string # TODO: Configure sermon text
       - name: preacher
@@ -34,7 +34,7 @@ content:
           collection: preachers
           # value: "{firstName} {lastName}" # TODO: Should this be default of {path}?
           # search: "firstName, lastName"
-          label: "{firstName} {lastName}"
+          # label: "{firstName} {lastName}"
       - name: spotifyURL
         label: Spotify URL
         type: string
@@ -47,16 +47,13 @@ content:
   - name: preachers
     label: Preachers
     type: collection
-    path: src/collections/preachers
-    filename: "{fields.lastName}_{fields.firstName}.md"
+    path: src/content/preachers
+    filename: "{primary}.md"
     fields:
-      - name: firstName
-        label: First Name
+      - name: name
+        label: Name
         type: string
-      - name: lastName
-        label: Last Name
-        type: string
-      - name: guest
+      - name: isGuest
         label: Guest Preacher
         type: boolean
       - name: bio
@@ -66,11 +63,11 @@ content:
         label: Upload a Picture
         type: image
     view:
-      primary: lastName
+      primary: name
   - name: series
     label: Sermon Series
     type: collection
-    path: src/collections/series
+    path: src/content/series
     filename: "{primary}.md"
     view:
       fields: [title, imageSquare, book]
@@ -156,4 +153,3 @@ content:
               "Jude",
               "Revelation",
             ]
-    
