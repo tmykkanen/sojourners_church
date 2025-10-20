@@ -34,7 +34,7 @@ content:
           collection: preachers
           # value: "{firstName} {lastName}" # TODO: Should this be default of {path}?
           # search: "firstName, lastName"
-          label: "{name}"
+          # label: "{name}"
       - name: spotifyURL
         label: Spotify URL
         type: string
