@@ -3,7 +3,7 @@
     {
       "name": "series",
       "label": "Sermon Series",
-      "folder": "src/collections/series",
+      "folder": "src/content/series",
       "create": true,
       "slug": "{{slug}}",
       "fields": [

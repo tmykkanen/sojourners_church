@@ -4,7 +4,7 @@
       "name": "preachers",
       "label": "Preachers",
       "icon": "person",
-      "folder": "src/collections/preachers",
+      "folder": "src/content/preachers",
       "create": true,
       "slug": "{{name.last}}_{{name.first}}",
       "summary": "{{name.first}} {{name.last}}",

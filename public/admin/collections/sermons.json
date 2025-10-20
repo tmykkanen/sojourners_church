@@ -4,10 +4,13 @@
       "name": "sermons",
       "label": "Sermons",
       "icon": "podium",
-      "folder": "src/collections/sermons",
+      "folder": "src/content/sermons",
       "create": true,
       "slug": "{{date}}-{{slug}}",
       "summary": "{{date}} - {{title}}",
+      "sortable_fields": {
+        "fields": ["title", "date"]
+      },
       "fields": [
         {
           "name": "title",

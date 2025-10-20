@@ -14,6 +14,13 @@ const latestSermon = allSermons.sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 )[0];
 
+console.log(latestSermon.data.series);
+
+// TRY: https://docs.astro.build/en/reference/modules/astro-content/#getentry
+const tmp = await getEntry(latestSermon.data.series);
+
+console.log("tmp", tmp);
+
 // Get latest sermon entry
 const latestSermonSeries = await getEntry(
   "series",

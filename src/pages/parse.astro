@@ -1,0 +1,8 @@
+---
+import { bcv_parser } from "bible-passage-reference-parser/esm/bcv_parser.js";
+import * as lang from "bible-passage-reference-parser/esm/lang/en.js";
+const bcv = new bcv_parser(lang);
+console.log(bcv.parse("John 1:1").osis());
+---
+
+<h1>Parse a Bible verse</h1>

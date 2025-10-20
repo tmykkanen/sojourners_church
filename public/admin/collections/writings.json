@@ -3,7 +3,7 @@
     {
       "name": "writings",
       "label": "Writings",
-      "folder": "src/collections/writings",
+      "folder": "src/content/writings",
       "create": true,
       "slug": "{{slug}}",
       "fields": [
