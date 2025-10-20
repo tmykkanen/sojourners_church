@@ -1,5 +1,5 @@
 ---
 name: Joshua Wilks
-guest: true
+isGuest: true
 bio: BCS student
 ---

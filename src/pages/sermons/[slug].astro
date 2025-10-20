@@ -24,7 +24,7 @@ export async function getStaticPaths() {
 }
 
 const { post, prevEntryIndex, nextEntryIndex } = Astro.props;
-const { spotifyURL, googleDocsURL, title, preacher, date, series, text } =
+const { spotifyURL, googleDocsURL, title, preacher, date, series, scripture } =
   post.data;
 
 const { Content } = await render(post);
@@ -42,7 +42,7 @@ if (nextEntryIndex >= 0) {
 }
 
 const seriesEntry = await getEntry(
-  "sermonSeries",
+  "series",
   series.id.match(/[a-z0-9-_]*.(?=.md$)/)![0],
 );
 
@@ -70,8 +70,7 @@ console.log(seriesEntry?.data.title);
           day: "2-digit",
           year: "numeric",
         })
-      } - {preacherEntry?.data.firstName}
-      {preacherEntry?.data.lastName} - <a
+      } - {preacherEntry?.data.name} - <a
         href=`/sermons/series/${seriesEntry?.id}`
         class="link">{seriesEntry?.data.title}</a
       >

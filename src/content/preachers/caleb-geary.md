@@ -1,5 +1,5 @@
 ---
 name: Caleb Geary
-guest: false
+isGuest: false
 bio: Pastoral Intern summer 2025
 ---

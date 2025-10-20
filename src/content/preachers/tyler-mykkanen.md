@@ -1,5 +1,5 @@
 ---
 name: Tyler Mykkanen
-guest: false
+isGuest: false
 bio: Lead pastor
 ---
