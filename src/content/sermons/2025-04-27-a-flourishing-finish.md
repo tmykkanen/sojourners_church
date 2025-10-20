@@ -3,7 +3,7 @@ title: A Flourishing Finish
 date: 2025-04-27
 series: src/collections/series/revelation-living-in-the-valley-between-the-victories.md
 scripture: Revelation 21:9–22:5
-preacher: src/collections/preachers/mykkanen_tyler.md
+preacher: src/content/preachers/tyler-mykkanen.md
 spotifyURL: https://open.spotify.com/episode/4cunjnpJaO6gf83M4PMqzL?si=73add7ba8d654281
 googleDocsURL: https://drive.google.com/file/d/1MG8VK-UTQXlscD1sThXPbY3XwJGDje_G/view
 ---
