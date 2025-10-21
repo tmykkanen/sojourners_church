@@ -32,9 +32,9 @@ content:
         type: reference
         options:
           collection: preachers
-          # value: "{slug}"
+          value: "{slug}"
           # search: "name,fields.slug,fields.name"
-          label: "{fields.slug}"
+          label: "{fields.name}"
       - name: spotifyURL
         label: Spotify URL
         type: string
