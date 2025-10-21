@@ -34,7 +34,7 @@ content:
           collection: preachers
           # value: "{slug}"
           # search: "name,fields.slug,fields.name"
-          label: "{fields.id}"
+          label: "{id}"
       - name: spotifyURL
         label: Spotify URL
         type: string
