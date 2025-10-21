@@ -34,7 +34,7 @@ content:
           collection: preachers
           # value: "{slug}"
           # search: "name,fields.slug,fields.name"
-          label: "{fields.name}"
+          label: "{fields.slug}"
       - name: spotifyURL
         label: Spotify URL
         type: string
@@ -52,6 +52,9 @@ content:
     fields:
       - name: name
         label: Name
+        type: string
+      - name: slug
+        label: Slug
         type: string
       - name: isGuest
         label: Guest Preacher
@@ -74,6 +77,9 @@ content:
     fields:
       - name: title
         label: Series Title
+        type: string
+      - name: slug
+        label: Slug
         type: string
       - name: image
         label: Series Image
