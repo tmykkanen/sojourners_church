@@ -6,36 +6,33 @@ import Header from "@components/Header.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import SpotifyAudioEmbed from "@components/SpotifyAudioEmbed.astro";
 
-// Get all sermons
-const allSermons = await getCollection("sermons");
+// Get all sermons, sorted by date
+const allSermons = (await getCollection("sermons")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
 
 // Get latest sermon from all sermons
-const latestSermon = allSermons.sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-)[0];
+const latestSermon = allSermons[0];
 
-console.log(latestSermon.data.series);
-
-// TRY: https://docs.astro.build/en/reference/modules/astro-content/#getentry
-const tmp = await getEntry(latestSermon.data.series);
-
-console.log("tmp", tmp);
+console.log(latestSermon);
 
 // Get latest sermon entry
-const latestSermonSeries = await getEntry(
-  "series",
-  latestSermon.data.series.id.match(/[a-z0-9-]*.(?=.md$)/)![0],
-);
+// const latestSermonSeries = await getEntry(
+//   "series",
+//   latestSermon.data.series.id.match(/[a-z0-9-]*.(?=.md$)/)![0]
+// );
+
+const latestSermonSeries = await getEntry(latestSermon.data.series);
 
 // Get latest preacher entry
-const latestPreacher = await getEntry(
-  "preachers",
-  latestSermon.data.preacher.id.match(/[a-z0-9-_]*.(?=.md$)/)![0],
-);
+// const latestPreacher = await getEntry(
+//   "preachers",
+//   latestSermon.data.preacher.id.match(/[a-z0-9-_]*.(?=.md$)/)![0]
+// );
+const latestPreacher = await getEntry(latestSermon.data.preacher);
 
 // Get all sermon series
-const allSeries = await getCollection("series");
-allSeries.sort(
+const allSeries = (await getCollection("series")).sort(
   (a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf(),
 );
 ---

@@ -10,8 +10,9 @@ import { getHumanReadableScriptureRef } from "@src/utils/bibleParser";
 
 // Get posts for rendering
 export async function getStaticPaths() {
-  const posts = await getCollection("sermons");
-  posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  const posts = (await getCollection("sermons")).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  );
 
   return posts.map((post, index) => ({
     params: { slug: post.id },
@@ -30,8 +31,9 @@ const { spotifyURL, googleDocsURL, title, preacher, date, series, scripture } =
 const { Content } = await render(post);
 
 // Get allSermons to get previous/next entries
-const allSermons = await getCollection("sermons");
-allSermons.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const allSermons = (await getCollection("sermons")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
 
 let prevEntry, nextEntry;
 if (prevEntryIndex <= allSermons.length - 1) {
@@ -41,17 +43,9 @@ if (nextEntryIndex >= 0) {
   nextEntry = await getEntry("sermons", allSermons[nextEntryIndex].id);
 }
 
-const seriesEntry = await getEntry(
-  "series",
-  series.id.match(/[a-z0-9-_]*.(?=.md$)/)![0],
-);
+const seriesEntry = await getEntry(series);
 
-const preacherEntry = await getEntry(
-  "preachers",
-  preacher.id.match(/[a-z0-9-_]*.(?=.md$)/)![0],
-);
-
-console.log(seriesEntry?.data.title);
+const preacherEntry = await getEntry(preacher);
 ---
 
 <BaseLayout>
