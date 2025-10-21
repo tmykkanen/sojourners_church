@@ -32,8 +32,8 @@ content:
         type: reference
         options:
           collection: preachers
-          value: "{slug}"
-          search: "name,fields.slug,fields.name"
+          # value: "{slug}"
+          # search: "name,fields.slug,fields.name"
           label: "{fields.name}"
       - name: spotifyURL
         label: Spotify URL
