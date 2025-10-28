@@ -48,7 +48,7 @@ content:
     label: Preachers
     type: collection
     path: src/content/preachers
-    filename: "{primary}.md"
+    filename: "{fields.slug}.md"
     fields:
       - name: name
         label: Name
