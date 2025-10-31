@@ -1,5 +1,6 @@
 ---
 title: The Amazingly True Story
+slug: the-amazingly-true-story
 image: /media/Story Sermon Series img FB.jpg
 imageSquare: /media/Story Sermon Series img SQ.jpg
 startDate: 2024-04-21
