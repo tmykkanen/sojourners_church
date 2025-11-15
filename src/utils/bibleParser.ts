@@ -127,4 +127,6 @@ export {
   getHumanReadableScriptureRef,
   createScriptureObject,
   scriptureRefToOsis,
+  osisToEnWrapper,
+  bcvParserWrapper,
 };

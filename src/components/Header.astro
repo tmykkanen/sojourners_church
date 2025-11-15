@@ -1,14 +1,14 @@
 ---
 import { Icon } from "astro-icon/components";
+import Text from "./Text.astro";
 ---
 
-<header class="bg-base-100 layout-base py-2 sm:py-4">
+<header class="bg-base-100 layout-base py-4">
   <nav class="navbar p-0">
-    <h1
-      class="text-base-content/70 flex-1 text-xl font-bold uppercase md:text-2xl"
-    >
-      <a href="/">Sojourners <br class="hidden sm:inline" /> Church</a>
-    </h1>
+    <Text as="h1" variant="display" class:list={"flex-1"}>
+      <a href="/">Sojourners <br class="hidden md:inline" /> Church</a>
+    </Text>
+
     <label for="sidebar-menu" class="z-50">
       <!-- <Icon
         name={"mdi:menu"}

@@ -14,8 +14,6 @@ const allSermons = (await getCollection("sermons")).sort(
 // Get latest sermon from all sermons
 const latestSermon = allSermons[0];
 
-console.log(latestSermon);
-
 // Get latest sermon entry
 // const latestSermonSeries = await getEntry(
 //   "series",
@@ -42,54 +40,48 @@ const allSeries = (await getCollection("series")).sort(
   <main class="layout-base">
     <h1 class="sr-only">Sermons</h1>
 
-    <div class="mb-8 grid grid-cols-2">
-      <div>
-        <h2 class="text-2xl uppercase">Latest Sermon</h2>
-        <h3 class="text-xl">
-          <a href={`/sermons/${latestSermon.id}`} class="link">
-            {latestSermon.data.title}
-          </a>
-        </h3>
-        <div class="text-base-content/50 text-sm">
-          <p>
-            {
-              latestSermon.data.date.toLocaleDateString("en-US", {
-                month: "long",
-                day: "2-digit",
-                year: "numeric",
-              })
-            }
-          </p>
-          <!-- <p>{latestSermon.data.title}</p> -->
-          <p>
-            {latestPreacher?.data.name}
-          </p>
+    <section class="mb-6">
+      <h2 class="text-2xl uppercase">Latest Sermon</h2>
+      <h3 class="text-xl">
+        <a href={`/sermons/${latestSermon.id}`} class="link">
+          {latestSermon.data.title}
+        </a>
+      </h3>
+      <div class="text-base-content/50 text-sm">
+        <p>
+          {
+            latestSermon.data.date.toLocaleDateString("en-US", {
+              month: "long",
+              day: "2-digit",
+              year: "numeric",
+            })
+          } - {latestPreacher?.data.name} - {latestSermon.data.scripture}
           <!-- TODO: Redo interaction with Bible Parser -->
-          <!-- <p>{getHumanReadableScriptureRef(latestSermon.sermonText)}</p> -->
-        </div>
-      </div>
-      <div>
-        <h2 class="text-2xl uppercase">Listen on Spotify</h2>
+          <!-- {getHumanReadableScriptureRef(latestSermon.sermonText)} -->
+        </p>
         <SpotifyAudioEmbed spotifyURL={latestSermon.data.spotifyURL} />
       </div>
-    </div>
-    <h2 class="text-2xl uppercase">Sermons By Series</h2>
-    <div class="flex gap-6">
-      {
-        allSeries.map(({ data: { imageSquare, title }, id }) => (
-          <div class="card bg-base-200 w-48 shadow-sm">
-            <a href={`/sermons/series/${id}`}>
-              <figure>
-                <img src={imageSquare} alt="series image" />
-              </figure>
-              <div class="card-body">
-                <h3 class="card-title text-sm">{title}</h3>
-              </div>
-            </a>
-          </div>
-        ))
-      }
-    </div>
+    </section>
+
+    <section>
+      <h2 class="mb-2 text-2xl uppercase">Sermons By Series</h2>
+      <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
+        {
+          allSeries.map(({ data: { imageSquare, title }, id }) => (
+            <div class="card bg-base-200 w-48 shadow-sm">
+              <a href={`/sermons/series/${id}`}>
+                <figure>
+                  <img src={imageSquare} alt="series image" />
+                </figure>
+                <div class="card-body">
+                  <h3 class="card-title justify-center text-sm">{title}</h3>
+                </div>
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </section>
 
     <!-- <div class="divider"></div>
     <div>
