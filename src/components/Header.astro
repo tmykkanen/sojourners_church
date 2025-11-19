@@ -1,6 +1,6 @@
 ---
-import { Icon } from "astro-icon/components";
 import Text from "./Text.astro";
+import HamburgerIcon from "./ui/HamburgerIcon.astro";
 ---
 
 <header class="bg-base-100 layout-base py-4">
@@ -10,16 +10,7 @@ import Text from "./Text.astro";
     </Text>
 
     <label for="sidebar-menu" class="z-50">
-      <!-- <Icon
-        name={"mdi:menu"}
-        class="drawer-button btn-ghost btn text-3xl lg:hidden"
-      /> -->
-      <div id="nav-icon3" class="lg:hidden">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <HamburgerIcon breakpoint="lg" />
     </label>
 
     <ul class="hidden font-light tracking-wider uppercase lg:inline-flex">
@@ -31,60 +22,3 @@ import Text from "./Text.astro";
     </ul>
   </nav>
 </header>
-
-<style>
-  /* Nav Icon 3 From https://codepen.io/designcouch/pen/ExvwPY */
-  #nav-icon1,
-  #nav-icon2,
-  #nav-icon3,
-  #nav-icon4 {
-    width: 36px;
-    height: 23px;
-    /* background-color: aqua; */
-    position: relative;
-    /* margin: 50px auto; */
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transition: 0.5s ease-in-out;
-    -moz-transition: 0.5s ease-in-out;
-    -o-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
-    cursor: pointer;
-  }
-
-  #nav-icon1 span,
-  #nav-icon3 span,
-  #nav-icon4 span {
-    display: block;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background: var(--color-base-content);
-    /* border-radius: 9px; */
-    opacity: 1;
-    left: 0;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transition: 0.25s ease-in-out;
-    -moz-transition: 0.25s ease-in-out;
-    -o-transition: 0.25s ease-in-out;
-    transition: 0.25s ease-in-out;
-  }
-
-  #nav-icon3 span:nth-child(1) {
-    top: 0px;
-  }
-
-  #nav-icon3 span:nth-child(2),
-  #nav-icon3 span:nth-child(3) {
-    top: 10px;
-  }
-
-  #nav-icon3 span:nth-child(4) {
-    top: 20px;
-  }
-</style>

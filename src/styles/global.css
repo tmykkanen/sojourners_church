@@ -103,11 +103,9 @@ ol li::before {
   /* font-weight: bold; */
 }
 
-/* ------- */
+/* ---- Transform nav-icon based on drawer toggle status */
+/* TODO: Convert to JS and add to Hamburger Icon Componnent? */
 .drawer-toggle:checked ~ * #nav-icon3 span {
-  /* For testing: */
-  /* background: yellow; */
-
   &:nth-child(1) {
     top: 10px;
     width: 0%;
