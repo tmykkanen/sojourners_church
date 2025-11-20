@@ -23,6 +23,7 @@ content:
         type: reference
         options:
           collection: series
+          value: "{slug}"
           label: "{title}"
       - name: scripture
         label: Sermon Text
