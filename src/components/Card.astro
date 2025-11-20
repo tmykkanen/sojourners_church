@@ -1,14 +1,18 @@
 ---
 import Text from "./Text.astro";
+import { format } from "date-fns";
 
 interface Props {
   baseUrl: string;
   id: string;
   image: string;
   title: string;
+  date: Date;
+  scripture: string;
+  name: string;
 }
 
-const { baseUrl, id, image, title } = Astro.props;
+const { baseUrl, id, image, title, date, scripture, name } = Astro.props;
 ---
 
 <!-- <div class="card bg-base-100 w-48 shadow-sm"> -->
@@ -18,6 +22,14 @@ const { baseUrl, id, image, title } = Astro.props;
   </figure>
   <div class="card-body">
     <Text as="h3" variant="subheading">{title}</Text>
+    <Text variant="meta">
+      {
+        format(
+          new Date(date.valueOf() + date.getTimezoneOffset() * 60 * 1000),
+          "LLLL dd, yyyy",
+        )
+      } - {name} - {scripture}
+    </Text>
   </div>
 </a>
 <!-- </div> -->

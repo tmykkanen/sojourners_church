@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry } from "astro:content";
 // import { getHumanReadableScriptureRef } from "@src/utils/bibleParser";
+import { format } from "date-fns";
 
 import Header from "@components/Header.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
@@ -29,6 +30,17 @@ const getSermonData = (sermonData: CollectionEntry<"sermons">[]) => {
 };
 
 const sermonData = await getSermonData(allSermons);
+
+console.log(sermonData[0].data.date);
+console.log(
+  format(
+    new Date(
+      sermonData[0].data.date.valueOf() +
+        sermonData[0].data.date.getTimezoneOffset() * 60 * 1000,
+    ),
+    "MM/dd/yyyy",
+  ),
+);
 
 // const sermonData = allSermons.map((sermon) => ({
 //   title: sermon.data.title,
@@ -76,11 +88,13 @@ const sermonData = await getSermonData(allSermons);
 
       <Text variant="meta">
         {
-          sermonData[0].data.date.toLocaleDateString("en-US", {
-            month: "long",
-            day: "2-digit",
-            year: "numeric",
-          })
+          format(
+            new Date(
+              sermonData[0].data.date.valueOf() +
+                sermonData[0].data.date.getTimezoneOffset() * 60 * 1000,
+            ),
+            "LLLL dd, yyyy",
+          )
         } - {sermonData[0].preacher.data.name} - {sermonData[0].data.scripture}
         <!-- TODO: Redo interaction with Bible Parser -->
         <!-- {getHumanReadableScriptureRef(latestSermon.sermonText)} -->
@@ -97,9 +111,22 @@ const sermonData = await getSermonData(allSermons);
               series: {
                 data: { imageSquare: image },
               },
-              data: { title },
+              preacher: {
+                data: { name },
+              },
+              data: { title, date, scripture },
               id,
-            }) => <Card {image} {title} {id} baseUrl="/sermons/series/" />,
+            }) => (
+              <Card
+                {image}
+                {title}
+                {id}
+                {date}
+                {scripture}
+                {name}
+                baseUrl="/sermons/"
+              />
+            ),
           )
         }
       </div>
@@ -156,3 +183,5 @@ const sermonData = await getSermonData(allSermons);
   </main>
   <Footer />
 </BaseLayout>
+
+<style></style>
