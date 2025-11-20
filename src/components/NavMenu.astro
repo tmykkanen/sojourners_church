@@ -17,8 +17,11 @@ const { ...attrs } = Astro.props;
 <ul {...attrs}>
   {
     navItems.map(({ label, href, outline }) => (
-      <li class:list={["btn", outline ? "btn-outline" : "btn-ghost"]}>
-        <a class="w-full" href={href}>
+      <li>
+        <a
+          class:list={["btn w-full", outline ? "btn-outline" : "btn-ghost"]}
+          href={href}
+        >
           {label}
         </a>
       </li>
