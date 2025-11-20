@@ -43,7 +43,12 @@
   --text-xxs: 0.6875rem; /* 10pt */
   /* --root-bg: var(--color-base-200); */
   /* --padding: 2rem; */
-  --padding: calc(var(--spacing) * 8);
+
+  --spacing-reg: calc(var(--spacing) * 8) /* 32px */;
+  --spacing-sm: calc(var(--spacing) * 4) /* 16px */;
+  --spacing-xs: calc(var(--spacing) * 2) /* 8px */;
+  --spacing-lg: calc(var(--spacing) * 12) /* 48px */;
+
   --layout-base: 70rem;
   --layout-full: 100%;
 }
@@ -52,8 +57,10 @@
 @utility layout-* {
   /* prettier-ignore */
   --max-width: --value(--layout-*);
+  --padding: var(--spacing-reg);
 
   display: grid;
+
   place-content: center;
   grid-template-columns:
     minmax(var(--padding), 1fr)
