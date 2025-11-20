@@ -16,8 +16,6 @@ const allSermons = (await getCollection("sermons")).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 
-console.log(allSermons);
-
 const getSermonData = (sermonData: CollectionEntry<"sermons">[]) => {
   const promises = sermonData.map(async (sermonItem) => {
     return {
@@ -30,17 +28,6 @@ const getSermonData = (sermonData: CollectionEntry<"sermons">[]) => {
 };
 
 const sermonData = await getSermonData(allSermons);
-
-console.log(sermonData[0].data.date);
-console.log(
-  format(
-    new Date(
-      sermonData[0].data.date.valueOf() +
-        sermonData[0].data.date.getTimezoneOffset() * 60 * 1000,
-    ),
-    "MM/dd/yyyy",
-  ),
-);
 
 // const sermonData = allSermons.map((sermon) => ({
 //   title: sermon.data.title,
@@ -95,7 +82,7 @@ console.log(
             ),
             "LLLL dd, yyyy",
           )
-        } - {sermonData[0].preacher.data.name} - {sermonData[0].data.scripture}
+        } - {sermonData[0].data.scripture} - {sermonData[0].preacher.data.name}
         <!-- TODO: Redo interaction with Bible Parser -->
         <!-- {getHumanReadableScriptureRef(latestSermon.sermonText)} -->
       </Text>
@@ -104,7 +91,7 @@ console.log(
 
     <section class="flex flex-col gap-(--spacing-xs)">
       <Text as="h2" variant="heading">All Sermons</Text>
-      <div class="flex flex-col gap-(--spacing-reg)">
+      <div class="flex flex-col gap-(--spacing-reg) lg:grid lg:grid-cols-2">
         {
           sermonData.map(
             ({

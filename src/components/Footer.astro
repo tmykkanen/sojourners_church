@@ -5,7 +5,7 @@ import Text from "./Text.astro";
 
 <footer class="bg-accent text-accent-content layout-base py-(--spacing-reg)">
   <div class="grid gap-(--spacing-reg) lg:grid-cols-3">
-    <section class="content-start gap-(--spacing-xs)">
+    <section class="flex flex-col gap-(--spacing-xs)">
       <Text as="h2" variant="screenReader"> Address & Contact Info </Text>
       <Text as="h3" variant="heading"> Sundays at 10am </Text>
       <Text as="address" class={"mb-(--spacing-reg)"}>
@@ -31,7 +31,7 @@ import Text from "./Text.astro";
       </div>
     </section>
 
-    <section class="content-start gap-(--spacing-xs)">
+    <section class="flex flex-col gap-(--spacing-xs)">
       <Text as="h2" variant="heading"> Weekly Bulletin </Text>
       <Text as="p">
         Sign up to stay informed and connected to Sojourners Church weekly
@@ -74,8 +74,8 @@ import Text from "./Text.astro";
         </fieldset>
       </form>
     </section>
-    <section class="content-start gap-(--spacing-xs)">
-      <Text as="h2" variant="heading"> Give to Sojourners Church </Text>
+    <section class="flex flex-col gap-(--spacing-xs)">
+      <Text as="h2" variant="heading"> Give to Sojourners</Text>
       <Text as="p">
         Click below to set up a one time or recurring gift to Sojourners Church.
       </Text>

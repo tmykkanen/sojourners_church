@@ -43,6 +43,7 @@
   --text-xxs: 0.6875rem; /* 10pt */
   /* --root-bg: var(--color-base-200); */
   /* --padding: 2rem; */
+  --breakpoint-xs: 24rem;
 
   --spacing-reg: calc(var(--spacing) * 8) /* 32px */;
   --spacing-sm: calc(var(--spacing) * 4) /* 16px */;

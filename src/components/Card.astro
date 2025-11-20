@@ -16,11 +16,20 @@ const { baseUrl, id, image, title, date, scripture, name } = Astro.props;
 ---
 
 <!-- <div class="card bg-base-100 w-48 shadow-sm"> -->
-<a href={`${baseUrl}${id}`} class="card bg-base-100 flex-row shadow-sm">
-  <figure>
-    <img src={image} alt="series image" class="w-48" />
+<a
+  href={`${baseUrl}${id}`}
+  class="bg-base-100 flex max-h-48 flex-row rounded-(--spacing-xs) shadow-sm"
+>
+  <figure class="max-sm:flex-1/3">
+    <img
+      src={image}
+      alt="series image"
+      class="h-full rounded-l-(--spacing-xs)"
+    />
   </figure>
-  <div class="card-body">
+  <div
+    class="xs:p-(--spacing-sm) flex flex-2/3 flex-col justify-center p-(--spacing-xs) sm:p-(--spacing-reg)"
+  >
     <Text as="h3" variant="subheading">{title}</Text>
     <Text variant="meta">
       {
@@ -28,7 +37,11 @@ const { baseUrl, id, image, title, date, scripture, name } = Astro.props;
           new Date(date.valueOf() + date.getTimezoneOffset() * 60 * 1000),
           "LLLL dd, yyyy",
         )
-      } - {name} - {scripture}
+      }
+      <br />
+      {scripture}
+      <br />
+      {name}
     </Text>
   </div>
 </a>
