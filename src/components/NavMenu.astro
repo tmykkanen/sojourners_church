@@ -4,11 +4,11 @@ import type { HTMLAttributes } from "@node/astro/types";
 interface Props extends HTMLAttributes<"ul"> {}
 
 const navItems = [
-  { label: "About Us", href: "/about" },
-  { label: "Life Together", href: "/life" },
-  { label: "Sermons", href: "/sermons" },
-  { label: "Writings", href: "/writings" },
-  { label: "What is the Gospel?", href: "/gospel", outline: true },
+  { label: "About Us", url: "/about" },
+  { label: "Life Together", url: "/life" },
+  { label: "Sermons", url: "/sermons" },
+  { label: "Writings", url: "/writings" },
+  { label: "What is the Gospel?", url: "/gospel", outline: true },
 ];
 
 const { ...attrs } = Astro.props;
@@ -16,11 +16,11 @@ const { ...attrs } = Astro.props;
 
 <ul {...attrs}>
   {
-    navItems.map(({ label, href, outline }) => (
+    navItems.map(({ label, url, outline }) => (
       <li>
         <a
           class:list={["btn w-full", outline ? "btn-outline" : "btn-ghost"]}
-          href={href}
+          href={url}
         >
           {label}
         </a>
