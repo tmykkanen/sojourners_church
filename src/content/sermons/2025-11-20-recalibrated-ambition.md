@@ -1,7 +1,7 @@
 ---
 title: Recalibrated Ambition
 date: 2025-11-16
-series: src/content/series/thessalonians-gospel-encouragement-for-everyday-life.md
+series: thessalonians-gospel-encouragement-for-everyday-life
 scripture: 1 Thessalonians 4:11–12
 preacher: tyler-mykkanen
 spotifyURL: https://open.spotify.com/episode/1pMkIp53dkbA0IeFuKW9dy?si=bd9d780c3f664ae3
