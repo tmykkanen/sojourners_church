@@ -5,14 +5,40 @@ import { getCollection, getEntry } from "astro:content";
 import Header from "@components/Header.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import SpotifyAudioEmbed from "@components/SpotifyAudioEmbed.astro";
+import Card from "@components/Card.astro";
+import Footer from "@components/Footer.astro";
+import Text from "@components/Text.astro";
+import type { CollectionEntry } from "astro:content";
 
 // Get all sermons, sorted by date
 const allSermons = (await getCollection("sermons")).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 
+console.log(allSermons);
+
+const getSermonData = (sermonData: CollectionEntry<"sermons">[]) => {
+  const promises = sermonData.map(async (sermonItem) => {
+    return {
+      ...sermonItem,
+      series: await getEntry(sermonItem.data.series),
+      preacher: await getEntry(sermonItem.data.preacher),
+    };
+  });
+  return Promise.all(promises);
+};
+
+const sermonData = await getSermonData(allSermons);
+
+// const sermonData = allSermons.map((sermon) => ({
+//   title: sermon.data.title,
+//   image: await getEntry(sermon.data.series),
+// }));
+
+// console.log(sermonData);
+
 // Get latest sermon from all sermons
-const latestSermon = allSermons[0];
+// const latestSermon = sermonData[0];
 
 // Get latest sermon entry
 // const latestSermonSeries = await getEntry(
@@ -20,65 +46,61 @@ const latestSermon = allSermons[0];
 //   latestSermon.data.series.id.match(/[a-z0-9-]*.(?=.md$)/)![0]
 // );
 
-const latestSermonSeries = await getEntry(latestSermon.data.series);
+// const latestSermonSeries = await getEntry(latestSermon.data.series);
 
 // Get latest preacher entry
 // const latestPreacher = await getEntry(
 //   "preachers",
 //   latestSermon.data.preacher.id.match(/[a-z0-9-_]*.(?=.md$)/)![0]
 // );
-const latestPreacher = await getEntry(latestSermon.data.preacher);
+// const latestPreacher = await getEntry(latestSermon.data.preacher);
 
 // Get all sermon series
-const allSeries = (await getCollection("series")).sort(
-  (a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf(),
-);
+// const allSeries = (await getCollection("series")).sort(
+//   (a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf()
+// );
 ---
 
 <BaseLayout>
   <Header />
-  <main class="layout-base">
+  <main class="layout-base gap-(--spacing-reg) py-(--spacing-reg)">
     <h1 class="sr-only">Sermons</h1>
 
-    <section class="mb-6">
-      <h2 class="text-2xl uppercase">Latest Sermon</h2>
-      <h3 class="text-xl">
-        <a href={`/sermons/${latestSermon.id}`} class="link">
-          {latestSermon.data.title}
+    <section class="flex flex-col gap-(--spacing-xs)">
+      <Text as="h2" variant="heading">Latest Sermon</Text>
+      <Text as="h3" variant="subheading">
+        <a href={`/sermons/${sermonData[0].id}`} class="link">
+          {sermonData[0].data.title}
         </a>
-      </h3>
-      <div class="text-base-content/50 text-sm">
-        <p>
-          {
-            latestSermon.data.date.toLocaleDateString("en-US", {
-              month: "long",
-              day: "2-digit",
-              year: "numeric",
-            })
-          } - {latestPreacher?.data.name} - {latestSermon.data.scripture}
-          <!-- TODO: Redo interaction with Bible Parser -->
-          <!-- {getHumanReadableScriptureRef(latestSermon.sermonText)} -->
-        </p>
-        <SpotifyAudioEmbed spotifyURL={latestSermon.data.spotifyURL} />
-      </div>
+      </Text>
+
+      <Text variant="meta">
+        {
+          sermonData[0].data.date.toLocaleDateString("en-US", {
+            month: "long",
+            day: "2-digit",
+            year: "numeric",
+          })
+        } - {sermonData[0].preacher.data.name} - {sermonData[0].data.scripture}
+        <!-- TODO: Redo interaction with Bible Parser -->
+        <!-- {getHumanReadableScriptureRef(latestSermon.sermonText)} -->
+      </Text>
+      <SpotifyAudioEmbed spotifyURL={sermonData[0].data.spotifyURL} />
     </section>
 
-    <section>
-      <h2 class="mb-2 text-2xl uppercase">Sermons By Series</h2>
-      <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
+    <section class="flex flex-col gap-(--spacing-xs)">
+      <Text as="h2" variant="heading">All Sermons</Text>
+      <div class="flex flex-col gap-(--spacing-reg)">
         {
-          allSeries.map(({ data: { imageSquare, title }, id }) => (
-            <div class="card bg-base-200 w-48 shadow-sm">
-              <a href={`/sermons/series/${id}`}>
-                <figure>
-                  <img src={imageSquare} alt="series image" />
-                </figure>
-                <div class="card-body">
-                  <h3 class="card-title justify-center text-sm">{title}</h3>
-                </div>
-              </a>
-            </div>
-          ))
+          sermonData.map(
+            ({
+              series: {
+                data: { imageSquare: image },
+              },
+              data: { title },
+              id,
+            }) => <Card {image} {title} {id} baseUrl="/sermons/series/" />,
+          )
         }
       </div>
     </section>
@@ -132,4 +154,5 @@ const allSeries = (await getCollection("series")).sort(
       </div>
     </div> -->
   </main>
+  <Footer />
 </BaseLayout>

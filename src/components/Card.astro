@@ -1,0 +1,23 @@
+---
+import Text from "./Text.astro";
+
+interface Props {
+  baseUrl: string;
+  id: string;
+  image: string;
+  title: string;
+}
+
+const { baseUrl, id, image, title } = Astro.props;
+---
+
+<!-- <div class="card bg-base-100 w-48 shadow-sm"> -->
+<a href={`${baseUrl}${id}`} class="card bg-base-100 flex-row shadow-sm">
+  <figure>
+    <img src={image} alt="series image" class="w-48" />
+  </figure>
+  <div class="card-body">
+    <Text as="h3" variant="subheading">{title}</Text>
+  </div>
+</a>
+<!-- </div> -->
