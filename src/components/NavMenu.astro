@@ -1,0 +1,27 @@
+---
+import type { HTMLAttributes } from "@node/astro/types";
+
+interface Props extends HTMLAttributes<"ul"> {}
+
+const navItems = [
+  { label: "About Us", href: "/about" },
+  { label: "Life Together", href: "/life" },
+  { label: "Sermons", href: "/sermons" },
+  { label: "Writings", href: "/writings" },
+  { label: "What is the Gospel?", href: "/gospel", outline: true },
+];
+
+const { ...attrs } = Astro.props;
+---
+
+<ul {...attrs}>
+  {
+    navItems.map(({ label, href, outline }) => (
+      <li class:list={["btn", outline ? "btn-outline" : "btn-ghost"]}>
+        <a class="w-full" href={href}>
+          {label}
+        </a>
+      </li>
+    ))
+  }
+</ul>

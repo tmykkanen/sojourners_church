@@ -1,5 +1,6 @@
 ---
 import Head from "@components/Head.astro";
+import NavMenu from "@components/NavMenu.astro";
 import "@styles/global.css";
 ---
 
@@ -12,15 +13,9 @@ import "@styles/global.css";
         <slot />
       </div>
       <div class="drawer-side">
-        <ul
-          class="menu bg-base-100 text-base-content min-h-full w-full p-4 pt-20"
-        >
-          <li class="btn btn-ghost"><a href="/about/beliefs">About Us</a></li>
-          <li class="btn btn-ghost"><a href="#">Life Together</a></li>
-          <li class="btn btn-ghost"><a href="/sermons">Sermons</a></li>
-          <li class="btn btn-ghost"><a href="/writings">Writings</a></li>
-          <li class="btn btn-outline"><a href="#">What is the Gospel?</a></li>
-        </ul>
+        <NavMenu
+          class:list={"bg-base-100 text-base-content flex min-h-full w-full flex-col p-8 pt-24 font-light tracking-wider uppercase"}
+        />
       </div>
     </div>
   </body>

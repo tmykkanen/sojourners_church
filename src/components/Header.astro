@@ -1,6 +1,7 @@
 ---
 import Text from "./Text.astro";
-import HamburgerIcon from "./ui/HamburgerIcon.astro";
+import HamburgerIcon from "./HamburgerIcon.astro";
+import NavMenu from "./NavMenu.astro";
 ---
 
 <header class="bg-base-100 layout-full py-4">
@@ -13,12 +14,8 @@ import HamburgerIcon from "./ui/HamburgerIcon.astro";
       <HamburgerIcon breakpoint="lg" />
     </label>
 
-    <ul class="hidden font-light tracking-wider uppercase lg:inline-flex">
-      <li class="btn btn-ghost"><a href="/about/beliefs">About Us</a></li>
-      <li class="btn btn-ghost"><a href="#">Life Together</a></li>
-      <li class="btn btn-ghost"><a href="/sermons">Sermons</a></li>
-      <li class="btn btn-ghost"><a href="/writings">Writings</a></li>
-      <li class="btn btn-outline"><a href="#">What is the Gospel?</a></li>
-    </ul>
+    <NavMenu
+      class:list={"hidden font-light tracking-wider uppercase lg:inline-flex"}
+    />
   </nav>
 </header>
