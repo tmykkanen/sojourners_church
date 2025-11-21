@@ -6,12 +6,13 @@ import { format } from "date-fns";
 import Header from "@components/Header.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import SpotifyAudioEmbed from "@components/SpotifyAudioEmbed.astro";
-import Card from "@components/Card.astro";
+import Card from "@components/Card.svelte";
 import Footer from "@components/Footer.astro";
-import Text from "@components/Text.astro";
+import Text from "@components/Text.svelte";
 import type { CollectionEntry } from "astro:content";
+import FilteredCards from "@components/FilteredCards.svelte";
 
-// Get all sermons, sorted by date
+// ----- GET ALL SERMON DATA ----- //
 const allSermons = (await getCollection("sermons")).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
@@ -27,37 +28,19 @@ const getSermonData = (sermonData: CollectionEntry<"sermons">[]) => {
   return Promise.all(promises);
 };
 
-const sermonData = await getSermonData(allSermons);
+const allSermonData = await getSermonData(allSermons);
 
-// const sermonData = allSermons.map((sermon) => ({
-//   title: sermon.data.title,
-//   image: await getEntry(sermon.data.series),
-// }));
+// ----- GET ALL SERMON Series ----- //
+const allSeries = (await getCollection("series")).sort(
+  (a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf(),
+);
 
-// console.log(sermonData);
-
-// Get latest sermon from all sermons
-// const latestSermon = sermonData[0];
-
-// Get latest sermon entry
-// const latestSermonSeries = await getEntry(
-//   "series",
-//   latestSermon.data.series.id.match(/[a-z0-9-]*.(?=.md$)/)![0]
-// );
-
-// const latestSermonSeries = await getEntry(latestSermon.data.series);
-
-// Get latest preacher entry
-// const latestPreacher = await getEntry(
-//   "preachers",
-//   latestSermon.data.preacher.id.match(/[a-z0-9-_]*.(?=.md$)/)![0]
-// );
-// const latestPreacher = await getEntry(latestSermon.data.preacher);
-
-// Get all sermon series
-// const allSeries = (await getCollection("series")).sort(
-//   (a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf()
-// );
+const allSeriesData = allSeries.map((item) => {
+  return {
+    id: item.id,
+    title: item.data.title,
+  };
+});
 ---
 
 <BaseLayout>
@@ -68,8 +51,8 @@ const sermonData = await getSermonData(allSermons);
     <section class="flex flex-col gap-(--spacing-xs)">
       <Text as="h2" variant="heading">Latest Sermon</Text>
       <Text as="h3" variant="subheading">
-        <a href={`/sermons/${sermonData[0].id}`} class="link">
-          {sermonData[0].data.title}
+        <a href={`/sermons/${allSermonData[0].id}`} class="link">
+          {allSermonData[0].data.title}
         </a>
       </Text>
 
@@ -77,21 +60,26 @@ const sermonData = await getSermonData(allSermons);
         {
           format(
             new Date(
-              sermonData[0].data.date.valueOf() +
-                sermonData[0].data.date.getTimezoneOffset() * 60 * 1000,
+              allSermonData[0].data.date.valueOf() +
+                allSermonData[0].data.date.getTimezoneOffset() * 60 * 1000,
             ),
             "LLLL dd, yyyy",
           )
-        } - {sermonData[0].data.scripture} - {sermonData[0].preacher.data.name}
+        } - {allSermonData[0].data.scripture} - {
+          allSermonData[0].preacher.data.name
+        }
         <!-- TODO: Redo interaction with Bible Parser -->
         <!-- {getHumanReadableScriptureRef(latestSermon.sermonText)} -->
       </Text>
-      <SpotifyAudioEmbed spotifyURL={sermonData[0].data.spotifyURL} />
+      <SpotifyAudioEmbed spotifyURL={allSermonData[0].data.spotifyURL} />
     </section>
 
     <section class="flex flex-col gap-(--spacing-xs)">
-      <Text as="h2" variant="heading">All Sermons</Text>
-      <div class="flex flex-col gap-(--spacing-reg) lg:grid lg:grid-cols-2">
+      <FilteredCards client:load {allSermonData} {allSeriesData} />
+      <!-- <div class="flex flex-col gap-(--spacing-reg) lg:grid lg:grid-cols-2">
+        {sermonData.map((sermon) => <Card baseUrl="/sermons/" {sermon} />)}
+      </div> -->
+      <!-- <div class="flex flex-col gap-(--spacing-reg) lg:grid lg:grid-cols-2">
         {
           sermonData.map(
             ({
@@ -113,10 +101,10 @@ const sermonData = await getSermonData(allSermons);
                 {name}
                 baseUrl="/sermons/"
               />
-            ),
+            )
           )
         }
-      </div>
+      </div> -->
     </section>
 
     <!-- <div class="divider"></div>

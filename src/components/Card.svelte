@@ -1,0 +1,58 @@
+<script lang="ts">
+  import { format } from "date-fns";
+  import Text from "@components/Text.svelte";
+
+  // interface Props {
+  //   baseUrl: string;
+  //   id: string;
+  //   image: string;
+  //   title: string;
+  //   date: Date;
+  //   scripture: string;
+  //   name: string;
+  // }
+
+  const { baseUrl, sermon } = $props();
+
+  const {
+    id,
+    data: { title, date, scripture },
+    series: {
+      data: { imageSquare },
+    },
+    preacher: {
+      data: { name },
+    },
+  } = sermon;
+</script>
+
+<!-- <div class="card bg-base-100 w-48 shadow-sm"> -->
+<a
+  href={`${baseUrl}${id}`}
+  class="bg-base-100 flex max-h-48 flex-row rounded-(--spacing-xs) shadow-sm"
+>
+  <figure class="max-sm:flex-1/3">
+    <img
+      src={imageSquare}
+      alt="series"
+      class="h-full rounded-l-(--spacing-xs)"
+    />
+  </figure>
+  <div
+    class="xs:p-(--spacing-sm) flex flex-2/3 flex-col justify-center p-(--spacing-xs) sm:p-(--spacing-reg)"
+  >
+    <Text as="h3" variant="subheading">{title}</Text>
+    <!-- <h3>{title}</h3> -->
+    <Text variant="meta">
+      {format(
+        new Date(date.valueOf() + date.getTimezoneOffset() * 60 * 1000),
+        "LLLL dd, yyyy",
+      )}
+      <br />
+      {scripture}
+      <br />
+      {name}
+    </Text>
+  </div>
+</a>
+<!-- </div> -->
