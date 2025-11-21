@@ -1,17 +1,17 @@
 ---
-import { getCollection, getEntry } from "astro:content";
-// import { getHumanReadableScriptureRef } from "@src/utils/bibleParser";
 import { format } from "date-fns";
+import { getCollection, getEntry, type CollectionEntry } from "astro:content";
+// import { getHumanReadableScriptureRef } from "@src/utils/bibleParser";
 
-import Header from "@components/Header.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import SpotifyAudioEmbed from "@components/SpotifyAudioEmbed.astro";
-import Card from "@components/Card.svelte";
+import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import Text from "@components/Text.svelte";
-import type { CollectionEntry } from "astro:content";
-import FilteredCards from "@components/FilteredCards.svelte";
 
+import Text from "@components/Text.svelte";
+import FilteredCards from "@components/FilteredCards.svelte";
+import SpotifyAudioEmbed from "@components/SpotifyAudioEmbed.astro";
+
+// TODO: Abstract these functions into util file
 // ----- GET ALL SERMON DATA ----- //
 const allSermons = (await getCollection("sermons")).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
@@ -76,87 +76,7 @@ const allSeriesData = allSeries.map((item) => {
 
     <section class="flex flex-col gap-(--spacing-xs)">
       <FilteredCards client:load {allSermonData} {allSeriesData} />
-      <!-- <div class="flex flex-col gap-(--spacing-reg) lg:grid lg:grid-cols-2">
-        {sermonData.map((sermon) => <Card baseUrl="/sermons/" {sermon} />)}
-      </div> -->
-      <!-- <div class="flex flex-col gap-(--spacing-reg) lg:grid lg:grid-cols-2">
-        {
-          sermonData.map(
-            ({
-              series: {
-                data: { imageSquare: image },
-              },
-              preacher: {
-                data: { name },
-              },
-              data: { title, date, scripture },
-              id,
-            }) => (
-              <Card
-                {image}
-                {title}
-                {id}
-                {date}
-                {scripture}
-                {name}
-                baseUrl="/sermons/"
-              />
-            )
-          )
-        }
-      </div> -->
     </section>
-
-    <!-- <div class="divider"></div>
-    <div>
-      <label class="input">
-        <svg
-          class="h-[1em] opacity-50"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke-linejoin="round"
-            stroke-linecap="round"
-            stroke-width="2.5"
-            fill="none"
-            stroke="currentColor"
-          >
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="m21 21-4.3-4.3"></path>
-          </g>
-        </svg>
-        <input type="search" class="grow" placeholder="Search" />
-        <kbd class="kbd kbd-sm">⌘</kbd>
-        <kbd class="kbd kbd-sm">K</kbd>
-      </label>
-    </div>
-    <div class="grid grid-cols-2">
-      <div>
-        <h2>Sermons By Preacher</h2>
-        <select class="select">
-          <option disabled selected>Pick a Preacher</option>
-          {
-            allPreachers.map(({ data: { name } }) => (
-              <option>
-                {name.first} {name.last}
-              </option>
-            ))
-          }
-        </select>
-      </div>
-      <div>
-        <h2>Sermons By Date</h2>
-        <select class="select">
-          <option disabled selected>Pick a color</option>
-          <option>Crimson</option>
-          <option>Amber</option>
-          <option>Velvet</option>
-        </select>
-      </div>
-    </div> -->
   </main>
   <Footer />
 </BaseLayout>
-
-<style></style>
