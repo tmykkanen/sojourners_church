@@ -60,6 +60,9 @@ content:
       - name: isGuest
         label: Guest Preacher
         type: boolean
+      - name: priority
+        label: Priority
+        type: number
       - name: bio
         label: Bio
         type: text
