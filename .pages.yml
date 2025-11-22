@@ -63,6 +63,7 @@ content:
       - name: priority
         label: Priority
         type: number
+        default: 0
       - name: bio
         label: Bio
         type: text
