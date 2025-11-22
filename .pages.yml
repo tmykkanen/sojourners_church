@@ -65,6 +65,7 @@ content:
       - name: slug
         label: Slug
         type: string
+        required: true
       - name: isGuest
         label: Guest Preacher
         type: boolean
@@ -91,18 +92,23 @@ content:
       - name: title
         label: Series Title
         type: string
+        required: true
       - name: slug
         label: Slug
         type: string
+        required: true
       - name: image
         label: Series Image
         type: image
+        required: true
       - name: imageSquare
         label: Square series image
         type: image
+        required: true
       - name: startDate
         label: Start date
         type: date
+        required: true
       - name: book
         label: Bible Book(s)
         type: select
