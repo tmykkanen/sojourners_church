@@ -16,12 +16,15 @@
   let {
     allSeriesData,
     allSermonData,
+    allPreachersData,
   }: {
     allSeriesData: SeriesData[];
     allSermonData: SermonData[];
+    allPreachersData: CollectionEntry<"preachers">[];
   } = $props();
 
   let selectedSeries: SeriesData | undefined = $state();
+  let selectedPreacher: SeriesData | undefined = $state();
 
   let filteredSermons = $derived(
     selectedSeries
@@ -39,9 +42,18 @@
 >
 
 <select class="select" bind:value={selectedSeries}>
-  <option value="">-----</option>
+  <option value="" selected>Filter by Series</option>
+  <option value="" disabled>-----</option>
   {#each allSeriesData as option}
     <option value={option}>{option.title}</option>
+  {/each}
+</select>
+
+<select class="select" bind:value={selectedPreacher}>
+  <option value="" selected>Filter by Preacher</option>
+  <option value="" disabled>-----</option>
+  {#each allPreachersData as option}
+    <option value={option}>{option.data.name}</option>
   {/each}
 </select>
 

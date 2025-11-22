@@ -30,7 +30,7 @@ const getSermonData = (sermonData: CollectionEntry<"sermons">[]) => {
 
 const allSermonData = await getSermonData(allSermons);
 
-// ----- GET ALL SERMON Series ----- //
+// ----- GET ALL SERMON SERIES ----- //
 const allSeries = (await getCollection("series")).sort(
   (a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf(),
 );
@@ -41,6 +41,10 @@ const allSeriesData = allSeries.map((item) => {
     title: item.data.title,
   };
 });
+
+// ----- GET ALL PREACHERS ----- //
+// TODO: Sort data by number of sermons / priority?
+const allPreachersData = await getCollection("preachers");
 ---
 
 <BaseLayout>
@@ -75,7 +79,12 @@ const allSeriesData = allSeries.map((item) => {
     </section>
 
     <section class="flex flex-col gap-(--spacing-xs)">
-      <FilteredCards client:load {allSermonData} {allSeriesData} />
+      <FilteredCards
+        client:load
+        {allSermonData}
+        {allSeriesData}
+        {allPreachersData}
+      />
     </section>
   </main>
   <Footer />

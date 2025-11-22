@@ -99,6 +99,7 @@ const preachersCollection = defineCollection({
   schema: z.object({
     name: z.string(),
     isGuest: z.boolean().optional(),
+    priority: z.number().optional(),
     bio: z.string().optional(),
     image: z.string().optional(),
   }),
