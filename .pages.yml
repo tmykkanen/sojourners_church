@@ -55,7 +55,7 @@ content:
         label: Name
         type: string
         required: true
-        pattern: {message: "Please enter a valid First and Last Name.", regex: "^[a-zA-Z]+([ \-'][a-zA-Z]+)*$"}
+        pattern: ^[a-zA-Z]+([ \-'][a-zA-Z]+)*$
       - name: slug
         label: Slug
         type: string
