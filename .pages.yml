@@ -15,9 +15,11 @@ content:
       - name: title
         label: Title
         type: string
+        required: true
       - name: date
         label: Date Preached
         type: date
+        required: true
       - name: series
         label: Sermon Series
         type: reference
@@ -25,6 +27,7 @@ content:
           collection: series
           value: "{slug}"
           label: "{title}"
+        required: true
       - name: scripture
         label: Sermon Text
         type: string # TODO: Configure sermon text
@@ -36,6 +39,7 @@ content:
           value: "{slug}"
           # search: "name,fields.slug,fields.name"
           label: "{fields.name}"
+        required: true
       - name: spotifyURL
         label: Spotify URL
         type: string
