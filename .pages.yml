@@ -57,7 +57,7 @@ content:
         required: true
         pattern: 
           message: "hello"
-          regex: '^[a-zA-Z]+([ ][a-zA-Z]+)*$'
+          regex: '^[a-zA-Z]+'
       - name: slug
         label: Slug
         type: string
