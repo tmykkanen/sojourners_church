@@ -1,5 +1,5 @@
 ---
-title: Guest Preacher
+title: Guest Preacher (Brian Kettering)
 date: 2025-10-19
 series: various
 scripture: Colossians 2:16–19
