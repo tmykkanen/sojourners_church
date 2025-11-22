@@ -55,9 +55,7 @@ content:
         label: Name
         type: string
         required: true
-        pattern: 
-          message: "hello"
-          regex: '^[a-zA-Z]+'
+        pattern: { message: 'This must be a valid email address (e.g. hello@example.com).', regex: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$' }
       - name: slug
         label: Slug
         type: string
