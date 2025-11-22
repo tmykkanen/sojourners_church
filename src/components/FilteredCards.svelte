@@ -23,16 +23,45 @@
     allPreachersData: CollectionEntry<"preachers">[];
   } = $props();
 
+  const getFilteredSermons = (sermonData: SermonData[]) => {
+    if (selectedSeries) {
+      sermonData = sermonData.filter(
+        (item) => item.series.id == selectedSeries!.id,
+      );
+    }
+
+    if (selectedPreacher) {
+      sermonData = sermonData.filter(
+        (item) => item.preacher.id == selectedPreacher!.id,
+      );
+    }
+
+    return sermonData;
+  };
+
+  const resetFilters = () => {
+    selectedSeries = undefined;
+    selectedPreacher = undefined;
+
+    const selectSeriesEl = document.getElementById(
+      "selectSeries",
+    ) as HTMLSelectElement;
+    const selectPreacherEl = document.getElementById(
+      "selectPreacher",
+    ) as HTMLSelectElement;
+
+    if (selectSeriesEl) {
+      selectSeriesEl.selectedIndex = 0;
+    }
+    if (selectPreacherEl) {
+      selectPreacherEl.selectedIndex = 0;
+    }
+  };
+
   let selectedSeries: SeriesData | undefined = $state();
   let selectedPreacher: SeriesData | undefined = $state();
 
-  let filteredSermons = $derived(
-    selectedSeries
-      ? allSermonData.filter((item) => item.series.id == selectedSeries!.id)
-      : allSermonData,
-  );
-
-  $inspect(selectedSeries, filteredSermons);
+  let filteredSermons = $derived.by(() => getFilteredSermons(allSermonData));
 </script>
 
 <Text as="h2" variant="heading"
@@ -41,7 +70,11 @@
     : "All Sermons"}</Text
 >
 
-<select class="select" bind:value={selectedSeries}>
+<select
+  class="select"
+  id="selectSeries"
+  bind:value={() => undefined, (v) => (selectedSeries = v)}
+>
   <option value="" selected>Filter by Series</option>
   <option value="" disabled>-----</option>
   {#each allSeriesData as option}
@@ -49,13 +82,23 @@
   {/each}
 </select>
 
-<select class="select" bind:value={selectedPreacher}>
+<select
+  class="select"
+  id="selectPreacher"
+  bind:value={() => undefined, (v) => (selectedPreacher = v)}
+>
   <option value="" selected>Filter by Preacher</option>
   <option value="" disabled>-----</option>
   {#each allPreachersData as option}
     <option value={option}>{option.data.name}</option>
   {/each}
 </select>
+
+{#if selectedSeries || selectedPreacher}
+  <button class="btn btn-accent" onclick={() => resetFilters()}
+    >Reset Filters</button
+  >
+{/if}
 
 <div class="flex flex-col gap-(--spacing-reg) lg:grid lg:grid-cols-2">
   {#each filteredSermons as sermon (sermon.id)}

@@ -44,7 +44,13 @@ const allSeriesData = allSeries.map((item) => {
 
 // ----- GET ALL PREACHERS ----- //
 // TODO: Sort data by number of sermons / priority?
-const allPreachersData = await getCollection("preachers");
+const allPreachersData = (await getCollection("preachers"))
+  .sort((a, b) =>
+    a.data.name.split(" ")[1].localeCompare(b.data.name.split(" ")[1]),
+  )
+  .sort((a, b) => b.data.priority - a.data.priority);
+
+console.log(allPreachersData);
 ---
 
 <BaseLayout>
