@@ -1,5 +1,6 @@
 ---
 title: Recalibrated Ambition
+test: this is a test
 date: 2025-11-16
 series: thessalonians-gospel-encouragement-for-everyday-life
 scripture: 1 Thessalonians 4:11–12
