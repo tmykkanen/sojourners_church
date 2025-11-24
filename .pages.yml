@@ -25,7 +25,7 @@ content:
         type: reference
         options:
           collection: series
-          value: "{slug}"
+          # value: "{slug}"
           label: "{title}"
         required: true
       - name: scripture
@@ -36,7 +36,7 @@ content:
         type: reference
         options:
           collection: preachers
-          value: "{slug}"
+          # value: "{slug}"
           # search: "name,fields.slug,fields.name"
           label: "{fields.name}"
         required: true
