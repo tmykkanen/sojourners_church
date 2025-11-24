@@ -4,15 +4,25 @@ import { glob } from "astro/loaders";
 // Import utilities from 'astro:content'
 import { z, defineCollection, reference } from "astro:content";
 
+const getSlugFromFilename = (val: any): string => {
+  val = val.match(/([^\/?#]+)$/g)[0] || val;
+  val = val.replace(".md", "");
+  return val;
+};
+
 // Define a 'loader' and 'schema' for each defineCollection
 const sermonsCollection = defineCollection({
   loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/sermons" }),
   schema: z.object({
     title: z.string(),
     date: z.date(),
-    series: reference("series"),
+    series: z.preprocess((val) => {
+      return getSlugFromFilename(val);
+    }, reference("series")),
     scripture: z.string().optional(),
-    preacher: reference("preachers"),
+    preacher: z.preprocess((val) => {
+      return getSlugFromFilename(val);
+    }, reference("preachers")),
     spotifyURL: z.string().optional(),
     googleDocsURL: z.string().optional(),
     // body: z.string().optional(),

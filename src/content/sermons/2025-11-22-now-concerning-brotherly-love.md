@@ -2,9 +2,9 @@
 title: Now Concerning Brotherly Love
 test: THIS IS A TEST
 date: 2025-11-09
-series: thessalonians-gospel-encouragement-for-everyday-life
+series: src/content/series/thessalonians-gospel-encouragement-for-everyday-life.md
 scripture: 1 Thessalonians 4:9–10
-preacher: tyler-mykkanen
+preacher: src/content/preachers/tyler-mykkanen.md
 spotifyURL: https://open.spotify.com/episode/1N43SHHMzpOSJaNDNbCzzY?si=8dEeoklKRwKmqZTr2TRCzA
 googleDocsURL: https://drive.google.com/file/d/1CXmlqSTTfDQC-QF5hIjy4fww_U6lVAx5/view
 ---

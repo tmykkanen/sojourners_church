@@ -17,6 +17,9 @@ const allSermons = (await getCollection("sermons")).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 
+console.log(allSermons[0]);
+// console.log(allSermons[0].data.series.match(/([^\/?#]+)$/g));
+
 const getSermonData = (sermonData: CollectionEntry<"sermons">[]) => {
   const promises = sermonData.map(async (sermonItem) => {
     return {
@@ -49,8 +52,6 @@ const allPreachersData = (await getCollection("preachers"))
     a.data.name.split(" ")[1].localeCompare(b.data.name.split(" ")[1]),
   )
   .sort((a, b) => b.data.priority - a.data.priority);
-
-console.log(allPreachersData);
 ---
 
 <BaseLayout>

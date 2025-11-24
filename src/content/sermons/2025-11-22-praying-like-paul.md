@@ -1,9 +1,9 @@
 ---
 title: Praying Like Paul
 date: 2025-10-12
-series: thessalonians-gospel-encouragement-for-everyday-life
+series: src/content/series/thessalonians-gospel-encouragement-for-everyday-life.md
 scripture: 1 Thessalonians 3:9–13
-preacher: tyler-mykkanen
+preacher: src/content/preachers/tyler-mykkanen.md
 spotifyURL: https://open.spotify.com/episode/3fc2cn5uD4KFe8KNPazqw1?si=Vncwm3WJRoq5K-T2wM7cug
 googleDocsURL: https://drive.google.com/file/d/1-5Y7C6E0u9VIOMyJtBsX3ctHIyk9zAvW/view
 ---
