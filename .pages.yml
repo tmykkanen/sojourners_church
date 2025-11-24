@@ -16,9 +16,6 @@ content:
         label: Title
         type: string
         required: true
-      - name: test
-        label: TEST
-        type: customString
       - name: date
         label: Date Preached
         type: date
