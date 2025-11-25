@@ -74,7 +74,6 @@
     }
   };
 
-  // let selectedSeries: SeriesData | undefined = $state({id: '', title: ''});
   let selectedSeries: CollectionEntry<"series"> | undefined = $state();
   let selectedPreacher: CollectionEntry<"preachers"> | undefined = $state();
   let startDate: string | undefined = $state();
@@ -83,7 +82,6 @@
   let filteredSermons = $derived.by(() => getFilteredSermons(allSermonData));
 </script>
 
-<!-- TODO: COMBINE ELEMENTS-->
 <Text as="h2" variant="heading"
   >{selectedSeries
     ? `Sermons from ${selectedSeries.data.title}`
@@ -100,71 +98,21 @@
   </button>
 {/if}
 
-<!-- <div class="join">
-  <div
-    class="join-item bg-base-100 px-(--spacing-sm) text-sm border border-base-content/20 h-full flex items-center"
-  >
-    <p>Series:</p>
-  </div>
-  <select
-    class={["select join-item", { "text-base-content/35": !selectedSeries }]}
-    id="selectSeries"
-    bind:value={() => undefined, (v) => (selectedSeries = v)}
-  >
-    <option value="" selected>Filter by Series</option>
-    <option value="" disabled>-----</option>
-    {#each allSeriesData as option}
-      <option value={option}>{option.title}</option>
-    {/each}
-  </select>
-</div> -->
-
-<!-- <select
-  class="select"
-  id="selectPreacher"
-  bind:value={() => undefined, (v) => (selectedPreacher = v)}
->
-  <option value="" selected>Filter by Preacher</option>
-  <option value="" disabled>-----</option>
-  {#each allPreachersData as option}
-    <option value={option}>{option.data.name}</option>
-  {/each}
-</select> -->
-
-<FilterInput
-  label="Series"
-  bind:value={selectedSeries}
-  options={allSeriesData}
-  type="select"
-/>
-<FilterInput
-  label="Preacher"
-  bind:value={selectedPreacher}
-  options={allPreachersData}
-  type="select"
-/>
-
-<div class="flex gap-(--spacing-xs) flex-col">
+<div class="flex flex-col gap-(--spacing-xs) md:grid md:grid-cols-2">
+  <FilterInput
+    label="Series"
+    bind:value={selectedSeries}
+    options={allSeriesData}
+    type="select"
+  />
+  <FilterInput
+    label="Preacher"
+    bind:value={selectedPreacher}
+    options={allPreachersData}
+    type="select"
+  />
   <FilterInput type="date" bind:value={startDate} label="From" />
   <FilterInput type="date" bind:value={endDate} label="To" />
-  <!-- <div class="join items-center">
-    <div
-      class="join-item bg-base-100 px-(--spacing-sm) text-sm border border-base-content/20 h-full flex items-center"
-    >
-      <p>From:</p>
-    </div>
-
-    <input type="date" class="input join-item" bind:value={startDate} />
-  </div> -->
-  <!-- <div class="join items-center">
-    <div
-      class="join-item bg-base-100 px-(--spacing-sm) text-sm border border-base-content/20 h-full flex items-center"
-    >
-      <p>To:</p>
-    </div>
-
-    <input type="date" class="input join-item" bind:value={endDate} />
-  </div> -->
 </div>
 
 <div

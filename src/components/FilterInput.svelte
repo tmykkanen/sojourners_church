@@ -13,14 +13,17 @@
 
 <div class="join">
   <div
-    class="join-item bg-base-100 px-(--spacing-sm) text-sm border border-base-content/20 h-full flex items-center"
+    class="join-item bg-base-100 px-(--spacing-sm) text-sm border border-base-content/20 h-full flex items-center flex-1/4 sm:flex-1 min-w-24"
   >
     <p>{label}:</p>
   </div>
   {#if type == "select"}
     <select
-      class={["select join-item", { "text-base-content/35": !value }]}
-      id="selectSeries"
+      class={[
+        "select join-item flex-[65%]",
+        { "text-base-content/35": !value },
+      ]}
+      id={`select${label}`}
       bind:value={() => undefined, (v) => (value = v)}
     >
       <option value="" selected>Filter by {label}</option>
@@ -38,6 +41,10 @@
     </select>
   {/if}
   {#if type == "date"}
-    <input type="date" class="input join-item" bind:value />
+    <input
+      type="date"
+      class={["input join-item flex-[65%]", { "text-base-content/35": !value }]}
+      bind:value
+    />
   {/if}
 </div>
