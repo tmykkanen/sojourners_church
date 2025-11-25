@@ -17,7 +17,7 @@ const allSermons = (await getCollection("sermons")).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 
-console.log(allSermons[0]);
+// console.log(allSermons[0]);
 // console.log(allSermons[0].data.series.match(/([^\/?#]+)$/g));
 
 const getSermonData = (sermonData: CollectionEntry<"sermons">[]) => {
@@ -34,16 +34,16 @@ const getSermonData = (sermonData: CollectionEntry<"sermons">[]) => {
 const allSermonData = await getSermonData(allSermons);
 
 // ----- GET ALL SERMON SERIES ----- //
-const allSeries = (await getCollection("series")).sort(
+const allSeriesData = (await getCollection("series")).sort(
   (a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf(),
 );
 
-const allSeriesData = allSeries.map((item) => {
-  return {
-    id: item.id,
-    title: item.data.title,
-  };
-});
+// const allSeriesData = allSeries.map((item) => {
+//   return {
+//     id: item.id,
+//     title: item.data.title,
+//   };
+// });
 
 // ----- GET ALL PREACHERS ----- //
 // TODO: Sort data by number of sermons / priority?

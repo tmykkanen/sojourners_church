@@ -26,6 +26,7 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
+    "@iconify/svelte": "^5.1.0",
     "@typescript-eslint/parser": "^8.33.1",
     "daisyui": "^5.0.43",
     "date-fns": "^4.1.0",
