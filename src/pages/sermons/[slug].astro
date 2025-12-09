@@ -1,0 +1,95 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, getEntry, render } from "astro:content";
+import { type GetStaticPaths } from "astro";
+import { format } from "date-fns";
+import Header from "$lib/components/Header.astro";
+import SpotifyAudioEmbed from "$lib/components/SpotifyAudioEmbed.astro";
+import Text from "$lib/components/Text.svelte";
+import BaseLayout from "$layouts/BaseLayout.astro";
+
+export const getStaticPaths = (async () => {
+  const posts = (await getCollection("sermons")).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  );
+  return posts.map((post, index) => ({
+    params: { slug: post.id },
+    props: {
+      post,
+      prevEntryIndex: index + 1,
+      nextEntryIndex: index - 1,
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+const {
+  post,
+  post: {
+    data: {
+      title,
+      date,
+      scripture,
+      preacher: preacherReference,
+      series: seriesReference,
+    },
+  },
+  prevEntryIndex,
+  nextEntryIndex,
+} = Astro.props;
+
+const { data: series } = await getEntry(seriesReference);
+const { data: preacher } = await getEntry(preacherReference);
+
+const { Content } = await render(post);
+
+import img from "../../../public/media/Thessalonian Sermon Series graphic bulletin.jpg";
+---
+
+<BaseLayout>
+  <Header />
+  <main class="layout-base gap-4">
+    <SpotifyAudioEmbed />
+    <div class="full-width stack-layout">
+      <Text as="h1" variant="display" class="stack-text">{title}</Text>
+      <Image src={img} alt=`${series.title} image` width={2000} height={2000} layout="constrained" class="opacity-10 stack-bg"/>
+    </div>
+    <div>
+      <Text as="span" variant="meta">
+        {
+          format(
+            new Date(
+              date.valueOf() +
+              date.getTimezoneOffset() * 60 * 1000,
+            ),
+            "LLLL dd, yyyy",
+          )
+        } - {scripture} - {
+        preacher.name
+        }
+      </Text>
+
+    </div>
+    <Content />
+  </main>
+</BaseLayout>
+
+<style>
+  .stack-layout {
+    display: grid;
+    grid-template-areas: "stack";
+  }
+
+  .stack-layout > * {
+    grid-area: stack;
+  }
+
+  .stack-bg {
+    width: 100%;
+  }
+
+  .stack-text {
+    place-self: center;
+    text-align: center;
+    z-index: 10;
+  }
+</style>

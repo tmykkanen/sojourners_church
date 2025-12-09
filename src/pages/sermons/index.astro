@@ -1,0 +1,63 @@
+---
+// TODO: Redo interaction with Bible Parser
+import { format } from "date-fns";
+import BaseLayout from "$layouts/BaseLayout.astro";
+import Footer from "$lib/components/Footer.astro";
+import Header from "$lib/components/Header.astro";
+import SermonCardDisplay from "$lib/components/SermonCard/SermonCardDisplay.svelte";
+import SermonFilter from "$lib/components/SermonFilter/SermonFilter.svelte";
+import SpotifyAudioEmbed from "$lib/components/SpotifyAudioEmbed.astro";
+import Text from "$lib/components/Text.svelte";
+import { Button } from "$lib/components/ui/button";
+import { getAllSermonData, getAllPreachersData, getAllSeriesData } from "$lib/posts";
+
+const allSermonData = await getAllSermonData()
+const allSeriesData = await getAllSeriesData()
+const allPreachersData = await getAllPreachersData()
+
+---
+
+<BaseLayout>
+  <Header />
+  <main class="layout-base gap-8 py-8">
+    <h1 class="sr-only">Sermons</h1>
+    <section class="flex flex-col gap-2">
+      <Text as="h2" variant="heading">Latest Sermon</Text>
+      <Button
+        variant="link"
+        href={`/sermons/${allSermonData[0].id}`}
+        class="hover:text-primary h-fit justify-start p-0"
+      >
+        <Text as="span" variant="subheading">
+          {allSermonData[0].data.title}
+        </Text>
+      </Button>
+      <Text as="span" variant="meta">
+        {
+          format(
+            new Date(
+              allSermonData[0].data.date.valueOf() +
+                allSermonData[0].data.date.getTimezoneOffset() * 60 * 1000,
+            ),
+            "LLLL dd, yyyy",
+          )
+        } - {allSermonData[0].data.scripture} - {
+          allSermonData[0].preacher.data.name
+        }
+      </Text>
+      <SpotifyAudioEmbed spotifyURL={allSermonData[0].data.spotifyURL} />
+    </section>
+    <section class="flex flex-col gap-2">
+      <SermonFilter
+        client:load
+        {allSermonData}
+        {allSeriesData}
+        {allPreachersData}
+      />
+      <div class="flex flex-col gap-8 pt-8 lg:grid lg:grid-cols-2">
+        <SermonCardDisplay client:load {allSermonData}/>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
