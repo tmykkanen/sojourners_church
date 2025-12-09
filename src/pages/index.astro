@@ -1,11 +1,35 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Footer from "$lib/components/Footer.astro";
+import Header from "$lib/components/Header.astro";
+import Text from "$lib/components/Text.svelte";
+import { Button } from "$lib/components/ui/button";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout>
+  <Header />
+  <main>
+    <div class="grid min-h-screen w-full bg-cover bg-right"
+    style="background-image: url(/albert-lea.jpg)"
+    >
+      <!-- Overlay Div -->
+      <div class="bg-muted col-start-1 row-start-1 h-full w-full opacity-85"/>
+
+      <div class="layout-base isolate col-start-1 row-start-1 gap-y-8">
+        <Text as="h2" variant="displayXL">
+          <span class="opacity-40">We exist to be and make</span>
+          <br />
+          <span class="text-primary">eternally joyful disciples</span>
+          <br />
+          <span class="opacity-40"> of Jesus Christ. </span>
+        </Text>
+        <Button variant="accent" class="h-full" href="#">
+          <Text as="span" variant="button">
+          10 am Sundays at the Skyline Plaza | Click here for livestream
+          </Text>
+        </Button>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
