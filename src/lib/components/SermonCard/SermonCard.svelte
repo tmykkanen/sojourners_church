@@ -1,10 +1,10 @@
 <script lang="ts">
-import {format} from "date-fns"
-import Text from "$lib/components/Text.svelte"
-import * as Card from "$lib/components/ui/card"
-import {type SermonData} from "$lib/types"
+import { format } from "date-fns";
+import Text from "$lib/components/Text.svelte";
+import * as Card from "$lib/components/ui/card";
+import { type SermonData } from "$lib/types";
 
-const {baseUrl, sermon}: {baseUrl: string, sermon: SermonData} = $props()
+const { baseUrl, sermon }: { baseUrl: string; sermon: SermonData } = $props();
 const {
   id,
   data: { title, date, scripture },

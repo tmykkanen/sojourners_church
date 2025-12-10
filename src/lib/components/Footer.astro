@@ -1,14 +1,14 @@
 ---
 import { Icon } from "astro-icon/components";
 import { superValidate } from "sveltekit-superforms";
-import { zod } from "sveltekit-superforms/adapters";
+import { zod4 } from "sveltekit-superforms/adapters";
+import { z } from "zod";
 import SubscribeForm from "$lib/components/SubscribeForm/SubscribeForm.svelte";
 import { zSubscribeValues } from "$lib/components/SubscribeForm/schema";
 import Text from "$lib/components/Text.svelte";
 import { Button } from "$lib/components/ui/button";
 
-// FIX: Hack using any
-const sv = await superValidate(Astro.request, zod(zSubscribeValues as any));
+const sv = await superValidate(Astro.request, zod4(zSubscribeValues));
 ---
 
 <footer class="bg-accent text-accent-foreground layout-base py-8">

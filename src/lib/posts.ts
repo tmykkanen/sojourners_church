@@ -1,5 +1,5 @@
-import { type SermonData } from "./types";
 import { getCollection, getEntry } from "astro:content";
+import type { SermonData } from "./types";
 
 export async function getAllSermonData(): Promise<SermonData[]> {
   const allSermons = (await getCollection("sermons")).sort(

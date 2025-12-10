@@ -9,12 +9,15 @@ import SermonFilter from "$lib/components/SermonFilter/SermonFilter.svelte";
 import SpotifyAudioEmbed from "$lib/components/SpotifyAudioEmbed.astro";
 import Text from "$lib/components/Text.svelte";
 import { Button } from "$lib/components/ui/button";
-import { getAllSermonData, getAllPreachersData, getAllSeriesData } from "$lib/posts";
+import {
+  getAllPreachersData,
+  getAllSeriesData,
+  getAllSermonData,
+} from "$lib/posts";
 
-const allSermonData = await getAllSermonData()
-const allSeriesData = await getAllSeriesData()
-const allPreachersData = await getAllPreachersData()
-
+const allSermonData = await getAllSermonData();
+const allSeriesData = await getAllSeriesData();
+const allPreachersData = await getAllPreachersData();
 ---
 
 <BaseLayout>
@@ -59,5 +62,5 @@ const allPreachersData = await getAllPreachersData()
       </div>
     </section>
   </main>
-  <Footer />
+  <!-- <Footer /> -->
 </BaseLayout>

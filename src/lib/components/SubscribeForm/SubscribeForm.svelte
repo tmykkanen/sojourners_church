@@ -5,7 +5,7 @@ import { Mail } from "@lucide/svelte";
 import { toast } from "svelte-sonner";
 
 import { type SuperValidated, superForm } from "sveltekit-superforms";
-import { zodClient } from "sveltekit-superforms/adapters";
+import { zod4Client } from "sveltekit-superforms/adapters";
 import {
   type Message,
   type SubscribeValues,
@@ -20,8 +20,7 @@ import { Toaster } from "$lib/components/ui/sonner";
 let { sv }: { sv: SuperValidated<SubscribeValues, Message> } = $props();
 
 const sf = superForm(sv, {
-  // FIX: Hack using any
-  validators: zodClient(zSubscribeValues as any),
+  validators: zod4Client(zSubscribeValues),
   onError: () => {
     toast.error(i18n());
   },

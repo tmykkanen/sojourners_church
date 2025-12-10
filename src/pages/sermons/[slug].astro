@@ -3,10 +3,10 @@ import { Image } from "astro:assets";
 import { getCollection, getEntry, render } from "astro:content";
 import { type GetStaticPaths } from "astro";
 import { format } from "date-fns";
+import BaseLayout from "$layouts/BaseLayout.astro";
 import Header from "$lib/components/Header.astro";
 import SpotifyAudioEmbed from "$lib/components/SpotifyAudioEmbed.astro";
 import Text from "$lib/components/Text.svelte";
-import BaseLayout from "$layouts/BaseLayout.astro";
 
 export const getStaticPaths = (async () => {
   const posts = (await getCollection("sermons")).sort(
