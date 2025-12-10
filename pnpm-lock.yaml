@@ -35,6 +35,12 @@ importers:
       nanostores:
         specifier: ^1.1.0
         version: 1.1.0
+      prettier:
+        specifier: ^3.7.4
+        version: 3.7.4
+      prettier-plugin-astro:
+        specifier: ^0.14.1
+        version: 0.14.1
       resend:
         specifier: ^6.6.0
         version: 6.6.0
@@ -7879,7 +7885,6 @@ snapshots:
       '@astrojs/compiler': 2.13.0
       prettier: 3.7.4
       sass-formatter: 0.7.9
-    optional: true
 
   prettier-plugin-tailwindcss@0.7.2(prettier-plugin-astro@0.14.1)(prettier@3.7.4):
     dependencies:
@@ -8166,8 +8171,7 @@ snapshots:
     optionalDependencies:
       '@sveltejs/kit': 2.49.2(@opentelemetry/api@1.9.0)(@sveltejs/vite-plugin-svelte@5.1.1(svelte@5.45.8)(vite@6.4.1(@types/node@24.10.2)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2)))(svelte@5.45.8)(vite@6.4.1(@types/node@24.10.2)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2))
 
-  s.color@0.0.15:
-    optional: true
+  s.color@0.0.15: {}
 
   sade@1.8.1:
     dependencies:
@@ -8184,7 +8188,6 @@ snapshots:
   sass-formatter@0.7.9:
     dependencies:
       suf-log: 2.5.3
-    optional: true
 
   sax@1.4.3: {}
 
@@ -8342,7 +8345,6 @@ snapshots:
   suf-log@2.5.3:
     dependencies:
       s.color: 0.0.15
-    optional: true
 
   superstruct@2.0.2:
     optional: true

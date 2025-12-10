@@ -1,14 +1,21 @@
 ---
 import { Icon } from "astro-icon/components";
 import { superValidate } from "sveltekit-superforms";
-import { zod4 } from "sveltekit-superforms/adapters";
+import { zod4, zod } from "sveltekit-superforms/adapters";
 import { z } from "zod";
+import AstroForm from "$lib/components/SubscribeForm/AstroForm.astro";
 import SubscribeForm from "$lib/components/SubscribeForm/SubscribeForm.svelte";
 import { zSubscribeValues } from "$lib/components/SubscribeForm/schema";
 import Text from "$lib/components/Text.svelte";
 import { Button } from "$lib/components/ui/button";
+import {actions} from "astro:actions"
 
-const sv = await superValidate(Astro.request, zod4(zSubscribeValues));
+
+
+
+// FIX
+// const sv = await superValidate(Astro.request, zod4(zSubscribeValues));
+// const sv = await superValidate(Astro.request, zod(zSubscribeValues));
 ---
 
 <footer class="bg-accent text-accent-foreground layout-base py-8">
@@ -31,42 +38,44 @@ const sv = await superValidate(Astro.request, zod4(zSubscribeValues));
           (507) 552-1595
         </address>
         <div class="flex">
-          <Button href="#"  variant="footer-icon"><Icon name={"simple-icons:facebook"} /></Button>
-          <Button href="#"  variant="footer-icon"><Icon name={"simple-icons:youtube"} /></Button>
-          <Button href="#"  variant="footer-icon"><Icon name={"simple-icons:spotify"} /></Button>
-          <Button href="#"variant="footer-icon" ><Icon name={"simple-icons:whatsapp"} /></Button>
-
+          <Button href="#" variant="footer-icon"
+            ><Icon name={"simple-icons:facebook"} /></Button
+          >
+          <Button href="#" variant="footer-icon"
+            ><Icon name={"simple-icons:youtube"} /></Button
+          >
+          <Button href="#" variant="footer-icon"
+            ><Icon name={"simple-icons:spotify"} /></Button
+          >
+          <Button href="#" variant="footer-icon"
+            ><Icon name={"simple-icons:whatsapp"} /></Button
+          >
         </div>
       </div>
     </section>
     <section class="flex flex-col gap-8">
       <div class="flex flex-col gap-2">
-        <Text as="h2" variant="heading">
-          Weekly Bulletin
-        </Text>
+        <Text as="h2" variant="heading"> Weekly Bulletin </Text>
         <p>
           Sign up to stay informed and connected to Sojourners Church weekly
           happenings.
         </p>
       </div>
-      <SubscribeForm client:load {sv}/>
+      <!-- <SubscribeForm client:load {sv} /> -->
+      <AstroForm />
+
     </section>
 
     <section class="flex flex-col gap-8">
       <div class="flex flex-col gap-2">
-        <Text as="h2" variant="heading">
-          Give to Sojourners
-        </Text>
+        <Text as="h2" variant="heading"> Give to Sojourners </Text>
 
         <p>
           Click below to set up a one time or recurring gift to Sojourners
           Church.
         </p>
       </div>
-      <Button variant="footer-button">Give</Button
-      >
+      <Button variant="footer-button">Give</Button>
     </section>
-
   </div>
-
 </footer>

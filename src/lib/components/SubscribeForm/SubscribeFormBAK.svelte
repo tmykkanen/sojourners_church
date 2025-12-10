@@ -1,11 +1,9 @@
 <script lang="ts">
   import { actions } from "astro:actions";
   import { Mail } from "@lucide/svelte";
-
   import { toast } from "svelte-sonner";
-
   import { type SuperValidated, superForm } from "sveltekit-superforms";
-  import { zod4Client, zodClient } from "sveltekit-superforms/adapters";
+  import { zod4Client } from "sveltekit-superforms/adapters";
   import {
     type Message,
     type SubscribeValues,
@@ -17,11 +15,13 @@
   import * as InputGroup from "$lib/components/ui/input-group";
   import { Toaster } from "$lib/components/ui/sonner";
 
-  let { sv }: { sv: SuperValidated<SubscribeValues, Message> } = $props();
+  // Get
+  let {
+    subscribeSV,
+  }: { subscribeSV: SuperValidated<SubscribeValues, Message> } = $props();
 
-  const sf = superForm(sv, {
-    // FIX: Hack using any
-    validators: zodClient(zSubscribeValues as any),
+  const sf = superForm(subscribeSV, {
+    validators: zod4Client(zSubscribeValues),
     onError: () => {
       toast.error(i18n());
     },
@@ -39,14 +39,12 @@
     if (code === "SUCCESS") return "Successfully subscribed.";
     return "An error occurred. Please try again later.";
   }
-
-
 </script>
 
 <Card.Root class="w-full py-0 bg-accent border-none shadow-none">
   <form
     method="POST"
-    action={actions.subscribe}
+    action={actions.submit}
     use:enhance
     novalidate
     class="flex flex-col gap-2"
@@ -103,9 +101,13 @@
       </Form.Field>
     </Card.Content>
     <Card.Footer class="px-0 w-full">
-      <Form.Button disabled={$submitting} class="w-full" variant="footer-button"
-        >{$delayed ? "Subscribing..." : "Subscribe"}</Form.Button
+      <Form.Button
+        disabled={$submitting}
+        class="w-full"
+        variant="footer-button"
       >
+        {$delayed ? "Subscribing..." : "Subscribe"}
+      </Form.Button>
     </Card.Footer>
   </form>
 </Card.Root>

@@ -1,8 +1,10 @@
-interface ImportMetaEnv {
-  readonly MAILCHIMP_API_KEY: string;
-  readonly MAILCHIMP_SERVER_PREFIX: string;
-}
+// import { SuperValidated } from "sveltekit-superforms";
 
-interface ImportMeta {
-  readonly env: ImportMetaEnv;
+/// <reference types="astro/client" />
+/// <reference types="sveltekit-superforms" />
+// https://docs.astro.build/en/guides/middleware/#middleware-types
+declare namespace App {
+  interface Locals {
+    title: string;
+  }
 }
