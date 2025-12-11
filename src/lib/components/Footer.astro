@@ -3,7 +3,7 @@ import { Icon } from "astro-icon/components";
 import { superValidate } from "sveltekit-superforms";
 import { zod4, zod } from "sveltekit-superforms/adapters";
 import { z } from "zod";
-import AstroForm from "$lib/components/SubscribeForm/AstroForm.astro";
+import AstroForm from "$lib/components/SubscribeForm/AstroForm.svelte";
 import SubscribeForm from "$lib/components/SubscribeForm/SubscribeForm.svelte";
 import { zSubscribeValues } from "$lib/components/SubscribeForm/schema";
 import Text from "$lib/components/Text.svelte";
@@ -62,7 +62,7 @@ import {actions} from "astro:actions"
         </p>
       </div>
       <!-- <SubscribeForm client:load {sv} /> -->
-      <AstroForm />
+      <AstroForm client:load/>
 
     </section>
 
