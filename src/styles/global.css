@@ -184,7 +184,19 @@
   }
 }
 
-/* CUSTOM */
+/* ---------------------- */
+/* ----- CUSTOM CSS ----- */
+/* ---------------------- */
+
+/* https://tailwindcss.com/docs/upgrade-guide#buttons-use-the-default-cursor */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/scrollbar-color */
 @layer base {
   :root {
     scrollbar-color: var(--muted-foreground) var(--muted);

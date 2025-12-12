@@ -1,12 +1,34 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { Button } from "@/components/ui/button";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { ButtonLink } from "@/components/ButtonLink";
+import { StyledText } from "@/components/StyledText";
 ---
 
 <BaseLayout>
-  <h1 class="text-2xl">Hello!</h1>
-  <Button>Click me!</Button>
+  <h2>HEADER</h2>
+  <main>
+    <div
+      class="grid min-h-screen w-full bg-cover bg-right"
+      style="background-image: url(/albert-lea.jpg)"
+    >
+      <!-- BG OVERLAY -->
+      <div class="bg-muted col-start-1 row-start-1 h-full w-full opacity-85">
+      </div>
+      <div class="layout-base isolate col-start-1 row-start-1 gap-y-8">
+        <StyledText as="h2" variant="displayXL">
+          <span class="opacity-40">We exist to be and make</span>
+          <br />
+          <span class="text-primary">eternally joyful disciples</span>
+          <br />
+          <span class="opacity-40">of Jesus Christ.</span>
+        </StyledText>
+        <ButtonLink variant="accent" href="#" className="w-full h-auto">
+          <StyledText as="span" variant="button">
+            10 am Sundays at the Skyline Plaza | Click here for livestream
+          </StyledText>
+        </ButtonLink>
+      </div>
+    </div>
+  </main>
+  <h2>FOOTER</h2>
 </BaseLayout>
