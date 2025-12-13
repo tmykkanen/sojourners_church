@@ -1,0 +1,68 @@
+---
+import { ButtonLink } from "./ButtonLink";
+import { Icon } from "astro-icon/components";
+import { StyledText } from "./StyledText";
+import { Button } from "./ui/button";
+
+// TODO: Impement form
+---
+
+<footer class="bg-accent text-accent-foreground layout-base py-8">
+  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <section class="flex flex-col gap-8">
+      <h2 class="sr-only">Address & Contact Info</h2>
+      <div class="flex flex-col gap-2">
+        <StyledText as="h3" variant="heading">Sundays at 10am</StyledText>
+        <address>
+          1679 West Main Street <br />
+          Skyline Plaza <br />
+          Albert Lea, MN 56007
+        </address>
+      </div>
+      <div class="flex flex-col gap-2">
+        <StyledText as="h3" variant="heading">Contact Us</StyledText>
+        <address>
+          <a href="mailto:hello@sojourners.church">hello@sojourners.church</a>
+          <br />
+          (507) 552-1595
+        </address>
+        <div class="flex">
+          <ButtonLink href="#" variant="footer-icon"
+            ><Icon name={"simple-icons:facebook"} /></ButtonLink
+          >
+          <ButtonLink href="#" variant="footer-icon"
+            ><Icon name={"simple-icons:youtube"} /></ButtonLink
+          >
+          <ButtonLink href="#" variant="footer-icon"
+            ><Icon name={"simple-icons:spotify"} /></ButtonLink
+          >
+          <ButtonLink href="#" variant="footer-icon"
+            ><Icon name={"simple-icons:whatsapp"} /></ButtonLink
+          >
+        </div>
+      </div>
+    </section>
+    <section class="flex flex-col gap-8">
+      <div class="flex flex-col gap-2">
+        <StyledText as="h2" variant="heading"> Weekly Bulletin </StyledText>
+        <p>
+          Sign up to stay informed and connected to Sojourners Church weekly
+          happenings.
+        </p>
+      </div>
+      <h2>TODO: FORM</h2>
+    </section>
+
+    <section class="flex flex-col gap-8">
+      <div class="flex flex-col gap-2">
+        <StyledText as="h2" variant="heading"> Give to Sojourners </StyledText>
+
+        <p>
+          Click below to set up a one time or recurring gift to Sojourners
+          Church.
+        </p>
+      </div>
+      <Button variant="footer-button">Give</Button>
+    </section>
+  </div>
+</footer>
