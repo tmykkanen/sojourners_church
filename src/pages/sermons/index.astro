@@ -1,0 +1,71 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import { StyledText } from "@/components/StyledText";
+import { ButtonLink } from "@/components/ButtonLink";
+import { format } from "date-fns";
+import {
+  getAllPreachersData,
+  getAllSeriesData,
+  getAllSermonData,
+} from "@/lib/posts";
+import SpotifyAudioEmbed from "@/components/SpotifyAudioEmbed.astro";
+import { SermonFilter } from "@/components/SermonFilter/SermonFilter";
+
+const allSermonData = await getAllSermonData();
+const allSeriesData = await getAllSeriesData();
+const allPreachersData = await getAllPreachersData();
+---
+
+<BaseLayout>
+  <Header />
+  <main class="layout-base gap-8 py-8">
+    <h1 class="sr-only">Sermons</h1>
+    <section class="flex flex-col gap-2">
+      <StyledText as="h2" variant="heading">Latest Sermon</StyledText>
+      <ButtonLink
+        variant="link"
+        href={`/sermons/${allSermonData[0].id}`}
+        className="hover:text-primary h-fit justify-start p-0"
+      >
+        <StyledText as="span" variant="subheading">
+          {allSermonData[0].data.title}
+        </StyledText>
+      </ButtonLink>
+      <StyledText as="span" variant="meta">
+        {
+          format(
+            new Date(
+              allSermonData[0].data.date.valueOf() +
+                allSermonData[0].data.date.getTimezoneOffset() * 60 * 1000,
+            ),
+            "LLLL dd, yyyy",
+          )
+        } - {allSermonData[0].data.scripture} - {
+          allSermonData[0].preacher.data.name
+        }
+      </StyledText>
+      <SpotifyAudioEmbed spotifyURL={allSermonData[0].data.spotifyURL} />
+    </section>
+    <section class="flex flex-col gap-2">
+      <!-- <SermonFilter
+        client:load
+        {allSermonData}
+        {allSeriesData}
+        {allPreachersData}
+      /> -->
+      <SermonFilter
+        {allSermonData}
+        {allSeriesData}
+        {allPreachersData}
+        client:load
+      />
+      <div class="flex flex-col gap-8 pt-8 lg:grid lg:grid-cols-2">
+        <!-- <SermonCardDisplay client:load {allSermonData}/> -->
+        <h2>SERMON CARDS</h2>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
