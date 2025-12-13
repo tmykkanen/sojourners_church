@@ -12,6 +12,9 @@ import {
 } from "@/lib/posts";
 import SpotifyAudioEmbed from "@/components/SpotifyAudioEmbed.astro";
 import { SermonFilter } from "@/components/SermonFilter/SermonFilter";
+// import { SermonCard } from "@/components/SermonCards/SermonCard";
+import { SermonCardDisplay } from "@/components/SermonCards/SermonCardDisplay";
+// import { $filteredSermons } from "@/lib/nanostores";
 
 const allSermonData = await getAllSermonData();
 const allSeriesData = await getAllSeriesData();
@@ -61,10 +64,7 @@ const allPreachersData = await getAllPreachersData();
         {allPreachersData}
         client:load
       />
-      <div class="flex flex-col gap-8 pt-8 lg:grid lg:grid-cols-2">
-        <!-- <SermonCardDisplay client:load {allSermonData}/> -->
-        <h2>SERMON CARDS</h2>
-      </div>
+      <SermonCardDisplay {allSermonData} client:load />
     </section>
   </main>
   <Footer />

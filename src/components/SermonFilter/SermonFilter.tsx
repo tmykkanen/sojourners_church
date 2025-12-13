@@ -20,11 +20,8 @@ const SermonFilter: React.FC<SermonFilterProps> = ({
 
   return (
     <div className="flex flex-col gap-2 md:grid md:grid-cols-2">
-      <h1>Sermon Filter Component</h1>
       <SermonFilterSelect data={allSeriesData} type="series" />
       <SermonFilterSelect data={allPreachersData} type="preacher" />
-      <p>SERIES: {series}</p>
-      <p>PREACHER: {preacher}</p>
     </div>
   );
 };

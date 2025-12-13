@@ -30,3 +30,5 @@ export async function getAllPreachersData() {
     )
     .sort((a, b) => b.data.priority - a.data.priority);
 }
+
+export const allSermonData = await getAllSermonData();
