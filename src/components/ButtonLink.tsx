@@ -20,4 +20,4 @@ const ButtonLink: React.FC<ButtonLinkProps> = ({
   );
 };
 
-export { ButtonLink };
+export { ButtonLink, type ButtonLinkProps };
