@@ -52,12 +52,6 @@ const allPreachersData = await getAllPreachersData();
       <SpotifyAudioEmbed spotifyURL={allSermonData[0].data.spotifyURL} />
     </section>
     <section class="flex flex-col gap-2">
-      <!-- <SermonFilter
-        client:load
-        {allSermonData}
-        {allSeriesData}
-        {allPreachersData}
-      /> -->
       <SermonFilter
         {allSermonData}
         {allSeriesData}
