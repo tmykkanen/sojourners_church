@@ -3,8 +3,7 @@ import { ButtonLink } from "./ButtonLink";
 import { Icon } from "astro-icon/components";
 import { StyledText } from "./StyledText";
 import { Button } from "./ui/button";
-
-// TODO: Impement form
+import SubscribeForm from "./SubscribeForm";
 ---
 
 <footer class="bg-accent text-accent-foreground layout-base py-8">
@@ -50,7 +49,7 @@ import { Button } from "./ui/button";
           happenings.
         </p>
       </div>
-      <h2>TODO: FORM</h2>
+      <SubscribeForm client:load />
     </section>
 
     <section class="flex flex-col gap-8">

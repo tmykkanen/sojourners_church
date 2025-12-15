@@ -62,7 +62,7 @@
 }
 
 /* Sensible defaults for list styling */
-ol {
+/*ol {
   counter-reset: counter;
 }
 
@@ -76,4 +76,4 @@ ol li {
 ol li::before {
   content: counter(counter) ". ";
   color: var(--color-primary);
-}
+}*/

@@ -8,6 +8,7 @@ import { StyledText } from "../StyledText";
 import { Undo2 } from "lucide-react";
 import { Button } from "../ui/button";
 
+// TODO: Consider converting to API endpoint rather than passing data?
 interface SermonFilterProps {
   allSermonData: SermonData[];
   allSeriesData: SeriesData[];
