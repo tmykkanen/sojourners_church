@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
-    "@iconify-json/simple-icons": "^1.2.62",
+    "@iconify-json/simple-icons": "^1.2.63",
     "@internationalized/date": "^3.10.0",
     "@nanostores/react": "^1.0.0",
     "@radix-ui/react-dialog": "^1.1.15",
