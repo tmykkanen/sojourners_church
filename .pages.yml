@@ -1,0 +1,180 @@
+media:
+  - name: media
+    label: Media
+    input: public/media
+    output: /media
+    path: /media
+content:
+  - name: sermons
+    label: Sermons
+    type: collection
+    path: src/content/sermons
+    view:
+      fields: [title, date, text]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date Preached
+        type: date
+        required: true
+      - name: series
+        label: Sermon Series
+        type: reference
+        options:
+          collection: series
+          # value: "{slug}"
+          label: "{title}"
+        required: true
+      - name: scripture
+        label: Sermon Text
+        type: string # TODO: Configure sermon text
+      - name: preacher
+        label: Preacher
+        type: reference
+        options:
+          collection: preachers
+          # value: "{slug}"
+          # search: "name,fields.slug,fields.name"
+          label: "{fields.name}"
+        required: true
+      - name: spotifyURL
+        label: Spotify URL
+        type: string
+      - name: googleDocsURL
+        label: Google Docs URL
+        type: string
+      - name: body
+        label: Notes
+        type: text
+  - name: preachers
+    label: Preachers
+    type: collection
+    path: src/content/preachers
+    filename: "{primary}.md"
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+        pattern:
+          message: "Please enter a first and last name."
+          regex: "^[a-zA-Z]+([ \-'][a-zA-Z]+)+$"
+      - name: slug
+        label: Slug
+        type: string
+        required: true
+      - name: isGuest
+        label: Guest Preacher
+        type: boolean
+      - name: priority
+        label: Priority
+        type: number
+        default: 0
+      - name: bio
+        label: Bio
+        type: text
+      - name: image
+        label: Upload a Picture
+        type: image
+    view:
+      primary: name
+  - name: series
+    label: Sermon Series
+    type: collection
+    path: src/content/series
+    filename: "{primary}.md"
+    view:
+      fields: [title, imageSquare, book]
+    fields:
+      - name: title
+        label: Series Title
+        type: string
+        required: true
+      - name: slug
+        label: Slug
+        type: string
+        required: true
+      - name: image
+        label: Series Image
+        type: image
+        required: true
+      - name: imageSquare
+        label: Square series image
+        type: image
+        required: true
+      - name: startDate
+        label: Start date
+        type: date
+        required: true
+      - name: book
+        label: Bible Book(s)
+        type: select
+        options:
+          multiple: true
+          values:
+            [
+              "Genesis",
+              "Exodus",
+              "Leviticus",
+              "Numbers",
+              "Deuteronomy",
+              "Joshua",
+              "Judges",
+              "Ruth",
+              "1 Samuel",
+              "2 Samuel",
+              "1 Kings",
+              "2 Kings",
+              "1 Chronicles",
+              "2 Chronicles",
+              "Ezra",
+              "Nehemiah",
+              "Esther",
+              "Job",
+              "Psalms",
+              "Proverbs",
+              "Ecclesiastes",
+              "Song of Solomon",
+              "Isaiah",
+              "Jeremiah",
+              "Lamentations",
+              "Ezekiel",
+              "Daniel",
+              "Hosea",
+              "Joel",
+              "Amos",
+              "Obadiah",
+              "Jonah",
+              "Micah",
+              "Nahum",
+              "Habakkuk",
+              "Zephaniah",
+              "Haggai",
+              "Zechariah",
+              "Malachi",
+              "Matthew",
+              "Mark",
+              "Luke",
+              "John",
+              "Acts",
+              "Romans",
+              "1 Corinthians",
+              "2 Corinthians",
+              "Galatians",
+              "Ephesians",
+              "Philippians",
+              "Colossians",
+              "1 Thessalonians",
+              "2 Thessalonians",
+              "1 Timothy",
+              "2 Timothy",
+              "Titus",
+              "Philemon",
+              "Hebrews",
+              "James",
+              "Jude",
+              "Revelation",
+            ]

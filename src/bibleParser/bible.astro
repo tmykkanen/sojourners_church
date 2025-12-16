@@ -1,0 +1,46 @@
+---
+import Header from "@components/Header.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+import { getCollection } from "astro:content";
+import {
+  scriptureRefToOsis,
+  createScriptureObject,
+  getHumanReadableScriptureRef,
+} from "../utils/bibleParser";
+
+const allSermons = await getCollection("sermons");
+allSermons.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const latestSermon = allSermons[0];
+
+// Function to process sermon post frontmatter to form readable for bcv_parser (processSermonPostRef)
+// const scriptureRef = formatForBCVParser(latestSermon);
+
+// Function to process scriptureRef to osisRef
+const osisRef = scriptureRefToOsis(latestSermon.data.sermonText);
+
+console.log("OSIS REF: ", osisRef);
+console.log(createScriptureObject(osisRef));
+
+// Create human readable text
+const readableText = getHumanReadableScriptureRef(latestSermon.data.sermonText);
+---
+
+<BaseLayout>
+  <Header />
+  <main class="layout-base gap-4">
+    <h1 class="text-4xl">Bible Verse Parsing</h1>
+    <!-- <p>Input: {scriptureRef}</p> -->
+    <section>
+      <h2 class="text-xl">OSIS</h2>
+      <p>{osisRef}</p>
+      <p>Book:</p>
+      <p>Chapter Start:</p>
+      <p>Chapter End:</p>
+    </section>
+    <section>
+      <h2 class="text-xl">Human readable</h2>
+      <!-- <p>{readableText}</p> -->
+    </section>
+  </main>
+</BaseLayout>

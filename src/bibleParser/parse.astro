@@ -1,0 +1,32 @@
+---
+// import { bcv_parser } from "bible-passage-reference-parser/esm/bcv_parser.js";
+// import * as lang from "bible-passage-reference-parser/esm/lang/en.js";
+// const bcv = new bcv_parser(lang);
+// console.log(bcv.parse("John 1:1").osis());
+
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { bcvParserWrapper, osisToEnWrapper } from "../utils/bibleParser";
+
+// Parsing test data
+const bookOnly = "John";
+const bookChapter = "John 1";
+const bookChapterVerse = "John 1:1";
+const verseRange = "John 1:1–5";
+const multiChapter = "John 1:1-5";
+
+const multiChapterOSIS = bcvParserWrapper(multiChapter);
+const multiChapterRef = osisToEnWrapper(multiChapterOSIS);
+console.log(multiChapterOSIS);
+console.log(multiChapterRef);
+---
+
+<BaseLayout>
+  <h1>Parse a Bible verse</h1>
+  <p>{bookOnly} {bcvParserWrapper(bookOnly)}</p>
+  <p>
+    {bookChapter}
+    {bcvParserWrapper(bookChapter)}
+    {osisToEnWrapper(bcvParserWrapper(bookChapter))}
+  </p>
+  <p>{multiChapterRef}</p>
+</BaseLayout>

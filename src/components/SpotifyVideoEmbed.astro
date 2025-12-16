@@ -1,0 +1,23 @@
+---
+const { spotifyURL, small } = Astro.props;
+
+const spotifyURI = spotifyURL
+  ? spotifyURL.match(/(?<=episode\/).+?(?=\?)/gm)
+  : "";
+
+const src = `https://open.spotify.com/embed/episode/${spotifyURI}/video?utm_source=generator`;
+---
+
+{
+  spotifyURI && (
+    <iframe
+      style="border-radius:12px"
+      src={src}
+      width={small ? "25%" : "100%"}
+      height={small ? "200" : "351"}
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+    />
+  )
+}
