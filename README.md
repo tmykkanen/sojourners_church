@@ -11,3 +11,7 @@
 - [ ] TODO: Style footer form
 - [ ] TODO: Add weighting priority to pastor for sermon search
 - [ ] TODO: Build collapsible filter
+
+<!-- TODO: Scripture Parsing -->
+
+- [ ] TODO: Add handling for whole book scripture ref

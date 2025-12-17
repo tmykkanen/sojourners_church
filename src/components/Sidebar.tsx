@@ -23,7 +23,11 @@ const Sidebar: React.FC<SidebarProps> = ({}) => {
       <Drawer open={isOpen} direction="right" onOpenChange={setIsOpen}>
         <DrawerTitle className="sr-only">Menu</DrawerTitle>
         <DrawerTrigger className="pointer-events-auto z-100 lg:hidden">
-          <Hamburger toggled={isOpen} color="var(--muted-foreground)" />
+          <Hamburger
+            toggled={isOpen}
+            color="var(--muted-foreground)"
+            // onToggle={setIsOpen}
+          />
         </DrawerTrigger>
         <DrawerContent className="pt-24 data-[vaul-drawer-direction=right]:w-full data-[vaul-drawer-direction=right]:sm:max-w-full">
           <NavMenu />

@@ -97,7 +97,7 @@ const SermonFilterDatePicker: React.FC<SermonFilterDatePickerProps> = ({
       </Label>
       <Group
         className={cn(
-          "bg-muted group-open:bg-secondary text-muted-foreground border-muted-foreground/20 ring-muted-foreground flex flex-[65%] rounded-md rounded-l-none border pl-3 shadow-md transition focus-visible:ring-2",
+          "bg-muted group-open:bg-secondary text-muted-foreground border-muted-foreground/20 ring-muted-foreground focus-visible:ring-primary flex flex-[65%] rounded-md rounded-l-none border pl-3 shadow-md transition focus-visible:ring-2",
           store && "text-foreground",
         )}
       >
@@ -105,7 +105,7 @@ const SermonFilterDatePicker: React.FC<SermonFilterDatePickerProps> = ({
           {(segment) => (
             <DateSegment
               segment={segment}
-              className="focus:ring-primary hover:bg-accent hover:text-accent-foreground rounded-xs px-0.5 text-sm tabular-nums caret-transparent outline-hidden placeholder-shown:italic focus:ring-1"
+              className="focus:ring-accent hover:bg-accent hover:text-accent-foreground rounded-xs px-0.5 text-sm tabular-nums caret-transparent outline-hidden placeholder-shown:italic focus:ring-2"
             />
           )}
         </DateInput>

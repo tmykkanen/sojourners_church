@@ -13,6 +13,7 @@ import {
 import SpotifyAudioEmbed from "@/components/SpotifyAudioEmbed.astro";
 import { SermonFilter } from "@/components/SermonFilter/SermonFilter";
 import { SermonCardDisplay } from "@/components/SermonCards/SermonCardDisplay";
+import Meta from "@/components/Meta.astro";
 
 const allSermonData = await getAllSermonData();
 const allSeriesData = await getAllSeriesData();
@@ -34,19 +35,12 @@ const allPreachersData = await getAllPreachersData();
           {allSermonData[0].data.title}
         </StyledText>
       </ButtonLink>
-      <StyledText as="span" variant="meta">
-        {
-          format(
-            new Date(
-              allSermonData[0].data.date.valueOf() +
-                allSermonData[0].data.date.getTimezoneOffset() * 60 * 1000,
-            ),
-            "LLLL dd, yyyy",
-          )
-        } - {allSermonData[0].data.scripture} - {
-          allSermonData[0].preacher.data.name
-        }
-      </StyledText>
+      <Meta
+        date={allSermonData[0].data.date}
+        scripture={allSermonData[0].data.scripture}
+        preacher={allSermonData[0].preacher.data.name}
+      />
+
       <SpotifyAudioEmbed spotifyURL={allSermonData[0].data.spotifyURL} />
     </section>
     <section class="flex flex-col gap-2">

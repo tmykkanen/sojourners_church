@@ -1,4 +1,9 @@
 ---
+interface Props {
+  spotifyURL: string;
+  small?: boolean;
+}
+
 const { spotifyURL, small } = Astro.props;
 
 const spotifyURI = spotifyURL
@@ -10,14 +15,16 @@ const src = `https://open.spotify.com/embed/episode/${spotifyURI}/video?utm_sour
 
 {
   spotifyURI && (
-    <iframe
-      style="border-radius:12px"
-      src={src}
-      width={small ? "25%" : "100%"}
-      height={small ? "200" : "351"}
-      allowfullscreen=""
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy"
-    />
+    <div class="h-60 sm:h-80 md:h-100">
+      <iframe
+        style="border-radius:12px"
+        src={src}
+        width={small ? "25%" : "100%"}
+        height={"100%"}
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      />
+    </div>
   )
 }

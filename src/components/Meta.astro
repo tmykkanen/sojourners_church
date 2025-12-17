@@ -1,0 +1,25 @@
+---
+import { format } from "date-fns";
+import { Badge } from "@/components/ui/badge";
+
+interface Props {
+  date?: Date;
+  scripture?: string;
+  preacher?: string;
+}
+
+const { date, scripture, preacher }: Props = Astro.props;
+
+const formattedDate =
+  date &&
+  format(
+    new Date(date.valueOf() + date.getTimezoneOffset() * 60 * 1000),
+    "LLLL dd, yyyy",
+  );
+---
+
+<div class="flex gap-2">
+  {date && <Badge variant="muted">{formattedDate}</Badge>}
+  {scripture && <Badge variant="muted">{scripture}</Badge>}
+  {preacher && <Badge variant="muted">{preacher}</Badge>}
+</div>

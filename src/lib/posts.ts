@@ -1,5 +1,17 @@
 import { getCollection, getEntry } from "astro:content";
 import type { SermonData } from "./types";
+import { type CollectionEntry } from "astro:content";
+
+// TODO: Update getAllSermonData w/ this function
+export const getSermonItemData = async (
+  sermonItem: CollectionEntry<"sermons">,
+) => {
+  return {
+    ...sermonItem,
+    series: await getEntry(sermonItem.data.series),
+    preacher: await getEntry(sermonItem.data.preacher),
+  };
+};
 
 export async function getAllSermonData(): Promise<SermonData[]> {
   const allSermons = (await getCollection("sermons")).sort(
