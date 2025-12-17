@@ -10,7 +10,7 @@ import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://sojourners.netlify.app/",
+  site: "https://sojourners.netlify.app",
   vite: {
     plugins: [tailwindcss()],
   },
