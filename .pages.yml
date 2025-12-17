@@ -11,7 +11,7 @@ content:
     path: src/content/sermons
     filename: "{fields.date}-{fields.title}.md"
     view:
-      fields: [title, date, preacher.fields.name, scripture]
+      fields: [title, date, preacher, scripture]
       default: {
         sort: date,
         order: desc
