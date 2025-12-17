@@ -29,6 +29,7 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
     "date-fns": "^4.1.0",
+    "fuse.js": "^7.1.0",
     "hamburger-react": "^2.5.2",
     "lucide-react": "^0.561.0",
     "nanostores": "^1.1.0",
@@ -42,6 +43,7 @@
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
     "tailwindcss-react-aria-components": "^2.0.1",
+    "use-debounce": "^10.0.6",
     "vaul": "^1.1.2",
     "zod": "^4.2.0"
   },

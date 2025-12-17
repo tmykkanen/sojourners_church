@@ -7,6 +7,7 @@ import { SermonFilterCombobox } from "./SermonFilterCombobox";
 import { StyledText } from "../StyledText";
 import { Undo2 } from "lucide-react";
 import { Button } from "../ui/button";
+import SermonSearch from "../SermonSearch";
 
 // TODO: Consider converting to API endpoint rather than passing data?
 interface SermonFilterProps {
@@ -53,6 +54,7 @@ const SermonFilter: React.FC<SermonFilterProps> = ({
       <StyledText as="h2" variant="heading">
         {titleText}
       </StyledText>
+      <SermonSearch />
       {(series || preacher || from || to) && (
         <Button
           variant="link"

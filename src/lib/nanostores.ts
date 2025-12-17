@@ -1,17 +1,29 @@
 import type { DateValue } from "@internationalized/date";
 import { atom, computed } from "nanostores";
 import type { SermonData } from "./types";
+import Fuse from "fuse.js";
+
+const options = {
+  includeScore: true,
+  threshold: 0.4,
+  keys: [
+    { name: "data.title", weight: 1 },
+    { name: "data.scripture", weight: 0.5 },
+    { name: "preacher.data.name", weight: 0.2 },
+  ],
+};
 
 export const $series = atom<string | undefined>(undefined);
 export const $preacher = atom<string | undefined>(undefined);
 export const $from = atom<DateValue | null>(null);
 export const $to = atom<DateValue | null>(null);
+export const $searchTerm = atom<string>("");
 
 export const $allSermonData = atom<SermonData[] | undefined>(undefined);
 
 export const $filteredSermons = computed(
-  [$series, $preacher, $from, $to, $allSermonData],
-  (series, preacher, from, to, allSermonData) => {
+  [$series, $preacher, $from, $to, $allSermonData, $searchTerm],
+  (series, preacher, from, to, allSermonData, searchTerm) => {
     if (!allSermonData) return undefined;
 
     let sermonData = allSermonData;
@@ -34,6 +46,20 @@ export const $filteredSermons = computed(
       sermonData = sermonData.filter(
         (item) => item.data.date <= to.toDate("UTC"),
       );
+    }
+
+    if (searchTerm !== "" && searchTerm !== undefined) {
+      console.log("data:", sermonData);
+      console.log("term:", searchTerm);
+
+      const fuse = new Fuse(sermonData, options);
+
+      const result = fuse.search(searchTerm);
+
+      // sermonData = sermonData.filter((item) =>
+      //   item.data.title.toLowerCase().includes(searchTerm.toLowerCase()),
+      // );
+      sermonData = result.map((hit) => hit.item);
     }
 
     return sermonData;
