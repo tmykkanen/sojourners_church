@@ -9,7 +9,7 @@ content:
     label: Sermons
     type: collection
     path: src/content/sermons
-    filename: "{fields.date} {fields.title}"
+
     view:
       fields: [title, date, text]
     fields:
