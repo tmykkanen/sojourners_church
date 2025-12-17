@@ -64,7 +64,7 @@ content:
           message: "Please enter a first and last name."
           regex: "^[a-zA-Z]+([ \-'][a-zA-Z]+)+$"
       - name: slug
-        label: Slug
+        label: "Slug (copy from filename)"
         type: string
         required: true
       - name: isGuest
@@ -95,7 +95,7 @@ content:
         type: string
         required: true
       - name: slug
-        label: Slug
+        label: "Slug (copy from filename)"
         type: string
         required: true
       - name: image
