@@ -12,6 +12,10 @@ content:
     filename: "{fields.date}-{fields.title}.md"
     view:
       fields: [title, date, preacher, scripture]
+      default: {
+        sort: title,
+        order: asc
+      }
     fields:
       - name: title
         label: Title
