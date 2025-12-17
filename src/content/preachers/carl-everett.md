@@ -1,6 +1,6 @@
 ---
 name: Carl Everett
-slug: d
+slug: carl-everett
 isGuest: true
 priority: 0
 ---
