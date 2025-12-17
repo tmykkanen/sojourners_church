@@ -1,6 +1,5 @@
 ---
 title: Now Concerning Brotherly Love
-test: THIS IS A TEST
 date: 2025-11-09
 series: src/content/series/thessalonians-gospel-encouragement-for-everyday-life.md
 scripture: 1 Thessalonians 4:9–10
