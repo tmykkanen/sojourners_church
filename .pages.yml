@@ -14,7 +14,7 @@ content:
       fields: [title, date, preacher, scripture]
       default:
         sort: date,
-        order: asc
+        order: desc
     fields:
       - name: title
         label: Title
