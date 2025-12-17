@@ -11,7 +11,7 @@ content:
     path: src/content/sermons
     filename: "{fields.date}-{fields.title}.md"
     view:
-      fields: [title, date, text]
+      fields: [title, date, scripture]
     fields:
       - name: title
         label: Title
