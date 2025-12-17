@@ -35,12 +35,16 @@ export const POST: APIRoute = async ({ request }) => {
     await request.json(),
   );
 
+  console.log("hello from the POST!");
+
   // Check if contact already exists
   try {
     const { data: getContact, error: getContactError } =
       await resend.contacts.get({
         email,
       });
+
+    console.log("GETCONTACT:", getContact);
 
     // Handle if contact already exists
     if (getContact) {
@@ -69,22 +73,29 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     // Resend limits requests to 2 per second
-    await pause(500);
+    await pause(1000);
 
     // Create new contact
-    const { error: createError } = await resend.contacts.create({
+    const { data, error: createError } = await resend.contacts.create({
       email,
       firstName,
       lastName,
       unsubscribed: false,
     });
+
+    console.log("CREATE:", data);
+
     if (createError) throw new Error(createError.message);
 
     // Add contact to general segment
-    const { error: addToSegmentError } = await resend.contacts.segments.add({
-      email,
-      segmentId: RESEND_SEGMENT_ID,
-    });
+    const { data: segment, error: addToSegmentError } =
+      await resend.contacts.segments.add({
+        email,
+        segmentId: RESEND_SEGMENT_ID,
+      });
+
+    console.log("SEGMENT:", segment);
+    console.log("SEGMENTERR:", addToSegmentError);
     if (addToSegmentError) throw new Error(addToSegmentError.message);
 
     // All good
