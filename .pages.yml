@@ -37,6 +37,7 @@ content:
         label: Sermon Text
         type: scripture
         required: true
+        list: true
       - name: preacher
         label: Preacher
         type: reference
