@@ -2,7 +2,8 @@
 title: Guest Preacher (Brian Kettering)
 date: 2025-10-19
 series: src/content/series/various.md
-scripture: Colossians 2:16–19
+scripture:
+  - Col.2.16-Col.2.19
 preacher: src/content/preachers/brian-kettering.md
 spotifyURL: https://open.spotify.com/episode/4aKZywSiVmlShwubCEjmFt?si=5JDuKmZCSL6y6RZ4Rc57NA
 googleDocsURL: https://drive.google.com/file/d/1TiOxHMgG327sVwnU4J8PX6TO0G5XacWl/view

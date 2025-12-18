@@ -2,7 +2,8 @@
 title: Keep On Keepin' On
 date: 2025-10-26
 series: src/content/series/thessalonians-gospel-encouragement-for-everyday-life.md
-scripture: 1 Thessalonians 4:1–2
+scripture:
+  - 1Thess.4.1-1Thess.4.2
 preacher: src/content/preachers/tyler-mykkanen.md
 spotifyURL: https://open.spotify.com/episode/5tkWjVObaFr3qHWVntS86i?si=TWqL8Ia0ReWFZ72UXMMJAw
 googleDocsURL: https://drive.google.com/file/d/1gqnskJ6UtsuXgL7_KxDGHXlSmwqUj1rv/view

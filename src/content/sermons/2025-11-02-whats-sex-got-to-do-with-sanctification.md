@@ -2,7 +2,8 @@
 title: What's Sex Got to Do with Sanctification?
 date: 2025-11-02
 series: src/content/series/thessalonians-gospel-encouragement-for-everyday-life.md
-scripture: 1 Thessalonians 4:3–8
+scripture:
+  - 1Thess.4.3-1Thess.4.8
 preacher: src/content/preachers/tyler-mykkanen.md
 spotifyURL: https://open.spotify.com/episode/2eU839zkkqpzGFWl5UmDFs?si=BTlZPhf7TPiYzikQavB9Ew
 googleDocsURL: https://drive.google.com/file/d/1JYuxzPzO_bh9KOZBytEwiTOvltDyK730/view

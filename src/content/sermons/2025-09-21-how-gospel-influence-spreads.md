@@ -2,11 +2,13 @@
 title: How Gospel Influence Spreads
 date: 2025-09-21
 series: src/content/series/thessalonians-gospel-encouragement-for-everyday-life.md
-scripture: 1 Thessalonians 2:1–12
+scripture:
+  - 1Thess.2.1-1Thess.2.12
 preacher: src/content/preachers/tyler-mykkanen.md
 spotifyURL: https://open.spotify.com/episode/2zG1Qdazj8t1vT4hGTHJCC?si=64d6cade3c1c4585
 googleDocsURL: https://drive.google.com/file/d/1V5XPhO_YHaUKkeZMCF3WhqHsnuKqeU9y/view
 ---
+
 Sermon on 1 Thessalonians 2:1-12 from⁠ Sojourners Church ⁠in Albert Lea, MN. Preached on September 21, 2025 by Pastor Tyler Mykkanen.
 
 Argument: People worth listening to have godly motives demonstrated in godly lives.

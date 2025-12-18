@@ -2,7 +2,8 @@
 title: Now Concerning Brotherly Love
 date: 2025-11-09
 series: src/content/series/thessalonians-gospel-encouragement-for-everyday-life.md
-scripture: 1 Thessalonians 4:9–10
+scripture:
+  - 1Thess.4.9-1Thess.4.10
 preacher: src/content/preachers/tyler-mykkanen.md
 spotifyURL: https://open.spotify.com/episode/1N43SHHMzpOSJaNDNbCzzY?si=8dEeoklKRwKmqZTr2TRCzA
 googleDocsURL: https://drive.google.com/file/d/1CXmlqSTTfDQC-QF5hIjy4fww_U6lVAx5/view
