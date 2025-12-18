@@ -21,6 +21,9 @@ content:
         label: Title
         type: string
         required: true
+      - name: test
+        label: Test
+        type: hello
       - name: date
         label: Date Preached
         type: date
