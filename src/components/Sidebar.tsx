@@ -7,11 +7,13 @@ import {
   DrawerDescription,
   DrawerFooter,
   DrawerHeader,
+  DrawerOverlay,
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Button } from "./ui/button";
 import { NavMenu } from "./NavMenu.tsx";
+import { set } from "astro/zod";
 
 interface SidebarProps {}
 
@@ -20,16 +22,13 @@ const Sidebar: React.FC<SidebarProps> = ({}) => {
 
   return (
     <>
-      <Drawer open={isOpen} direction="right" onOpenChange={setIsOpen}>
-        <DrawerTitle className="sr-only">Menu</DrawerTitle>
-        <DrawerTrigger className="pointer-events-auto z-100 lg:hidden">
-          <Hamburger
-            toggled={isOpen}
-            color="var(--muted-foreground)"
-            // onToggle={setIsOpen}
-          />
+      <Drawer open={isOpen} onOpenChange={setIsOpen} direction="right">
+        <DrawerTrigger className="z-100 lg:hidden">
+          <Hamburger toggled={isOpen} color="var(--muted-foreground)" />
         </DrawerTrigger>
-        <DrawerContent className="pt-24 data-[vaul-drawer-direction=right]:w-full data-[vaul-drawer-direction=right]:sm:max-w-full">
+        <DrawerOverlay className="bg-background" />
+        <DrawerContent className="mt-24 data-[vaul-drawer-direction=right]:w-full data-[vaul-drawer-direction=right]:border-none data-[vaul-drawer-direction=right]:sm:max-w-full">
+          <DrawerTitle className="sr-only">Menu</DrawerTitle>
           <NavMenu />
         </DrawerContent>
       </Drawer>
