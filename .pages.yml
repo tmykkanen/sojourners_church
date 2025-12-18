@@ -24,6 +24,7 @@ content:
       - name: test
         label: Test
         type: scripture
+        required: true
       - name: date
         label: Date Preached
         type: date
