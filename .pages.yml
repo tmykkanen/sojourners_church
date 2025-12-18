@@ -23,7 +23,7 @@ content:
         required: true
       - name: test
         label: Test
-        type: hello
+        type: scripture
       - name: date
         label: Date Preached
         type: date
