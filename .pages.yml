@@ -21,10 +21,6 @@ content:
         label: Title
         type: string
         required: true
-      - name: test
-        label: Test
-        type: scripture
-        required: true
       - name: date
         label: Date Preached
         type: date
@@ -39,7 +35,8 @@ content:
         required: true
       - name: scripture
         label: Sermon Text
-        type: string # TODO: Configure sermon text
+        type: scripture
+        required: true
       - name: preacher
         label: Preacher
         type: reference
