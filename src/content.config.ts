@@ -114,6 +114,10 @@ const preachersCollection = defineCollection({
   }),
 });
 
+const pagesCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
+});
+
 // const writingsCollection = defineCollection({
 //   loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/writings" }),
 //   schema: z.object({
@@ -126,5 +130,6 @@ export const collections = {
   sermons: sermonsCollection,
   series: seriesCollection,
   preachers: preachersCollection,
+  pages: pagesCollection,
   // writings: writingsCollection,
 };
