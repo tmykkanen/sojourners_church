@@ -22,13 +22,41 @@ const { Content } = await render(page);
 
 <BaseLayout>
   <Header />
-  <main class="layout-base [&_h2]:text-red-500">
+  <main class="layout-base md-wrapper gap-8">
     <Content />
   </main>
 </BaseLayout>
 
 <style>
-  h2 {
-    color: red;
+  @import "../styles/global.css";
+
+  .md-wrapper {
+    section {
+      @apply flex flex-col gap-4 md:flex-row;
+    }
+    h2 {
+      @apply text-xl font-bold uppercase md:w-1/3 md:text-2xl;
+    }
+    div {
+      @apply flex flex-col gap-2 md:w-2/3;
+    }
+    p {
+    }
+    /* Sensible defaults for list styling */
+    ol {
+      counter-reset: counter;
+    }
+
+    ol li {
+      counter-increment: counter;
+      padding-block: 0.5rem;
+      /*display: flex;*/
+      /*gap: var(--spacing);*/
+    }
+
+    ol li::before {
+      content: counter(counter) ". ";
+      color: var(--color-primary);
+    }
   }
 </style>
