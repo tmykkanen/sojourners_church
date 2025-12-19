@@ -188,7 +188,7 @@ content:
   - name: pages
     label: Pages
     type: collection
-    path: src/docs
+    path: src/content/pages
     filename: "{primary}.md"
     view:
       fields: [title, order]
