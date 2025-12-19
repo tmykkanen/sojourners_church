@@ -3,6 +3,7 @@ import { type SermonData } from "@/lib/types";
 import { Card, CardContent } from "@/components/ui/card";
 import { format } from "date-fns";
 import { StyledText } from "../StyledText";
+import formatOsis from "@/lib/Bible-Reference-Formatter/en";
 
 interface SermonCardProps {
   baseUrl: string;
@@ -40,7 +41,7 @@ const SermonCard: React.FC<SermonCardProps> = ({ baseUrl, sermon }) => {
                 "LLLL dd, yyyy",
               )}
               <br />
-              {scripture}
+              {scripture && scripture.map((ref) => formatOsis("esv-long", ref))}
               <br />
               {name}
             </StyledText>

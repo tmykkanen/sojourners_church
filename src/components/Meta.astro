@@ -1,10 +1,11 @@
 ---
 import { format } from "date-fns";
 import { Badge } from "@/components/ui/badge";
+import formatOsis from "@/lib/Bible-Reference-Formatter/en";
 
 interface Props {
   date?: Date;
-  scripture?: string;
+  scripture?: string[];
   preacher?: string;
 }
 
@@ -20,6 +21,11 @@ const formattedDate =
 
 <div class="flex gap-2">
   {date && <Badge variant="muted">{formattedDate}</Badge>}
-  {scripture && <Badge variant="muted">{scripture}</Badge>}
+  {
+    scripture &&
+      scripture.map((ref) => (
+        <Badge variant="muted">{formatOsis("esv-long", ref)}</Badge>
+      ))
+  }
   {preacher && <Badge variant="muted">{preacher}</Badge>}
 </div>

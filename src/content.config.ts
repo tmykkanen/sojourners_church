@@ -16,7 +16,7 @@ const sermonsCollection = defineCollection({
     series: z.preprocess((val) => {
       return getSlugFromFilename(val as string);
     }, reference("series")),
-    scripture: z.string().optional(),
+    scripture: z.array(z.string()).optional(),
     preacher: z.preprocess((val) => {
       return getSlugFromFilename(val as string);
     }, reference("preachers")),

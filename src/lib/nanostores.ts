@@ -5,9 +5,8 @@ import Fuse from "fuse.js";
 
 const options = {
   includeScore: true,
-  threshold: 0.4,
   keys: [
-    { name: "data.title", weight: 1 },
+    { name: "data.title", weight: 0.7 },
     { name: "data.scripture", weight: 0.5 },
     { name: "preacher.data.name", weight: 0.2 },
   ],
@@ -49,16 +48,13 @@ export const $filteredSermons = computed(
     }
 
     if (searchTerm !== "" && searchTerm !== undefined) {
-      console.log("data:", sermonData);
-      console.log("term:", searchTerm);
-
       const fuse = new Fuse(sermonData, options);
-
       const result = fuse.search(searchTerm);
 
-      // sermonData = sermonData.filter((item) =>
-      //   item.data.title.toLowerCase().includes(searchTerm.toLowerCase()),
-      // );
+      // console.log("data:", sermonData);
+      // console.log("term:", searchTerm);
+      // console.log(result);
+
       sermonData = result.map((hit) => hit.item);
     }
 
