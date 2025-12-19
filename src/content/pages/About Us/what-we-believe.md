@@ -4,10 +4,6 @@ order: 1
 ---
 <section>
 
-```
-secion
-```
-
 ## Foundation, Purpose, and Chief Priority
 
 <div>
