@@ -206,4 +206,4 @@ content:
           options: { maxlength: 180 },
         }
       - { name: order, label: Order, type: number }
-      - { name: body, label: Body, type: rich-text , options: {format: html}}
+      - { name: body, label: Body, type: rich-text }
