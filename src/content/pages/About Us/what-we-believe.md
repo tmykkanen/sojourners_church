@@ -2,7 +2,7 @@
 title: What We Believe
 order: 1
 ---
-## Foundation, Purpose, and Chief Priorit
+## Foundation, Purpose, and Chief Priority
 
 The **purpose** of this church and the reason for its existence is to glorify God. We believe that God is most glorified in us as we learn to hope in Him and be satisfied in Him alone and as we share our hope and satisfaction with others.
 
