@@ -2,7 +2,7 @@
 title: What We Believe
 order: 1
 ---
-:::section
+::::section
 
 :::div{.left}
 
@@ -22,9 +22,9 @@ Below, you will find several summaries of what we believe. These statements can 
 
 :::
 
-:::
+::::
 
-:::section
+::::section
 
 :::div{.left}
 
@@ -59,4 +59,4 @@ The _Doctrinal Essentials_ of Sojourners Church reflect the central, non-negotia
 
 :::
 
-:::
+::::
