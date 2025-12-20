@@ -102,7 +102,7 @@ Sojourners Church is committed to several _Doctrinal Distinctives_ that, unlik
 
 :::div{.right}
 
-Sojourners Church is grateful for Bethlehem College and Seminary in providing theological education for a number of our elders. We have adopted, with permission, the [Bethlehem College and Seminary Affirmation of Faith](https://drive.google.com/a/sojourners.church/file/d/1hWhmLwRf-Yq2bLts8OU28TK0eiqPLzDs/view?usp=sharing) (right-click the link to save a copy). This 52-page document is the fullest expression of our beliefs at Sojourners Church.
+Sojourners Church is grateful for Bethlehem College and Seminary in providing theological education for a number of our elders. We have adopted, with permission, the [_Bethlehem College and Seminary Affirmation of Faith_](https://drive.google.com/a/sojourners.church/file/d/1hWhmLwRf-Yq2bLts8OU28TK0eiqPLzDs/view?usp=sharing) (right-click the link to save a copy). This 52-page document is the fullest expression of our beliefs at Sojourners Church.
 
 :::
 
@@ -118,17 +118,17 @@ Sojourners Church is grateful for Bethlehem College and Seminary in providing t
 
 :::div{.right}
 
-We believe that God creates each person as male or female. These two distinct, complementary genders together reflect the image and nature of God _(_[_Genesis 1:26-27_](https://ref.ly/Gen%201.26-27;esv?t=biblia)_)_. Rejection of one’s biological sex is a rejection of the image of God within that person.
+We believe that God creates each person as male or female. These two distinct, complementary genders together reflect the image and nature of God ([Genesis 1:26-27](https://ref.ly/Gen%201.26-27;esv?t=biblia)). Rejection of one’s biological sex is a rejection of the image of God within that person.
 
-We believe that the term “marriage” has only one meaning: the uniting of one man and one woman in a single, exclusive union, as delineated in Scripture _(_[_Genesis 2:18-25_](https://ref.ly/Gen%202.18-25;esv?t=biblia)_)_. We believe that God intends sexual intimacy to occur only between a man and a woman who are married to each other _(_[_1 Corinthians 6:18_](https://ref.ly/1%20Cor%206.18;esv?t=biblia)_;_ [_7:2-5_](https://ref.ly/1%20Corinthians%207.2-5;esv?t=biblia)_;_ [_Hebrews 13:4_](https://ref.ly/Heb%2013.4;esv?t=biblia)_)_. We believe that God has commanded that no intimate sexual activity be engaged in outside of a marriage between a man and a woman.
+We believe that the term “marriage” has only one meaning: the uniting of one man and one woman in a single, exclusive union, as delineated in Scripture ([Genesis 2:18-25](https://ref.ly/Gen%202.18-25;esv?t=biblia)). We believe that God intends sexual intimacy to occur only between a man and a woman who are married to each other ([1 Corinthians 6:18](https://ref.ly/1%20Cor%206.18;esv?t=biblia); [7:2-5](https://ref.ly/1%20Corinthians%207.2-5;esv?t=biblia); [Hebrews 13:4](https://ref.ly/Heb%2013.4;esv?t=biblia)). We believe that God has commanded that no intimate sexual activity be engaged in outside of a marriage between a man and a woman.
 
-We believe that any form of sexual immorality (including adultery, fornication, homosexual behavior, bisexual conduct, bestiality, incest, and use of pornography) is sinful and offensive to God _(_[_Matthew 15:18-20_](https://ref.ly/Matt%2015.18-20;esv?t=biblia)_;_ [_1 Corinthians 6:9-10_](https://ref.ly/1%20Cor%206.9-10;esv?t=biblia)_)_.
+We believe that any form of sexual immorality (including adultery, fornication, homosexual behavior, bisexual conduct, bestiality, incest, and use of pornography) is sinful and offensive to God ([Matthew 15:18-20](https://ref.ly/Matt%2015.18-20;esv?t=biblia); [1 Corinthians 6:9-10](https://ref.ly/1%20Cor%206.9-10;esv?t=biblia)).
 
-We believe that in order to preserve the function and integrity of Sojourners Church as the local Body of Christ, and to provide a biblical role model to our members and the community, it is imperative that all persons employed by Sojourners Church in any capacity, or who serve as volunteers, agree to and abide by this _Statement on Marriage, Gender, and Sexuality (_[_Matthew 5:16_](https://ref.ly/Matt%205.16;esv?t=biblia)_;_ [_Philippians 2:14-16_](https://ref.ly/Phil%202.14-16;esv?t=biblia)_;_ [_1 Thessalonians 5:22_](https://ref.ly/1%20Thess%205.22;esv?t=biblia)_)._
+We believe that in order to preserve the function and integrity of Sojourners Church as the local Body of Christ, and to provide a biblical role model to our members and the community, it is imperative that all persons employed by Sojourners Church in any capacity, or who serve as volunteers, agree to and abide by this _Statement on Marriage, Gender, and Sexuality_ ([Matthew 5:16](https://ref.ly/Matt%205.16;esv?t=biblia); [Philippians 2:14-16](https://ref.ly/Phil%202.14-16;esv?t=biblia); [1 Thessalonians 5:22](https://ref.ly/1%20Thess%205.22;esv?t=biblia)).
 
-We believe that God offers redemption and restoration to all who confess and forsake their sin, seeking His mercy and forgiveness through Jesus Christ _(_[_Acts 3:19-21_](https://ref.ly/Acts%203.19-21;esv?t=biblia)_;_ [_Romans 10:9-10_](https://ref.ly/Rom%2010.9-10;esv?t=biblia)_;_ [_1 Corinthians 6:9-11_](https://ref.ly/1%20Cor%206.9-11;esv?t=biblia)_)_.
+We believe that God offers redemption and restoration to all who confess and forsake their sin, seeking His mercy and forgiveness through Jesus Christ ([Acts 3:19-21](https://ref.ly/Acts%203.19-21;esv?t=biblia); [Romans 10:9-10](https://ref.ly/Rom%2010.9-10;esv?t=biblia); [1 Corinthians 6:9-11](https://ref.ly/1%20Cor%206.9-11;esv?t=biblia)).
 
-We believe that every person must be afforded compassion, love, kindness, respect, and dignity _(_[_Mark 12:28-31_](https://ref.ly/Mark%2012.28-31;esv?t=biblia)_;_ [_Luke 6:31_](https://ref.ly/Luke%206.31;esv?t=biblia)_)_. Hateful and harassing behavior or attitudes directed toward any individual are to be repudiated and are not in accord with Scripture nor the doctrines of Sojourners Church.
+We believe that every person must be afforded compassion, love, kindness, respect, and dignity ([Mark 12:28-31](https://ref.ly/Mark%2012.28-31;esv?t=biblia); [Luke 6:31](https://ref.ly/Luke%206.31;esv?t=biblia)). Hateful and harassing behavior or attitudes directed toward any individual are to be repudiated and are not in accord with Scripture nor the doctrines of Sojourners Church.
 
 :::
 
