@@ -1,17 +1,11 @@
 import * as React from "react";
 import { useForm, useStore } from "@tanstack/react-form";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { Field, FieldError, FieldGroup } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-import { Toaster } from "./ui/sonner";
+import { Toaster } from "../ui/sonner";
 import { toast } from "sonner";
-import * as z from "zod";
-
-export const subscribeFormSchema = z.object({
-  firstName: z.string().min(2, "First name must be at least 2 characters."),
-  lastName: z.string().min(2, "Last name must be at least 2 characters."),
-  email: z.email("Enter a valid email address."),
-});
+import { subscribeFormSchema } from "./schema";
 
 interface SubscribeFormProps {}
 
@@ -90,8 +84,9 @@ const SubscribeForm: React.FC<SubscribeFormProps> = ({}) => {
           e.preventDefault();
           form.handleSubmit();
         }}
+        className="flex flex-col gap-4"
       >
-        <FieldGroup>
+        <FieldGroup className="gap-4">
           <form.Field
             name="firstName"
             children={(field) => {
@@ -168,7 +163,7 @@ const SubscribeForm: React.FC<SubscribeFormProps> = ({}) => {
         <form.Subscribe
           selector={(state) => [state.canSubmit, state.isSubmitting]}
           children={([canSubmit, isSubmitting]) => (
-            <Button type="submit" disabled={!canSubmit}>
+            <Button type="submit" disabled={!canSubmit} variant="footer-button">
               {isSubmitting ? "..." : "Subscribe"}
             </Button>
           )}

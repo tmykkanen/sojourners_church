@@ -3,7 +3,7 @@ import { ButtonLink } from "./ButtonLink";
 import { Icon } from "astro-icon/components";
 import { StyledText } from "./StyledText";
 import { Button } from "./ui/button";
-import SubscribeForm from "./SubscribeForm";
+import SubscribeForm from "@/components/SubscribeForm/SubscribeForm";
 ---
 
 <footer class="bg-accent text-accent-foreground layout-base py-8">
@@ -41,7 +41,7 @@ import SubscribeForm from "./SubscribeForm";
         </div>
       </div>
     </section>
-    <section class="flex flex-col gap-8">
+    <section class="flex flex-col gap-4">
       <div class="flex flex-col gap-2">
         <StyledText as="h2" variant="heading"> Weekly Bulletin </StyledText>
         <p>
@@ -52,7 +52,7 @@ import SubscribeForm from "./SubscribeForm";
       <SubscribeForm client:load />
     </section>
 
-    <section class="flex flex-col gap-8">
+    <section class="flex flex-col gap-4">
       <div class="flex flex-col gap-2">
         <StyledText as="h2" variant="heading"> Give to Sojourners </StyledText>
 

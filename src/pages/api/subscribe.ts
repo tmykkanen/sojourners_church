@@ -3,7 +3,7 @@
 export const prerender = false;
 import type { APIRoute } from "astro";
 import * as z from "zod";
-import { subscribeFormSchema } from "@/components/SubscribeForm";
+import { subscribeFormSchema } from "@/components/SubscribeForm/schema";
 
 const { RESEND_SEGMENT_ID, RESEND_API_KEY } = import.meta.env;
 
