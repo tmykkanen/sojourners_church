@@ -2,6 +2,8 @@
 title: What We Believe
 order: 1
 ---
+:::section
+
 :::div{.left}
 
 ## Foundation, Purpose, and Chief Priority
@@ -19,6 +21,10 @@ Therefore, our **chief priority** aimed at fulfilling our purpose is to be and
 Below, you will find several summaries of what we believe. These statements can also be found in our [_Constitution and Bylaws_](https://drive.google.com/file/d/1ggsuzTeH6kKD8kG-8Do2YO4YgIE_xN-B/view?usp=sharing) (adopted June 20, 2021).
 
 :::
+
+:::
+
+:::section
 
 :::div{.left}
 
@@ -50,5 +56,7 @@ The _Doctrinal Essentials_ of Sojourners Church reflect the central, non-negotia
     
 10.  **The Last Things** - We believe in the personal and visible return of the Lord Jesus Christ to earth and the establishment of His kingdom. We believe in the resurrection of the body, the final judgement, the eternal joy of the righteous and the endless suffering of the wicked. ([_Matthew 16:27_](https://ref.ly/Matt%2016.27;esv?t=biblia)_;_ [_Mark 14:62_](https://ref.ly/Mark%2014.62;esv?t=biblia)_;_ [_John 14:3_](https://ref.ly/John%2014.3;esv?t=biblia)_;_ [_Acts 1:11_](https://ref.ly/Acts%201.11;esv?t=biblia)_;_ [_Philippians 3:20_](https://ref.ly/Phil%203.20;esv?t=biblia)_;_ [_1 Thessalonians 4:15_](https://ref.ly/1%20Thess%204.15;esv?t=biblia)_;_ [_2 Timothy 4:1_](https://ref.ly/2%20Tim%204.1;esv?t=biblia)_;_ [_Titus 2:13_](https://ref.ly/Titus%202.13;esv?t=biblia)_;_ [_1 Corinthians 4:5_](https://ref.ly/1%20Cor%204.5;esv?t=biblia)_; 1 Corinthians 15;_ [_2 Thessalonians 1:7-10_](https://ref.ly/2%20Thess%201.7-10;esv?t=biblia)_;_ [_Revelation 20:4-6_](https://ref.ly/Rev%2020.4-6;esv?t=biblia)_,_[_11-15_](https://ref.ly/Revelation%2020.11-15;esv?t=biblia)_)_
      
+
+:::
 
 :::
