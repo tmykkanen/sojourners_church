@@ -60,3 +60,78 @@ The _Doctrinal Essentials_ of Sojourners Church reflect the central, non-negotia
 :::
 
 ::::
+
+::::section
+
+:::div{.left}
+
+## Doctrinal Distinctives
+
+:::
+
+:::div{.right}
+
+Sojourners Church is committed to several _Doctrinal Distinctives_ that, unlike our _Doctrinal Essentials_, are not embraced by all orthodox Christians. Nevertheless, we believe that these distinctives represent our best understanding of Scripture, so our elders passionately preach, teach, and counsel members of the church in harmony with these distinctives. Our members also agree to remain non-divisive over these issues by joyful submission to the teaching of the elders. We affirm the following _Doctrinal Distinctives_:
+
+1.  **The sovereignty of God over the individual in salvation.** _(_[_Romans 9:14-23_](https://ref.ly/Rom%209.14-23;esv?t=biblia)_; Ephesians 1-2)_
+    
+2.  **The pursuit of our fullest joy in the glory of God through Christ** \[“Christian Hedonism”\]. _(_[_Psalm 37:4_](https://ref.ly/Ps%2037.4;esv?t=biblia)_;_ [_Philippians 1:21-23_](https://ref.ly/Phil%201.21-23;esv?t=biblia)_,_ [_3:1-11_](https://ref.ly/Philippians%203.1-11;esv?t=biblia)_)_
+    
+3.  **Local church rule by a plurality of elders.** _(_[_1 Peter 5:1-2_](https://ref.ly/1%20Pet%205.1-2;esv?t=biblia)_;_ [_Acts 14:23_](https://ref.ly/Acts%2014.23;esv?t=biblia)_;_ [_Titus 1:5_](https://ref.ly/Titus%201.5;esv?t=biblia)_)_
+    
+4.  **Complementary roles for men and women in the church and home.** _(Genesis 1-2;_
+    
+    [_Ephesians 5:22-33_](https://ref.ly/Eph%205.22-33;esv?t=biblia)_; 1 Timothy 3)_
+    
+5.  **Believer’s baptism and communion.** _(_[_Jeremiah 31:31-34_](https://ref.ly/Jer%2031.31-34;esv?t=biblia)_;_ [_Ezekiel 36:26-28_](https://ref.ly/Ezek%2036.26-28;esv?t=biblia)_)_
+    
+6.  **The spiritually nourishing presence of Christ in the Lord’s Supper.** _(_[_1 Corinthians 10:16-17_](https://ref.ly/1%20Cor%2010.16-17;esv?t=biblia)_)_
+    
+7.  **Desire, discernment, and decency in the use of all the spiritual gifts.** _(1 Corinthians 12-14)_
+    
+
+:::
+
+::::
+
+::::section
+
+:::div{.left}
+
+## Elder Affirmation of Faith
+
+:::
+
+:::div{.right}
+
+Sojourners Church is grateful for Bethlehem College and Seminary in providing theological education for a number of our elders. We have adopted, with permission, the [Bethlehem College and Seminary Affirmation of Faith](https://drive.google.com/a/sojourners.church/file/d/1hWhmLwRf-Yq2bLts8OU28TK0eiqPLzDs/view?usp=sharing) (right-click the link to save a copy). This 52-page document is the fullest expression of our beliefs at Sojourners Church.
+
+:::
+
+::::
+
+::::section
+
+:::div{.left}
+
+## Statement on Marriage, Gender, & Sexuality
+
+:::
+
+:::div{.right}
+
+We believe that God creates each person as male or female. These two distinct, complementary genders together reflect the image and nature of God _(_[_Genesis 1:26-27_](https://ref.ly/Gen%201.26-27;esv?t=biblia)_)_. Rejection of one’s biological sex is a rejection of the image of God within that person.
+
+We believe that the term “marriage” has only one meaning: the uniting of one man and one woman in a single, exclusive union, as delineated in Scripture _(_[_Genesis 2:18-25_](https://ref.ly/Gen%202.18-25;esv?t=biblia)_)_. We believe that God intends sexual intimacy to occur only between a man and a woman who are married to each other _(_[_1 Corinthians 6:18_](https://ref.ly/1%20Cor%206.18;esv?t=biblia)_;_ [_7:2-5_](https://ref.ly/1%20Corinthians%207.2-5;esv?t=biblia)_;_ [_Hebrews 13:4_](https://ref.ly/Heb%2013.4;esv?t=biblia)_)_. We believe that God has commanded that no intimate sexual activity be engaged in outside of a marriage between a man and a woman.
+
+We believe that any form of sexual immorality (including adultery, fornication, homosexual behavior, bisexual conduct, bestiality, incest, and use of pornography) is sinful and offensive to God _(_[_Matthew 15:18-20_](https://ref.ly/Matt%2015.18-20;esv?t=biblia)_;_ [_1 Corinthians 6:9-10_](https://ref.ly/1%20Cor%206.9-10;esv?t=biblia)_)_.
+
+We believe that in order to preserve the function and integrity of Sojourners Church as the local Body of Christ, and to provide a biblical role model to our members and the community, it is imperative that all persons employed by Sojourners Church in any capacity, or who serve as volunteers, agree to and abide by this _Statement on Marriage, Gender, and Sexuality (_[_Matthew 5:16_](https://ref.ly/Matt%205.16;esv?t=biblia)_;_ [_Philippians 2:14-16_](https://ref.ly/Phil%202.14-16;esv?t=biblia)_;_ [_1 Thessalonians 5:22_](https://ref.ly/1%20Thess%205.22;esv?t=biblia)_)._
+
+We believe that God offers redemption and restoration to all who confess and forsake their sin, seeking His mercy and forgiveness through Jesus Christ _(_[_Acts 3:19-21_](https://ref.ly/Acts%203.19-21;esv?t=biblia)_;_ [_Romans 10:9-10_](https://ref.ly/Rom%2010.9-10;esv?t=biblia)_;_ [_1 Corinthians 6:9-11_](https://ref.ly/1%20Cor%206.9-11;esv?t=biblia)_)_.
+
+We believe that every person must be afforded compassion, love, kindness, respect, and dignity _(_[_Mark 12:28-31_](https://ref.ly/Mark%2012.28-31;esv?t=biblia)_;_ [_Luke 6:31_](https://ref.ly/Luke%206.31;esv?t=biblia)_)_. Hateful and harassing behavior or attitudes directed toward any individual are to be repudiated and are not in accord with Scripture nor the doctrines of Sojourners Church.
+
+:::
+
+::::
