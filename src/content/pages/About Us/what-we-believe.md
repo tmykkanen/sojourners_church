@@ -30,15 +30,6 @@ Below, you will find several summaries of what we believe. These statements can 
 
 The _Doctrinal Essentials_ of Sojourners Church reflect the central, non-negotiable teachings of orthodox Christianity throughout history as derived from the Scriptures. These beliefs are rooted in Scripture and reaffirmed in various creeds throughout church history. All members of Sojourners Church must affirm these _Doctrinal Essentials_. Our _Doctrinal Essentials_ are as follows:
 
-1.  We believe this
-    
-2.  And this
-    
-3.  And this
-    
-4.  **Also this**
-    
-
 1.  **The Word of God** - We believe that the Bible is the Word of God, fully inspired and without error in the original manuscripts, written under the inspiration of the Holy Spirit, and that it has supreme authority in all matters of faith and conduct. ([2 Timothy 3:16](https://ref.ly/2%20Tim%203.16;esv?t=biblia); [2 Peter 1:20](https://ref.ly/2%20Pet%201.20;esv?t=biblia),[21](https://ref.ly/2%20Peter%201.21;esv?t=biblia); [Mark 13:31](https://ref.ly/Mark%2013.31;esv?t=biblia); [John 8:31](https://ref.ly/John%208.31;esv?t=biblia),[32](https://ref.ly/John%208.32;esv?t=biblia); [John 20:31](https://ref.ly/John%2020.31;esv?t=biblia); [Acts 20:32](https://ref.ly/Acts%2020.32;esv?t=biblia))
     
 2.  **The Trinity** - We believe that there is one living and true God, eternally existing in three persons; that these are equal in every divine perfection, and that they execute distinct but harmonious offices in the work of creation, providence and redemption. ([Genesis 1:1](https://ref.ly/Gen%201.1;esv?t=biblia),[26](https://ref.ly/Genesis%201.26;esv?t=biblia); [John 1:1](https://ref.ly/John%201.1;esv?t=biblia),[3](https://ref.ly/John%201.3;esv?t=biblia); [Matthew 28:19](https://ref.ly/Matt%2028.19;esv?t=biblia); [John 4:24](https://ref.ly/John%204.24;esv?t=biblia); [Romans 1:19](https://ref.ly/Rom%201.19;esv?t=biblia),[20](https://ref.ly/Romans%201.20;esv?t=biblia); [Ephesians 4:5](https://ref.ly/Eph%204.5;esv?t=biblia),[6](https://ref.ly/Ephesians%204.6;esv?t=biblia))
