@@ -79,9 +79,7 @@ Sojourners Church is committed to several _Doctrinal Distinctives_ that, unlik
     
 3.  **Local church rule by a plurality of elders.** _(_[_1 Peter 5:1-2_](https://ref.ly/1%20Pet%205.1-2;esv?t=biblia)_;_ [_Acts 14:23_](https://ref.ly/Acts%2014.23;esv?t=biblia)_;_ [_Titus 1:5_](https://ref.ly/Titus%201.5;esv?t=biblia)_)_
     
-4.  **Complementary roles for men and women in the church and home.** _(Genesis 1-2;_
-    
-    [_Ephesians 5:22-33_](https://ref.ly/Eph%205.22-33;esv?t=biblia)_; 1 Timothy 3)_
+4.  **Complementary roles for men and women in the church and home.** _(Genesis 1-2;_ [_Ephesians 5:22-33_](https://ref.ly/Eph%205.22-33;esv?t=biblia)_; 1 Timothy 3)_
     
 5.  **Believer’s baptism and communion.** _(_[_Jeremiah 31:31-34_](https://ref.ly/Jer%2031.31-34;esv?t=biblia)_;_ [_Ezekiel 36:26-28_](https://ref.ly/Ezek%2036.26-28;esv?t=biblia)_)_
     
