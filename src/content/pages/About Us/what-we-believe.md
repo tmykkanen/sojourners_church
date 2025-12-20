@@ -36,6 +36,8 @@ The _Doctrinal Essentials_ of Sojourners Church reflect the central, non-negotia
     
 3.  And this
     
+4.  **Also this**
+    
 
 1.  **The Word of God** - We believe that the Bible is the Word of God, fully inspired and without error in the original manuscripts, written under the inspiration of the Holy Spirit, and that it has supreme authority in all matters of faith and conduct. ([2 Timothy 3:16](https://ref.ly/2%20Tim%203.16;esv?t=biblia); [2 Peter 1:20](https://ref.ly/2%20Pet%201.20;esv?t=biblia),[21](https://ref.ly/2%20Peter%201.21;esv?t=biblia); [Mark 13:31](https://ref.ly/Mark%2013.31;esv?t=biblia); [John 8:31](https://ref.ly/John%208.31;esv?t=biblia),[32](https://ref.ly/John%208.32;esv?t=biblia); [John 20:31](https://ref.ly/John%2020.31;esv?t=biblia); [Acts 20:32](https://ref.ly/Acts%2020.32;esv?t=biblia))
     
