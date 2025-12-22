@@ -7,6 +7,14 @@
     {
       "title": "Life Together",
       "order": 2
+    },
+    {
+      "title": "Sermons",
+      "order": 3
+    },
+    {
+      "title": "Writings",
+      "order": 4
     }
   ]
 }
