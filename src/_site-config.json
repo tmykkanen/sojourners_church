@@ -39,6 +39,17 @@
     {
       "title": "Writings",
       "order": 4
+    },
+    {
+      "title": "Bonus Menu",
+      "subMenu": [
+        {
+          "title": "Bonus One"
+        },
+        {
+          "title": "Another Bonus"
+        }
+      ]
     }
   ]
 }
