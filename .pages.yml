@@ -220,12 +220,4 @@ content:
         type: object
         fields:
           - { name: title, label: Title, type: string }
-          - name: entries
-            label: Entries
-            type: object
-            list: true
-            fields:
-              - { name: title, label: Title, type: string }
-              - { name: description, label: Description, type: string }
-              - { name: icon, label: Icon, type: string }
-              - { name: soon, label: Soon, type: boolean }
+        
