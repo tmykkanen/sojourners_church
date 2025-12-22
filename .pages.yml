@@ -210,13 +210,13 @@ content:
       - { name: order, label: Order, type: number }
       - { name: body, label: Body, type: rich-text }
 
-  - name: menu
-    label: Menu
+  - name: config
+    label: Site Config
     type: file
-    path: src/pages/_nav.json
+    path: src/_site-config.json
     fields:
-      - name: features
-        label: Features
+      - name: menu
+        label: Menu
         type: object
         fields:
           - { name: title, label: Title, type: string }
