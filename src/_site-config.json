@@ -1,40 +1,15 @@
 {
-  "menu": {
-    "menuItem": [
-      {
-        "title": "About Us",
-        "subMenuItem": [
-          {
-            "title": "What We Believe"
-          },
-          {
-            "title": "Church Membership"
-          },
-          {
-            "title": "Leadership"
-          },
-          {
-            "title": "Partnerships"
-          }
-        ]
-      },
-      {
-        "title": "Life Together",
-        "subMenuItem": [
-          {
-            "title": "Sundays"
-          },
-          {
-            "title": "Community Rhythms"
-          }
-        ]
-      },
-      {
-        "title": "Sermons"
-      },
-      {
-        "title": "Writings"
-      }
-    ]
-  }
+  "menu": [
+    {
+      "title": "About Us",
+      "menuItem": [
+        {
+          "title": "What We Believe"
+        }
+      ]
+    },
+    {
+      "title": "Life Together"
+    }
+  ]
 }
