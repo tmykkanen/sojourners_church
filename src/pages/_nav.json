@@ -1,5 +1,12 @@
 {
   "features": {
-    "title": "Test"
+    "title": "Test",
+    "subfield": [
+      {
+        "title": "Menu 1",
+        "description": "desc",
+        "soon": true
+      }
+    ]
   }
 }
