@@ -5,10 +5,12 @@
       "order": 1,
       "subMenu": [
         {
-          "title": "What We Believe"
+          "title": "What We Believe",
+          "order": 1
         },
         {
-          "title": "Leadership"
+          "title": "Leadership",
+          "order": 2
         },
         {
           "title": "Church Membership"
