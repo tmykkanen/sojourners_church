@@ -2,14 +2,11 @@
   "menu": [
     {
       "title": "About Us",
-      "menuItem": [
-        {
-          "title": "What We Believe"
-        }
-      ]
+      "order": 1
     },
     {
-      "title": "Life Together"
+      "title": "Life Together",
+      "order": 2
     }
   ]
 }
