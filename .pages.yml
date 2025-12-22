@@ -209,3 +209,23 @@ content:
         }
       - { name: order, label: Order, type: number }
       - { name: body, label: Body, type: rich-text }
+
+  - name: menu
+    label: Menu
+    type: file
+    path: src/pages/_nav.json
+    fields:
+      - name: features
+        label: Features
+        type: object
+        fields:
+          - { name: title, label: Title, type: string }
+          - name: entries
+            label: Entries
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Title, type: string }
+              - { name: description, label: Description, type: string }
+              - { name: icon, label: Icon, type: string }
+              - { name: soon, label: Soon, type: boolean }
