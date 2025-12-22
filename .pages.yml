@@ -222,5 +222,13 @@ content:
         fields:
           - { name: title, label: Title, type: string }
           - { name: order, label: Order, type: number }
+          - name: subMenu
+            label: Sub Menu
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Title, type: string }
+              - { name: order, label: Order, type: number }
+            
         
         
