@@ -2,7 +2,21 @@
   "menu": [
     {
       "title": "About Us",
-      "order": 1
+      "order": 1,
+      "subMenu": [
+        {
+          "title": "What We Believe"
+        },
+        {
+          "title": "Leadership"
+        },
+        {
+          "title": "Church Membership"
+        },
+        {
+          "title": "Partnerships"
+        }
+      ]
     },
     {
       "title": "Life Together",
