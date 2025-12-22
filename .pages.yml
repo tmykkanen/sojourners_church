@@ -218,6 +218,7 @@ content:
       - name: menu
         label: Menu
         type: object
+        list: true
         fields:
           - name: menuItem
             label: Menu Item
