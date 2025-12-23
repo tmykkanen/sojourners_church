@@ -8,7 +8,7 @@ order: 3
 
 We believe that the local church should be led by a plurality of qualified elders. Sojourners Church has three elders that provide theological direction and teaching to the body of believers that they will one day give an account for. All elders are equal in authority and have different gifts, experiences, and abilities.
 
-# Elders
+## Elders
 
 ### Tyler Mykkanen, Pastor for Preaching
 
