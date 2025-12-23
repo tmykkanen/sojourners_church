@@ -12,10 +12,7 @@ content:
     filename: "{fields.date}-{fields.title}.md"
     view:
       fields: [title, date, preacher, scripture]
-      default: {
-        sort: date,
-        order: desc
-      }
+      default: { sort: date, order: desc }
     fields:
       - name: title
         label: Title
@@ -68,7 +65,7 @@ content:
         required: true
         pattern:
           message: "Please enter a first and last name."
-          regex: "^[a-zA-Z]+([ \-'][a-zA-Z]+)+$"
+          regex: "^[a-zA-Z]+([ '-][a-zA-Z]+)+$"
       - name: slug
         label: "Slug (firstname-lastname)"
         type: string
