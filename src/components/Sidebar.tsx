@@ -24,7 +24,7 @@ const Sidebar: React.FC<SidebarProps> = ({}) => {
           <Hamburger toggled={isOpen} color="var(--muted-foreground)" />
         </DrawerTrigger>
         <DrawerOverlay className="bg-background" />
-        <DrawerContent className="mt-24 data-[vaul-drawer-direction=right]:w-full data-[vaul-drawer-direction=right]:border-none data-[vaul-drawer-direction=right]:sm:max-w-full">
+        <DrawerContent className="mt-24 overflow-y-auto data-[vaul-drawer-direction=right]:w-full data-[vaul-drawer-direction=right]:border-none data-[vaul-drawer-direction=right]:sm:max-w-full">
           <DrawerTitle className="sr-only">Menu</DrawerTitle>
           <DrawerDescription className="sr-only">
             Navigation Menu
