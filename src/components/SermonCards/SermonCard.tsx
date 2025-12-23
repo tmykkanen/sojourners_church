@@ -1,9 +1,8 @@
 import * as React from "react";
 import { type SermonData } from "@/lib/types";
 import { Card, CardContent } from "@/components/ui/card";
-import { format } from "date-fns";
 import { StyledText } from "../StyledText";
-import formatOsis from "@/lib/Bible-Reference-Formatter/en";
+import Meta from "@/components/Meta";
 
 interface SermonCardProps {
   baseUrl: string;
@@ -29,22 +28,18 @@ const SermonCard: React.FC<SermonCardProps> = ({ baseUrl, sermon }) => {
           <img
             src={imageSquare}
             alt="series"
-            className="h-full rounded-l-sm max-sm:flex-1/3"
+            className="my-4 ml-4 h-20 self-center rounded-sm md:m-0 md:h-full md:rounded-none md:rounded-l-sm"
           />
-          <div className="xs:p-4 flex flex-2/3 flex-col justify-center p-2 sm:p-8">
+          <div className="flex flex-2/3 flex-col justify-center p-4 md:p-8">
             <StyledText as="h3" variant="subheading">
               {title}
             </StyledText>
-            <StyledText as="span" variant="meta">
-              {format(
-                new Date(date.valueOf() + date.getTimezoneOffset() * 60 * 1000),
-                "LLLL dd, yyyy",
-              )}
-              <br />
-              {scripture && scripture.map((ref) => formatOsis("esv-long", ref))}
-              <br />
-              {name}
-            </StyledText>
+            <Meta
+              date={date}
+              scripture={scripture}
+              preacher={name}
+              variant="outline"
+            />
           </div>
         </a>
       </CardContent>

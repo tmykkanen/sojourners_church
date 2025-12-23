@@ -13,7 +13,8 @@ import {
 import SpotifyAudioEmbed from "@/components/SpotifyAudioEmbed.astro";
 import { SermonFilter } from "@/components/SermonFilter/SermonFilter";
 import { SermonCardDisplay } from "@/components/SermonCards/SermonCardDisplay";
-import Meta from "@/components/Meta.astro";
+import Meta from "@/components/Meta";
+import useIsMobile from "@/lib/useIsMobile";
 
 const allSermonData = await getAllSermonData();
 const allSeriesData = await getAllSeriesData();
@@ -39,6 +40,7 @@ const allPreachersData = await getAllPreachersData();
         date={allSermonData[0].data.date}
         scripture={allSermonData[0].data.scripture}
         preacher={allSermonData[0].preacher.data.name}
+        client:load
       />
 
       <SpotifyAudioEmbed spotifyURL={allSermonData[0].data.spotifyURL} />

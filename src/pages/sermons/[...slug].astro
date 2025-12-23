@@ -7,8 +7,7 @@ import { StyledText } from "@/components/StyledText";
 import { format } from "date-fns";
 import { getAllSermonData } from "@/lib/posts";
 import SpotifyVideoEmbed from "@/components/SpotifyVideoEmbed.astro";
-import { Badge } from "@/components/ui/badge";
-import Meta from "@/components/Meta.astro";
+import Meta from "@/components/Meta";
 
 export async function getStaticPaths() {
   const posts = await getAllSermonData();
@@ -33,9 +32,12 @@ const { Content } = await render(post);
 <BaseLayout>
   <Header />
   <main class="layout-base gap-4">
-    <StyledText as="h1" variant="displayXL"> {title}</StyledText>
+    <div>
+      <StyledText as="h1" variant="displayXL"> {title}</StyledText>
 
-    <Meta {date} {scripture} {preacher} />
+      <!-- Don't need to client:load b/c meta defaults to compact=false -->
+      <Meta {date} {scripture} {preacher} compact={false} />
+    </div>
 
     {spotifyURL && <SpotifyVideoEmbed {spotifyURL} />}
     <Content />
