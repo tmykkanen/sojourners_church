@@ -49,6 +49,11 @@ Here is a code block
 And some more code
 ```
 
+| This is a Table Heading | Heading 2 | Heading 3 |
+| --- | --- | --- |
+| Some content | More content | More |
+| And another | Still more | Last |
+
 :::div{.test.another}
 
 This paragraph is wrapped in a div.
