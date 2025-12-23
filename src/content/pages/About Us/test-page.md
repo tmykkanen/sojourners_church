@@ -8,6 +8,8 @@ description: Page for testing page styling
 
 ### H3 Heading
 
+#### H4 Heading
+
 Paragraph test. This is **bold**. This is _italics_.
 
 *   Bullet One
@@ -46,8 +48,6 @@ Below is an OL
 Here is a code block
 And some more code
 ```
-
-#### H4 Heading?
 
 :::div{.test.another}
 
