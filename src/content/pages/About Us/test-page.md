@@ -49,7 +49,7 @@ And some more code
 
 #### H4 Heading?
 
-:::div
+:::div{.test.another}
 
 This paragraph is wrapped in a div.
 
