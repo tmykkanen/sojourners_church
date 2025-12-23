@@ -38,7 +38,7 @@ const Sidebar: React.FC<SidebarProps> = ({}) => {
                       <ButtonLink
                         href="#"
                         variant="link"
-                        className="h-auto text-4xl font-bold whitespace-normal uppercase sm:text-5xl"
+                        className="h-auto text-3xl font-bold whitespace-normal uppercase sm:text-5xl"
                       >
                         {label}
                       </ButtonLink>
@@ -48,7 +48,7 @@ const Sidebar: React.FC<SidebarProps> = ({}) => {
                             <ButtonLink
                               href={`/${path}/${subMenuItem.path}`}
                               variant="link"
-                              className="text-muted-foreground text-lg font-bold uppercase sm:text-xl"
+                              className="text-muted-foreground font-bold uppercase sm:text-xl"
                             >
                               {subMenuItem.label}
                             </ButtonLink>
@@ -61,7 +61,7 @@ const Sidebar: React.FC<SidebarProps> = ({}) => {
                       <ButtonLink
                         href={`/${path}`}
                         variant="link"
-                        className="h-auto text-4xl font-bold whitespace-normal uppercase sm:text-5xl"
+                        className="h-auto text-3xl font-bold whitespace-normal uppercase sm:text-5xl"
                       >
                         {label}
                       </ButtonLink>
