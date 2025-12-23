@@ -2,6 +2,8 @@
 title: Leadership
 order: 3
 ---
+# Leadership
+
 > Pay careful attention to yourselves and to all the flock, in which the Holy Spirit has made you overseers, to care for the church of God, which he obtained with his own blood. - Acts 20:28
 
 We believe that the local church should be led by a plurality of qualified elders. Sojourners Church has three elders that provide theological direction and teaching to the body of believers that they will one day give an account for. All elders are equal in authority and have different gifts, experiences, and abilities.
