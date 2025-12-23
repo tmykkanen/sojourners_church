@@ -2,15 +2,7 @@
 title: What We Believe
 order: 1
 ---
-::::section
-
-:::div{.left}
-
 ## Foundation, Purpose, and Chief Priority
-
-:::
-
-:::div{.right}
 
 The **foundation** of this church is the Lord Jesus Christ, and its final arbiter in all its affairs is the Bible—the Holy Scriptures of the Old and New Testaments—which we believe is the Word of Almighty God.
 
@@ -20,19 +12,7 @@ Therefore, our **chief priority** aimed at fulfilling our purpose is to be and
 
 Below, you will find several summaries of what we believe. These statements can also be found in our [_Constitution and Bylaws_](https://drive.google.com/file/d/1ggsuzTeH6kKD8kG-8Do2YO4YgIE_xN-B/view?usp=sharing) (adopted June 20, 2021).
 
-:::
-
-::::
-
-::::section
-
-:::div{.left}
-
 ## Doctrinal Essentials
-
-:::
-
-:::div{.right}
 
 The _Doctrinal Essentials_ of Sojourners Church reflect the central, non-negotiable teachings of orthodox Christianity throughout history as derived from the Scriptures. These beliefs are rooted in Scripture and reaffirmed in various creeds throughout church history. All members of Sojourners Church must affirm these _Doctrinal Essentials_. Our _Doctrinal Essentials_ are as follows:
 
@@ -57,19 +37,7 @@ The _Doctrinal Essentials_ of Sojourners Church reflect the central, non-negotia
 10.  **The Last Things** - We believe in the personal and visible return of the Lord Jesus Christ to earth and the establishment of His kingdom. We believe in the resurrection of the body, the final judgement, the eternal joy of the righteous and the endless suffering of the wicked. ([_Matthew 16:27_](https://ref.ly/Matt%2016.27;esv?t=biblia)_;_ [_Mark 14:62_](https://ref.ly/Mark%2014.62;esv?t=biblia)_;_ [_John 14:3_](https://ref.ly/John%2014.3;esv?t=biblia)_;_ [_Acts 1:11_](https://ref.ly/Acts%201.11;esv?t=biblia)_;_ [_Philippians 3:20_](https://ref.ly/Phil%203.20;esv?t=biblia)_;_ [_1 Thessalonians 4:15_](https://ref.ly/1%20Thess%204.15;esv?t=biblia)_;_ [_2 Timothy 4:1_](https://ref.ly/2%20Tim%204.1;esv?t=biblia)_;_ [_Titus 2:13_](https://ref.ly/Titus%202.13;esv?t=biblia)_;_ [_1 Corinthians 4:5_](https://ref.ly/1%20Cor%204.5;esv?t=biblia)_;_ [_1 Corinthians 15_](https://biblia.com/bible/esv/1-corinthians/15)_;_ [_2 Thessalonians 1:7-10_](https://ref.ly/2%20Thess%201.7-10;esv?t=biblia)_;_ [_Revelation 20:4-6_](https://ref.ly/Rev%2020.4-6;esv?t=biblia)_,_[_11-15_](https://ref.ly/Revelation%2020.11-15;esv?t=biblia)_)_
      
 
-:::
-
-::::
-
-::::section
-
-:::div{.left}
-
 ## Doctrinal Distinctives
-
-:::
-
-:::div{.right}
 
 Sojourners Church is committed to several _Doctrinal Distinctives_ that, unlike our _Doctrinal Essentials_, are not embraced by all orthodox Christians. Nevertheless, we believe that these distinctives represent our best understanding of Scripture, so our elders passionately preach, teach, and counsel members of the church in harmony with these distinctives. Our members also agree to remain non-divisive over these issues by joyful submission to the teaching of the elders. We affirm the following _Doctrinal Distinctives_:
 
@@ -88,35 +56,11 @@ Sojourners Church is committed to several _Doctrinal Distinctives_ that, unlik
 7.  **Desire, discernment, and decency in the use of all the spiritual gifts.** _(1 Corinthians 12-14)_
     
 
-:::
-
-::::
-
-::::section
-
-:::div{.left}
-
 ## Elder Affirmation of Faith
-
-:::
-
-:::div{.right}
 
 Sojourners Church is grateful for Bethlehem College and Seminary in providing theological education for a number of our elders. We have adopted, with permission, the [_Bethlehem College and Seminary Affirmation of Faith_](https://drive.google.com/a/sojourners.church/file/d/1hWhmLwRf-Yq2bLts8OU28TK0eiqPLzDs/view?usp=sharing) (right-click the link to save a copy). This 52-page document is the fullest expression of our beliefs at Sojourners Church.
 
-:::
-
-::::
-
-::::section
-
-:::div{.left}
-
 ## Statement on Marriage, Gender, & Sexuality
-
-:::
-
-:::div{.right}
 
 We believe that God creates each person as male or female. These two distinct, complementary genders together reflect the image and nature of God ([Genesis 1:26-27](https://ref.ly/Gen%201.26-27;esv?t=biblia)). Rejection of one’s biological sex is a rejection of the image of God within that person.
 
@@ -129,7 +73,3 @@ We believe that in order to preserve the function and integrity of Sojourners Ch
 We believe that God offers redemption and restoration to all who confess and forsake their sin, seeking His mercy and forgiveness through Jesus Christ ([Acts 3:19-21](https://ref.ly/Acts%203.19-21;esv?t=biblia); [Romans 10:9-10](https://ref.ly/Rom%2010.9-10;esv?t=biblia); [1 Corinthians 6:9-11](https://ref.ly/1%20Cor%206.9-11;esv?t=biblia)).
 
 We believe that every person must be afforded compassion, love, kindness, respect, and dignity ([Mark 12:28-31](https://ref.ly/Mark%2012.28-31;esv?t=biblia); [Luke 6:31](https://ref.ly/Luke%206.31;esv?t=biblia)). Hateful and harassing behavior or attitudes directed toward any individual are to be repudiated and are not in accord with Scripture nor the doctrines of Sojourners Church.
-
-:::
-
-::::
