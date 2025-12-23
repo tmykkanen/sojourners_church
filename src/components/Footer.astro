@@ -4,6 +4,8 @@ import { Icon } from "astro-icon/components";
 import { StyledText } from "./StyledText";
 import { Button } from "./ui/button";
 import SubscribeForm from "@/components/SubscribeForm/SubscribeForm";
+
+// TODO: Config footer links in site settings
 ---
 
 <footer class="bg-accent text-accent-foreground layout-base py-8">
@@ -25,17 +27,34 @@ import SubscribeForm from "@/components/SubscribeForm/SubscribeForm";
           <br />
           (507) 552-1595
         </address>
+
         <div class="flex">
-          <ButtonLink href="#" variant="footer-icon"
+          <ButtonLink
+            href="https://www.facebook.com/SojournersMN"
+            target="_blank"
+            aria-label="link to facebook page"
+            variant="footer-icon"
             ><Icon name={"simple-icons:facebook"} /></ButtonLink
           >
-          <ButtonLink href="#" variant="footer-icon"
+          <ButtonLink
+            href="https://www.youtube.com/@sojournerschurch7048"
+            target="_blank"
+            aria-label="link to youtube"
+            variant="footer-icon"
             ><Icon name={"simple-icons:youtube"} /></ButtonLink
           >
-          <ButtonLink href="#" variant="footer-icon"
+          <ButtonLink
+            href="https://open.spotify.com/show/4XUQE1mKNoKG2r4Ovr7FoQ?si=89b3897946374748"
+            target="_blank"
+            aria-label="link to spotify"
+            variant="footer-icon"
             ><Icon name={"simple-icons:spotify"} /></ButtonLink
           >
-          <ButtonLink href="#" variant="footer-icon"
+          <ButtonLink
+            href="#"
+            target="_blank"
+            aria-label="link to Whatsapp"
+            variant="footer-icon"
             ><Icon name={"simple-icons:whatsapp"} /></ButtonLink
           >
         </div>

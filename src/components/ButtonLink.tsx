@@ -8,7 +8,7 @@ interface ButtonLinkProps extends ButtonProps {
   href: string;
 }
 
-const ButtonLink: React.FC<ButtonLinkProps> = ({
+const ButtonLink: React.FC<ButtonLinkProps & React.ComponentProps<"a">> = ({
   href,
   children,
   ...props
