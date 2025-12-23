@@ -23,6 +23,8 @@ Paragraph test. This is **bold**. This is _italics_.
 *   Bullet Four
     
 
+![](/media/mykkanens.webp)
+
 Below is an OL
 
 1.  Number one
