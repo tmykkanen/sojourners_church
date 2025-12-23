@@ -7,6 +7,35 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* https://tailwindcss.com/docs/font-weight */
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: medium;
+  font-weight: 500;
+  src: url("/fonts/Poppins-Medium.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: bold;
+  font-weight: 700 900;
+  src: url("/fonts/Poppins-Bold.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: bold;
+  font-weight: 700 900;
+  src: url("/fonts/Poppins-Bold.ttf");
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
