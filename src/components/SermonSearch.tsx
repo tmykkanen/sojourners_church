@@ -4,7 +4,6 @@ import { useStore } from "@nanostores/react";
 import { SearchIcon } from "lucide-react";
 import { InputGroup, InputGroupInput, InputGroupAddon } from "./ui/input-group";
 import type { HTMLProps } from "react";
-import { cn } from "@/lib/utils";
 
 interface SermonSearchProps {}
 
