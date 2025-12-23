@@ -29,6 +29,8 @@ export async function getAllSermonData(): Promise<SermonData[]> {
   return Promise.all(promises);
 }
 
+export const allSermonData = await getAllSermonData();
+
 export async function getAllSeriesData() {
   return (await getCollection("series")).sort(
     (a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf(),
@@ -42,5 +44,3 @@ export async function getAllPreachersData() {
     )
     .sort((a, b) => b.data.priority - a.data.priority);
 }
-
-export const allSermonData = await getAllSermonData();

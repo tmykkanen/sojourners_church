@@ -2,7 +2,6 @@
 import { NavMenu } from "@/components/NavMenu";
 import { Sidebar } from "@/components/Sidebar";
 import { StyledText } from "@/components/StyledText";
-import { ButtonLink } from "@/components/ButtonLink";
 ---
 
 <header class="layout-full py-4">
@@ -13,7 +12,10 @@ import { ButtonLink } from "@/components/ButtonLink";
       </a>
     </StyledText>
 
-    <NavMenu className="hidden gap-2 lg:inline-flex" />
+    <NavMenu
+      className="hidden gap-2 lg:inline-flex items-center "
+      client:load
+    />
 
     <Sidebar client:load />
   </nav>
