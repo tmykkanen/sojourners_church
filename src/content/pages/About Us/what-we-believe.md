@@ -2,6 +2,8 @@
 title: What We Believe
 order: 1
 ---
+# What We Believe
+
 ## Foundation, Purpose, and Chief Priority
 
 The **foundation** of this church is the Lord Jesus Christ, and its final arbiter in all its affairs is the Bible—the Holy Scriptures of the Old and New Testaments—which we believe is the Word of Almighty God.
