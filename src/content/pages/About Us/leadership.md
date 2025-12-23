@@ -28,9 +28,7 @@ He married his wife, Lauri (who serves as the Office Administrator at Sojouners)
 
 Charlie grew up in a Christian home and has been a dedicated student of the Bible all of his adult life. He has been teaching adult and youth Sunday school classes since 1990. He was a member of the Hollandale Christian School Board where all four of his children have graduated from.
 
-His main focus of study is Systematic Theology and Creation.
-
-> _His divine power has granted to us all things that pertain to life and godliness, through the knowledge of him who called us to his own glory and excellence. (_[_2 Peter 1:3_](http://biblia.com/bible/esv/2%20Peter%201.3)_)_
+His main focus of study is Systematic Theology and Creation. "_His divine power has granted to us all things that pertain to life and godliness, through the knowledge of him who called us to his own glory and excellence." (_[_2 Peter 1:3_](http://biblia.com/bible/esv/2%20Peter%201.3)_)_
 
 ### Thad Rosenberg, Elder
 
