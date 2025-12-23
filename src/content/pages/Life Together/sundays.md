@@ -29,4 +29,4 @@ We have age appropriate Sunday School programming for Pre-K through adult during
 
 We meet in the Skyline Plaza mall on the opposite side of the mall from Bomgaars and the Moose Lodge. Our address is 1679 Main Street, Skyline Plaza, Albert Lea, MN 56007. You can drive through the mall parking lot, but the easiest way to find us is to enter the mall parking lot on the south side of the building (off Front Street). If you see Sibley Elementary School across the street, you are on the right side of the mall. Our entrance looks like this:
 
-<img src="https://images.squarespace-cdn.com/content/v1/5c1979f3da02bc4d968e0241/1546397729681-26A7QL5LYXDA2FSGFFY2/Screen+Shot+2019-01-01+at+8.54.21+PM.png" alt="Screen Shot 2019-01-01 at 8.54.21 PM.png" class="loaded" width="1442" height="609" style="display: block; object-fit: cover; width: 100%; height: 100%; object-position: 50% 50%;">
+![](/media/entrance.webp)
