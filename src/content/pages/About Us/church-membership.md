@@ -1,7 +1,7 @@
 ---
 title: Church Membership
-order: 2
 ---
+
 # Church Membership
 
 ## On Membership
@@ -17,11 +17,7 @@ Membership at Sojourners Church is most fully defined in our [_Constitution and 
 To qualify for membership in this church, a person must:
 
 1.  confess faith on the Lord Jesus Christ as personal Savior, be baptized in obedience to Christ, and give evidence of regeneration by living consistent with their profession and displaying a maturing, active, loving relationship with Jesus;
-    
-2.  wholeheartedly believe in the Christian faith as revealed in the Bible and summarized in the _Doctrinal Essentials_;
-    
-3.  agree to submit to the teaching of the elders consistent with the _Doctrinal Distinctives_ and the _Sojourners Elder Affirmation of Faith_;
-    
-4.  agree to abide by the _Sojourners Church Constitution & Bylaws,_ including the policies on church discipline and the _Statement on Marriage, Gender, and Sexuality_;
-    
-5.  and promise to keep the commitments expressed in the _Membership Covenant_.
+2.  wholeheartedly believe in the Christian faith as revealed in the Bible and summarized in the *Doctrinal Essentials*;
+3.  agree to submit to the teaching of the elders consistent with the *Doctrinal Distinctives* and the *Sojourners Elder Affirmation of Faith*;
+4.  agree to abide by the *Sojourners Church Constitution & Bylaws,* including the policies on church discipline and the *Statement on Marriage, Gender, and Sexuality*;
+5.  and promise to keep the commitments expressed in the *Membership Covenant*.

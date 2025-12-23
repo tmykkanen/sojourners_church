@@ -2,15 +2,12 @@
   "menu": [
     {
       "title": "About Us",
-      "order": 1,
       "subMenu": [
         {
-          "title": "What We Believe",
-          "order": 1
+          "title": "What We Believe"
         },
         {
-          "title": "Leadership",
-          "order": 2
+          "title": "Leadership"
         },
         {
           "title": "Church Membership"
@@ -22,7 +19,6 @@
     },
     {
       "title": "Life Together",
-      "order": 2,
       "subMenu": [
         {
           "title": "Sundays"
@@ -33,15 +29,13 @@
       ]
     },
     {
-      "title": "Sermons",
-      "order": 3
+      "title": "Sermons"
     },
     {
       "title": "What is the gospel?"
     },
     {
-      "title": "Writings",
-      "order": 4
+      "title": "Writings"
     }
   ]
 }

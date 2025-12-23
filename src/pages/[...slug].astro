@@ -3,7 +3,8 @@ import { getCollection, render } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Header from "@/components/Header.astro";
 
-// TODO: Add dynamic ordering
+// TODO: Sermon Page Title too large comparaed to church branding?
+// TODO: Add dynamic ordering to pages
 export async function getStaticPaths() {
   const pages = await getCollection("pages");
   return pages.map((page) => ({
@@ -22,8 +23,12 @@ const { Content } = await render(page);
 
 <BaseLayout>
   <Header />
-  <main class="layout-base md-wrapper gap-8">
-    <Content />
+  <main class="layout-base justify-items-center">
+    <div
+      class="prose prose-custom prose-strong:opacity-90 prose-a:hover:text-primary"
+    >
+      <Content />
+    </div>
   </main>
 </BaseLayout>
 
@@ -31,6 +36,37 @@ const { Content } = await render(page);
   @import "../styles/global.css";
 
   .md-wrapper {
+    h1 {
+      @apply text-3xl font-bold uppercase;
+    }
+
+    h2 {
+      @apply text-xl font-bold uppercase md:text-2xl;
+    }
+    h3 {
+      @apply text-xl tracking-wider uppercase md:text-2xl;
+    }
+    h4 {
+      @apply text-foreground text-xl;
+    }
+
+    p {
+      @apply text-muted-foreground;
+    }
+
+    em,
+    strong {
+      @apply text-foreground/80;
+    }
+
+    a {
+      @apply hover:text-primary hover:underline;
+    }
+
+    ul {
+      @apply list-disc;
+    }
+
     section {
       @apply flex flex-col gap-4 md:flex-row;
     }
@@ -42,22 +78,6 @@ const { Content } = await render(page);
     }
     div {
       @apply flex flex-col gap-2;
-    }
-
-    h2 {
-      @apply text-xl font-bold uppercase md:text-2xl;
-    }
-
-    p {
-      @apply text-muted-foreground;
-    }
-    em,
-    strong {
-      @apply text-foreground;
-    }
-
-    a {
-      @apply hover:text-primary hover:underline;
     }
 
     /* Sensible defaults for list styling */

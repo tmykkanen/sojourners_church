@@ -4,14 +4,17 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { StyledText } from "@/components/StyledText";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import bgImage from "public/media/homepage-bg.jpg";
+import { Image } from "astro:assets";
 ---
 
 <BaseLayout>
   <Header />
   <main>
+    <!-- <Image src={bgImage} alt={"background image"} class={"hidden"} priority /> -->
     <div
       class="grid min-h-screen w-full bg-cover bg-right"
-      style="background-image: url(/albert-lea.jpg)"
+      style={`background-image: url(${bgImage.src}); background-color: var(--background);`}
     >
       <!-- BG OVERLAY -->
       <div class="bg-muted col-start-1 row-start-1 h-full w-full opacity-85">

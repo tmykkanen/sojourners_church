@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useForm, useStore } from "@tanstack/react-form";
+import { useForm } from "@tanstack/react-form";
 import { Button } from "../ui/button";
 import { Field, FieldError, FieldGroup } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
@@ -38,43 +38,9 @@ const SubscribeForm: React.FC<SubscribeFormProps> = ({}) => {
       if (code === "CONFLICT") toast.info(message);
       if (code === "SUCCESS") toast.success(message);
 
-      // TODO: Style Sonner
-      // if (data.message === "") toast.info(data.message);
-
-      // toast("You submitted the following values:", {
-      //   description: (
-      //     <pre className="bg-code text-code-foreground mt-2 w-[320px] overflow-x-auto rounded-md p-4">
-      //       <code>{JSON.stringify(value, null, 2)}</code>
-      //     </pre>
-      //   ),
-      //   position: "bottom-right",
-      //   classNames: {
-      //     content: "flex flex-col gap-2",
-      //   },
-      //   style: {
-      //     "--border-radius": "calc(var(--radius)  + 4px)",
-      //   } as React.CSSProperties,
-      // });
-      // console.log(post);
-
       form.reset();
     },
   });
-
-  // const firstName = useStore(form.store, (state) => state.values.firstName);
-  // const lastName = useStore(form.store, (state) => state.values.lastName);
-  // const email = useStore(form.store, (state) => state.values.email);
-  // const errors = useStore(form.store, (state) => state.errorMap);
-
-  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   const formData = new FormData(e.target as HTMLFormElement);
-  //   const { data, error } = await actions.subscribe(formData);
-  //   if (error) {
-  //     return toast.error(error.message);
-  //   }
-  //   toast.success(data);
-  // };
 
   return (
     <>
@@ -94,7 +60,6 @@ const SubscribeForm: React.FC<SubscribeFormProps> = ({}) => {
                 field.state.meta.isTouched && !field.state.meta.isValid;
               return (
                 <Field data-invalid={isInvalid}>
-                  {/*<FieldLabel htmlFor={field.name}>First Name</FieldLabel>*/}
                   <Input
                     id={field.name}
                     name={field.name}
