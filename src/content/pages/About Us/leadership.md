@@ -10,7 +10,7 @@ We believe that the local church should be led by a plurality of qualified elder
 
 ### **Tyler Mykkanen, Pastor for preaching**
 
-<img src="https://images.squarespace-cdn.com/content/v1/5c1979f3da02bc4d968e0241/1624298295180-82PNZE8ZP95DT8LGUXV4/mykkanen-fam-2020.jpeg" alt="mykkanen-fam-2020.jpeg" class="loaded" style="display:block;object-fit: cover; width: 100%; height: 100%; object-position: 50% 50%" width="2308" height="1731">
+![](/media/mykkanens.webp)
 
 Tyler Mykkanen is Pastor for Preaching at Sojourners Church. He and his wife Nicole have been married since 2003 and have three children (Malachi, Ruby, and Ella). Tyler worked as a special education teacher for eight years before attending seminary at Bethlehem College and Seminary in Minneapolis, MN. He graduated with his MDiv in the spring of 2018 and joined Sojourners in September 2018.
 
