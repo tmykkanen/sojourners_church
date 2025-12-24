@@ -223,9 +223,9 @@ content:
         fields:
           - name: hero
             label: Hero Text
-            type: rich-text
+            type: code
             options:
-              format: html
+              language: html
           - name: cta
             label: CTA Button
             type: object
