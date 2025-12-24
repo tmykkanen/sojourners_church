@@ -223,7 +223,7 @@ content:
         fields:
           - name: hero
             label: Hero Text
-            type: string
+            type: rich-text
           - name: cta
             label: CTA Button
             type: object
