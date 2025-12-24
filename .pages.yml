@@ -1,4 +1,6 @@
-media: assets
+media: 
+  input: src/assets
+  output: assets
 content:
   - name: sermons
     label: Sermons
