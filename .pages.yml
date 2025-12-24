@@ -1,9 +1,4 @@
-media:
-  - name: media
-    label: Media
-    input: public/media
-    output: /media
-    path: /media
+media: assets
 content:
   - name: sermons
     label: Sermons
