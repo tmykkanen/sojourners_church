@@ -221,7 +221,11 @@ content:
         label: Homepage Config
         type: object
         fields:
-          - { name: hero, label: Hero Text, type: string }
+          - name: hero
+            label: Hero Text
+            type: rich-text
+            options:
+              format: html
           - name: cta
             label: CTA Button
             type: object
