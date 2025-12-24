@@ -215,7 +215,7 @@ content:
         type: object
         fields:
           - { name: name, label: Church Name, type: string }
-          - { name: address, label: Church Address, type: text }
+          - { name: address, label: Church Address, type: code, options: {language: html} }
           - { name: phone, label: Church Phone, type: string }
       - name: homepage
         label: Homepage Config
