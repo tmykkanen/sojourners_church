@@ -210,6 +210,9 @@ content:
     type: file
     path: src/_site-config.json
     fields:
+      - name: title
+        label: Website title
+        type: string
       - name: menu
         label: Menu
         type: object
