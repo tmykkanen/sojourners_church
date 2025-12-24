@@ -226,7 +226,7 @@ content:
             label: CTA Button
             type: object
             fields: 
-              - { name: text, label: CTA Text, type: string }
+              - { name: text, label: CTA Text, type: code, options: {language: html} }
               - { name: link, label: CTA Link, type: string }
       - name: menu
         label: Menu
