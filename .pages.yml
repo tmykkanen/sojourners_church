@@ -210,8 +210,8 @@ content:
     type: file
     path: src/_site-config.json
     fields:
-      - name: title
-        label: Website title
+      - name: churchName
+        label: Church Name
         type: string
       - name: menu
         label: Menu
