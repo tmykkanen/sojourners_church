@@ -1,5 +1,5 @@
 ---
 name: Brian Kettering
 isGuest: true
-priority: 0
+priority: 3
 ---
