@@ -74,7 +74,7 @@ content:
         type: boolean
         default: true
       - name: priority
-        label: Priority
+        label: Priority (1 is highest, 0 is lowest)
         type: number
         default: 0
       - name: bio
