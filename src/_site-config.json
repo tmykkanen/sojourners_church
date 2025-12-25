@@ -3,6 +3,7 @@
     "name": "Sojourners Church",
     "address": "1679 West Main Street<br />\nSkyline Plaza<br />\nAlbert Lea, MN 56007",
     "phone": "(507) 552-1595",
+    "logo": "assets/logo.png",
     "favicon": "/favicon.svg"
   },
   "homepage": {
