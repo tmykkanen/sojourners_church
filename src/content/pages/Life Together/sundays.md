@@ -1,6 +1,7 @@
 ---
 title: Sundays
 ---
+
 # Sunday Worship
 
 Each Sunday, we meet together as Sojourners Church. Our gathering is a family gathering, and we love to have company join us. Come in comfortable clothes and with an open heart. Come, taste and see that the Lord is good and magnify his name with us (Psalm 34)!
@@ -29,4 +30,4 @@ We have age appropriate Sunday School programming for Pre-K through adult during
 
 We meet in the Skyline Plaza mall on the opposite side of the mall from Bomgaars and the Moose Lodge. Our address is 1679 Main Street, Skyline Plaza, Albert Lea, MN 56007. You can drive through the mall parking lot, but the easiest way to find us is to enter the mall parking lot on the south side of the building (off Front Street). If you see Sibley Elementary School across the street, you are on the right side of the mall. Our entrance looks like this:
 
-![](/media/entrance.webp)
+![](/src/assets/entrance.webp)

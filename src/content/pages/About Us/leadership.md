@@ -12,7 +12,7 @@ We believe that the local church should be led by a plurality of qualified elder
 
 ### Tyler Mykkanen, Pastor for Preaching
 
-![](/media/mykkanens.webp)
+![](/src/assets/mykkanens.webp)
 
 Tyler Mykkanen is Pastor for Preaching at Sojourners Church. He and his wife Nicole have been married since 2003 and have three children (Malachi, Ruby, and Ella). Tyler worked as a special education teacher for eight years before attending seminary at Bethlehem College and Seminary in Minneapolis, MN. He graduated with his MDiv in the spring of 2018 and joined Sojourners in September 2018.
 
@@ -22,7 +22,7 @@ Tyler's goal in ministry at Sojourners is to help others trust Jesus, love Jesus
 
 ### Charlie Olson, Elder
 
-![](/media/olson.webp)
+![](/src/assets/olson.webp)
 
 Charlie graduated from South Dakota State University in 1979 with a Bachelor of Science Degree in pharmacy. He has been a registered pharmacist for the last 34 years and is currently the Director of the Long Term Care Division for Astrup Drug.
 
