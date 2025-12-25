@@ -1,6 +1,12 @@
 media: 
-  input: src/assets
-  output: assets
+  - name: assets
+    label: Assets
+    input: src/assets
+    output: assets
+  - name: public
+    label: Public
+    input: public
+    output: /
 content:
   - name: sermons
     label: Sermons
