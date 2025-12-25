@@ -13,12 +13,13 @@
 - [x] TODO: Add handling for whole book scripture ref
 - [x] TODO: ([...slug].astro) Sermon Page Title too large comparaed to church branding?
 - [x] TODO: ([...slug].astro) Add dynamic ordering to pages
+- [x] TODO: Handle slug generation from filenames for Preacher + Series entries
+- [x] TODO: Add scrolling to menu for mobile
+- [x] TODO: Update image paths
+
 - [ ] TODO: Add weighting priority to pastor for sermon search
 - [ ] TODO: (SermonFilter.tsx) Consider converting to sermons to API endpoint rather than passing data?
 - [ ] TODO: (posts.ts) Update getAllSermonData w/ this function
 - [ ] TODO: (subscribe.ts) Better error handling
 - [ ] TODO: Run lighthouse checks
-- [ ] TODO: Handle slug generation from filenames for Preacher + Series entries
-- [x] TODO: Add scrolling to menu for mobile
-- [ ] TODO: Update image paths
 - [ ] TODO: Tweak image handling to only require one image format for series?

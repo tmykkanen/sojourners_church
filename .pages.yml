@@ -1,4 +1,4 @@
-media: 
+media:
   - name: assets
     label: Assets
     input: src/assets
@@ -69,10 +69,6 @@ content:
         pattern:
           message: "Please enter a first and last name."
           regex: "^[a-zA-Z]+([ '-][a-zA-Z]+)+$"
-      - name: slug
-        label: "Slug (firstname-lastname)"
-        type: string
-        required: true
       - name: isGuest
         label: Guest Preacher
         type: boolean
@@ -98,10 +94,6 @@ content:
     fields:
       - name: title
         label: Series Title
-        type: string
-        required: true
-      - name: slug
-        label: "Slug (series-name-lowercase-no-spaces)"
         type: string
         required: true
       - name: image
@@ -218,21 +210,41 @@ content:
         type: object
         fields:
           - { name: name, label: Church Name, type: string }
-          - { name: address, label: Church Address, type: code, options: {language: html} }
+          - {
+              name: address,
+              label: Church Address,
+              type: code,
+              options: { language: html },
+            }
           - { name: phone, label: Church Phone, type: string }
           - { name: logo, label: Logo, type: image }
-          - { name: favicon, label: Favicon, type: image, options: {media: public} }
-          
+          - {
+              name: favicon,
+              label: Favicon,
+              type: image,
+              options: { media: public },
+            }
+
       - name: homepage
         label: Homepage Config
         type: object
         fields:
-          - { name: hero, label: Hero Text, type: code, options: {language: html} }
+          - {
+              name: hero,
+              label: Hero Text,
+              type: code,
+              options: { language: html },
+            }
           - name: cta
             label: CTA Button
             type: object
-            fields: 
-              - { name: text, label: CTA Text, type: code, options: {language: html} }
+            fields:
+              - {
+                  name: text,
+                  label: CTA Text,
+                  type: code,
+                  options: { language: html },
+                }
               - { name: link, label: CTA Link, type: string }
       - name: menu
         label: Menu
