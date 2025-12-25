@@ -38,9 +38,19 @@ export async function getAllSeriesData() {
 }
 
 export async function getAllPreachersData() {
-  return (await getCollection("preachers"))
-    .sort((a, b) =>
-      a.data.name.split(" ")[1].localeCompare(b.data.name.split(" ")[1]),
-    )
-    .sort((a, b) => b.data.priority - a.data.priority);
+  return (
+    (await getCollection("preachers"))
+      // alpha sort by last name
+      .sort((a, b) =>
+        a.data.name.split(" ")[1].localeCompare(b.data.name.split(" ")[1]),
+      )
+      // sort by priority, 1 being highest priority, set 0 to 9999 to keep from sorting above 1
+      .sort(
+        (a, b) =>
+          (a.data.priority === 0 ? 9999 : a.data.priority) -
+          (b.data.priority === 0 ? 9999 : b.data.priority),
+      )
+      // Prioritize non-guest preachers
+      .sort((a, b) => Number(a.data.isGuest) - Number(b.data.isGuest))
+  );
 }
