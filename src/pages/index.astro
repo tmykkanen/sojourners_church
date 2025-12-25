@@ -4,14 +4,14 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { StyledText } from "@/components/StyledText";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
-import bgImage from "public/media/homepage-bg.jpg";
-import { Image } from "astro:assets";
+import bgImage from "@/assets/homepage-bg.jpg";
+
+import config from "@/_site-config.json";
 ---
 
 <BaseLayout>
   <Header />
   <main>
-    <!-- <Image src={bgImage} alt={"background image"} class={"hidden"} priority /> -->
     <div
       class="grid min-h-screen w-full bg-cover bg-right"
       style={`background-image: url(${bgImage.src}); background-color: var(--background);`}
@@ -21,17 +21,22 @@ import { Image } from "astro:assets";
       </div>
 
       <div class="layout-base isolate col-start-1 row-start-1 gap-y-8">
-        <StyledText as="h2" variant="displayXL">
-          <span class="opacity-40">We exist to be and make</span>
-          <br />
-          <span class="text-primary">eternally joyful disciples</span>
-          <br />
-          <span class="opacity-40">of Jesus Christ.</span>
-        </StyledText>
-        <ButtonLink variant="accent" href="#" className="w-full h-auto">
-          <StyledText as="span" variant="button">
-            10 am Sundays at the Skyline Plaza | Click here for livestream
-          </StyledText>
+        <StyledText
+          as="h2"
+          variant="displayXL"
+          set:html={config.homepage.hero}
+        />
+        <ButtonLink
+          variant="accent"
+          href={config.homepage.cta.link}
+          target="_blank"
+          className="w-full h-auto"
+        >
+          <StyledText
+            as="span"
+            variant="button"
+            set:html={config.homepage.cta.text}
+          />
         </ButtonLink>
       </div>
     </div>

@@ -19,4 +19,6 @@
 - [ ] TODO: (subscribe.ts) Better error handling
 - [ ] TODO: Run lighthouse checks
 - [ ] TODO: Handle slug generation from filenames for Preacher + Series entries
-- [ ] TODO: Add scrolling to menu for mobile
+- [x] TODO: Add scrolling to menu for mobile
+- [ ] TODO: Update image paths
+- [ ] TODO: Tweak image handling to only require one image format for series?

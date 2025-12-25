@@ -32,7 +32,7 @@ const Sidebar: React.FC<SidebarProps> = ({}) => {
             </DrawerDescription>
             <nav className="flex flex-col items-center px-4">
               <ul className="flex flex-col gap-4">
-                {navEntries.map(({ label, path, subMenu, order }, index) =>
+                {navEntries.map(({ label, path, subMenu }, index) =>
                   subMenu ? (
                     <li key={index}>
                       <ButtonLink

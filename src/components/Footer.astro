@@ -1,11 +1,10 @@
 ---
 import { ButtonLink } from "./ButtonLink";
-import { Icon } from "astro-icon/components";
 import { StyledText } from "./StyledText";
-import { Button } from "./ui/button";
 import SubscribeForm from "@/components/SubscribeForm/SubscribeForm";
+import SocialMediaLinks from "@/components/SocialMediaLinks";
 
-// TODO: Config footer links in site settings
+import config from "@/_site-config.json";
 ---
 
 <footer class="bg-accent text-accent-foreground layout-base py-8">
@@ -14,50 +13,17 @@ import SubscribeForm from "@/components/SubscribeForm/SubscribeForm";
       <h2 class="sr-only">Address & Contact Info</h2>
       <div class="flex flex-col gap-2">
         <StyledText as="h3" variant="heading">Sundays at 10am</StyledText>
-        <address>
-          1679 West Main Street <br />
-          Skyline Plaza <br />
-          Albert Lea, MN 56007
-        </address>
+        <address set:html={config.info.address} />
       </div>
       <div class="flex flex-col gap-2">
         <StyledText as="h3" variant="heading">Contact Us</StyledText>
         <address>
           <a href="mailto:hello@sojourners.church">hello@sojourners.church</a>
           <br />
-          (507) 552-1595
+          <span set:html={config.info.phone} />
         </address>
 
-        <div class="flex">
-          <ButtonLink
-            href="https://www.facebook.com/SojournersMN"
-            target="_blank"
-            aria-label="link to facebook page"
-            variant="footer-icon"
-            ><Icon name={"simple-icons:facebook"} /></ButtonLink
-          >
-          <ButtonLink
-            href="https://www.youtube.com/@sojournerschurch7048"
-            target="_blank"
-            aria-label="link to youtube"
-            variant="footer-icon"
-            ><Icon name={"simple-icons:youtube"} /></ButtonLink
-          >
-          <ButtonLink
-            href="https://open.spotify.com/show/4XUQE1mKNoKG2r4Ovr7FoQ?si=89b3897946374748"
-            target="_blank"
-            aria-label="link to spotify"
-            variant="footer-icon"
-            ><Icon name={"simple-icons:spotify"} /></ButtonLink
-          >
-          <ButtonLink
-            href="#"
-            target="_blank"
-            aria-label="link to Whatsapp"
-            variant="footer-icon"
-            ><Icon name={"simple-icons:whatsapp"} /></ButtonLink
-          >
-        </div>
+        <SocialMediaLinks client:load />
       </div>
     </section>
     <section class="flex flex-col gap-4">
@@ -80,7 +46,11 @@ import SubscribeForm from "@/components/SubscribeForm/SubscribeForm";
           Church.
         </p>
       </div>
-      <Button variant="footer-button">Give</Button>
+      <ButtonLink
+        target="_blank"
+        href="https://give.tithe.ly/?formId=7ddcb78e-6865-11ee-90fc-1260ab546d11"
+        variant="footer-button">Give</ButtonLink
+      >
     </section>
   </div>
 </footer>

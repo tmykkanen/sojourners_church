@@ -4,7 +4,6 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import { StyledText } from "@/components/StyledText";
 import { ButtonLink } from "@/components/ButtonLink";
-import { format } from "date-fns";
 import {
   getAllPreachersData,
   getAllSeriesData,
@@ -14,7 +13,6 @@ import SpotifyAudioEmbed from "@/components/SpotifyAudioEmbed.astro";
 import { SermonFilter } from "@/components/SermonFilter/SermonFilter";
 import { SermonCardDisplay } from "@/components/SermonCards/SermonCardDisplay";
 import Meta from "@/components/Meta";
-import useIsMobile from "@/lib/useIsMobile";
 
 const allSermonData = await getAllSermonData();
 const allSeriesData = await getAllSeriesData();
@@ -25,7 +23,7 @@ const allPreachersData = await getAllPreachersData();
   <Header />
   <main class="layout-base gap-8 py-8">
     <h1 class="sr-only">Sermons</h1>
-    <section class="flex flex-col gap-2">
+    <section class="flex flex-col gap-4">
       <StyledText as="h2" variant="heading">Latest Sermon</StyledText>
       <ButtonLink
         variant="link"

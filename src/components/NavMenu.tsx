@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -17,14 +18,13 @@ const NavMenu: React.FC<React.ComponentProps<"nav">> = ({ ...props }) => {
         subMenu ? (
           <DropdownMenu key={label}>
             <DropdownMenuTrigger asChild>
-              <ButtonLink
-                href=""
+              <Button
                 variant="ghost"
-                className="group flex items-center gap-1 rounded-md px-3 py-2 text-xs tracking-widest uppercase sm:text-sm"
+                className="group flex items-center gap-1 rounded-md px-3 py-2 text-sm tracking-widest uppercase xl:text-base"
               >
                 {label}
                 <ChevronDown className="h-4 w-4 transition-transform duration-200 ease-out group-data-[state=open]:rotate-180" />
-              </ButtonLink>
+              </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="start"
@@ -41,7 +41,7 @@ const NavMenu: React.FC<React.ComponentProps<"nav">> = ({ ...props }) => {
           <a
             key={label}
             href={`/${path}`}
-            className="hover:bg-accent hover:text-accent-foreground rounded-md px-3 py-2 text-xs tracking-widest uppercase sm:text-sm"
+            className="hover:bg-accent hover:text-accent-foreground rounded-md px-3 py-2 text-sm tracking-widest text-nowrap uppercase xl:text-base"
           >
             {label}
           </a>
