@@ -72,6 +72,7 @@ content:
       - name: isGuest
         label: Guest Preacher
         type: boolean
+        default: true
       - name: priority
         label: Priority
         type: number
