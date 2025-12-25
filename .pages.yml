@@ -221,7 +221,7 @@ content:
           - { name: address, label: Church Address, type: code, options: {language: html} }
           - { name: phone, label: Church Phone, type: string }
           - { name: logo, label: Logo, type: image }
-          - { name: favicon, label: Favicon, type: image }
+          - { name: favicon, label: Favicon, type: image, options: {media: public} }
           
       - name: homepage
         label: Homepage Config
