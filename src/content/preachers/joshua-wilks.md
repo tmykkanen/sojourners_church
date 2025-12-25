@@ -2,5 +2,5 @@
 name: Joshua Wilks
 isGuest: true
 priority: 0
-bio: BCS studen
+bio: BCS student
 ---
