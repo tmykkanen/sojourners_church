@@ -2,7 +2,7 @@ media:
   - name: assets
     label: Assets
     input: src/assets
-    output: assets
+    output: src/assets
   - name: public
     label: Public
     input: public
