@@ -41,7 +41,7 @@ const NavMenu: React.FC<React.ComponentProps<"nav">> = ({ ...props }) => {
           <a
             key={label}
             href={`/${path}`}
-            className="hover:bg-accent hover:text-accent-foreground rounded-md px-3 py-2 text-sm tracking-widest text-nowrap uppercase xl:text-base"
+            className="hover:bg-accent hover:text-accent-foreground rounded-md px-3 py-2 text-sm font-medium tracking-widest text-nowrap uppercase xl:text-base"
           >
             {label}
           </a>
