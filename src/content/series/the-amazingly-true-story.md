@@ -1,8 +1,7 @@
 ---
 title: The Amazingly True Story
-slug: the-amazingly-true-story
-image: /src/assets/Story Sermon Series img FB.jpg
-imageSquare: /src/assets/Story Sermon Series img SQ.jpg
+image: src/assets/Story Sermon Series img FB.jpg
+imageSquare: src/assets/Story Sermon Series img SQ.jpg
 startDate: 2024-04-21
 book:
   - Genesis
