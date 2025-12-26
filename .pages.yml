@@ -105,7 +105,8 @@ content:
         label: Series Image
         type: image
         required: true
-        media: series-graphics
+        options:
+          media: series-graphics
       - name: imageSquare
         label: Square series image
         type: image
