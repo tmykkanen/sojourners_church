@@ -23,3 +23,4 @@
 - [ ] TODO: (subscribe.ts) Better error handling
 - [ ] TODO: Run lighthouse checks
 - [ ] TODO: Tweak image handling to only require one image format for series?
+- [ ] TODO: update links / content in pages

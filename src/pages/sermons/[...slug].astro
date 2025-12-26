@@ -2,13 +2,11 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Header from "@/components/Header.astro";
 
-import { getCollection, render } from "astro:content";
+import { render } from "astro:content";
 import { StyledText } from "@/components/StyledText";
-import { format } from "date-fns";
 import { getAllSermonData } from "@/lib/posts";
 import SpotifyVideoEmbed from "@/components/SpotifyVideoEmbed.astro";
 import Meta from "@/components/Meta";
-import slugify from "slugify";
 import { ButtonLink } from "@/components/ButtonLink";
 
 export async function getStaticPaths() {
@@ -48,7 +46,8 @@ const { Content } = await render(post);
         <p>
           <ButtonLink
             variant="link"
-            href={`https://www.youtube.com/@sojournerschurch7048/search?query=${slugify(title)}`}
+            href={`https://www.youtube.com/@sojournerschurch7048/search?query=${title}`}
+            target="_blank"
           >
             No audio available. Try our YouTube channel.
           </ButtonLink>
