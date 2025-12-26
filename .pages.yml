@@ -111,6 +111,8 @@ content:
         label: Square series image
         type: image
         required: true
+        options:
+          media: series-graphics
       - name: startDate
         label: Start date
         type: date
