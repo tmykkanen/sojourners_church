@@ -55,7 +55,7 @@ content:
         type: string
       - name: body
         label: Notes
-        type: text
+        type: rich-text
   - name: preachers
     label: Preachers
     type: collection
