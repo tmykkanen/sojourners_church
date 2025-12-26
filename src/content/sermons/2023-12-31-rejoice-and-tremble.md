@@ -6,4 +6,5 @@ scripture:
   - Isa.65.17-Isa.66.24
 preacher: src/content/preachers/tyler-mykkanen.md
 ---
-Isaiah 65:17–66:24 
+
+Isaiah 65:17–66:24
