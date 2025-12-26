@@ -8,6 +8,8 @@ import { format } from "date-fns";
 import { getAllSermonData } from "@/lib/posts";
 import SpotifyVideoEmbed from "@/components/SpotifyVideoEmbed.astro";
 import Meta from "@/components/Meta";
+import slugify from "slugify";
+import { ButtonLink } from "@/components/ButtonLink";
 
 export async function getStaticPaths() {
   const posts = await getAllSermonData();
@@ -39,7 +41,20 @@ const { Content } = await render(post);
       <Meta {date} {scripture} {preacher} compact={false} />
     </div>
 
-    {spotifyURL && <SpotifyVideoEmbed {spotifyURL} />}
+    {
+      spotifyURL ? (
+        <SpotifyVideoEmbed {spotifyURL} />
+      ) : (
+        <p>
+          <ButtonLink
+            variant="link"
+            href={`https://www.youtube.com/@sojournerschurch7048/search?query=${slugify(title)}`}
+          >
+            No audio available. Try our YouTube channel.
+          </ButtonLink>
+        </p>
+      )
+    }
     <div
       class="prose prose-custom prose-a:hover:decoration-primary prose-a:hover:text-foreground max-w-none"
     >
