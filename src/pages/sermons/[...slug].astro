@@ -8,6 +8,7 @@ import { getAllSermonData } from "@/lib/posts";
 import SpotifyVideoEmbed from "@/components/SpotifyVideoEmbed.astro";
 import Meta from "@/components/Meta";
 import { ButtonLink } from "@/components/ButtonLink";
+import { format as datefnsFormat } from "date-fns";
 
 export async function getStaticPaths() {
   const posts = await getAllSermonData();
@@ -27,6 +28,11 @@ const {
 } = post;
 
 const { Content } = await render(post);
+
+const dateFormatted = datefnsFormat(
+  new Date(date.valueOf() + date.getTimezoneOffset() * 60 * 1000),
+  "LLL dd, yyyy",
+);
 ---
 
 <BaseLayout>
@@ -46,7 +52,7 @@ const { Content } = await render(post);
         <p>
           <ButtonLink
             variant="link"
-            href={`https://www.youtube.com/@sojournerschurch7048/search?query=${title}`}
+            href={`https://www.youtube.com/@sojournerschurch7048/search?query=${dateFormatted}`}
             target="_blank"
           >
             No audio available. Try our YouTube channel.
