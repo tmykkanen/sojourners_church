@@ -7,6 +7,10 @@ media:
     label: Public
     input: public
     output: /
+  - name: series-graphics
+    label: Series Graphics
+    input: public/series-graphics
+    output: /series-graphics
 content:
   - name: sermons
     label: Sermons
