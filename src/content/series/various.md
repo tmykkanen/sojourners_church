@@ -1,6 +1,6 @@
 ---
 title: Various
-image: src/assets/SJ Logo Color.jpg
-imageSquare: src/assets/SJ Logo Color.jpg
+image: /series-graphics/SJ Logo Color.jpg
+imageSquare: /series-graphics/SJ Logo Color.jpg
 startDate: 2010-01-01
 ---
