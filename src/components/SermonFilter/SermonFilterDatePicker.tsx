@@ -12,26 +12,17 @@ import {
   DatePicker,
   DateSegment,
   Dialog,
-  FieldError,
   Group,
   Heading,
   Label,
   Popover,
 } from "react-aria-components";
 import type { ButtonProps, PopoverProps } from "react-aria-components";
-import {
-  ChevronLeft,
-  ChevronRight,
-  ChevronDown,
-  CalendarIcon,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight, CalendarIcon } from "lucide-react";
 import {
   getLocalTimeZone,
   parseAbsoluteToLocal,
-  parseDate,
   today,
-  DateFormatter,
-  parseAbsolute,
   CalendarDate,
   type DateValue,
 } from "@internationalized/date";
@@ -40,8 +31,6 @@ import * as React from "react";
 import type { SermonData } from "@/lib/types";
 import { useStore } from "@nanostores/react";
 import { $from, $to } from "@/lib/nanostores";
-import { formatISO } from "date-fns";
-import type { StoreValue } from "nanostores";
 import { cn } from "@/lib/utils";
 
 interface SermonFilterDatePickerProps {
