@@ -1,5 +1,5 @@
 ---
-title: Guest Preacher (Brian Kettering)
+title: "Guest Preacher: Brian Kettering"
 date: 2025-10-19
 series: src/content/series/various.md
 scripture:
@@ -11,4 +11,4 @@ googleDocsURL: https://drive.google.com/file/d/1TiOxHMgG327sVwnU4J8PX6TO0G5XacWl
 
 Sermon on Colossians 2:16-19 from ⁠Sojourners Church⁠ in Albert Lea, MN.
 
-Preached on October 19,2025 by Brian Kettering, Pastoral Resident at Redemption City Church.
+Preached on October 19,2025 by Brian Kettering, Pastoral Resident at [Redemption City Church](https://www.redemptionrochester.com/).

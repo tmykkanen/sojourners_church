@@ -1,5 +1,5 @@
 ---
-title: Guest Preacher (Carl Everett)
+title: "Guest Preacher: Carl Everett"
 date: 2025-08-31
 series: src/content/series/various.md
 scripture:

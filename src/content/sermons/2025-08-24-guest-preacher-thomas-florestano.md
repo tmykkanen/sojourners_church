@@ -1,5 +1,5 @@
 ---
-title: Guest Preacher (Thomas Florestano)
+title: "Guest Preacher: Thomas Florestano"
 date: 2025-08-24
 series: src/content/series/various.md
 scripture:
