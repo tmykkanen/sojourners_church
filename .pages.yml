@@ -83,7 +83,7 @@ content:
         default: 0
       - name: bio
         label: Bio
-        type: text
+        type: rich-text
       - name: image
         label: Upload a Picture
         type: image
