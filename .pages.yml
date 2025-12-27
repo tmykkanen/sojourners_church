@@ -192,12 +192,7 @@ content:
     filename: "{primary}.md"
     fields:
        - { name: title, label: Title, type: string, required: true }
-       - {
-            name: tags,
-            label: Tags,
-            type: string,
-            list: true
-          }
+       - { name: tags, label: Tags, type: string, list: true }
        - { name: body, label: Body, type: rich-text }
   - name: pages
     label: Pages
