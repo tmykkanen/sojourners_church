@@ -1,5 +1,6 @@
 ---
 title: Why do we do that? Corporate Singing
+date: 2024-06-09
 tags:
   - Liturgy
 ---
