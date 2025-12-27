@@ -1,5 +1,5 @@
 ---
-title: Guest Preacher
+title: Guest Preacher (Carl Everett)
 date: 2025-08-31
 series: src/content/series/various.md
 scripture:
@@ -9,4 +9,4 @@ spotifyURL: https://open.spotify.com/episode/5rqTuPHGtSXp5cnh5ONf6p?si=fc54e1db4
 googleDocsURL: https://drive.google.com/file/d/1dKTNZjWrKb5RrZORBtmdfhMjFah4wkzY/view
 ---
 
-Sermon on Ephesians 2:1-10 from Sojourners Church in Albert Lea, MN. Preached on August 31, 2025 by Carl Everett.
+Sermon on Ephesians 2:1-10 from Sojourners Church in Albert Lea, MN. Preached on August 31, 2025 by Carl Everett, seminary student at [Bethlehem College and Seminary](https://bcsmn.edu/).
