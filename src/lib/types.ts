@@ -75,3 +75,37 @@ export const isStringArray = (
 ): data is string[] => {
   return typeof data[0] === "string";
 };
+
+// Spotify Types
+export interface SpotifyPlaybackEvent {
+  data: {
+    position: number;
+    duration: number;
+    isBuffering: boolean;
+    isPaused: boolean;
+    playingURI: string;
+  };
+}
+
+export interface SpotifyEmbedController {
+  addListener: (
+    event: string,
+    callback: (event: SpotifyPlaybackEvent) => void,
+  ) => void;
+  removeListener: (event: string) => void;
+  play?: () => void;
+  pause?: () => void;
+  loadUri?: (uri: string) => void;
+}
+
+export interface SpotifyIframeApi {
+  createController: (
+    element: HTMLElement | null,
+    options: {
+      width: string;
+      height: string;
+      uri: string;
+    },
+    callback: (controller: SpotifyEmbedController) => void,
+  ) => void;
+}

@@ -9,15 +9,24 @@ import {
   getAllSeriesData,
   getAllSermonData,
 } from "@/lib/posts";
-import SpotifyAudioEmbed from "@/components/SpotifyAudioEmbed.astro";
-import { SermonFilter } from "@/components/Filters/SermonFilter";
-import CombinedFilter from "@/components/Filters/CombinedFilter";
+import SpotifyEmbed from "@/components/SpotifyEmbed";
+import Filter from "@/components/Filters/Filter";
 import { CardDisplay } from "@/components/Cards/CardDisplay";
 import Meta from "@/components/Meta";
+import { format as datefnsFormat } from "date-fns";
 
 const allSermonData = await getAllSermonData();
 const allSeriesData = await getAllSeriesData();
 const allPreachersData = await getAllPreachersData();
+
+const latestSermon = allSermonData[0];
+const latestSermonDateFormatted = datefnsFormat(
+  new Date(
+    latestSermon.data.date.valueOf() +
+      latestSermon.data.date.getTimezoneOffset() * 60 * 1000,
+  ),
+  "LLL dd, yyyy",
+);
 ---
 
 <BaseLayout>
@@ -28,35 +37,33 @@ const allPreachersData = await getAllPreachersData();
       <StyledText as="h2" variant="heading">Latest Sermon</StyledText>
       <ButtonLink
         variant="link"
-        href={`/sermons/${allSermonData[0].id}`}
+        href={`/sermons/${latestSermon.id}`}
         className="hover:text-primary h-fit justify-start p-0"
       >
         <StyledText as="span" variant="subheading">
-          {allSermonData[0].data.title}
+          {latestSermon.data.title}
         </StyledText>
       </ButtonLink>
       <Meta
-        date={allSermonData[0].data.date}
-        scripture={allSermonData[0].data.scripture}
-        preacher={allSermonData[0].preacher.data.name}
+        date={latestSermon.data.date}
+        scripture={latestSermon.data.scripture}
+        preacher={latestSermon.preacher.data.name}
         client:load
       />
-
-      <SpotifyAudioEmbed spotifyURL={allSermonData[0].data.spotifyURL} />
-    </section>
-    <section class="flex flex-col gap-2">
-      <!-- <SermonFilter
-        {allSermonData}
-        {allSeriesData}
-        {allPreachersData}
+      <!-- <SpotifyAudio
+        spotifyURL={latestSermon.data.spotifyURL}
+        query={latestSermonDateFormatted}
         client:load
       /> -->
-      <CombinedFilter
-        {allSermonData}
-        {allSeriesData}
-        {allPreachersData}
-        client:load
+      <SpotifyEmbed
+        type="audio"
+        spotifyURL={latestSermon.data.spotifyURL}
+        query={latestSermonDateFormatted}
+        client:idle
       />
+    </section>
+    <section class="flex flex-col gap-2">
+      <Filter {allSermonData} {allSeriesData} {allPreachersData} client:load />
       <CardDisplay data={allSermonData} client:load />
     </section>
   </main>

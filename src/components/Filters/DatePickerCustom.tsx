@@ -189,4 +189,4 @@ const getOldestSermonDate = (data: SermonData[]) => {
   );
 };
 
-export { DatePickerCustom };
+export default DatePickerCustom;

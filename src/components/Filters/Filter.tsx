@@ -5,12 +5,6 @@ import type {
   SermonData,
   WritingsData,
 } from "@/lib/types";
-import { StyledText } from "../StyledText";
-import { DatePickerCustom } from "@/components/Filters/DatePickerCustom";
-import { Combobox } from "@/components/Filters/Combobox";
-import Search from "@/components/Filters/Search";
-import { Button } from "@/components/ui/button";
-import { Settings2, Undo2 } from "lucide-react";
 import { useStore } from "@nanostores/react";
 import {
   $series,
@@ -22,7 +16,15 @@ import {
   $writingsTag,
 } from "@/lib/nanostores";
 
-interface CombinedFilterProps {
+// Components / Assets
+import { StyledText } from "@/components/StyledText";
+import DatePickerCustom from "@/components/Filters/DatePickerCustom";
+import Combobox from "@/components/Filters/Combobox";
+import Search from "@/components/Filters/Search";
+import { Button } from "@/components/ui/button";
+import { Settings2, Undo2 } from "lucide-react";
+
+interface FilterProps {
   allSermonData?: SermonData[];
   allSeriesData?: SeriesData[];
   allPreachersData?: PreacherData[];
@@ -30,7 +32,7 @@ interface CombinedFilterProps {
   allTags?: string[] | null;
 }
 
-const CombinedFilter: FC<CombinedFilterProps> = ({
+const Filter: FC<FilterProps> = ({
   allSermonData,
   allSeriesData,
   allPreachersData,
@@ -131,4 +133,4 @@ const CombinedFilter: FC<CombinedFilterProps> = ({
   );
 };
 
-export default CombinedFilter;
+export default Filter;

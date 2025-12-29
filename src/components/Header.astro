@@ -11,7 +11,7 @@ const currentPath = Astro.url.pathname;
 <header class:list={["layout-full py-4", currentPath !== "/" && "bg-muted"]}>
   <div class="flex min-h-16 w-full items-center">
     {
-      config.info.logo ? (
+      "logo" in config.info ? (
         <a href="/" class="flex-1">
           <Image src={config.info.logo} alt="logo" class={"max-h-18"} />
         </a>

@@ -1,0 +1,178 @@
+import type { FC } from "react";
+import { useRef, useState, useEffect } from "react";
+import type {
+  SpotifyPlaybackEvent,
+  SpotifyEmbedController,
+  SpotifyIframeApi,
+} from "@/lib/types";
+import { Skeleton } from "@/components/ui/skeleton";
+import { ButtonLink } from "./ButtonLink";
+
+declare global {
+  interface Window {
+    onSpotifyIframeApiReady?: (api: SpotifyIframeApi) => void;
+  }
+}
+
+interface SpotifyEmbedProps {
+  type: "audio" | "video";
+  spotifyURL: string | undefined;
+  query?: string;
+}
+
+const SpotifyEmbed: FC<SpotifyEmbedProps> = ({
+  type,
+  spotifyURL,
+  query = "",
+}) => {
+  const isVideo = type === "video";
+  const isAudio = type === "audio";
+
+  const match = spotifyURL?.match(/(?<=episode\/).+?(?=\?)/);
+  const spotifyURI = match ? match[0] : null;
+  const videoSrc = `https://open.spotify.com/embed/episode/${spotifyURI}/video?utm_source=generator`;
+
+  const [playerLoaded, setPlayerLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
+
+  const audioRef = useRef<HTMLDivElement | null>(null);
+  const videoRef = useRef<HTMLDivElement | null>(null);
+  const controllerRef = useRef<SpotifyEmbedController | null>(null);
+  const [iFrameAPI, setIFrameAPI] = useState<SpotifyIframeApi | null>(null);
+
+  const LOAD_TIMEOUT_MS = 5000;
+
+  // Load Spotify API
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://open.spotify.com/embed/iframe-api/v1";
+    script.async = true;
+
+    script.onerror = () => {
+      setHasError(true);
+      console.log("script.onerror!");
+    };
+
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  // Wait for API
+  useEffect(() => {
+    if (iFrameAPI || hasError) return;
+
+    window.onSpotifyIframeApiReady = (SpotifyIframeApi) => {
+      setIFrameAPI(SpotifyIframeApi);
+    };
+  }, [iFrameAPI, hasError]);
+
+  // Create Player
+  useEffect(() => {
+    if (
+      !iFrameAPI ||
+      !audioRef.current ||
+      !spotifyURI ||
+      playerLoaded ||
+      hasError
+    ) {
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      if (!playerLoaded) {
+        setHasError(true);
+      }
+    }, LOAD_TIMEOUT_MS);
+
+    iFrameAPI.createController(
+      audioRef.current,
+      {
+        width: type === "audio" ? "100%" : "0",
+        height: type === "audio" ? "152" : "0",
+        uri: `spotify:episode:${spotifyURI}`,
+      },
+      (spotifyEmbedController) => {
+        spotifyEmbedController.addListener("ready", () => {
+          clearTimeout(timeout);
+          setPlayerLoaded(true);
+        });
+
+        const handlePlaybackUpdate = (e: SpotifyPlaybackEvent) => {
+          const { position, duration, isBuffering, isPaused, playingURI } =
+            e.data;
+          console.log(
+            `Playback State updates:
+                position - ${position},
+                duration - ${duration},
+                isBuffering - ${isBuffering},
+                isPaused - ${isPaused},
+                playingURI - ${playingURI},
+                duration - ${duration}`,
+          );
+        };
+
+        spotifyEmbedController.addListener(
+          "playback_update",
+          handlePlaybackUpdate,
+        );
+
+        spotifyEmbedController.addListener("playback_started", (e) => {
+          console.log(`Playback started: ${e.data.playingURI}`);
+        });
+
+        controllerRef.current = spotifyEmbedController;
+      },
+    );
+
+    return () => {
+      clearTimeout(timeout);
+      controllerRef.current?.removeListener("playback_update");
+    };
+  }, [iFrameAPI, spotifyURI, playerLoaded, hasError]);
+
+  return (
+    <div
+      className={`relative ${isAudio ? "h-[152px]" : "h-60 sm:h-80 md:h-100"}`}
+    >
+      {/* VIDEO FRAME */}
+      {isVideo && (
+        <iframe
+          title="Spotify Video Episode"
+          src={videoSrc}
+          className={`h-full w-full ${playerLoaded ? "opacity-100" : "opacity-0"}`}
+          style={{ borderRadius: "12px" }}
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        />
+      )}
+
+      {/* AUDIO FRAME */}
+      <div ref={audioRef} className={`${isVideo && "hidden"}`} />
+
+      {/* SKELETON */}
+      {!playerLoaded && !hasError && (
+        <Skeleton
+          className={`bg-muted absolute top-0 left-0 w-full ${isAudio ? "h-[152px]" : "h-60 sm:h-80 md:h-100"}`}
+        />
+      )}
+
+      {hasError && (
+        <div
+          className={`text-muted-foreground bg-background absolute top-0 left-0 flex w-full items-center justify-center rounded-md border text-sm ${isAudio ? "h-[152px]" : "h-60 sm:h-80 md:h-100"}`}
+        >
+          <ButtonLink
+            variant="link"
+            href={`https://www.youtube.com/@sojournerschurch7048/search?query=${query}`}
+            target="_blank"
+          >
+            No Spotify link available. Try our YouTube channel.
+          </ButtonLink>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default SpotifyEmbed;

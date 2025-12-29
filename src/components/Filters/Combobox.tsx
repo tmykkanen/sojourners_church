@@ -142,4 +142,4 @@ const Combobox: React.FC<ComboboxProps> = ({ data, type }) => {
   );
 };
 
-export { Combobox };
+export default Combobox;

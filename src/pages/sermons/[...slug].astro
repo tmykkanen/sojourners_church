@@ -6,9 +6,8 @@ import Footer from "@/components/Footer.astro";
 import { render } from "astro:content";
 import { StyledText } from "@/components/StyledText";
 import { getAllSermonData } from "@/lib/posts";
-import SpotifyVideoEmbed from "@/components/SpotifyVideoEmbed.astro";
+import SpotifyEmbed from "@/components/SpotifyEmbed";
 import Meta from "@/components/Meta";
-import { ButtonLink } from "@/components/ButtonLink";
 import { format as datefnsFormat } from "date-fns";
 
 export async function getStaticPaths() {
@@ -41,26 +40,18 @@ const dateFormatted = datefnsFormat(
   <main class="layout-base gap-4 py-8">
     <div class="flex flex-col gap-4">
       <StyledText as="h1" variant="displayXL"> {title}</StyledText>
-
-      <!-- Don't need to client:load b/c meta defaults to compact=false -->
       <Meta {date} {scripture} {preacher} compact={false} />
     </div>
 
-    {
-      spotifyURL ? (
-        <SpotifyVideoEmbed {spotifyURL} />
-      ) : (
-        <p>
-          <ButtonLink
-            variant="link"
-            href={`https://www.youtube.com/@sojournerschurch7048/search?query=${dateFormatted}`}
-            target="_blank"
-          >
-            No Spotify link available. Try our YouTube channel.
-          </ButtonLink>
-        </p>
-      )
-    }
+    <div>
+      <SpotifyEmbed
+        type="video"
+        spotifyURL={spotifyURL}
+        query={dateFormatted}
+        client:idle
+      />
+    </div>
+
     <div
       class="prose prose-custom prose-a:hover:decoration-primary prose-a:hover:text-foreground max-w-none"
     >
