@@ -9,6 +9,7 @@ interface MetaProps {
   dateFormat?: "MM/dd/yy" | "LLLL do, yyyy";
   scripture?: string[];
   preacher?: string;
+  tags?: string[];
   variant?: "muted" | "outline";
   compact?: true | false | undefined;
 }
@@ -18,6 +19,7 @@ const Meta: React.FC<MetaProps> = ({
   dateFormat = "MM/dd/yy",
   scripture,
   preacher,
+  tags,
   variant = "muted",
   compact = undefined,
 }) => {
@@ -39,6 +41,7 @@ const Meta: React.FC<MetaProps> = ({
       metaItems.push(formatOsis(isCompact ? "esv-short" : "esv-long", ref)),
     );
   if (preacher) metaItems.push(preacher);
+  if (tags) metaItems = [...metaItems, ...tags];
 
   return (
     <div className="flex flex-wrap gap-2">

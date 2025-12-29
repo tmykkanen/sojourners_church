@@ -117,18 +117,19 @@ const pagesCollection = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
 });
 
-// const writingsCollection = defineCollection({
-//   loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/writings" }),
-//   schema: z.object({
-//     title: z.string(),
-//     date: z.date(),
-//   }),
-// });
+const writingsCollection = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/writings" }),
+  schema: z.object({
+    title: z.string(),
+    date: z.date(),
+    tags: z.array(z.string()).optional(),
+  }),
+});
 
 export const collections = {
   sermons: sermonsCollection,
   series: seriesCollection,
   preachers: preachersCollection,
   pages: pagesCollection,
-  // writings: writingsCollection,
+  writings: writingsCollection,
 };

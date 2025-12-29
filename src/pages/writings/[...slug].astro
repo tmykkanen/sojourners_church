@@ -1,0 +1,31 @@
+---
+import Meta from "@/components/Meta";
+import RenderMarkdownPage from "@/components/RenderMarkdownPage.astro";
+import { StyledText } from "@/components/StyledText";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const pages = await getCollection("writings");
+  return pages.map((page) => ({
+    params: {
+      slug: page.id,
+    },
+    props: {
+      page,
+    },
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+---
+
+<RenderMarkdownPage>
+  <Fragment slot="heading">
+    <StyledText as="h2" variant="display">
+      <a href={`/writings/${page.id}`}>{page.data.title}</a>
+    </StyledText>
+    <Meta tags={page.data.tags} />
+  </Fragment>
+  <Content slot="content" />
+</RenderMarkdownPage>

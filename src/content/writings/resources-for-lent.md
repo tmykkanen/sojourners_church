@@ -1,9 +1,6 @@
 ---
 title: Resources for Lent
 date: 2024-02-12
-tags:
-  - Church Calendar
-  - Lent
 ---
 
 Observing Lent is not required of Christians, but many believers throughout the history of the church have found the heart preparation of this season helpful leading up to Holy Week and Easter. Below is some background on lent and resources to aid in lenten devotional practices.

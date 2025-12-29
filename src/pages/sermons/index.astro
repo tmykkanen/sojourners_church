@@ -10,8 +10,9 @@ import {
   getAllSermonData,
 } from "@/lib/posts";
 import SpotifyAudioEmbed from "@/components/SpotifyAudioEmbed.astro";
-import { SermonFilter } from "@/components/SermonFilter/SermonFilter";
-import { SermonCardDisplay } from "@/components/SermonCards/SermonCardDisplay";
+import { SermonFilter } from "@/components/Filters/SermonFilter";
+import CombinedFilter from "@/components/Filters/CombinedFilter";
+import { CardDisplay } from "@/components/Cards/CardDisplay";
 import Meta from "@/components/Meta";
 
 const allSermonData = await getAllSermonData();
@@ -44,13 +45,19 @@ const allPreachersData = await getAllPreachersData();
       <SpotifyAudioEmbed spotifyURL={allSermonData[0].data.spotifyURL} />
     </section>
     <section class="flex flex-col gap-2">
-      <SermonFilter
+      <!-- <SermonFilter
+        {allSermonData}
+        {allSeriesData}
+        {allPreachersData}
+        client:load
+      /> -->
+      <CombinedFilter
         {allSermonData}
         {allSeriesData}
         {allPreachersData}
         client:load
       />
-      <SermonCardDisplay {allSermonData} client:load />
+      <CardDisplay data={allSermonData} client:load />
     </section>
   </main>
   <Footer />

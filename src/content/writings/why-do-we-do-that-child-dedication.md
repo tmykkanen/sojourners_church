@@ -1,8 +1,6 @@
 ---
 title: Why do we do that? Child Dedication
 date: 2025-08-02
-tags:
-  - Liturgy
 ---
 
 ## What Child Dedication Is Not

@@ -1,13 +1,19 @@
 import * as React from "react";
 import type { PreacherData, SeriesData, SermonData } from "@/lib/types";
 import { useStore } from "@nanostores/react";
-import { $series, $preacher, $from, $to, $searchTerm } from "@/lib/nanostores";
-import { SermonFilterDatePicker } from "./SermonFilterDatePicker";
-import { SermonFilterCombobox } from "./SermonFilterCombobox";
+import {
+  $series,
+  $preacher,
+  $from,
+  $to,
+  $sermonsSearchTerm,
+} from "@/lib/nanostores";
+import { DatePickerCustom } from "@/components/Filters/DatePickerCustom";
+import { Combobox } from "@/components/Filters/Combobox";
 import { StyledText } from "../StyledText";
 import { Settings2, Undo2 } from "lucide-react";
 import { Button } from "../ui/button";
-import SermonSearch from "../SermonSearch";
+import Search from "./Search";
 import { useState } from "react";
 
 // TODO: Consider converting to API endpoint rather than passing data?
@@ -24,7 +30,7 @@ const SermonFilter: React.FC<SermonFilterProps> = ({
 }) => {
   const [isShowFilters, setIsShowFilters] = useState(false);
 
-  const searchTerm = useStore($searchTerm);
+  const searchTerm = useStore($sermonsSearchTerm);
   const series = useStore($series);
   const preacher = useStore($preacher);
   const from = useStore($from);
@@ -35,7 +41,7 @@ const SermonFilter: React.FC<SermonFilterProps> = ({
     $preacher.set(undefined);
     $from.set(null);
     $to.set(null);
-    $searchTerm.set("");
+    $sermonsSearchTerm.set("");
     setIsShowFilters(false);
   };
 
@@ -63,7 +69,7 @@ const SermonFilter: React.FC<SermonFilterProps> = ({
         {titleText}
       </StyledText>
       <div className="flex flex-col gap-4 md:flex-row">
-        <SermonSearch className="bg-muted text-muted-foreground" />
+        <Search className="bg-muted text-muted-foreground" type="sermons" />
         <div className="flex content-between justify-between self-end">
           <Button
             variant="link"
@@ -88,10 +94,10 @@ const SermonFilter: React.FC<SermonFilterProps> = ({
 
       {isShowFilters && (
         <div className="flex flex-col gap-x-8 gap-y-4 lg:grid lg:grid-cols-2">
-          <SermonFilterCombobox data={allSeriesData} type="series" />
-          <SermonFilterCombobox data={allPreachersData} type="preacher" />
-          <SermonFilterDatePicker data={allSermonData} type="from" />
-          <SermonFilterDatePicker data={allSermonData} type="to" />
+          <Combobox data={allSeriesData} type="series" />
+          <Combobox data={allPreachersData} type="preacher" />
+          <DatePickerCustom data={allSermonData} type="from" />
+          <DatePickerCustom data={allSermonData} type="to" />
         </div>
       )}
     </div>

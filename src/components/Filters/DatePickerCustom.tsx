@@ -1,5 +1,3 @@
-// FIX: Clear not updating
-
 import {
   Button,
   Calendar,
@@ -33,15 +31,12 @@ import { useStore } from "@nanostores/react";
 import { $from, $to } from "@/lib/nanostores";
 import { cn } from "@/lib/utils";
 
-interface SermonFilterDatePickerProps {
+interface DatePickerCustomProps {
   data: SermonData[];
   type: "from" | "to";
 }
 
-const SermonFilterDatePicker: React.FC<SermonFilterDatePickerProps> = ({
-  type,
-  data,
-}) => {
+const DatePickerCustom: React.FC<DatePickerCustomProps> = ({ type, data }) => {
   const min = getOldestSermonDate(data);
   const max = today(getLocalTimeZone());
 
@@ -194,4 +189,4 @@ const getOldestSermonDate = (data: SermonData[]) => {
   );
 };
 
-export { SermonFilterDatePicker };
+export { DatePickerCustom };

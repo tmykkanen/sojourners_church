@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 
 import { render } from "astro:content";
 import { StyledText } from "@/components/StyledText";
@@ -66,4 +67,5 @@ const dateFormatted = datefnsFormat(
       <Content />
     </div>
   </main>
+  <Footer />
 </BaseLayout>
