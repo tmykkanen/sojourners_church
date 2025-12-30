@@ -16,7 +16,7 @@ declare global {
 
 interface SpotifyEmbedProps {
   type: "audio" | "video";
-  spotifyURL: string | undefined;
+  spotifyURL?: string;
   query?: string;
 }
 
@@ -30,10 +30,12 @@ const SpotifyEmbed: FC<SpotifyEmbedProps> = ({
 
   const match = spotifyURL?.match(/(?<=episode\/).+?(?=\?)/);
   const spotifyURI = match ? match[0] : null;
-  const videoSrc = `https://open.spotify.com/embed/episode/${spotifyURI}/video?utm_source=generator`;
+  const videoSrc = spotifyURI
+    ? `https://open.spotify.com/embed/episode/${spotifyURI}/video?utm_source=generator`
+    : "";
 
   const [playerLoaded, setPlayerLoaded] = useState(false);
-  const [hasError, setHasError] = useState(false);
+  const [hasError, setHasError] = useState(!spotifyURL || !spotifyURI);
 
   const audioRef = useRef<HTMLDivElement | null>(null);
   const videoRef = useRef<HTMLDivElement | null>(null);
@@ -44,6 +46,8 @@ const SpotifyEmbed: FC<SpotifyEmbedProps> = ({
 
   // Load Spotify API
   useEffect(() => {
+    if (hasError) return; // skip if no valid URL
+
     const script = document.createElement("script");
     script.src = "https://open.spotify.com/embed/iframe-api/v1";
     script.async = true;
@@ -133,11 +137,9 @@ const SpotifyEmbed: FC<SpotifyEmbedProps> = ({
   }, [iFrameAPI, spotifyURI, playerLoaded, hasError]);
 
   return (
-    <div
-      className={`relative ${isAudio ? "h-[152px]" : "h-60 sm:h-80 md:h-100"}`}
-    >
+    <div className={`relative ${isAudio ? "h-38" : "h-60 sm:h-80 md:h-100"}`}>
       {/* VIDEO FRAME */}
-      {isVideo && (
+      {isVideo && spotifyURI && (
         <iframe
           title="Spotify Video Episode"
           src={videoSrc}
@@ -149,18 +151,20 @@ const SpotifyEmbed: FC<SpotifyEmbedProps> = ({
       )}
 
       {/* AUDIO FRAME */}
-      <div ref={audioRef} className={`${isVideo && "hidden"}`} />
+      {spotifyURI && (
+        <div ref={audioRef} className={`${isVideo && "hidden"}`} />
+      )}
 
       {/* SKELETON */}
       {!playerLoaded && !hasError && (
         <Skeleton
-          className={`bg-muted absolute top-0 left-0 w-full ${isAudio ? "h-[152px]" : "h-60 sm:h-80 md:h-100"}`}
+          className={`bg-muted absolute top-0 left-0 w-full ${isAudio ? "h-38" : "h-60 sm:h-80 md:h-100"}`}
         />
       )}
 
       {hasError && (
         <div
-          className={`text-muted-foreground bg-background absolute top-0 left-0 flex w-full items-center justify-center rounded-md border text-sm ${isAudio ? "h-[152px]" : "h-60 sm:h-80 md:h-100"}`}
+          className={`text-muted-foreground bg-background absolute top-0 left-0 flex w-full items-center justify-center rounded-md border text-sm ${isAudio ? "h-38" : "h-60 sm:h-80 md:h-100"}`}
         >
           <ButtonLink
             variant="link"

@@ -50,11 +50,6 @@ const latestSermonDateFormatted = datefnsFormat(
         preacher={latestSermon.preacher.data.name}
         client:load
       />
-      <!-- <SpotifyAudio
-        spotifyURL={latestSermon.data.spotifyURL}
-        query={latestSermonDateFormatted}
-        client:load
-      /> -->
       <SpotifyEmbed
         type="audio"
         spotifyURL={latestSermon.data.spotifyURL}

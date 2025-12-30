@@ -16,3 +16,4 @@
 - [ ] TODO: Turn writings tag into select using fetch api from site to get existing tags?
 - [ ] TODO: Add skeleton loaders
 - [ ] TODO: Add YouTube search suggestion for iframe 504 error timeout
+- [ ] TODO: Add support for querying state via url? (https://github.com/47ng/nuqs | https://iamsahaj.xyz/blog/react-state-in-the-url/)
