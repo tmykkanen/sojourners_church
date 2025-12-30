@@ -1,6 +1,8 @@
 ---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import MarkdownContentWrapper from "@/components/MarkdownContentWrapper.astro";
+
 import { getCollection, render } from "astro:content";
-import RenderMarkdownPage from "@/components/RenderMarkdownPage.astro";
 
 export async function getStaticPaths() {
   const pages = await getCollection("pages");
@@ -18,6 +20,10 @@ const { page } = Astro.props;
 const { Content } = await render(page);
 ---
 
-<RenderMarkdownPage>
-  <Content slot="content" />
-</RenderMarkdownPage>
+<BaseLayout pageTitle={page.data.title}>
+  <main class="layout-base justify-items-center py-8">
+    <MarkdownContentWrapper>
+      <Content slot="content" />
+    </MarkdownContentWrapper>
+  </main>
+</BaseLayout>

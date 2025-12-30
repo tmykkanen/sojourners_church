@@ -1,0 +1,19 @@
+---
+import { StyledText } from "@/components/StyledText";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<BaseLayout pageTitle="Not Found">
+  <main class="layout-base gap-8 py-8 min-h-screen">
+    <StyledText
+      as="h2"
+      variant="displayXL"
+      className="text-primary flex items-center gap-4"
+    >
+      <Icon name="material-symbols:cloud-alert-outline" />
+      Opps!
+    </StyledText>
+    <p>Sorry, we couldn't find the page you were looking for.</p>
+  </main>
+</BaseLayout>

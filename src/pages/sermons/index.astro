@@ -1,7 +1,5 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
 import { StyledText } from "@/components/StyledText";
 import { ButtonLink } from "@/components/ButtonLink";
 import {
@@ -29,8 +27,7 @@ const latestSermonDateFormatted = datefnsFormat(
 );
 ---
 
-<BaseLayout>
-  <Header />
+<BaseLayout pageTitle="Sermons">
   <main class="layout-base gap-8 py-8">
     <h1 class="sr-only">Sermons</h1>
     <section class="flex flex-col gap-4">
@@ -58,9 +55,13 @@ const latestSermonDateFormatted = datefnsFormat(
       />
     </section>
     <section class="flex flex-col gap-2">
-      <Filter {allSermonData} {allSeriesData} {allPreachersData} client:load />
+      <Filter
+        {allSermonData}
+        {allSeriesData}
+        {allPreachersData}
+        client:only="react"
+      />
       <CardDisplay data={allSermonData} client:load />
     </section>
   </main>
-  <Footer />
 </BaseLayout>

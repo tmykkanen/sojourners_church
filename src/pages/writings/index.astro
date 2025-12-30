@@ -1,7 +1,5 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
 import { getCollection } from "astro:content";
 import Filter from "@/components/Filters/Filter";
 import { CardDisplay } from "@/components/Cards/CardDisplay";
@@ -22,13 +20,11 @@ const getTags = () => {
 };
 ---
 
-<BaseLayout>
-  <Header />
+<BaseLayout pageTitle={"Writings"}>
   <main class="layout-base gap-8 py-8">
     <section class="flex flex-col gap-2">
-      <Filter {allWritings} allTags={getTags()} client:load />
+      <Filter {allWritings} allTags={getTags()} client:only="react" />
       <CardDisplay data={allWritings} client:load />
     </section>
   </main>
-  <Footer />
 </BaseLayout>

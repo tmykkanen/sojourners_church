@@ -1,7 +1,5 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
 
 import { render } from "astro:content";
 import { StyledText } from "@/components/StyledText";
@@ -11,23 +9,23 @@ import Meta from "@/components/Meta";
 import { format as datefnsFormat } from "date-fns";
 
 export async function getStaticPaths() {
-  const posts = await getAllSermonData();
+  const pages = await getAllSermonData();
 
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: { post },
+  return pages.map((page) => ({
+    params: { slug: page.id },
+    props: { page },
   }));
 }
 
-const { post } = Astro.props;
+const { page } = Astro.props;
 const {
   data: { title, spotifyURL, scripture, date },
   preacher: {
     data: { name: preacher },
   },
-} = post;
+} = page;
 
-const { Content } = await render(post);
+const { Content } = await render(page);
 
 const dateFormatted = datefnsFormat(
   new Date(date.valueOf() + date.getTimezoneOffset() * 60 * 1000),
@@ -35,8 +33,7 @@ const dateFormatted = datefnsFormat(
 );
 ---
 
-<BaseLayout>
-  <Header />
+<BaseLayout pageTitle={page.data.title}>
   <main class="layout-base gap-4 py-8">
     <div class="flex flex-col gap-4">
       <StyledText as="h1" variant="displayXL"> {title}</StyledText>
@@ -58,5 +55,4 @@ const dateFormatted = datefnsFormat(
       <Content />
     </div>
   </main>
-  <Footer />
 </BaseLayout>

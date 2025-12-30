@@ -20,6 +20,12 @@ export const isSeriesCollection = (
   return (data[0] as SeriesData).collection === "series";
 };
 
+export const isSeries = (
+  data: SeriesData | PreacherData | SermonData | WritingsData | string,
+): data is SeriesData => {
+  return (data as SeriesData).collection === "series";
+};
+
 export const isPreacherCollection = (
   data:
     | SeriesData[]
@@ -74,6 +80,11 @@ export const isStringArray = (
     | string[],
 ): data is string[] => {
   return typeof data[0] === "string";
+};
+
+type HasTitle = { title: string };
+export const hasTitle = (value: unknown): value is HasTitle => {
+  return typeof value === "object" && value !== null && "title" in value;
 };
 
 // Spotify Types

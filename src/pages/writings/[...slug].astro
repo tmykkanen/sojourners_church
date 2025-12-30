@@ -1,6 +1,9 @@
 ---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
 import Meta from "@/components/Meta";
-import RenderMarkdownPage from "@/components/RenderMarkdownPage.astro";
+import MarkdownContentWrapper from "@/components/MarkdownContentWrapper.astro";
+
 import { StyledText } from "@/components/StyledText";
 import { getCollection, render } from "astro:content";
 
@@ -20,12 +23,16 @@ const { page } = Astro.props;
 const { Content } = await render(page);
 ---
 
-<RenderMarkdownPage>
-  <Fragment slot="heading">
-    <StyledText as="h2" variant="display">
-      <a href={`/writings/${page.id}`}>{page.data.title}</a>
-    </StyledText>
-    <Meta tags={page.data.tags} />
-  </Fragment>
-  <Content slot="content" />
-</RenderMarkdownPage>
+<BaseLayout pageTitle={page.data.title}>
+  <main class="layout-base justify-items-center py-8">
+    <MarkdownContentWrapper>
+      <Fragment slot="heading">
+        <StyledText as="h2" variant="display">
+          <a href={`/writings/${page.id}`}>{page.data.title}</a>
+        </StyledText>
+        <Meta tags={page.data.tags} />
+      </Fragment>
+      <Content slot="content" />
+    </MarkdownContentWrapper>
+  </main>
+</BaseLayout>

@@ -1,7 +1,10 @@
 import * as React from "react";
 import { Check, ChevronDown } from "lucide-react";
-import { useStore } from "@nanostores/react";
-import { $series, $preacher, $writingsTag } from "@/lib/nanostores";
+import { $sermonFilterParams, isSermonFilterKey } from "@/lib/nanostoreSermons";
+import {
+  $writingsFilterParams,
+  isWritingsFilterKey,
+} from "@/lib/nanostoreWritings";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -26,64 +29,96 @@ import {
   type SeriesData,
 } from "@/lib/types";
 import { Label } from "../ui/label";
+import { useState } from "react";
+import { updateNanostore } from "@/lib/nanostores";
 
-interface ComboboxProps {
-  data: SeriesData[] | PreacherData[] | string[];
-  type: "series" | "preacher" | "tag";
-}
+type ComboboxProps =
+  | {
+      type: "series";
+      data: SeriesData[];
+    }
+  | {
+      type: "preacher";
+      data: PreacherData[];
+    }
+  | {
+      type: "tag";
+      data: string[];
+    };
 
-const Combobox: React.FC<ComboboxProps> = ({ data, type }) => {
+const Combobox: React.FC<ComboboxProps> = ({ data: inputData, type }) => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlParamValue = urlParams.get(type);
+
+  const [open, setOpen] = useState(false);
+
   // Set variables according to type
-  let label, store: string | undefined, placeholder, options;
+  let label, placeholder, options, storeKey: string;
 
-  if (type === "series" && isSeriesCollection(data)) {
+  if (type === "series" && isSeriesCollection(inputData)) {
     label = "Series";
-    store = useStore($series);
-    placeholder = data.find((data) => data.id === store)?.data.title;
-    options = data.map((item) => {
+    storeKey = "series";
+    placeholder = inputData.find((item) => item.id === urlParamValue)?.data
+      .title;
+    // updateNanostore = (v: any) => {
+    //   $sermonFilterParams.setKey("series", v);
+    // };
+    options = inputData.map((item) => {
       return {
         label: item.data.title,
         key: item.id,
         value: item.id,
-        handleSelect: (v: any) => {
-          $series.set(v);
-          setOpen(false);
-        },
       };
     });
-  } else if (type === "preacher" && isPreacherCollection(data)) {
+  } else if (type === "preacher" && isPreacherCollection(inputData)) {
     label = "Preacher";
-    store = useStore($preacher);
-    placeholder = data.find((data) => data.id === store)?.data.name;
-    options = data.map((item) => {
+    storeKey = "preacher";
+    placeholder = inputData.find((item) => item.id === urlParamValue)?.data
+      .name;
+    // updateNanostore = (v: any) => {
+    //   $sermonFilterParams.setKey("preacher", v);
+    // };
+    options = inputData.map((item) => {
       return {
         label: item.data.name,
         key: item.id,
         value: item.id,
-        handleSelect: (v: any) => {
-          $preacher.set(v);
-          setOpen(false);
-        },
       };
     });
-  } else if (type === "tag" && isStringArray(data)) {
+  } else if (type === "tag" && isStringArray(inputData)) {
     label = "Tag";
-    store = useStore($writingsTag);
-    placeholder = store;
-    options = data.map((item, index) => {
+    storeKey = "tag";
+    placeholder = urlParamValue;
+    // TODO
+    // updateNanostore = (v: any) => {
+    //   $writingsFilterParams.setKey("tag", v);
+    // };
+    options = inputData.map((item, index) => {
       return {
         label: item,
         key: index,
         value: item,
-        handleSelect: (v: any) => {
-          $writingsTag.set(v);
-          setOpen(false);
-        },
       };
     });
   }
 
-  const [open, setOpen] = React.useState(false);
+  // const updateNanostore = (v: any, storeKey: any) => {
+  //   (isSermonFilterKey(storeKey) && $sermonFilterParams.setKey(storeKey, v)) ||
+  //     (isWritingsFilterKey(storeKey) &&
+  //       $writingsFilterParams.setKey(storeKey, v));
+  // };
+
+  const handleSelect = (value: any) => {
+    updateNanostore(value, storeKey);
+
+    // update url
+    const url = new URL(window.location.href);
+    url.searchParams.set(storeKey, value);
+    window.history.replaceState({}, "", url);
+
+    // close select
+    setOpen(false);
+  };
 
   return (
     <div className="inline-flex h-9 items-stretch">
@@ -101,23 +136,23 @@ const Combobox: React.FC<ComboboxProps> = ({ data, type }) => {
             aria-expanded={open}
             className={cn(
               "bg-muted text-muted-foreground -ml-px flex-[65%] justify-between overflow-hidden rounded-l-none text-sm",
-              store
+              urlParamValue
                 ? "text-foreground"
                 : "text-muted-foreground font-normal italic",
             )}
           >
-            {store ? placeholder : `Filter by ${type}`}
+            {urlParamValue ? placeholder : `Filter by ${type}`}
 
             <ChevronDown />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-(--radix-popper-anchor-width) p-2">
-          <Command value={store}>
+          <Command>
             <CommandInput placeholder={`Search ${type}...`} className="h-9" />
             <CommandList>
               <CommandEmpty>No results found.</CommandEmpty>
               <CommandGroup>
-                {options?.map(({ key, value, handleSelect, label }) => (
+                {options?.map(({ key, value, label }) => (
                   <CommandItem
                     key={key}
                     value={value}
@@ -128,7 +163,7 @@ const Combobox: React.FC<ComboboxProps> = ({ data, type }) => {
                     <Check
                       className={cn(
                         "ml-auto",
-                        store === value ? "opacity-100" : "opacity-0",
+                        urlParamValue === value ? "opacity-100" : "opacity-0",
                       )}
                     />
                   </CommandItem>

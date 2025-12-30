@@ -1,16 +1,13 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import config from "@/_site-config.json";
+
 import { ButtonLink } from "@/components/ButtonLink";
 import { StyledText } from "@/components/StyledText";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
 import bgImage from "@/assets/homepage-bg.jpg";
-
-import config from "@/_site-config.json";
 ---
 
 <BaseLayout>
-  <Header />
   <main>
     <div
       class="grid min-h-screen w-full bg-cover bg-right"
@@ -41,5 +38,4 @@ import config from "@/_site-config.json";
       </div>
     </div>
   </main>
-  <Footer />
 </BaseLayout>
