@@ -27,8 +27,8 @@ const { Content } = await render(page);
   <main class="layout-base justify-items-center py-8">
     <MarkdownContentWrapper>
       <Fragment slot="heading">
-        <StyledText as="h2" variant="display">
-          <a href={`/writings/${page.id}`}>{page.data.title}</a>
+        <StyledText as="h2" variant="displayLG">
+          {page.data.title}
         </StyledText>
         <Meta tags={page.data.tags} />
       </Fragment>
