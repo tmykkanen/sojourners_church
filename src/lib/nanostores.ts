@@ -6,12 +6,24 @@ import {
   isWritingsFilterKey,
 } from "./nanostoreWritings";
 
-export const updateNanostore = (value: string, key: string) => {
-  const normalizedValue = value === "" ? undefined : value;
+export const isDateValue = (value: unknown): value is DateValue => {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    "calendar" in value &&
+    "year" in value &&
+    "month" in value &&
+    "day" in value
+  );
+};
+
+export const updateNanostore = (value: any, key: string) => {
+  const normalizedValue = value === "" || value === null ? undefined : value;
 
   (isSermonFilterKey(key) &&
     $sermonFilterParams.setKey(key, normalizedValue)) ||
     (isWritingsFilterKey(key) &&
+      !isDateValue(normalizedValue) &&
       $writingsFilterParams.setKey(key, normalizedValue));
 };
 

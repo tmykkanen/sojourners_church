@@ -9,14 +9,14 @@ export interface SermonFilterParamsValue {
   // TODO: Does from need to have a null option?
   from?: DateValue;
   to?: DateValue;
-  searchTerm?: string;
+  sermonSearchTerm?: string;
 }
 
 export const isSermonFilterKey = (
   key: string,
 ): key is keyof SermonFilterParamsValue => {
   // NOTE: Be sure to update this array if changing SermonFilterParamsValue interface
-  return ["series", "preacher", "from", "to", "searchTerm"].includes(key);
+  return ["series", "preacher", "from", "to", "sermonSearchTerm"].includes(key);
 };
 
 export const $sermonFilterParams = map<SermonFilterParamsValue>({});
@@ -33,7 +33,7 @@ const sermonSearchOptions = {
 
 export const $filteredSermons = computed(
   [$sermonFilterParams, $allSermonData],
-  ({ series, preacher, from, to, searchTerm }, allSermonData) => {
+  ({ series, preacher, from, to, sermonSearchTerm }, allSermonData) => {
     if (!allSermonData) return undefined;
 
     let sermonData = allSermonData;
@@ -58,9 +58,9 @@ export const $filteredSermons = computed(
       );
     }
 
-    if (searchTerm !== "" && searchTerm !== undefined) {
+    if (sermonSearchTerm !== "" && sermonSearchTerm !== undefined) {
       const fuse = new Fuse(sermonData, sermonSearchOptions);
-      const result = fuse.search(searchTerm);
+      const result = fuse.search(sermonSearchTerm);
 
       sermonData = result.map((hit) => hit.item);
     }

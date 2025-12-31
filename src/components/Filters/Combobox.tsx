@@ -1,12 +1,6 @@
-import * as React from "react";
+import { useState } from "react";
 import { Check, ChevronDown } from "lucide-react";
-import { $sermonFilterParams, isSermonFilterKey } from "@/lib/nanostoreSermons";
-import {
-  $writingsFilterParams,
-  isWritingsFilterKey,
-} from "@/lib/nanostoreWritings";
 
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   Command,
@@ -21,6 +15,9 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { Label } from "@/components/ui/label";
+
+import { cn } from "@/lib/utils";
 import {
   isPreacherCollection,
   isSeriesCollection,
@@ -28,98 +25,90 @@ import {
   type PreacherData,
   type SeriesData,
 } from "@/lib/types";
-import { Label } from "../ui/label";
-import { useState } from "react";
-import { updateNanostore } from "@/lib/nanostores";
+import { useNanostoreURLSync } from "@/lib/hooks/useNanostoreURLSync";
 
+/* -------------------------------------------------------------------------- */
+/*                                 Types                                      */
+/* -------------------------------------------------------------------------- */
 type ComboboxProps =
-  | {
-      type: "series";
-      data: SeriesData[];
-    }
-  | {
-      type: "preacher";
-      data: PreacherData[];
-    }
-  | {
-      type: "tag";
-      data: string[];
-    };
+  | { type: "series"; data: SeriesData[] }
+  | { type: "preacher"; data: PreacherData[] }
+  | { type: "tag"; data: string[] };
 
+interface Option {
+  key: string | number;
+  value: string;
+  label: string;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               Combobox Component                           */
+/* -------------------------------------------------------------------------- */
 const Combobox: React.FC<ComboboxProps> = ({ data: inputData, type }) => {
-  const urlParams = new URLSearchParams(window.location.search);
-  const urlParamValue = urlParams.get(type);
-
+  /* ------------------------------------------------------------------------ */
+  /*                                  Hooks                                  */
+  /* ------------------------------------------------------------------------ */
   const [open, setOpen] = useState(false);
+  const { value: selectedValue, setValue } = useNanostoreURLSync<string>(type);
 
-  // Set variables according to type
-  let label, placeholder, options, storeKey: string;
+  /* ------------------------------------------------------------------------ */
+  /*                               Options & Label                             */
+  /* ------------------------------------------------------------------------ */
+  let label = "";
+  let options: Option[] = [];
 
-  if (type === "series" && isSeriesCollection(inputData)) {
-    label = "Series";
-    storeKey = "series";
-    placeholder = inputData.find((item) => item.id === urlParamValue)?.data
-      .title;
-    // updateNanostore = (v: any) => {
-    //   $sermonFilterParams.setKey("series", v);
-    // };
-    options = inputData.map((item) => {
-      return {
+  switch (type) {
+    case "series":
+      if (!isSeriesCollection(inputData))
+        throw new Error("Invalid data for series combobox");
+      label = "Series";
+      options = inputData.map((item) => ({
+        key: item.id,
+        value: item.id,
         label: item.data.title,
+      }));
+      break;
+
+    case "preacher":
+      if (!isPreacherCollection(inputData))
+        throw new Error("Invalid data for preacher combobox");
+      label = "Preacher";
+      options = inputData.map((item) => ({
         key: item.id,
         value: item.id,
-      };
-    });
-  } else if (type === "preacher" && isPreacherCollection(inputData)) {
-    label = "Preacher";
-    storeKey = "preacher";
-    placeholder = inputData.find((item) => item.id === urlParamValue)?.data
-      .name;
-    // updateNanostore = (v: any) => {
-    //   $sermonFilterParams.setKey("preacher", v);
-    // };
-    options = inputData.map((item) => {
-      return {
         label: item.data.name,
-        key: item.id,
-        value: item.id,
-      };
-    });
-  } else if (type === "tag" && isStringArray(inputData)) {
-    label = "Tag";
-    storeKey = "tag";
-    placeholder = urlParamValue;
-    // TODO
-    // updateNanostore = (v: any) => {
-    //   $writingsFilterParams.setKey("tag", v);
-    // };
-    options = inputData.map((item, index) => {
-      return {
-        label: item,
+      }));
+      break;
+
+    case "tag":
+      if (!isStringArray(inputData))
+        throw new Error("Invalid data for tag combobox");
+      label = "Tag";
+      options = inputData.map((item, index) => ({
         key: index,
         value: item,
-      };
-    });
+        label: item,
+      }));
+      break;
+
+    default:
+      throw new Error(`Unsupported combobox type: ${type}`);
   }
 
-  // const updateNanostore = (v: any, storeKey: any) => {
-  //   (isSermonFilterKey(storeKey) && $sermonFilterParams.setKey(storeKey, v)) ||
-  //     (isWritingsFilterKey(storeKey) &&
-  //       $writingsFilterParams.setKey(storeKey, v));
-  // };
+  const placeholder = options.find((o) => o.value === selectedValue)?.label;
 
-  const handleSelect = (value: any) => {
-    updateNanostore(value, storeKey);
+  /* ------------------------------------------------------------------------ */
+  /*                                 Handlers                                  */
+  /* ------------------------------------------------------------------------ */
 
-    // update url
-    const url = new URL(window.location.href);
-    url.searchParams.set(storeKey, value);
-    window.history.replaceState({}, "", url);
-
-    // close select
+  const handleSelect = (value: string) => {
+    setValue(value);
     setOpen(false);
   };
 
+  /* ------------------------------------------------------------------------ */
+  /*                                  Render                                    */
+  /* ------------------------------------------------------------------------ */
   return (
     <div className="inline-flex h-9 items-stretch">
       <Label
@@ -136,12 +125,12 @@ const Combobox: React.FC<ComboboxProps> = ({ data: inputData, type }) => {
             aria-expanded={open}
             className={cn(
               "bg-muted text-muted-foreground -ml-px flex-[65%] justify-between overflow-hidden rounded-l-none text-sm",
-              urlParamValue
+              selectedValue
                 ? "text-foreground"
                 : "text-muted-foreground font-normal italic",
             )}
           >
-            {urlParamValue ? placeholder : `Filter by ${type}`}
+            {selectedValue ? placeholder : `Filter by ${type}`}
 
             <ChevronDown />
           </Button>
@@ -156,14 +145,14 @@ const Combobox: React.FC<ComboboxProps> = ({ data: inputData, type }) => {
                   <CommandItem
                     key={key}
                     value={value}
-                    onSelect={handleSelect}
+                    onSelect={() => handleSelect(value)}
                     className="px-4"
                   >
                     {label}
                     <Check
                       className={cn(
                         "ml-auto",
-                        urlParamValue === value ? "opacity-100" : "opacity-0",
+                        selectedValue === value ? "opacity-100" : "opacity-0",
                       )}
                     />
                   </CommandItem>

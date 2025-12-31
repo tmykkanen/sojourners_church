@@ -4,13 +4,13 @@ import Fuse from "fuse.js";
 
 export interface WritingsFilterParamsValue {
   tag?: string;
-  searchTerm?: string;
+  writingsSearchTerm?: string;
 }
 
 export const isWritingsFilterKey = (
   key: string,
 ): key is keyof WritingsFilterParamsValue => {
-  return ["tag", "searchTerm"].includes(key);
+  return ["tag", "writingsSearchTerm"].includes(key);
 };
 
 export const $writingsFilterParams = map<WritingsFilterParamsValue>({});
@@ -32,7 +32,7 @@ const writingsSearchOptions = {
 
 export const $filteredWritings = computed(
   [$writingsFilterParams, $allWritingsData],
-  ({ tag, searchTerm }, allWritingsData) => {
+  ({ tag, writingsSearchTerm }, allWritingsData) => {
     if (!allWritingsData) return undefined;
 
     let writingsData = allWritingsData;
@@ -43,9 +43,9 @@ export const $filteredWritings = computed(
       );
     }
 
-    if (searchTerm !== "" && searchTerm !== undefined) {
+    if (writingsSearchTerm !== "" && writingsSearchTerm !== undefined) {
       const fuse = new Fuse(writingsData, writingsSearchOptions);
-      const result = fuse.search(searchTerm);
+      const result = fuse.search(writingsSearchTerm);
 
       writingsData = result.map((hit) => hit.item);
     }
