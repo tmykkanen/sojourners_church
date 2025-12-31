@@ -8,11 +8,16 @@ import bgImage from "@/assets/homepage-bg.jpg";
 ---
 
 <BaseLayout>
-  <main>
-    <div
-      class="grid min-h-screen w-full bg-cover bg-right"
-      style={`background-image: url(${bgImage.src}); background-color: var(--background);`}
-    >
+  <main class="relative min-h-[calc(100vh-6.5rem)]">
+    <div class="grid min-h-screen w-full bg-cover bg-right">
+      <img
+        src={bgImage.src}
+        alt="Homepage background"
+        class="absolute inset-0 w-full h-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+      />
+
       <!-- BG OVERLAY -->
       <div class="bg-muted col-start-1 row-start-1 h-full w-full opacity-85">
       </div>
