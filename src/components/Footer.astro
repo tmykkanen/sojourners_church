@@ -23,7 +23,7 @@ import config from "@/_site-config.json";
           <span set:html={config.info.phone} />
         </address>
 
-        <SocialMediaLinks client:load />
+        <SocialMediaLinks client:idle />
       </div>
     </section>
     <section class="flex flex-col gap-4">
@@ -34,7 +34,7 @@ import config from "@/_site-config.json";
           happenings.
         </p>
       </div>
-      <SubscribeForm client:load />
+      <SubscribeForm client:idle />
     </section>
 
     <section class="flex flex-col gap-4">
