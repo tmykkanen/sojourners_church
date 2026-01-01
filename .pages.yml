@@ -194,7 +194,7 @@ content:
     label: Writings
     type: collection
     path: src/content/writings
-    filename: "{primary}.md"
+    filename: "{fields.date}-{fields.title}.md"
     fields:
        - { name: title, label: Title, type: string, required: true }
        - {name: date, label: Date Posted, type: date, required: true}
