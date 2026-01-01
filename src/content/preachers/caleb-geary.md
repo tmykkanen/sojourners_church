@@ -1,6 +1,6 @@
 ---
 name: Caleb Geary
-isGuest: false
+isGuest: true
 priority: 5
 bio: Prairie Forge Pastoral Intern summer 2025
 ---
