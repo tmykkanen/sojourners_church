@@ -1,6 +1,6 @@
 ---
 name: Dave Zuleger
-isGuest: false
+isGuest: true
 priority: 10
 bio: Former Lead Pastor at Sojourners Church.
 ---
