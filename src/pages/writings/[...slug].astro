@@ -30,7 +30,7 @@ const { Content } = await render(page);
         <StyledText as="h2" variant="displayLG">
           {page.data.title}
         </StyledText>
-        <Meta tags={page.data.tags} />
+        <Meta tags={page.data.tags} linked />
       </Fragment>
       <Content slot="content" />
     </MarkdownContentWrapper>

@@ -28,11 +28,11 @@ const metaTitle = `${config.info.name}${pageTitle ? ` | ${pageTitle}` : ""}`;
     />
 
     <!-- Preload hero image for homepage -->
-    {
+    <!-- {
       currentPath === "/" && (
         <link rel="preload" as="image" href={bgImage.src} />
       )
-    }
+    } -->
     <meta name="generator" content={Astro.generator} />
     <title>{metaTitle}</title>
 

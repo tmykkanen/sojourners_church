@@ -45,6 +45,8 @@ const latestSermonDateFormatted = datefnsFormat(
         date={latestSermon.data.date}
         scripture={latestSermon.data.scripture}
         preacher={latestSermon.preacher.data.name}
+        series={latestSermon.series.data.title}
+        linked
         client:load
       />
       <SpotifyEmbed

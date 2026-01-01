@@ -8,7 +8,7 @@ Each Sunday, we meet together as Sojourners Church. Our gathering is a family ga
 
 ## What are your services like?
 
-Our worship service starts at 10am. A member or pastor will welcome us, lead us in reading a call to worship from scripture, and pray for our service. We have a gospel-shaped liturgy that includes scripture readings, prayer, and songs. [You can read more about our liturgy here.](https://www.sojourners.church/writings?tag=Sojourners%20Church%20Liturgy) We sing a mix of contemporary and traditional songs. Many of our favorites come from [Sovereign Grace Music](https://sovereigngracemusic.org/) and [Getty Music](https://www.gettymusic.com/).
+Our worship service starts at 10am. A member or pastor will welcome us, lead us in reading a call to worship from scripture, and pray for our service. We have a gospel-shaped liturgy that includes scripture readings, prayer, and songs. [You can read more about our liturgy here.](https://www.sojourners.church/writings?tag=Liturgy) We sing a mix of contemporary and traditional songs. Many of our favorites come from [Sovereign Grace Music](https://sovereigngracemusic.org/) and [Getty Music](https://www.gettymusic.com/).
 
 We are committed to expository preaching, therefore the pastor typically preaches a 35 minute message from whatever text of scripture we are studying together. [You can find recent sermons here.](https://www.sojourners.church/sermons)
 

@@ -19,7 +19,7 @@ const buttonVariants = cva(
         accent: "bg-accent text-accent-foreground shadow-xs hover:bg-accent/80",
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-        link: "text-primary underline-offset-4 hover:underline",
+        link: "text-primary hover:decoration-primary underline-offset-4 hover:underline",
         "footer-icon":
           "text-muted hover:text-primary text-xl [&_svg:not([class*='size-'])]:size-5",
         "footer-button":

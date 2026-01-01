@@ -20,7 +20,10 @@ const Sidebar: React.FC<SidebarProps> = ({}) => {
   return (
     <>
       <Drawer open={isOpen} onOpenChange={setIsOpen} direction="right" modal>
-        <DrawerTrigger className="z-100 lg:hidden">
+        <DrawerTrigger
+          className="z-100 lg:hidden"
+          aria-label="Open sidebar menu"
+        >
           <Hamburger toggled={isOpen} color="var(--muted-foreground)" />
         </DrawerTrigger>
         <DrawerOverlay className="bg-background" />
@@ -34,14 +37,12 @@ const Sidebar: React.FC<SidebarProps> = ({}) => {
               <ul className="flex flex-col gap-4">
                 {navEntries.map(({ label, path, subMenu }, index) =>
                   subMenu ? (
-                    <li key={index}>
-                      <ButtonLink
-                        href="#"
-                        variant="link"
-                        className="h-auto text-3xl font-bold whitespace-normal uppercase sm:text-5xl"
-                      >
-                        {label}
-                      </ButtonLink>
+                    <li
+                      key={index}
+                      className="text-primary h-auto text-3xl font-bold whitespace-normal uppercase sm:text-5xl"
+                    >
+                      {label}
+
                       <ul className="border-muted ml-4 flex flex-col gap-2 border-l-4">
                         {subMenu.map((subMenuItem, index) => (
                           <li key={index}>
@@ -49,6 +50,7 @@ const Sidebar: React.FC<SidebarProps> = ({}) => {
                               href={`/${path}/${subMenuItem.path}`}
                               variant="link"
                               className="text-muted-foreground font-bold uppercase sm:text-xl"
+                              aria-label={`Link to ${subMenuItem.label}`}
                             >
                               {subMenuItem.label}
                             </ButtonLink>
@@ -62,6 +64,7 @@ const Sidebar: React.FC<SidebarProps> = ({}) => {
                         href={`/${path}`}
                         variant="link"
                         className="h-auto text-3xl font-bold whitespace-normal uppercase sm:text-5xl"
+                        aria-label={`Link to ${label}`}
                       >
                         {label}
                       </ButtonLink>
