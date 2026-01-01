@@ -2,5 +2,6 @@
 name: Adam Pohlman
 isGuest: true
 priority: 1
-bio: Lead pastor at [Redemption City Church](https://www.redemptionrochester.com/)
+bio: Adam is Lead Pastor at [Redemption City
+  Church](https://www.redemptionrochester.com/) in Rochester, MN.
 ---
