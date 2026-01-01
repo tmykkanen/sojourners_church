@@ -6,5 +6,3 @@ scripture:
   - Jer.23.1-Jer.23.8
 preacher: src/content/preachers/tyler-mykkanen.md
 ---
-
-Jeremiah 23:1–8

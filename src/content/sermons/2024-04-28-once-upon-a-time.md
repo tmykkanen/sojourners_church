@@ -6,5 +6,3 @@ scripture:
   - Gen.1.1-Gen.2.3
 preacher: src/content/preachers/tyler-mykkanen.md
 ---
-
-Genesis 1:1–2:3

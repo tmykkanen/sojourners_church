@@ -6,5 +6,3 @@ scripture:
   - 1Cor.15
 preacher: src/content/preachers/tyler-mykkanen.md
 ---
-
-1 Corinthians 15:1–58

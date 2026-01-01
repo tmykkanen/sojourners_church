@@ -6,5 +6,3 @@ scripture:
   - Acts.2
 preacher: src/content/preachers/tyler-mykkanen.md
 ---
-
-Acts 2:1–47

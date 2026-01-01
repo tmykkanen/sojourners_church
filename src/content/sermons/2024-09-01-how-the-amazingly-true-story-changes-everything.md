@@ -6,5 +6,3 @@ scripture:
   - Eph.3
 preacher: src/content/preachers/tyler-mykkanen.md
 ---
-
-Ephesians 3:1–21

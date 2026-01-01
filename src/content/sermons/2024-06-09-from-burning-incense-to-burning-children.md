@@ -6,5 +6,3 @@ scripture:
   - 2Kgs.17.1-2Kgs.17.23
 preacher: src/content/preachers/tyler-mykkanen.md
 ---
-
-2 Kings 17:1–23

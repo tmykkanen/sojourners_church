@@ -6,5 +6,3 @@ scripture:
   - Gen.3
 preacher: src/content/preachers/tyler-mykkanen.md
 ---
-
-Genesis 3:1–24

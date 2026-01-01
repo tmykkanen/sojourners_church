@@ -6,5 +6,3 @@ scripture:
   - Ezek.37.1-Ezek.37.14
 preacher: src/content/preachers/tyler-mykkanen.md
 ---
-
-Ezekiel 37:1–14

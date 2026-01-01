@@ -6,5 +6,3 @@ scripture:
   - Josh.24.1-Josh.24.28
 preacher: src/content/preachers/tyler-mykkanen.md
 ---
-
-Joshua 24:1–28

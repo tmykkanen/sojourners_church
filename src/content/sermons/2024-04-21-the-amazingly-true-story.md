@@ -6,5 +6,3 @@ scripture:
   - Luke.24.13-Luke.24.35
 preacher: src/content/preachers/tyler-mykkanen.md
 ---
-
-Luke 24:13–35

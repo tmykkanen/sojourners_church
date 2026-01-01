@@ -6,5 +6,3 @@ scripture:
   - Gen.11.27-Gen.12.9
 preacher: src/content/preachers/tyler-mykkanen.md
 ---
-
-Genesis 11:27–12:9

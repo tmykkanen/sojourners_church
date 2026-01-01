@@ -6,5 +6,3 @@ scripture:
   - Phil.1.27-Phil.2.18
 preacher: src/content/preachers/tyler-mykkanen.md
 ---
-
-Philippians 1:27–2:18

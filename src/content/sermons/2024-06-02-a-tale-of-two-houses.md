@@ -6,5 +6,3 @@ scripture:
   - 2Sam.7
 preacher: src/content/preachers/tyler-mykkanen.md
 ---
-
-2 Samuel 7:1–29

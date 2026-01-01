@@ -6,5 +6,3 @@ scripture:
   - Ps.131
 preacher: src/content/preachers/tyler-mykkanen.md
 ---
-
-Psalm 131:1–3

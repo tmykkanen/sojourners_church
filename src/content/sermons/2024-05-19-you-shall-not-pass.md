@@ -6,5 +6,3 @@ scripture:
   - Exod.19
 preacher: src/content/preachers/tyler-mykkanen.md
 ---
-
-Exodus 19:1–25

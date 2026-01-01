@@ -6,5 +6,3 @@ scripture:
   - Col.1.15-Col.1.23
 preacher: src/content/preachers/tyler-mykkanen.md
 ---
-
-Colossians 1:15–23
