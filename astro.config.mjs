@@ -15,7 +15,7 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkDirective, remarkDirectiveToHTML],
   },
-  site: "https://sojourners.netlify.app",
+  site: "https://sojourners.church",
   vite: {
     plugins: [tailwindcss()],
   },
