@@ -1,5 +1,6 @@
 import { defineCollection, reference, z } from "astro:content";
 import { glob } from "astro/loaders";
+import formatOsis from "@/lib/Bible-Reference-Formatter/en";
 
 const getSlugFromFilename = (val: string): string => {
   const regexRes = val?.match(/([^/?#]+)$/g);
@@ -16,7 +17,9 @@ const sermonsCollection = defineCollection({
     series: z.preprocess((val) => {
       return getSlugFromFilename(val as string);
     }, reference("series")),
-    scripture: z.array(z.string()).optional(),
+    scripture: z
+      .array(z.string().refine((val) => formatOsis("esv-long", val)))
+      .optional(),
     preacher: z.preprocess((val) => {
       return getSlugFromFilename(val as string);
     }, reference("preachers")),

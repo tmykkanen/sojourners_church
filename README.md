@@ -1,17 +1,15 @@
-# Sojourners Church Website
+# Website for Sojourners Church in Albert Lea, MN
 
-## TODO
+## Site Info
 
-<!-- BUG -->
+Built by [Tyler Mykkanen](https://github.com/tmykkanen) using:
 
-<!-- TODO -->
+- ![Astro](https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white)
+- ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+- ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+- ![Shadcn/ui](https://img.shields.io/badge/shadcn/ui-%23000000?style=for-the-badge&logo=shadcnui&logoColor=white)
 
-- [ ] TODO: (SermonFilter.tsx) Consider converting to sermons to API endpoint rather than passing data?
-- [ ] TODO: (posts.ts) Update getAllSermonData w/ this function
-- [ ] TODO: (subscribe.ts) Better error handling
-- [ ] TODO: Run lighthouse checks
-- [ ] TODO: Tweak image handling to only require one image format for series?
-- [ ] TODO: update links / content in pages
-- [ ] TODO: add preacher bio conditionally if no post body present
-- [ ] TODO: Add query links to badges - https://ui.shadcn.com/docs/components/badge#link
-- [ ] TODO: Add default link target for about and life together?
+- ![Tanstack Form](https://img.shields.io/badge/tanstack_form-%23DD9700.svg?style=for-the-badge&logo=tanstack&logoColor=white)
+- ![Resend](https://img.shields.io/badge/resend-%23000000.svg?style=for-the-badge&logo=resend&logoColor=#00C7B7)
+
+- ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
