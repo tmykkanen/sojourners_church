@@ -8,7 +8,7 @@ tags:
 
 Observing Lent is not required of Christians, but many believers throughout the history of the church have found the heart preparation of this season helpful leading up to Holy Week and Easter. Below is some background on lent and resources to aid in lenten devotional practices.
 
-## What is Lent?
+## What is Lent?
 
 Lent is a season in the church calendar with origins in the third-century. Lent begins with Ash Wednesday and lasts the forty days (excluding Sundays) leading up to Resurrection Sunday. Sundays during Lent are "mini Easters" and are still celebrations of the resurrection.
 
