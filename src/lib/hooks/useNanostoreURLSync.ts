@@ -10,7 +10,7 @@ import {
   isWritingsFilterKey,
   type WritingsFilterParamsValue,
 } from "@/lib/nanostoreWritings";
-import { isDateValue } from "@/lib/nanostores";
+import { isDateValue } from "@/lib/types";
 import { parseDate } from "@internationalized/date";
 
 type FilterKey = string;

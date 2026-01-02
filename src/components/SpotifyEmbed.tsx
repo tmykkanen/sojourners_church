@@ -38,7 +38,6 @@ const SpotifyEmbed: FC<SpotifyEmbedProps> = ({
   const [hasError, setHasError] = useState(!spotifyURL || !spotifyURI);
 
   const audioRef = useRef<HTMLDivElement | null>(null);
-  const videoRef = useRef<HTMLDivElement | null>(null);
   const controllerRef = useRef<SpotifyEmbedController | null>(null);
   const [iFrameAPI, setIFrameAPI] = useState<SpotifyIframeApi | null>(null);
 

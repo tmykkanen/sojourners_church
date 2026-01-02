@@ -1,25 +1,23 @@
 import * as React from "react";
-import { format as datefnsFormat, type FormatDateOptions } from "date-fns";
+import { format as datefnsFormat } from "date-fns";
 import { Badge } from "@/components/ui/badge";
-import formatOsis from "@/lib/Bible-Reference-Formatter/en";
+import formatOsis from "@/lib/bible-reference-formatter/en";
 import useIsMobile from "@/lib/hooks/useIsMobile";
 import slugify from "slugify";
 
 interface MetaProps {
   date?: Date;
-  dateFormat?: "MM/dd/yy" | "LLLL do, yyyy";
   scripture?: string[];
   preacher?: string;
   series?: string;
   tags?: string[];
   variant?: "muted" | "outline";
-  compact?: true | false | undefined;
-  linked?: true | false;
+  compact?: boolean;
+  linked?: boolean;
 }
 
 const Meta: React.FC<MetaProps> = ({
   date,
-  dateFormat = "MM/dd/yy",
   scripture,
   preacher,
   series,
@@ -28,8 +26,7 @@ const Meta: React.FC<MetaProps> = ({
   compact = undefined,
   linked = false,
 }) => {
-  const isMobile = useIsMobile();
-  const isCompact = compact || (compact === undefined && isMobile);
+  const isCompact = compact ?? useIsMobile();
 
   const formattedDate =
     date &&
@@ -38,46 +35,53 @@ const Meta: React.FC<MetaProps> = ({
       isCompact ? "MM/dd/yy" : "LLLL do, yyyy",
     );
 
-  let metaItems = [];
+  const metaItems: (string | React.JSX.Element)[] = [];
 
   if (formattedDate) metaItems.push(formattedDate);
+
   if (scripture)
     scripture.forEach((ref) =>
       metaItems.push(formatOsis(isCompact ? "esv-short" : "esv-long", ref)),
     );
-  if (preacher) {
-    linked
-      ? metaItems.push(
-          <a
-            href={`/sermons/?preacher=${slugify(preacher, { strict: true }).toLowerCase()}`}
-          >
-            {preacher}
-          </a>,
-        )
-      : metaItems.push(preacher);
-  }
-  if (series) {
-    linked
-      ? metaItems.push(
-          <a
-            href={`/sermons/?series=${slugify(series, { strict: true }).toLowerCase()}`}
-          >
-            {series}
-          </a>,
-        )
-      : metaItems.push(series);
-  }
+
+  if (preacher)
+    metaItems.push(
+      linked ? (
+        <a
+          href={`/sermons/?preacher=${slugify(preacher, { strict: true }).toLowerCase()}`}
+        >
+          {preacher}
+        </a>
+      ) : (
+        preacher
+      ),
+    );
+
+  if (series)
+    metaItems.push(
+      linked ? (
+        <a
+          href={`/sermons/?series=${slugify(series, { strict: true }).toLowerCase()}`}
+        >
+          {series}
+        </a>
+      ) : (
+        series
+      ),
+    );
 
   if (tags)
-    linked
-      ? tags.map((tag) =>
-          metaItems.push(
-            <a href={`/writings/?tag=${tag}`} className="not-prose">
-              {tag}
-            </a>,
-          ),
-        )
-      : (metaItems = [...metaItems, ...tags]);
+    tags.forEach((tag) =>
+      metaItems.push(
+        linked ? (
+          <a href={`/writings/?tag=${tag}`} className="not-prose" key={tag}>
+            {tag}
+          </a>
+        ) : (
+          tag
+        ),
+      ),
+    );
 
   return (
     <div className="flex flex-wrap gap-2">

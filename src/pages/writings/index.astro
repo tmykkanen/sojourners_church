@@ -8,10 +8,6 @@ const allWritings = (await getCollection("writings")).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 
-// (await getCollection("sermons")).sort(
-//   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-// )
-
 const getTags = () => {
   const postsWithTags = allWritings.filter((i) => i.data.tags);
   let tagSet = new Set<string>();

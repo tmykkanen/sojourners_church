@@ -39,10 +39,9 @@ export const POST: APIRoute = async ({ request }) => {
 
   // Check if contact already exists
   try {
-    const { data: getContact, error: getContactError } =
-      await resend.contacts.get({
-        email,
-      });
+    const { data: getContact } = await resend.contacts.get({
+      email,
+    });
 
     console.log("GETCONTACT:", getContact);
 
@@ -107,6 +106,7 @@ export const POST: APIRoute = async ({ request }) => {
       { status: 200 },
     );
   } catch (error) {
+    console.log(error);
     return new Response(
       JSON.stringify({
         message: "Unknown Failure! Please try again.",

@@ -7,11 +7,6 @@ import {
   type WritingsData,
 } from "@/lib/types";
 import { useStore } from "@nanostores/react";
-import {} from // $allSermonData,
-// $filteredSermons,
-// $allWritingsData,
-// $filteredWritings,
-"@/lib/nanostores";
 
 import { $filteredSermons, $allSermonData } from "@/lib/nanostoreSermons";
 import { $filteredWritings, $allWritingsData } from "@/lib/nanostoreWritings";

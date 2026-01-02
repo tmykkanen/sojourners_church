@@ -1,4 +1,4 @@
-import * as React from "react";
+/* eslint-disable react/no-children-prop */
 import { useForm } from "@tanstack/react-form";
 import { Button } from "../ui/button";
 import { Field, FieldError, FieldGroup } from "@/components/ui/field";
@@ -7,9 +7,7 @@ import { Toaster } from "../ui/sonner";
 import { toast } from "sonner";
 import { subscribeFormSchema } from "./schema";
 
-interface SubscribeFormProps {}
-
-const SubscribeForm: React.FC<SubscribeFormProps> = ({}) => {
+const SubscribeForm = () => {
   const form = useForm({
     defaultValues: {
       firstName: "",

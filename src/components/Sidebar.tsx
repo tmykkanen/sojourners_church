@@ -8,13 +8,10 @@ import {
   DrawerTrigger,
   DrawerDescription,
 } from "@/components/ui/drawer";
-import { NavMenu } from "./NavMenu.tsx";
 import { navEntries } from "@/lib/nav.ts";
 import { ButtonLink } from "./ButtonLink.tsx";
 
-interface SidebarProps {}
-
-const Sidebar: React.FC<SidebarProps> = ({}) => {
+const Sidebar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (

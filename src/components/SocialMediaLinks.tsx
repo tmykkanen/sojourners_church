@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Icon } from "@iconify/react";
 import { ButtonLink } from "@/components/ButtonLink";
 import {
@@ -7,9 +6,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-interface SocialMediaLinksProps {}
-
-const SocialMediaLinks: React.FC<SocialMediaLinksProps> = ({}) => {
+const SocialMediaLinks = () => {
   return (
     <div className="flex">
       <ButtonLink

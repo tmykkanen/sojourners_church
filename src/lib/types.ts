@@ -1,3 +1,4 @@
+import type { DateValue } from "@internationalized/date";
 import type { CollectionEntry } from "astro:content";
 
 export type WritingsData = CollectionEntry<"writings">;
@@ -120,3 +121,14 @@ export interface SpotifyIframeApi {
     callback: (controller: SpotifyEmbedController) => void,
   ) => void;
 }
+
+export const isDateValue = (value: unknown): value is DateValue => {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    "calendar" in value &&
+    "year" in value &&
+    "month" in value &&
+    "day" in value
+  );
+};

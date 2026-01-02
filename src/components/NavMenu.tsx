@@ -6,7 +6,6 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
-import { ButtonLink } from "@/components/ButtonLink";
 import { ChevronDown } from "lucide-react";
 
 import { navEntries } from "@/lib/nav";
