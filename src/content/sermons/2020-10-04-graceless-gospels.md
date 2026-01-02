@@ -1,6 +1,6 @@
 ---
 title: Graceless Gospels
-date: 2020-10-05
+date: 2020-10-04
 series: src/content/series/entrusted-letters-to-timothy-and-titus.md
 scripture:
   - Titus.1.10-Titus.1.16

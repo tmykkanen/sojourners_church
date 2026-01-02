@@ -1,6 +1,6 @@
 ---
 title: Gospel-Centered Unity
-date: 2019-09-16
+date: 2019-09-15
 series: src/content/series/philippians-living-on-earth-as-citizens-of-heaven.md
 scripture:
   - Phil.2.1-Phil.2.4

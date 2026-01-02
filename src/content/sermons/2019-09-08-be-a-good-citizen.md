@@ -1,6 +1,6 @@
 ---
 title: Be a Good Citizen
-date: 2019-09-09
+date: 2019-09-08
 series: src/content/series/philippians-living-on-earth-as-citizens-of-heaven.md
 scripture:
   - Phil.1.27-Phil.1.30

@@ -1,6 +1,6 @@
 ---
 title: To Live Is Christ
-date: 2019-09-02
+date: 2019-09-01
 series: src/content/series/philippians-living-on-earth-as-citizens-of-heaven.md
 scripture:
   - Phil.1.18-Phil.1.26

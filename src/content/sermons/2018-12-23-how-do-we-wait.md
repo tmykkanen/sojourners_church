@@ -1,8 +1,8 @@
 ---
-title: Why do we have to wait?
-date: 2018-12-03
+title: How do we wait?
+date: 2018-12-23
 series: src/content/series/advent-2018-come-thou-long-expected-jesus.md
 scripture:
-  - 1Pet.1.3-1Pet.1.9
+  - Ps.62
 preacher: src/content/preachers/tyler-mykkanen.md
 ---

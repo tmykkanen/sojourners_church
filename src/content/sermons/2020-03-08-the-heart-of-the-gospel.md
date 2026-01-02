@@ -1,6 +1,6 @@
 ---
 title: The Heart of the Gospel
-date: 2020-03-09
+date: 2020-03-08
 series: src/content/series/entrusted-letters-to-timothy-and-titus.md
 scripture:
   - 1Tim.1.12-1Tim.1.17

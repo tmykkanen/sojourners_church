@@ -1,6 +1,6 @@
 ---
 title: In Christ, At Philippi
-date: 2019-08-12
+date: 2019-08-11
 series: src/content/series/philippians-living-on-earth-as-citizens-of-heaven.md
 scripture:
   - Phil.1.1-Phil.1.2

@@ -1,6 +1,6 @@
 ---
 title: Take Care Who You Are Imitating
-date: 2019-11-18
+date: 2019-11-17
 series: src/content/series/philippians-living-on-earth-as-citizens-of-heaven.md
 scripture:
   - Phil.3.17-Phil.3.21

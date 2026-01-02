@@ -1,6 +1,6 @@
 ---
 title: All Things Bright and Beautiful
-date: 2019-12-09
+date: 2019-12-08
 series: src/content/series/advent-2019-delighting-in-the-generosity-of-god.md
 scripture:
   - Gen.1.1-Gen.2.3

@@ -1,8 +1,8 @@
 ---
-title: The Heart of God for Widows
-date: 2020-06-29
+title: Beware the Danger of Self-Love
+date: 2021-02-21
 series: src/content/series/entrusted-letters-to-timothy-and-titus.md
 scripture:
-  - 1Tim.5.3-1Tim.5.16
+  - 2Tim.3.1-2Tim.3.9
 preacher: src/content/preachers/tyler-mykkanen.md
 ---

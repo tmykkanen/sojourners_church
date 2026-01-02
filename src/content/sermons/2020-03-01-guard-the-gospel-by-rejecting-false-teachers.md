@@ -1,6 +1,6 @@
 ---
 title: Guard the Gospel by Rejecting False Teachers
-date: 2020-03-02
+date: 2020-03-01
 series: src/content/series/entrusted-letters-to-timothy-and-titus.md
 scripture:
   - 1Tim.1.3-1Tim.1.11

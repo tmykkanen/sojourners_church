@@ -1,6 +1,6 @@
 ---
 title: We Work Because He Works
-date: 2019-09-30
+date: 2019-09-29
 series: src/content/series/philippians-living-on-earth-as-citizens-of-heaven.md
 scripture:
   - Phil.2.12-Phil.2.18

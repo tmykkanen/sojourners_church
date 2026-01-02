@@ -1,16 +1,22 @@
 ---
 import { Image } from "astro:assets";
+
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import config from "@/_site-config.json";
 
 import { ButtonLink } from "@/components/ButtonLink";
 import { StyledText } from "@/components/StyledText";
+
 import bgImage from "@/assets/homepage-bg.webp";
 ---
 
 <BaseLayout>
   <main class="relative min-h-[calc(100vh-6.5rem)]">
-    <div class="grid min-h-screen w-full bg-cover bg-right">
+    <section
+      class="grid min-h-screen w-full bg-cover bg-right"
+      aria-labelledby="hero-heading"
+    >
+      <!-- BACKGROUND IMG -->
       <Image
         src={bgImage}
         alt="Homepage background"
@@ -18,13 +24,18 @@ import bgImage from "@/assets/homepage-bg.webp";
         priority
       />
 
-      <!-- BG OVERLAY -->
-      <div class="bg-muted col-start-1 row-start-1 h-full w-full opacity-85">
+      <!-- BACKGROUND OVERLAY -->
+      <div
+        class="bg-muted col-start-1 row-start-1 h-full w-full opacity-85"
+        aria-hidden="true"
+      >
       </div>
 
+      <!-- HERO CONTENT -->
       <div class="layout-base isolate col-start-1 row-start-1 gap-y-8">
         <StyledText
           as="h2"
+          id="hero-heading"
           variant="displayXL"
           set:html={config.homepage.hero}
         />
@@ -41,6 +52,6 @@ import bgImage from "@/assets/homepage-bg.webp";
           />
         </ButtonLink>
       </div>
-    </div>
+    </section>
   </main>
 </BaseLayout>

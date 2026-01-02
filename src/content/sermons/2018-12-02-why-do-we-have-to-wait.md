@@ -1,8 +1,8 @@
 ---
-title: What are we waiting for?
-date: 2018-12-17
+title: Why do we have to wait?
+date: 2018-12-02
 series: src/content/series/advent-2018-come-thou-long-expected-jesus.md
 scripture:
-  - Rom.8.18-Rom.8.30
+  - 1Pet.1.3-1Pet.1.9
 preacher: src/content/preachers/tyler-mykkanen.md
 ---
