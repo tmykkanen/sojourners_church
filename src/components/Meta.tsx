@@ -2,7 +2,7 @@ import * as React from "react";
 import { format as datefnsFormat, type FormatDateOptions } from "date-fns";
 import { Badge } from "@/components/ui/badge";
 import formatOsis from "@/lib/Bible-Reference-Formatter/en";
-import useIsMobile from "@/lib/useIsMobile";
+import useIsMobile from "@/lib/hooks/useIsMobile";
 import slugify from "slugify";
 
 interface MetaProps {

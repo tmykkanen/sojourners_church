@@ -1,7 +1,7 @@
 ---
 import { StyledText } from "@/components/StyledText";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { Icon } from "astro-icon/components";
+import { CircleX } from "lucide-react";
 ---
 
 <BaseLayout pageTitle="Not Found">
@@ -11,7 +11,7 @@ import { Icon } from "astro-icon/components";
       variant="displayXL"
       className="text-primary flex items-center gap-4"
     >
-      <Icon name="material-symbols:cloud-alert-outline" />
+      <CircleX className="sm:w-18 sm:h-18 w-12 h-12" />
       Opps!
     </StyledText>
     <p>Sorry, we couldn't find the page you were looking for.</p>

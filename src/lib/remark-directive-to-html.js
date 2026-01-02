@@ -7,7 +7,9 @@
 import { h } from "hastscript";
 import { visit } from "unist-util-visit";
 
-// This plugin is an example to let users write HTML with directives.
+/**
+ * This plugin converts remark directives to HTML.
+ */
 export function remarkDirectiveToHTML() {
   /**
    * @param {Root} tree
