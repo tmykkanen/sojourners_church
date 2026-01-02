@@ -24,7 +24,11 @@ const Sidebar: React.FC<SidebarProps> = ({}) => {
           className="z-100 lg:hidden"
           aria-label="Open sidebar menu"
         >
-          <Hamburger toggled={isOpen} color="var(--muted-foreground)" />
+          <Hamburger
+            toggled={isOpen}
+            color="var(--muted-foreground)"
+            label="Button to open sidebar menu"
+          />
         </DrawerTrigger>
         <DrawerOverlay className="bg-background" />
         <DrawerContent className="mt-24 data-[vaul-drawer-direction=right]:w-full data-[vaul-drawer-direction=right]:border-none data-[vaul-drawer-direction=right]:sm:max-w-full">
