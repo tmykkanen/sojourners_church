@@ -1,7 +1,7 @@
 ---
 title: Grace Works
 date: 2020-09-20
-series: src/content/series/entrusted-letters-to-timothy-titus.md
+series: src/content/series/entrusted-letters-to-timothy-and-titus.md
 scripture:
   - Titus.1.1-Titus.1.4
 preacher: src/content/preachers/tyler-mykkanen.md

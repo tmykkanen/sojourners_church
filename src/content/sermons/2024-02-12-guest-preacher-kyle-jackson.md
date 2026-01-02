@@ -1,8 +1,8 @@
 ---
 title: "Guest Preacher: Kyle Jackson"
-date: 2024-10-13
-series: src/content/series/various.md
+date: 2024-02-12
+series: src/content/series/various
 scripture:
-  - John.20.24-John.20.31
+  - Jer.31.31-Jer.31.37
 preacher: src/content/preachers/kyle-jackson.md
 ---

@@ -1,7 +1,7 @@
 ---
 title: Graceless Gospels
 date: 2020-10-05
-series: src/content/series/entrusted-letters-to-timothy-titus.md
+series: src/content/series/entrusted-letters-to-timothy-and-titus.md
 scripture:
   - Titus.1.10-Titus.1.16
 preacher: src/content/preachers/tyler-mykkanen.md

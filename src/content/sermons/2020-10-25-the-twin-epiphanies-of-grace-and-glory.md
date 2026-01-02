@@ -1,7 +1,7 @@
 ---
 title: The Twin Epiphanies of Grace and Glory
 date: 2020-10-25
-series: src/content/series/entrusted-letters-to-timothy-titus.md
+series: src/content/series/entrusted-letters-to-timothy-and-titus.md
 scripture:
   - Titus.2.11-Titus.2.15
 preacher: src/content/preachers/tyler-mykkanen.md

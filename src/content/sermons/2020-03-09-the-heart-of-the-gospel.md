@@ -1,7 +1,7 @@
 ---
 title: The Heart of the Gospel
 date: 2020-03-09
-series: src/content/series/entrusted-letters-to-timothy-titus.md
+series: src/content/series/entrusted-letters-to-timothy-and-titus.md
 scripture:
   - 1Tim.1.12-1Tim.1.17
 preacher: src/content/preachers/tyler-mykkanen.md

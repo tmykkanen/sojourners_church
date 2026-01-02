@@ -1,7 +1,7 @@
 ---
 title: Grace-Full Elders
 date: 2020-09-27
-series: src/content/series/entrusted-letters-to-timothy-titus.md
+series: src/content/series/entrusted-letters-to-timothy-and-titus.md
 scripture:
   - Titus.1.5-Titus.1.9
 preacher: src/content/preachers/tyler-mykkanen.md
