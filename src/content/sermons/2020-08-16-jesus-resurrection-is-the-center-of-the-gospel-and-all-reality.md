@@ -6,5 +6,3 @@ scripture:
   - 1Cor.15.1-1Cor.15.11
 preacher: src/content/preachers/tyler-mykkanen.md
 ---
-
-1 Cor 15:1–11

@@ -6,5 +6,3 @@ scripture:
   - 1Cor.15.35-1Cor.15.49
 preacher: src/content/preachers/tyler-mykkanen.md
 ---
-
-1 Cor 15:35–49
