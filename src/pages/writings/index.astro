@@ -4,7 +4,13 @@ import { getCollection } from "astro:content";
 import Filter from "@/components/Filters/Filter";
 import { CardDisplay } from "@/components/Cards/CardDisplay";
 
-const allWritings = await getCollection("writings");
+const allWritings = (await getCollection("writings")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+// (await getCollection("sermons")).sort(
+//   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+// )
 
 const getTags = () => {
   const postsWithTags = allWritings.filter((i) => i.data.tags);
@@ -16,7 +22,7 @@ const getTags = () => {
     );
   }
 
-  return tagSet.size === 0 ? null : [...tagSet];
+  return tagSet.size === 0 ? null : [...tagSet].sort();
 };
 ---
 
