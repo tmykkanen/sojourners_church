@@ -145,7 +145,6 @@ const SpotifyEmbed: FC<SpotifyEmbedProps> = ({
           className={`h-full w-full ${playerLoaded ? "opacity-100" : "opacity-0"}`}
           style={{ borderRadius: "12px" }}
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
         />
       )}
 

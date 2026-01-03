@@ -43,7 +43,7 @@ const sermonsCollection = defineCollection({
       return getSlugFromFilename(val as string);
     }, reference("preachers")),
     spotifyURL: z.string().optional(),
-    googleDocsURL: z.string().optional(),
+    bulletinURL: z.string().optional(),
   }),
 });
 

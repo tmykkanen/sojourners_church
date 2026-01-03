@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 
 const { page } = Astro.props;
 const {
-  data: { title, spotifyURL, scripture, date },
+  data: { title, spotifyURL, scripture, date, bulletinURL },
   preacher: {
     data: { name: preacher, bio: preacherBio },
   },
@@ -48,14 +48,21 @@ const dateFormatted = datefnsFormat(
         type="video"
         spotifyURL={spotifyURL}
         query={dateFormatted}
-        client:idle
+        client:load
       />
     </div>
 
     <div
       class="prose prose-custom prose-a:hover:decoration-primary prose-a:hover:text-foreground max-w-none"
     >
-      {page.rendered?.html ? <Content /> : preacherBio}
+      {page.rendered?.html ? <Content /> : <p>{preacherBio}</p>}
+      {
+        bulletinURL && (
+          <a href={bulletinURL} target="_blank">
+            View the Sunday Bulletin
+          </a>
+        )
+      }
     </div>
   </main>
 </BaseLayout>

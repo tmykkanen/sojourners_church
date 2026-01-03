@@ -6,7 +6,7 @@ scripture:
   - Col.2.16-Col.2.19
 preacher: src/content/preachers/brian-kettering.md
 spotifyURL: https://open.spotify.com/episode/4aKZywSiVmlShwubCEjmFt?si=5JDuKmZCSL6y6RZ4Rc57NA
-googleDocsURL: https://drive.google.com/file/d/1TiOxHMgG327sVwnU4J8PX6TO0G5XacWl/view
+bulletinURL: https://drive.google.com/file/d/1TiOxHMgG327sVwnU4J8PX6TO0G5XacWl/view
 ---
 
 Sermon on Colossians 2:16-19 from ⁠Sojourners Church⁠ in Albert Lea, MN.

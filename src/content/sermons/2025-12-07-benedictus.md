@@ -6,5 +6,5 @@ scripture:
   - Luke.1.57-Luke.1.80
 preacher: src/content/preachers/tyler-mykkanen.md
 spotifyURL: https://open.spotify.com/episode/4mEuDCDzrNP3MIHjeWmqy3?si=8cdc81e4e0394fb8
-googleDocsURL: https://drive.google.com/file/d/1v31uGgfPJVAH2lrcpQClxU5G9GoCl6ZE/view
+bulletinURL: https://drive.google.com/file/d/1v31uGgfPJVAH2lrcpQClxU5G9GoCl6ZE/view
 ---

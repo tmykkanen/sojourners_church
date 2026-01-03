@@ -53,8 +53,8 @@ content:
       - name: spotifyURL
         label: Spotify URL
         type: string
-      - name: googleDocsURL
-        label: Google Docs URL
+      - name: bulletinURL
+        label: Bulletin URL
         type: string
       - name: body
         label: Notes
@@ -196,10 +196,10 @@ content:
     path: src/content/writings
     filename: "{fields.date}-{fields.title}.md"
     fields:
-       - { name: title, label: Title, type: string, required: true }
-       - {name: date, label: Date Posted, type: date, required: true}
-       - { name: tags, label: Tags, type: string, list: {min: 1} }
-       - { name: body, label: Body, type: rich-text, required: true }
+      - { name: title, label: Title, type: string, required: true }
+      - { name: date, label: Date Posted, type: date, required: true }
+      - { name: tags, label: Tags, type: string, list: { min: 1 } }
+      - { name: body, label: Body, type: rich-text, required: true }
   - name: pages
     label: Pages
     type: collection

@@ -6,7 +6,7 @@ scripture:
   - 1Thess.2.17-1Thess.3.8
 preacher: src/content/preachers/tyler-mykkanen.md
 spotifyURL: https://open.spotify.com/episode/7objBiY3v5rmEXeEbWOJgI?si=05936c71fa844bb5
-googleDocsURL: https://drive.google.com/file/d/1CvOrVDW_lgwUluIXizErdgG_JHJGyC_i/view
+bulletinURL: https://drive.google.com/file/d/1CvOrVDW_lgwUluIXizErdgG_JHJGyC_i/view
 ---
 
 Sermon on 1 Thessalonians 2:17-3:8 from ⁠Sojourners Church⁠ in Albert Lea, MN. Preached on October 5, 2025 by Pastor Tyler Mykkanen.

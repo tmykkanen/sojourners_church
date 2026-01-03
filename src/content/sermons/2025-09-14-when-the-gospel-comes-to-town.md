@@ -6,7 +6,7 @@ scripture:
   - 1Thess.1
 preacher: src/content/preachers/tyler-mykkanen.md
 spotifyURL: https://open.spotify.com/episode/0PUyzCREbfrRELyltKDf0k?si=5c0ffd9926a9456d
-googleDocsURL: https://drive.google.com/file/d/1egBmScLnh0H6KdvmIxicjwa1f9albLG2/view
+bulletinURL: https://drive.google.com/file/d/1egBmScLnh0H6KdvmIxicjwa1f9albLG2/view
 ---
 
 Sermon on 1 Thessalonians 1:1-10 from ⁠Sojourners Church⁠ in Albert Lea, MN. Preached on September 14, 2025 by Pastor Tyler Mykkanen.

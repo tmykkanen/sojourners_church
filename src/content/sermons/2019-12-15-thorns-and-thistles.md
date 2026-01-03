@@ -5,7 +5,7 @@ series: src/content/series/advent-2019-delighting-in-the-generosity-of-god.md
 scripture:
   - Gen.3
 preacher: src/content/preachers/tyler-mykkanen.md
-googleDocsURL: https://drive.google.com/a/sojourners.church/file/d/1l3Tr32gIiSNsCwh0Q_wu8CNUeW2WHG2m/view?usp=sharing
+bulletinURL: https://drive.google.com/a/sojourners.church/file/d/1l3Tr32gIiSNsCwh0Q_wu8CNUeW2WHG2m/view?usp=sharing
 ---
 
 ### Sermon Preview

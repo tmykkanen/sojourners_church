@@ -5,7 +5,7 @@ series: src/content/series/advent-2019-delighting-in-the-generosity-of-god.md
 scripture:
   - Luke.12.13-Luke.12.34
 preacher: src/content/preachers/tyler-mykkanen.md
-googleDocsURL: https://drive.google.com/open?id=1-Z9WyZ-_cfLufgZAubnrIDjObLmyXtlh
+bulletinURL: https://drive.google.com/open?id=1-Z9WyZ-_cfLufgZAubnrIDjObLmyXtlh
 ---
 
 ### Sermon Preview

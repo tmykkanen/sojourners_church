@@ -6,7 +6,7 @@ scripture:
   - 1Thess.2.13-1Thess.2.16
 preacher: src/content/preachers/tyler-mykkanen.md
 spotifyURL: https://open.spotify.com/episode/0jzfg0Xv24kAN3D2bow7W8?si=09617a1e6e3f4374
-googleDocsURL: https://drive.google.com/file/d/1IJO5wHuCHbf4ynlTNU98NBH7wGR9Gonb/view
+bulletinURL: https://drive.google.com/file/d/1IJO5wHuCHbf4ynlTNU98NBH7wGR9Gonb/view
 ---
 
 Sermon on 1 Thessalonians 2:13-16 from Sojourners Church in Albert Lea, MN. Preached on September 28, 2025 by Pastor Tyler Mykkanen.
