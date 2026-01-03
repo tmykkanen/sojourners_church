@@ -1,6 +1,7 @@
 import { defineCollection, reference, z } from "astro:content";
 import { glob } from "astro/loaders";
-import formatOsis from "./lib/bible-reference-formatter/en";
+// BUG: Fix import causing build to fail
+// import formatOsis from "./lib/bible-reference-formatter/en";
 
 const getSlugFromFilename = (val: string): string => {
   const regexRes = val?.match(/([^/?#]+)$/g);
@@ -37,7 +38,11 @@ const sermonsCollection = defineCollection({
       return getSlugFromFilename(val as string);
     }, reference("series")),
     scripture: z
-      .array(z.string().refine((val) => formatOsis("esv-long", val)))
+      .array(
+        z.string(),
+        // BUG: Fix
+        // .refine((val) => formatOsis("esv-long", val))
+      )
       .optional(),
     preacher: z.preprocess((val) => {
       return getSlugFromFilename(val as string);

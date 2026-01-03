@@ -2,6 +2,8 @@
 
 ## Site Info
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/51ee23a9-6093-49ed-a752-b46b84b7daab/deploy-status)](https://app.netlify.com/projects/sojourners/deploys)
+
 Built by [Tyler Mykkanen](https://github.com/tmykkanen) using:
 
 - ![Astro](https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white)
