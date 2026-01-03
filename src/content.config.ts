@@ -1,6 +1,6 @@
 import { defineCollection, reference, z } from "astro:content";
 import { glob } from "astro/loaders";
-import formatOsis from "@/lib/bible-reference-formatter/en";
+import formatOsis from "./lib/bible-reference-formatter/en";
 
 const getSlugFromFilename = (val: string): string => {
   const regexRes = val?.match(/([^/?#]+)$/g);
