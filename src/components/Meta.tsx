@@ -1,7 +1,8 @@
 import * as React from "react";
 import { format as datefnsFormat } from "date-fns";
 import { Badge } from "@/components/ui/badge";
-import formatOsis from "@/lib/bible-reference-formatter/en";
+// import formatOsis from "@/lib/bible-reference-formatter/en";
+import osisToEn from "bible-reference-formatter";
 import useIsMobile from "@/lib/hooks/useIsMobile";
 import slugify from "slugify";
 
@@ -41,7 +42,7 @@ const Meta: React.FC<MetaProps> = ({
 
   if (scripture)
     scripture.forEach((ref) =>
-      metaItems.push(formatOsis(isCompact ? "esv-short" : "esv-long", ref)),
+      metaItems.push(osisToEn(isCompact ? "esv-short" : "esv-long", ref)),
     );
 
   if (preacher)
