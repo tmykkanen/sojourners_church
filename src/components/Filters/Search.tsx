@@ -34,7 +34,7 @@ const Search: FC<HTMLProps<HTMLDivElement> & SearchProps> = ({
   const [inputValue, setInputValue] = useState(storeValue ?? "");
 
   // Debounce the store value to avoid too many updates
-  const debouncedValue = useDebounce(inputValue, 500);
+  const debouncedValue = useDebounce(inputValue, 300);
 
   // Sync debounced value back to Nanostore + URL
   useEffect(() => {
