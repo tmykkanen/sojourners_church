@@ -76,19 +76,12 @@ export const $filteredSermons = computed(
 
       // If yes, filter by verse reference
       if (osis) {
-        console.log(osis);
-        console.log(expandChapters(splitOsis(osis)));
-
         const sermonFilter = getRegExpFromOsis(osis);
-        console.log(sermonFilter);
 
         // Find sermons where scripture ref in .md file matches regex version of search term
-        sermonData = sermonData.filter((item) =>
-          item.data.scripture?.some((ref) =>
-            sermonFilter?.some((regExp) => {
-              if (regExp.test(ref)) console.log(ref);
-              return regExp.test(ref);
-            }),
+        sermonData = sermonData.filter((s) =>
+          s.data.scripture?.some((ref) =>
+            sermonFilter?.some((regex) => regex.test(ref)),
           ),
         );
 
@@ -96,10 +89,10 @@ export const $filteredSermons = computed(
         sermonData = sermonData.sort((a, b) => {
           // Find ref matching search term
           const aMatch = a.data.scripture?.find((ref) =>
-            sermonFilter?.some((regExp) => regExp.test(ref)),
+            sermonFilter?.some((regex) => regex.test(ref)),
           );
           const bMatch = b.data.scripture?.find((ref) =>
-            sermonFilter?.some((regExp) => regExp.test(ref)),
+            sermonFilter?.some((regex) => regex.test(ref)),
           );
 
           // Handle no refs found; shouldn't ever trigger b/c of prior filter function
@@ -108,8 +101,8 @@ export const $filteredSermons = computed(
           if (!bMatch) return -1;
 
           // split into BCV array
-          const aRef = splitOsis(aMatch).flat()[0].split(".");
-          const bRef = splitOsis(bMatch).flat()[0].split(".");
+          const aRef = aMatch.split("-")[0].split(".");
+          const bRef = bMatch.split("-")[0].split(".");
 
           const aChapter = parseInt(aRef[1]) || 0;
           const aVerse = parseInt(aRef[2]) || 0;
@@ -125,9 +118,8 @@ export const $filteredSermons = computed(
           // Sort by verse if same chapter
           return aVerse - bVerse;
         });
-      }
-      // If no, make fuzzy search using fuse
-      else {
+      } else {
+        // If no, make fuzzy search using fuse
         const fuse = new Fuse(sermonData, sermonSearchOptions);
         const result = fuse.search(sermonSearchTerm);
 
@@ -139,54 +131,34 @@ export const $filteredSermons = computed(
   },
 );
 
-const splitOsis = (osis: string) => {
-  return (
-    osis
-      // e.g. osis input: "Luke.2.1-Luke.2.4,John.3"
-      // split multi-reference into array of single references
-      // Result: ['Luke.2.1-Luke.2.4', 'John.3']
-      .split(",")
-      // split ranges into single references + flatten array
-      // Result: ['Luke.2.1', 'Luke.2.4', 'John.3']
-      .map((ref) => ref.split("-"))
-  );
-};
-
-const expandChapters = (data: string[][]) => {
-  return data.map((refArray) => {
-    if (refArray.length < 2) return refArray;
-    const startChapter = parseInt(refArray[0].split(".")[1]);
-    const endChapter = parseInt(refArray[1].split(".")[1]);
-
-    // const missingChapters = endChapter - startChapter - 1;
-
-    const expandedArray = [...refArray];
-
-    for (let i = startChapter + 1; i < endChapter; i++) {
-      expandedArray.push(refArray[0].split(".")[0] + "." + i);
-    }
-
-    return expandedArray;
-  });
-};
+/** ------------------------ Helper Functions ------------------------ */
 
 const getRegExpFromOsis = (osis: string) => {
-  const splitRefs = expandChapters(splitOsis(osis))
-    .flat()
-    // Split references into BCV
-    // Result: [['Luke', '2', '1'], ['Luke', '2', '4'], ...]
-    .map((ref) => ref.split("."));
+  const split = osis
+    // e.g. osis input: "Luke.2.1-Luke.2.4,John.3"
+    // split multi-reference into array of single references
+    // Result: ['Luke.2.1-Luke.2.4', 'John.3']
+    .split(",")
+    // split ranges into single references + flatten array
+    // Result: ['Luke.2.1', 'Luke.2.4', 'John.3']
+    .map((ref) => ref.split("-"))
+    // Explicitly expand array to include each chapter in range
+    .map((refArray) => {
+      if (refArray.length < 2) return refArray;
+      const startChapter = parseInt(refArray[0].split(".")[1]);
+      const endChapter = parseInt(refArray[1].split(".")[1]);
+      const expandedArray = [...refArray];
+      for (let i = startChapter + 1; i < endChapter; i++) {
+        expandedArray.push(refArray[0].split(".")[0] + "." + i);
+      }
+      return expandedArray;
+    })
+    .flat();
 
-  // unique refs for books or books + chapters
-  const uniqueRefs = [
-    ...new Set(
-      splitRefs.map((ref) => {
-        return ref[1] ? ref[0] + "." + ref[1] : ref[0];
-      }),
-    ),
-  ];
+  // clean up array to include only unique values
+  const refs = [...new Set(split)];
 
-  return uniqueRefs.map((ref) => {
+  return refs.map((ref) => {
     const [book, chapter] = ref.split(".");
 
     return chapter
