@@ -1,4 +1,4 @@
-import { useEffect, type FC, type HTMLProps } from "react";
+import { useEffect, useState, type FC, type HTMLProps } from "react";
 import { SearchIcon } from "lucide-react";
 
 import {
@@ -30,13 +30,21 @@ const Search: FC<HTMLProps<HTMLDivElement> & SearchProps> = ({
 
   const { value: storeValue, setValue } = useNanostoreURLSync<string>(storeKey);
 
+  // Local input state
+  const [inputValue, setInputValue] = useState(storeValue ?? "");
+
   // Debounce the store value to avoid too many updates
-  const debouncedValue = useDebounce(storeValue ?? "", 500);
+  const debouncedValue = useDebounce(inputValue, 500);
 
   // Sync debounced value back to Nanostore + URL
   useEffect(() => {
-    setValue(debouncedValue);
+    setValue(debouncedValue || undefined);
   }, [debouncedValue, setValue]);
+
+  // Keep input in sync if URL/store changes externally
+  useEffect(() => {
+    setInputValue(storeValue ?? "");
+  }, [storeValue]);
 
   const placeholder =
     type === "sermons" ? "Search sermons..." : "Search posts...";
@@ -45,9 +53,9 @@ const Search: FC<HTMLProps<HTMLDivElement> & SearchProps> = ({
     <InputGroup className={className}>
       <InputGroupInput
         type="text"
-        value={storeValue ?? ""}
+        value={inputValue}
         onChange={(e) => {
-          setValue(e.target.value);
+          setInputValue(e.target.value);
         }}
         placeholder={placeholder}
         className="placeholder:text-muted-foreground text-foreground placeholder:italic"
